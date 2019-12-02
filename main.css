@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+	margin: 0;
+	padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* background-image: linear-gradient(173deg, #f6f7f6, #fcfdfc)!important; */
+}
+html,
+body {
+	max-width: 100%;
+    max-height: 100%;
+    background-image: linear-gradient(173deg, #f6f7f6, #fcfdfc)!important;
+}
+  
+.big-wrapper {
+    display: flex;
+    justify-content: center;
+    color: #eee;
+    font-family: "coda", Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  .main-section {
+    background-color: black;
+    padding-top: 10px;
+    height:100vh;
+    width:100vw;
+}
+.main-section-story {
+    padding-top: 10px;
+    background-image: linear-gradient(151deg, #3b18a2, #372dd6);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.logo {
+   font-family: "M PLUS 1p", "Arial Black", Impact, Haettenschweiler;
+    font-weight: 700;
+    font-size: 26px;
+    color: white !important;
+    justify-self: start;
+    align-self: center;
+}
+.nav-bar {
+    grid-column: 2;
+    width: 100%;
+    color: #989998;
+    font-family: "coda", Verdana, Geneva, Tahoma, sans-serif;
+    justify-self: center;
+    align-self: center;
+    font-size: 14px;
+}
+.story-logo {
+    color: white!important;
+}
+.story-text {
+    color: rgba(255, 255, 255, 0.74)!important;
+}
+#home:hover, #story:hover, #github:hover{
+    transition: 800ms;
+    cursor: pointer;
+    color: #2e2f2e;
+    font-weight: 700;
+    text-decoration: underline;
+}
+#home {
+    color:white;
+    font-weight: 700;
+}
+#home-story:hover, #story-story:hover, #github-story:hover{
+    transition: 800ms;
+    cursor: pointer;
+    color: white!important;
+    font-weight: 700;
+    text-decoration: underline;
+}
+#story-story {
+    color: white!important;
+    font-weight: 700;
+}
+.contact-button {
+    outline: none;
+    border:none;
+    border-radius: 3px;
+    background-image: linear-gradient(113deg, #5727ed, #3e27e8);
+    height: 40px;
+    width: 160px;
+    justify-self: end;
+    align-self: center;
+    color: white;
+    font-weight: 500;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    transition: 500ms;
+}
+.contact-button:hover {
+    transition: 500ms;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.contact-button-story {
+    outline: none;
+    border:none;
+    border-radius: 3px;
+    /* background-image: linear-gradient(113deg, #362CD5, #3917A1); */
+    background-color: white;
+    height: 40px;
+    width: 160px;
+    justify-self: end;
+    align-self: center;
+    color: #362CD5;
+    font-weight: 500;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14px;
+    transition: 500ms;
+}
+.contact-button-story:hover {
+    transition: 500ms;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.link-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 100px 100px 100px 1fr;
+    justify-self: stretch;
+    align-self: center;
+    padding: 30px 150px;
+    background-color: black;
+}
+.link-text {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    color:white;
+}
+.hero {
+    margin-top:15px;
+    grid-column: 2;
+    justify-items: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+.hero-story {
+    padding-top: 70px;
+    padding-bottom: 100px;
+    grid-column: 2;
+    justify-self: center;
+    align-self: center;
+    color: white ;
+    font-family: 'Roboto Mono', monospace;
+    display: grid;
+}
+.value-prop {
+    padding-top: 40px;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    grid-column: 1/-1;
+    font-size: 50px;
+    color: white;
+}
+.qoute{
+    margin-top:30px;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    grid-column: 1/-1;
+    width: 500px;
+    color: #484848;
+    font-family: "coda", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header.sub-value-prop {
+    padding-top: 120px;
+    font-size: 24px;
+    grid-column: 1/-1;
+    justify-self: center;
+    align-self: center;
+    color: white;
+}
+.text {
+    grid-column: 1/-1;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    width: 500px;
+    font-size: 12px;
+    color: white;
+    line-height: 1.56!important;
+    text-transform: uppercase;
+    
+}
+.sota {
+    font-weight: bold!important;
+}
+.author {
+    font-weight: bold!important;
+    color: #464746!important;
+}
+
+.second-section {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr minmax(800px, 1200px) 1fr;
+}
+
+  
+  .main-header {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1rem;
+  }
+  
+  .main-header h2 {
+    line-height: 1;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 3;
+    padding-bottom: 0.5rem;
+  }
+  
+  .main-header h2 span {
+    font-size: 0.75em;
+  }
+  
+  /* Nav bar */
+  
+  .main-nav ul {
+    margin-top: 40px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .main-nav a {
+    position: relative;
+    color: #eee;
+    height: 64px;
+    width: 64px;
+    margin: 0 0.25rem;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+  }
+  
+  .main-nav li a:hover::after,
+  .main-nav li a:focus::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 133%;
+    z-index: 4;
+    transform: translateX(-50%);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .main-nav li:nth-child(1) a:hover::after {
+    content: "Genesis";
+  }
+  .main-nav li:nth-child(2) a:hover::after {
+    content: "Apokalypse";
+  }
+  .main-nav li:nth-child(3) a:hover::after {
+    content: "Prometheus";
+  }
+  .main-nav li:nth-child(4) a:hover::after {
+    content: "Daedalus";
+  }
+  
+  .main-nav a img {
+    display: block;
+    width: 50%;
+    opacity: 0.5;
+    transition: 200ms ease;
+  }
+  
+  .main-nav li:nth-child(3) a img {
+    width: 62%;
+  }
+  
+  .main-nav a:hover img,
+  .main-nav a img.active {
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1.5);
+    background-image: radial-gradient(black, transparent 80%);
+  }
+  
+  .main-nav a img.active {
+    transform: scale(2);
+    z-index: 2;
+  }
+  
+  .main-nav li:nth-child(3) a:hover img {
+    background-image: radial-gradient(black, transparent 95%);
+    overflow: visible;
+  }
+  
+  /* content */
+  
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 600px 300px ;
+    justify-content: center;
+  }
+#planet-name{
+    font-size: 30px;
+}
+
+  
+  .planet-image{
+     height:200px;
+  }
+  .planet-col {
+    width: 38%;
+  }
+  
+  .planet-col img {
+    width: 100%;
+    display: block;
+  }
+  
+  .info-col {
+    margin-right: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  h1 {
+    font-family: "M PLUS 1p", "Arial Black", Impact, Haettenschweiler,
+      "Arial Narrow Bold", sans-serif;
+    font-size: 6rem;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  
+  .planet-col,
+  .info-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+      transition: 1000ms ease-in-out;
+      transform: translateX(0%) scale(1);
+      opacity: 1;
+  }
+  
+  .hide-left {
+      opacity: 0;
+      transform: translateX(-200%) scale(3);
+  }
+  
+  .hide-right {
+      opacity: 0;
+      transform: translateX(100%) scale(0.25);
+  }
+  
+  td:first-of-type {
+    text-align: end;
+    font-size: 10px;
+  }
+  
+  td:nth-child(2) {
+    padding-left: 1rem;
+    font-size: 10px;
+  }
+  
+  /*mobile style */
+  @media screen and (max-width: 639px) {
+    .main-header h2 {
+      font-size: 1.23rem;
+    }
+  
+    .main-nav {
+      margin-top: 2rem;
+    }
+  
+    .main-nav li {
+      width: 25%;
+      text-align: center;
+      margin: 0 0 2rem;
+    }
+  
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+  
+    h1 {
+      font-size: 4rem;
+    }
+  
+    .info-col {
+      margin-right: 0;
+    }
+  
+    .planet-col {
+      width: 90.5%;
+    }
+    .logo{
+      font-size: 18px;
+      display: block;
+      padding-bottom: 5px;
+    }
+   .link-wrapper{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     justify-content: center;
+   }
+   .link-text{
+     margin-right:15px;
+   }
+   .value-prop{
+     font-size:22px;
+     margin-bottom:8px;
+   }
+   .text{
+     margin:0 auto;
+     font-size: 14px;
+     width:300px;
+   }
+   .planet-image{
+     height:120px;
+     margin-top:12px;
+     padding-bottom: 30px;
+   }
+  }
+  
+  /* Larger Desktop styles */
+  @media screen and (min-width: 1440px) {
+    h1 {
+      font-size: 8rem;
+    }
+  
+    .info-col table {
+      font-size: 2rem;
+    }
+  
+    .main-header h2 {
+      padding-bottom: 2.5rem;
+      font-size: 3rem;
+    }
+  
+    .main-nav li a {
+      margin: 0 1rem;
+    }
+  
+    .main-nav a svg.active {
+      transform: scale(3);
+    }
+  }
+  
+  @keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+
+.stars, .twinkling, .clouds {
+  position: relative;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+}
+
+.stars{
+    height:100vh;
+}
+.twinkling{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+    background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
+}
+
+.planet-col:hover{
+    cursor: pointer;
+}
