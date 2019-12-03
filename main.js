@@ -1,3 +1,5 @@
+console.log("started");
+
 // let main_root = document.querySelector("#seymurs-main-root");
 const Choice_planetName = document.getElementById("planet-name"),
   Choice_fromSun = document.getElementById("from-sun"),
