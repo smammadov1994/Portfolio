@@ -522,7 +522,7 @@ td:nth-child(2) {
 
 .stars {
   background: #000
-    url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
+    url(https://www.script-tutorials.com/demos/360/images/stars.png) repeat top
     center;
 }
 
@@ -531,7 +531,7 @@ td:nth-child(2) {
 }
 .twinkling {
   background: transparent
-    url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat
+    url(https://www.script-tutorials.com/demos/360/images/twinkling.png) repeat
     top center;
 
   -moz-animation: move-twink-back 200s linear infinite;
@@ -543,8 +543,8 @@ td:nth-child(2) {
 
 .clouds {
   background: transparent
-    url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top
-    center;
+    url(https://www.script-tutorials.com/demos/360/images/clouds3.png) repeat
+    top center;
 
   -moz-animation: move-clouds-back 200s linear infinite;
   -ms-animation: move-clouds-back 200s linear infinite;
