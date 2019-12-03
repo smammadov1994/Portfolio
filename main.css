@@ -389,6 +389,10 @@ td:nth-child(2) {
 
 /*mobile style */
 @media screen and (max-width: 639px) {
+  body{
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
   .main-header h2 {
     font-size: 1.23rem;
   }

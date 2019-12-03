@@ -85,20 +85,25 @@ Choice_mainNav.addEventListener("click", function(e) {
   if (event.target.tagName != "IMG" && event.target.tagName != "A") {
     return;
   } else if (event.target.tagName == "IMG") {
+    console.log("clicked on symbol");
     for (i = 0; i < Choice_symbol_array.length; i++) {
       Choice_symbol_array[i].classList.remove("active"); // removing any .active class on symbol img svgs
+      console.log("removing active class");
 
       if (Choice_symbol_array[i] === event.target) {
+        console.log("displaying planet info");
         displayPlanetInfo(i); // calling function that matches iteration of symbol, passing in iteration
         hideCols();
         Choice_symbol_array[i].classList.toggle("active");
       }
     }
   } else if (event.target.tagName == "A") {
+    console.log("removing active class from a anchor");
     for (i = 0; i < Choice_nav_links.length; i++) {
       Choice_symbol_array[i].classList.remove("active"); // removing any .active class on symbol img svgs
 
       if (Choice_symbol_array[i].parentElement === event.target) {
+        console.log("displaying planet info from anchor");
         displayPlanetInfo(i); // calling function that matches iteration of symbol, passing in iteration
         hideCols();
         Choice_symbol_array[i].classList.toggle("active");
