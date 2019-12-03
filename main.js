@@ -79,7 +79,7 @@ function displayPlanetInfo(action) {
   }, 1100);
 }
 
-Choice_mainNav.addEventListener("click", function(e) {
+Choice_mainNav.addEventListener("touchstart", function(e) {
   e.preventDefault();
 
   if (event.target.tagName != "IMG" && event.target.tagName != "A") {
