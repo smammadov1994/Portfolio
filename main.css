@@ -436,6 +436,7 @@ td:nth-child(2) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
+    padding: 20px 10px 0px 10px;
   }
   .link-text {
     margin-right: 15px;
@@ -443,6 +444,7 @@ td:nth-child(2) {
   .value-prop {
     font-size: 22px;
     margin-bottom: 8px;
+    padding-top:15px;
   }
   .text {
     margin: 0 auto;
