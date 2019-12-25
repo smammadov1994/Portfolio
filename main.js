@@ -124,7 +124,7 @@ function planetUrl() {
     Choice_planetImg.srcset ===
     "https://image.flaticon.com/icons/svg/1751/1751884.svg"
   ) {
-    window.location.href = "https://github.com/smammadov1994/LifeModz";
+    window.location.href = "https://github.com/smammadov1994/Live-Chat";
   } else if (
     Choice_planetImg.srcset ===
     "https://image.flaticon.com/icons/svg/1086/1086088.svg"
@@ -134,7 +134,7 @@ function planetUrl() {
     Choice_planetImg.srcset ===
     "https://image.flaticon.com/icons/svg/788/788174.svg"
   ) {
-    window.location.href = "https://github.com/smammadov1994/ScarletAI";
+    window.location.href = "https://github.com/smammadov1994/Grocery-Store";
   } else if (
     Choice_planetImg.srcset ===
     "https://image.flaticon.com/icons/svg/788/788180.svg"
