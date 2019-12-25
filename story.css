@@ -14,7 +14,7 @@ body {
     display: grid;
     grid-template-columns: 1fr minmax(800px, 1200px) 1fr;
     padding-top: 10px;
-    background-image: linear-gradient(113deg, #5727ed, #3e27e8);
+    background-image: linear-gradient(151deg, #5d3eba, #392f85);
 }
 .main-section {
     display: grid;
