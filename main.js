@@ -1,3 +1,5 @@
+/** @format */
+
 console.log("started");
 
 // let main_root = document.querySelector("#seymurs-main-root");
@@ -27,9 +29,9 @@ const planets = [
     year: "88 Earth Days",
     day: "59 Earth Days",
     velocity: "106,000 <abbr>mph</abbr>",
-    img480: "https://image.flaticon.com/icons/svg/1086/1086088.svg",
-    img1024: "https://image.flaticon.com/icons/svg/1086/1086088.svg",
-    id: "genesis"
+    img480: "./images/neptune.png",
+    img1024: "./images/neptune.png",
+    id: "genesis",
   },
   {
     planetName: "Apokalypse",
@@ -37,9 +39,9 @@ const planets = [
     year: "225 Earth Days",
     day: "116 Earth Days",
     velocity: "126 <abbr>Kmh</abbr>",
-    img480: "https://image.flaticon.com/icons/svg/1751/1751884.svg",
-    img1024: "https://image.flaticon.com/icons/svg/1751/1751884.svg",
-    id: "apokalypse"
+    img480: "./images/apokalipse (2).png",
+    img1024: "./images/apokalipse (2).png",
+    id: "apokalypse",
   },
   {
     planetName: "Prometheus",
@@ -47,9 +49,9 @@ const planets = [
     year: "365 Days",
     day: "48 Hours",
     velocity: "66,600 <abbr>Mph</abbr>",
-    img480: "https://image.flaticon.com/icons/svg/788/788174.svg",
-    img1024: "https://image.flaticon.com/icons/svg/788/788174.svg",
-    id: "prometheus"
+    img480: "./images/purpleplanet.png",
+    img1024: "./images/purpleplanet.png",
+    id: "prometheus",
   },
   {
     planetName: "Daedalus",
@@ -57,16 +59,16 @@ const planets = [
     year: "687 Earth Days",
     day: "24.6 Earth Days",
     velocity: "86, 400 <abbr>Kmh</abbr>",
-    img480: "https://image.flaticon.com/icons/svg/788/788180.svg",
-    img1024: "https://image.flaticon.com/icons/svg/788/788180.svg",
-    id: "daedalus"
-  }
+    img480: "./images/greenplanet.png",
+    img1024: "./images/greenplanet.png",
+    id: "daedalus",
+  },
 ];
 
 function displayPlanetInfo(action) {
   // Main function, swaps out all content
 
-  setTimeout(function() {
+  setTimeout(function () {
     // This delaying swapping out content to allow for animated transition before reappearing
     Choice_planetName.innerText = planets[action].planetName;
     Choice_fromSun.innerHTML = planets[action].fromSun;
@@ -81,7 +83,7 @@ function displayPlanetInfo(action) {
   }, 1100);
 }
 
-Choice_mainNav.addEventListener("click", function(e) {
+Choice_mainNav.addEventListener("click", function (e) {
   e.preventDefault();
 
   if (event.target.tagName != "IMG" && event.target.tagName != "A") {
