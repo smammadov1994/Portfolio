@@ -533,12 +533,10 @@ td:nth-child(2) {
 }
 
 .stars {
+  height: 100vh;
   background: #000
     url(https://www.script-tutorials.com/demos/360/images/stars.png) repeat top
     center;
-}
-
-.stars {
 }
 
 .twinkling {
