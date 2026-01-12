@@ -36,18 +36,34 @@ const GalaxyBackground = () => {
     let nextShootingStarTime = Date.now() + Math.random() * 5000 + 3000; // 3-8 seconds
 
     const createShootingStar = () => {
-        const startX = Math.random() * width * 0.6; // Start in left 60%
-        const startY = Math.random() * height * 0.4; // Start in top 40%
+        // Random starting edge: top or left side of screen
+        const fromTop = Math.random() > 0.5;
+        
+        let startX, startY, angle;
+        
+        if (fromTop) {
+            // Start from top edge, travel diagonally down-right
+            startX = Math.random() * width * 0.8;
+            startY = -10;
+            angle = Math.PI / 4 + (Math.random() - 0.5) * 0.5; // 30-60 degrees
+        } else {
+            // Start from left edge, travel diagonally right-down
+            startX = -10;
+            startY = Math.random() * height * 0.6;
+            angle = Math.PI / 6 + (Math.random() - 0.5) * 0.4; // 15-45 degrees
+        }
+        
         return {
             x: startX,
             y: startY,
-            length: 80 + Math.random() * 60, // Tail length
-            speed: 12 + Math.random() * 8,
-            angle: Math.PI / 4 + (Math.random() - 0.5) * 0.3, // ~45 degrees with variation
+            length: 60 + Math.random() * 80, // Varied tail length
+            speed: 10 + Math.random() * 12,
+            angle: angle,
             opacity: 1,
             life: 1
         };
     };
+
 
     const handleResize = () => {
       width = window.innerWidth;
