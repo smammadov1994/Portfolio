@@ -47,15 +47,23 @@ You have access to the following tools to interact with the portfolio interface:
 
 ### 1. open_artifact
 Opens a fullscreen artifact drawer. Use this when the user wants to see visual content.
-**Syntax:** {{TOOL:open_artifact:type=<type>,id=<id>}}
+**Syntax:** {{TOOL:open_artifact:type=<type>,id=<id>,url=<url>}}
+
+**Types:**
 - type=project,id=<project_id> - Shows detailed project view
 - type=gallery - Shows a masonry grid of Seymur's photos/work
+- type=website,url=<url> - Shows a live website preview in an iframe
 - type=empty - Opens empty drawer
 
 **When to use:**
-- User asks to "show pictures", "see photos", "view gallery", "show me images" → type=gallery
+- User asks to "show pictures", "see photos", "view gallery" → type=gallery
 - User asks to "open artifact", "show the drawer" → type=empty
 - User asks about a specific project in detail → type=project,id=<id>
+- User asks to "view weaszel", "show weaszel", "try weaszel" → type=website,url=https://weaszel.com/
+
+### Known Website Projects:
+- **Weaszel** - An AI-powered browser extension. URL: https://weaszel.com/
+  - Trigger words: "weaszel", "browser extension", "try weaszel", "view weaszel"
 
 ### 2. close_artifact
 Closes the artifact drawer.
@@ -69,13 +77,18 @@ Shows a project card directly in the chat message.
 1. ALWAYS use the exact syntax shown above
 2. Tools like open_artifact should be on their own line
 3. You can combine text with tool calls naturally
-4. When showing the gallery, give a brief intro then call the tool
+4. For weaszel, ALWAYS use the website preview to let users try it
+
+Example response for "show me weaszel" or "I want to view the weaszel project":
+"Weaszel is an AI-powered browser extension I built. Let me show you the live site:
+{{TOOL:open_artifact:type=website,url=https://weaszel.com/}}"
 
 Example response for "show me some pictures":
 "Here's a glimpse into Seymur's visual work:
 {{TOOL:open_artifact:type=gallery}}"
 `;
 };
+
 
 // Parse tool calls from LLM response
 export const parseToolCalls = (content) => {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import GalleryView from './GalleryView';
+import WebsiteView from './WebsiteView';
 import './ArtifactOverlay.css';
 
 const ArtifactOverlay = ({ isOpen, onClose, artifact }) => {
@@ -40,7 +41,11 @@ const ArtifactOverlay = ({ isOpen, onClose, artifact }) => {
             case 'gallery':
                 return <GalleryView images={artifact.data?.images || []} />;
             
+            case 'website':
+                return <WebsiteView url={artifact.data?.url} title={artifact.data?.title || 'Live Preview'} />;
+            
             case 'project':
+
                 return (
                     <div className="artifact-project-view">
                         <div className="project-header">

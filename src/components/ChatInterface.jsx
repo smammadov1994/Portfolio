@@ -23,9 +23,12 @@ const ChatInterface = ({ artifact, isArtifactOpen, openArtifact, closeArtifact }
         
         switch (tool) {
             case 'open_artifact':
-                const { type, id } = params;
+                const { type, id, url } = params;
                 if (type === 'gallery') {
-                    openArtifact('gallery', { images: [] }); // Placeholder for now
+                    openArtifact('gallery', { images: [] });
+                } else if (type === 'website' && url) {
+                    // Website preview with iframe
+                    openArtifact('website', { url, title: 'Weaszel' });
                 } else if (type === 'project' && id) {
                     const project = projectData.find(p => p.id === id);
                     if (project) {
@@ -44,6 +47,7 @@ const ChatInterface = ({ artifact, isArtifactOpen, openArtifact, closeArtifact }
                 console.warn('Unknown tool:', tool);
         }
     };
+
 
     const handleSend = async (e) => {
         e.preventDefault();
