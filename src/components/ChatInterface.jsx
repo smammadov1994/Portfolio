@@ -107,6 +107,27 @@ const ChatInterface = ({ artifact, isArtifactOpen, openArtifact, closeArtifact }
 
     const isHero = messages.length === 0;
 
+    // Starter prompts for the hero view
+    const starterPrompts = [
+        { emoji: '🚀', text: "What projects has Seymur built?" },
+        { emoji: '🌐', text: "Show me Weaszel" },
+        { emoji: '🖼️', text: "View the gallery" },
+        { emoji: '💼', text: "Tell me about Seymur's experience" },
+        { emoji: '🛠️', text: "What technologies does he use?" },
+    ];
+
+    const handlePromptClick = (prompt) => {
+        setInput(prompt);
+        // Auto-submit after a tiny delay for visual feedback
+        setTimeout(() => {
+            const fakeEvent = { preventDefault: () => {} };
+            setInput(prompt);
+            // Trigger the send
+            const submitBtn = document.querySelector('.send-btn');
+            if (submitBtn) submitBtn.click();
+        }, 100);
+    };
+
     return (
         <div className={`chat-container ${isHero ? 'mode-hero' : 'mode-chat'}`}>
             
@@ -122,8 +143,22 @@ const ChatInterface = ({ artifact, isArtifactOpen, openArtifact, closeArtifact }
                 <div className="hero-center">
                     <h1 className="hero-logo">Portfolio</h1>
                     <p className="hero-subtitle">Ask me anything about Seymur's work.</p>
+                    
+                    <div className="starter-prompts">
+                        {starterPrompts.map((prompt, idx) => (
+                            <button 
+                                key={idx}
+                                className="starter-chip"
+                                onClick={() => handlePromptClick(prompt.text)}
+                            >
+                                <span className="chip-emoji">{prompt.emoji}</span>
+                                <span className="chip-text">{prompt.text}</span>
+                            </button>
+                        ))}
+                    </div>
                 </div>
             )}
+
 
             {/* Chat Stream - Only visible when there are messages */}
             {!isHero && (
