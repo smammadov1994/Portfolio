@@ -136,6 +136,30 @@
         max-width: 280px;
         justify-content: center;
     }
+    
+    .refresh-chip {
+        width: auto;
+    }
+}
+
+/* Refresh button special styling */
+.refresh-chip {
+    padding: 0.75rem 1rem;
+    background: rgba(130, 170, 255, 0.1);
+    border-color: rgba(130, 170, 255, 0.2);
+}
+
+.refresh-chip:hover {
+    background: rgba(130, 170, 255, 0.2);
+    border-color: rgba(130, 170, 255, 0.4);
+}
+
+.refresh-chip .chip-emoji {
+    transition: transform 0.3s ease;
+}
+
+.refresh-chip:hover .chip-emoji {
+    transform: rotate(180deg);
 }
 
 /* Input Transitions */

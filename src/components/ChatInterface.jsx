@@ -107,26 +107,45 @@ const ChatInterface = ({ artifact, isArtifactOpen, openArtifact, closeArtifact }
 
     const isHero = messages.length === 0;
 
-    // Starter prompts for the hero view
-    const starterPrompts = [
-        { emoji: '🚀', text: "What projects has Seymur built?" },
-        { emoji: '🌐', text: "Show me Weaszel" },
-        { emoji: '🖼️', text: "View the gallery" },
-        { emoji: '💼', text: "Tell me about Seymur's experience" },
-        { emoji: '🛠️', text: "What technologies does he use?" },
+    // Multiple sets of starter prompts
+    const promptSets = [
+        [
+            { emoji: '🚀', text: "What projects has Seymur built?" },
+            { emoji: '🌐', text: "Show me Weaszel" },
+            { emoji: '🖼️', text: "View the gallery" },
+            { emoji: '💼', text: "Tell me about Seymur's experience" },
+        ],
+        [
+            { emoji: '🧠', text: "What's Seymur's tech stack?" },
+            { emoji: '📱', text: "Show me mobile projects" },
+            { emoji: '🎨', text: "What's his design philosophy?" },
+            { emoji: '🔥', text: "What's he working on now?" },
+        ],
+        [
+            { emoji: '🎓', text: "Where did Seymur study?" },
+            { emoji: '💡', text: "What problems does he solve?" },
+            { emoji: '🤝', text: "How can I contact him?" },
+            { emoji: '⚡', text: "What makes him unique?" },
+        ],
     ];
+
+    const [promptSetIndex, setPromptSetIndex] = useState(0);
+    const currentPrompts = promptSets[promptSetIndex];
+
+    const cyclePrompts = () => {
+        setPromptSetIndex((prev) => (prev + 1) % promptSets.length);
+    };
 
     const handlePromptClick = (prompt) => {
         setInput(prompt);
         // Auto-submit after a tiny delay for visual feedback
         setTimeout(() => {
-            const fakeEvent = { preventDefault: () => {} };
             setInput(prompt);
-            // Trigger the send
             const submitBtn = document.querySelector('.send-btn');
             if (submitBtn) submitBtn.click();
         }, 100);
     };
+
 
     return (
         <div className={`chat-container ${isHero ? 'mode-hero' : 'mode-chat'}`}>
@@ -144,8 +163,8 @@ const ChatInterface = ({ artifact, isArtifactOpen, openArtifact, closeArtifact }
                     <h1 className="hero-logo">Portfolio</h1>
                     <p className="hero-subtitle">Ask me anything about Seymur's work.</p>
                     
-                    <div className="starter-prompts">
-                        {starterPrompts.map((prompt, idx) => (
+                    <div className="starter-prompts" key={promptSetIndex}>
+                        {currentPrompts.map((prompt, idx) => (
                             <button 
                                 key={idx}
                                 className="starter-chip"
@@ -155,7 +174,15 @@ const ChatInterface = ({ artifact, isArtifactOpen, openArtifact, closeArtifact }
                                 <span className="chip-text">{prompt.text}</span>
                             </button>
                         ))}
+                        <button 
+                            className="starter-chip refresh-chip"
+                            onClick={cyclePrompts}
+                            title="More suggestions"
+                        >
+                            <span className="chip-emoji">🔄</span>
+                        </button>
                     </div>
+
                 </div>
             )}
 
