@@ -1,0 +1,202 @@
+/* Sidebar Base */
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 60px; /* Back to sleek */
+    background: rgba(10, 10, 10, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.08); 
+    z-index: 1000;
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    color: white;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.3);
+}
+
+.sidebar-container.hovered,
+.sidebar-container.pinned {
+    width: 240px; /* Standard sleek width */
+    background: rgba(10, 10, 10, 0.65);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 240px;
+}
+
+.sidebar-header {
+    height: 70px; /* Smaller header */
+    display: flex;
+    align-items: center;
+    padding: 0 1.2rem;
+    justify-content: space-between;
+}
+
+.sidebar-logo {
+    font-size: 1.25rem; /* Smaller logo */
+    font-weight: 700;
+    width: 24px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.pin-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 6px;
+    opacity: 0;
+    transition: all 0.3s;
+    border-radius: 50%;
+}
+
+/* ... nav items ... */
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    white-space: nowrap;
+    position: relative;
+    border-left: 3px solid transparent;
+    border-radius: 8px;
+    margin: 0 0.5rem;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-left-color: rgba(255, 255, 255, 0.6);
+    transform: translateX(4px);
+}
+
+.nav-item:active {
+    transform: translateX(2px) scale(0.98);
+}
+
+.nav-item .icon {
+    width: 24px;
+    margin-right: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    opacity: 0.8;
+    transition: transform 0.3s;
+}
+
+.nav-item:hover .icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.nav-item .label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: white;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Show labels when expanded */
+.sidebar-container.hovered .nav-item .label,
+.sidebar-container.pinned .nav-item .label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ... footer ... */
+
+.sidebar-footer {
+    padding: 1.5rem 1.2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.2);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+    font-size: 0.8rem;
+    background: linear-gradient(135deg, #333, #111);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Tooltips for collapsed state */
+.nav-item::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 100%;
+    margin-left: 1rem;
+    background: rgba(20, 20, 20, 0.95);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-container:not(.hovered):not(.pinned) .nav-item:hover::before {
+    opacity: 1;
+}
+
+.user-profile .label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sidebar-container.hovered .user-profile .label,
+.sidebar-container.pinned .user-profile .label {
+    opacity: 1;
+}
+
+/* Pin button visibility */
+.pin-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.sidebar-container.hovered .pin-btn,
+.sidebar-container.pinned .pin-btn {
+    opacity: 1;
+}
+

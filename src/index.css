@@ -1,0 +1,49 @@
+@import './styles/animations.css';
+
+:root {
+  /* Grok Minimalist Style */
+  --glass-bg: rgba(255, 255, 255, 0.03); /* Almost invisible */
+  --glass-border: rgba(255, 255, 255, 0.1); /* Subtle crisp line */
+  --glass-shadow: none; /* No shadow, floating in void */
+  --glass-blur: 0px; /* Crystal clear, no blur */
+  --glass-radius: 24px; /* Soft square */
+  
+  --primary-gradient: white; /* No gradient, just white */
+  --secondary-gradient: #888;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  --transition-speed: 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #0f0f11;
+  /* Background handled by GalaxyBackground */
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glass Utility Class */
+.glass-panel {
+  background: var(--glass-bg);
+  /* contrast with background */
+  border: 1px solid var(--glass-border);
+  border-radius: var(--glass-radius);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

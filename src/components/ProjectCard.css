@@ -1,0 +1,76 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  aspect-ratio: 1/1; /* PERFECT SQUARE */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Remove Glare */
+.project-card::after {
+  display: none;
+}
+
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.05); /* Slight brighten on hover */
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-image-container {
+  width: 50%; /* Smaller icon */
+  aspect-ratio: 1/1;
+  border-radius: 0;
+  overflow: visible;
+  margin-bottom: 1.5rem;
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px rgba(255,255,255,0.1));
+  padding: 0;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-stats {
+  display: none; /* Hide stats for minimalism */
+}
+
+.card-overlay {
+  display: none;
+}

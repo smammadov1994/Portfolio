@@ -1,0 +1,54 @@
+[
+  {
+    "id": "genesis",
+    "title": "Genesis",
+    "description": "A live chat application.",
+    "stats": [
+      { "label": "Distance From Sun", "value": "57.9m Km" },
+      { "label": "Solar Year", "value": "88 Earth Days" },
+      { "label": "Solar Day", "value": "59 Earth Days" },
+      { "label": "Velocity", "value": "106,000 mph" }
+    ],
+    "image": "/images/neptune.png",
+    "githubUrl": "https://github.com/smammadov1994/Live-Chat"
+  },
+  {
+    "id": "apokalypse",
+    "title": "Apokalypse",
+    "description": "Space forager game project.",
+    "stats": [
+      { "label": "Distance From Sun", "value": "108m Km" },
+      { "label": "Solar Year", "value": "225 Earth Days" },
+      { "label": "Solar Day", "value": "116 Earth Days" },
+      { "label": "Velocity", "value": "126 Kmh" }
+    ],
+    "image": "/images/apokalipse (2).png",
+    "githubUrl": "https://github.com/smammadov1994/Spaceforager"
+  },
+  {
+    "id": "prometheus",
+    "title": "Prometheus",
+    "description": "Grocery Store application.",
+    "stats": [
+      { "label": "Distance From Sun", "value": "150m Km" },
+      { "label": "Solar Year", "value": "365 Days" },
+      { "label": "Solar Day", "value": "48 Hours" },
+      { "label": "Velocity", "value": "66,600 Mph" }
+    ],
+    "image": "/images/purpleplanet.png",
+    "githubUrl": "https://github.com/smammadov1994/Grocery-Store"
+  },
+  {
+    "id": "daedalus",
+    "title": "Daedalus",
+    "description": "RepEnhance application.",
+    "stats": [
+      { "label": "Distance From Sun", "value": "228m Km" },
+      { "label": "Solar Year", "value": "687 Earth Days" },
+      { "label": "Solar Day", "value": "24.6 Earth Days" },
+      { "label": "Velocity", "value": "86,400 Kmh" }
+    ],
+    "image": "/images/greenplanet.png",
+    "githubUrl": "https://github.com/smammadov1994/RepEnhance"
+  }
+]
