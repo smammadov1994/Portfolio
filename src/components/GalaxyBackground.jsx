@@ -31,6 +31,24 @@ const GalaxyBackground = () => {
         }
     };
 
+    // Shooting star state
+    let shootingStar = null;
+    let nextShootingStarTime = Date.now() + Math.random() * 5000 + 3000; // 3-8 seconds
+
+    const createShootingStar = () => {
+        const startX = Math.random() * width * 0.6; // Start in left 60%
+        const startY = Math.random() * height * 0.4; // Start in top 40%
+        return {
+            x: startX,
+            y: startY,
+            length: 80 + Math.random() * 60, // Tail length
+            speed: 12 + Math.random() * 8,
+            angle: Math.PI / 4 + (Math.random() - 0.5) * 0.3, // ~45 degrees with variation
+            opacity: 1,
+            life: 1
+        };
+    };
+
     const handleResize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
@@ -55,6 +73,7 @@ const GalaxyBackground = () => {
       ctx.fillStyle = '#050505'; 
       ctx.fillRect(0, 0, width, height);
       
+      // Draw stars
       stars.forEach(star => {
         // Move stars left to right (Planetary Spin)
         star.x += star.speed;
@@ -71,6 +90,48 @@ const GalaxyBackground = () => {
         ctx.fill();
       });
 
+      // Shooting star logic
+      const now = Date.now();
+      if (!shootingStar && now > nextShootingStarTime) {
+          shootingStar = createShootingStar();
+      }
+
+      if (shootingStar) {
+          // Move shooting star
+          shootingStar.x += Math.cos(shootingStar.angle) * shootingStar.speed;
+          shootingStar.y += Math.sin(shootingStar.angle) * shootingStar.speed;
+          shootingStar.life -= 0.015;
+          shootingStar.opacity = shootingStar.life;
+
+          if (shootingStar.life > 0) {
+              // Draw shooting star with gradient tail
+              const tailX = shootingStar.x - Math.cos(shootingStar.angle) * shootingStar.length;
+              const tailY = shootingStar.y - Math.sin(shootingStar.angle) * shootingStar.length;
+
+              const gradient = ctx.createLinearGradient(tailX, tailY, shootingStar.x, shootingStar.y);
+              gradient.addColorStop(0, `rgba(255, 255, 255, 0)`);
+              gradient.addColorStop(0.7, `rgba(255, 255, 255, ${shootingStar.opacity * 0.3})`);
+              gradient.addColorStop(1, `rgba(255, 255, 255, ${shootingStar.opacity})`);
+
+              ctx.beginPath();
+              ctx.strokeStyle = gradient;
+              ctx.lineWidth = 2;
+              ctx.lineCap = 'round';
+              ctx.moveTo(tailX, tailY);
+              ctx.lineTo(shootingStar.x, shootingStar.y);
+              ctx.stroke();
+
+              // Bright head
+              ctx.beginPath();
+              ctx.fillStyle = `rgba(255, 255, 255, ${shootingStar.opacity})`;
+              ctx.arc(shootingStar.x, shootingStar.y, 2, 0, Math.PI * 2);
+              ctx.fill();
+          } else {
+              shootingStar = null;
+              nextShootingStarTime = now + Math.random() * 5000 + 3000; // Next one in 3-8 seconds
+          }
+      }
+
       animationFrameId = requestAnimationFrame(animate);
     };
 
@@ -82,6 +143,7 @@ const GalaxyBackground = () => {
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
+
 
   return (
     <canvas 
