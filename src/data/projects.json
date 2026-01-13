@@ -1,54 +1,28 @@
 [
   {
-    "id": "genesis",
-    "title": "Genesis",
-    "description": "A live chat application.",
+    "id": "weaszel",
+    "title": "Weaszel",
+    "description": "An AI-powered browser extension that helps users research and understand web content faster.",
     "stats": [
-      { "label": "Distance From Sun", "value": "57.9m Km" },
-      { "label": "Solar Year", "value": "88 Earth Days" },
-      { "label": "Solar Day", "value": "59 Earth Days" },
-      { "label": "Velocity", "value": "106,000 mph" }
+      { "label": "Type", "value": "Browser Extension" },
+      { "label": "Tech", "value": "React, AI/ML" },
+      { "label": "Status", "value": "Live" }
     ],
-    "image": "/images/neptune.png",
-    "githubUrl": "https://github.com/smammadov1994/Live-Chat"
+    "image": "/images/weaszel-preview.png",
+    "liveUrl": "https://weaszel.com/",
+    "githubUrl": "https://github.com/smammadov1994"
   },
   {
-    "id": "apokalypse",
-    "title": "Apokalypse",
-    "description": "Space forager game project.",
+    "id": "chatbot-ui-components",
+    "title": "Chatbot UI Components",
+    "description": "A reusable UI component library for building conversational interfaces, documented with Storybook.",
     "stats": [
-      { "label": "Distance From Sun", "value": "108m Km" },
-      { "label": "Solar Year", "value": "225 Earth Days" },
-      { "label": "Solar Day", "value": "116 Earth Days" },
-      { "label": "Velocity", "value": "126 Kmh" }
+      { "label": "Type", "value": "UI Library" },
+      { "label": "Tech", "value": "React, Storybook" },
+      { "label": "Status", "value": "Open Source" }
     ],
-    "image": "/images/apokalipse (2).png",
-    "githubUrl": "https://github.com/smammadov1994/Spaceforager"
-  },
-  {
-    "id": "prometheus",
-    "title": "Prometheus",
-    "description": "Grocery Store application.",
-    "stats": [
-      { "label": "Distance From Sun", "value": "150m Km" },
-      { "label": "Solar Year", "value": "365 Days" },
-      { "label": "Solar Day", "value": "48 Hours" },
-      { "label": "Velocity", "value": "66,600 Mph" }
-    ],
-    "image": "/images/purpleplanet.png",
-    "githubUrl": "https://github.com/smammadov1994/Grocery-Store"
-  },
-  {
-    "id": "daedalus",
-    "title": "Daedalus",
-    "description": "RepEnhance application.",
-    "stats": [
-      { "label": "Distance From Sun", "value": "228m Km" },
-      { "label": "Solar Year", "value": "687 Earth Days" },
-      { "label": "Solar Day", "value": "24.6 Earth Days" },
-      { "label": "Velocity", "value": "86,400 Kmh" }
-    ],
-    "image": "/images/greenplanet.png",
-    "githubUrl": "https://github.com/smammadov1994/RepEnhance"
+    "image": "/images/ui-components-preview.png",
+    "liveUrl": "https://smammadov1994.github.io/chatbot-ui-components/?path=/story/getting-started--introduction",
+    "githubUrl": "https://github.com/smammadov1994/chatbot-ui-components"
   }
 ]

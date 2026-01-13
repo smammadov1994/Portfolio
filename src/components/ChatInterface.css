@@ -15,7 +15,7 @@
   overflow-y: auto;
   padding: 0 2rem;
   padding-top: 8rem; /* Start with good margin from top */
-  padding-bottom: 140px; /* Space for fixed input */
+  padding-bottom: 200px; /* Space for fixed input + breathing room */
   scrollbar-width: none;
   display: flex;
   flex-direction: column;
@@ -477,6 +477,11 @@
     padding: 0 1rem;
     padding-top: 6rem;
     padding-left: calc(1rem + 60px); /* Account for sidebar */
+    padding-bottom: 180px; /* More space for fixed input on mobile */
+  }
+
+  .input-fixed {
+    bottom: 1.5rem; /* Bring input down a bit on mobile */
   }
 
   .chat-input-wrapper {
