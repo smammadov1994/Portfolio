@@ -322,7 +322,7 @@ const ChatInterface = ({
     const toolMessages = [];
     toolCalls.forEach(({ tool, params }) => {
       const maybeMsg = executeTool(tool, params);
-      if (maybeMsg?.content) toolMessages.push(maybeMsg);
+      if (maybeMsg?.content) toolMessages.push({ ...maybeMsg, _fromTool: tool });
     });
 
     // Clean the content for display (remove tool syntax)
@@ -330,9 +330,19 @@ const ChatInterface = ({
     const cleanedTrimmed = cleanedContent.trim();
 
     const out = [];
+    const hasSubstantiveText = cleanedTrimmed.length > 30; // More than just "Here you go:" etc.
+
     if (cleanedTrimmed.length > 0)
       out.push({ ...responseMsg, content: cleanedTrimmed });
-    out.push(...toolMessages);
+
+    // If AI already gave a good answer, skip answer_about_me tool result (avoids double-bubble)
+    toolMessages.forEach((tm) => {
+      if (tm._fromTool === "answer_about_me" && hasSubstantiveText) {
+        // Skip — AI already answered
+        return;
+      }
+      out.push(tm);
+    });
 
     if (out.length > 0) setMessages((prev) => [...prev, ...out]);
     setIsLoading(false);
