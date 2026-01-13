@@ -38,7 +38,7 @@ const TopRightActions = ({ onOpenContact }) => {
 
       <button
         type="button"
-        className="top-action-btn"
+        className="top-action-btn top-action-btn--contact"
         onClick={onOpenContact}
         aria-label="Contact"
         title="Contact"
@@ -47,6 +47,7 @@ const TopRightActions = ({ onOpenContact }) => {
           className="top-action-icon top-action-icon--mail"
           aria-hidden="true"
         />
+        <span className="top-action-label">Contact</span>
       </button>
     </div>
   );

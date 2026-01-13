@@ -22,7 +22,7 @@ const INPUT_PLACEHOLDERS = [
 ];
 
 const RATE_LIMIT_KEY = "portfolio_chat_usage";
-const MAX_QUESTIONS_PER_DAY = 2; // TODO: change back to 20 after testing
+const MAX_QUESTIONS_PER_DAY = 25;
 
 const getRateLimitInfo = () => {
   try {
