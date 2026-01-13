@@ -406,11 +406,42 @@ const ChatInterface = ({
     setIsLoading(false);
   };
 
+  const handleProjectClick = (project) => {
+    // Open the project's live URL or website preview
+    if (project.liveUrl) {
+      openArtifact("website", { url: project.liveUrl, title: project.title });
+    } else if (project.githubUrl) {
+      window.open(project.githubUrl, "_blank");
+    }
+  };
+
   const renderMessageContent = (content) => {
-    // Also handle inline DISPLAY_PROJECT tags
-    const parts = content.split(/({{DISPLAY_PROJECT:\w+}})/g);
+    // Handle inline DISPLAY_PROJECT and DISPLAY_ALL_PROJECTS tags
+    const parts = content.split(/({{DISPLAY_PROJECT:\w+}}|{{DISPLAY_ALL_PROJECTS}})/g);
 
     return parts.map((part, i) => {
+      // Display all projects as clickable cards
+      if (part === "{{DISPLAY_ALL_PROJECTS}}") {
+        return (
+          <div key={i} className="chat-projects-grid">
+            {projectData.map((project) => (
+              <div
+                key={project.id}
+                className="chat-project-card"
+                onClick={() => handleProjectClick(project)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => e.key === "Enter" && handleProjectClick(project)}
+              >
+                <div className="chat-project-card-title">{project.title}</div>
+                <div className="chat-project-card-desc">{project.description}</div>
+              </div>
+            ))}
+          </div>
+        );
+      }
+
+      // Display single project
       if (part.startsWith("{{DISPLAY_PROJECT:")) {
         const projectId = part
           .replace("{{DISPLAY_PROJECT:", "")
@@ -422,7 +453,7 @@ const ChatInterface = ({
             <div key={i} className="chat-project-embed">
               <ProjectCard
                 project={project}
-                onClick={(p) => openArtifact("project", p)}
+                onClick={handleProjectClick}
               />
             </div>
           );

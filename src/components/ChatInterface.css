@@ -304,6 +304,59 @@
   max-width: 500px;
 }
 
+/* Projects grid for "show me projects" */
+.chat-projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.chat-project-card {
+  flex: 1 1 200px;
+  max-width: 280px;
+  padding: 1rem 1.25rem;
+  background: rgba(20, 20, 25, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(12px);
+}
+
+.chat-project-card:hover {
+  border-color: rgba(130, 170, 255, 0.4);
+  background: rgba(30, 30, 40, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(100, 80, 200, 0.2);
+}
+
+.chat-project-card:focus {
+  outline: none;
+  border-color: rgba(130, 170, 255, 0.5);
+}
+
+.chat-project-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.chat-project-card-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .chat-project-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
 .input-form {
   display: flex;
   align-items: center;

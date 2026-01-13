@@ -3,7 +3,7 @@ import useTilt from '../hooks/useTilt';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './ProjectCard.css';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, onClick }) => {
   const { transform, handleMouseMove, handleMouseLeave } = useTilt();
   const { ref, isVisible } = useScrollReveal();
 
@@ -11,7 +11,7 @@ const ProjectCard = ({ project }) => {
     <div 
       ref={ref}
       className={`project-card glass-panel ${isVisible ? 'reveal-visible' : 'reveal-hidden'}`}
-      onClick={() => onClick ? onClick(project) : window.open(project.githubUrl, '_blank')}
+      onClick={() => onClick ? onClick(project) : window.open(project.liveUrl || project.githubUrl, '_blank')}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ transform }}
