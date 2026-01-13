@@ -441,3 +441,70 @@
     transform: translateY(0) scale(1);
   }
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .hero-center {
+    left: calc(50% + 30px); /* Offset for collapsed sidebar (60px / 2) */
+    width: calc(100% - 60px); /* Account for sidebar */
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .hero-logo {
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+    text-align: center;
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .input-area {
+    left: calc(50% + 30px); /* Offset for collapsed sidebar */
+    width: calc(95% - 60px); /* Account for sidebar */
+  }
+
+  .input-hero {
+    width: calc(100% - 60px);
+    padding: 0 0.5rem;
+  }
+
+  .chat-scroll-area {
+    padding: 0 1rem;
+    padding-top: 6rem;
+    padding-left: calc(1rem + 60px); /* Account for sidebar */
+  }
+
+  .chat-input-wrapper {
+    padding: 0.8rem 1rem;
+  }
+
+  .chat-input {
+    font-size: 1rem;
+  }
+
+  .message-bubble {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .starter-chip {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+  }
+}
