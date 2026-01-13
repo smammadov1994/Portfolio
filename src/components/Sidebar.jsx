@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import './Sidebar.css';
+import React, { useState } from "react";
+import writings from "../data/writings.json";
+import "./Sidebar.css";
 
 const Sidebar = ({ onToggleArtifact }) => {
     const [isPinned, setIsPinned] = useState(false);
@@ -46,10 +47,26 @@ const Sidebar = ({ onToggleArtifact }) => {
                 </nav>
 
                 <div className="sidebar-footer">
-                   <div className="user-profile">
-                        <div className="avatar">S</div>
-                        <span className="label">Seymur M.</span>
-                   </div>
+                    <div className="sidebar-writing">
+                        <div className="sidebar-writing-title">Writing</div>
+                        <div className="sidebar-writing-list">
+                            {writings.map((w) => (
+                                <a
+                                    key={w.url}
+                                    className="writing-item"
+                                    href={w.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    data-tooltip={w.title}
+                                >
+                                    <span className="writing-icon">
+                                        {w.source === "Medium" ? "✍️" : "🔗"}
+                                    </span>
+                                    <span className="writing-label">{w.title}</span>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
