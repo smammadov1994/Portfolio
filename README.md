@@ -1,6 +1,6 @@
 # Portfolio
 
-![Portfolio screenshot](public/images/pictureofwebsite.png)
+![Portfolio screenshot](public/images/appimage.png)
 
 This is **Seymur Mammadov’s portfolio** — a space-themed, chat-first experience that lets visitors explore his work, background, and demos.
 
