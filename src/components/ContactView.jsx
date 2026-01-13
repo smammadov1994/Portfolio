@@ -1,8 +1,8 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import me from "../../me.json";
 import "./ContactView.css";
 
-const ContactView = () => {
+const ContactView = ({ onClose }) => {
   const toEmail = me?.personal?.contact?.email || "";
   const sendEndpoint =
     import.meta.env.VITE_CONTACT_API_URL || "/api/send-email";
@@ -18,6 +18,13 @@ const ContactView = () => {
     subject: false,
     message: false,
   });
+  const closeTimerRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current);
+    };
+  }, []);
 
   const isValidEmail = (value) => {
     // Simple, practical email validation
@@ -76,6 +83,10 @@ const ContactView = () => {
       });
       setSendSuccessFlash(true);
       window.setTimeout(() => setSendSuccessFlash(false), 900);
+      if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = window.setTimeout(() => {
+        if (typeof onClose === "function") onClose();
+      }, 1500);
       setSubject("");
       setMessage("");
       setFromEmail("");
@@ -178,7 +189,14 @@ const ContactView = () => {
               "Sending…"
             ) : sendSuccessFlash ? (
               <span className="send-check" aria-label="Sent">
-                ✓
+                <svg
+                  className="send-check-icon"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path d="M22.027 9.07c-.479-.28-1.09-.11-1.366.36l-6.395 11.08-3.578-3.3a1 1 0 0 0-1.414 1.42l4.572 4.22a1 1 0 0 0 1.367-.04c.122-.11 7.18-12.41 7.18-12.41.276-.47.112-1.09-.366-1.36ZM16 30C8.268 30 2 23.73 2 16S8.268 2 16 2s14 6.27 14 14-6.268 14-14 14Z" />
+                </svg>
               </span>
             ) : (
               "Send"
