@@ -21,6 +21,31 @@ const INPUT_PLACEHOLDERS = [
   "What makes me unique?",
 ];
 
+const RATE_LIMIT_KEY = "portfolio_chat_usage";
+const MAX_QUESTIONS_PER_DAY = 20;
+
+const getRateLimitInfo = () => {
+  try {
+    const stored = localStorage.getItem(RATE_LIMIT_KEY);
+    if (!stored) return { count: 0, date: new Date().toDateString() };
+    const parsed = JSON.parse(stored);
+    // Reset if it's a new day
+    if (parsed.date !== new Date().toDateString()) {
+      return { count: 0, date: new Date().toDateString() };
+    }
+    return parsed;
+  } catch {
+    return { count: 0, date: new Date().toDateString() };
+  }
+};
+
+const incrementRateLimit = () => {
+  const info = getRateLimitInfo();
+  const updated = { count: info.count + 1, date: new Date().toDateString() };
+  localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(updated));
+  return updated.count;
+};
+
 const ChatInterface = ({
   artifact,
   isArtifactOpen,
@@ -31,10 +56,19 @@ const ChatInterface = ({
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [rateLimitReached, setRateLimitReached] = useState(false);
   const bottomRef = useRef(null);
   const [placeholderIndex, setPlaceholderIndex] = useState(() =>
     Math.floor(Math.random() * INPUT_PLACEHOLDERS.length)
   );
+
+  // Check rate limit on mount
+  useEffect(() => {
+    const info = getRateLimitInfo();
+    if (info.count >= MAX_QUESTIONS_PER_DAY) {
+      setRateLimitReached(true);
+    }
+  }, []);
 
   const activePlaceholder = useMemo(() => {
     return INPUT_PLACEHOLDERS[placeholderIndex] || "Ask about my projects...";
@@ -304,6 +338,29 @@ const ChatInterface = ({
   const handleSend = async (e) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
+
+    // Check rate limit
+    const rateLimitInfo = getRateLimitInfo();
+    if (rateLimitInfo.count >= MAX_QUESTIONS_PER_DAY) {
+      setRateLimitReached(true);
+      setMessages((prev) => [
+        ...prev,
+        { role: "user", content: input },
+        {
+          role: "assistant",
+          content:
+            "Hey! You've hit the daily limit (20 questions). Come back tomorrow — I'd love to keep chatting! In the meantime, feel free to explore the gallery or check out Weaszel.",
+        },
+      ]);
+      setInput("");
+      return;
+    }
+
+    // Increment usage
+    const newCount = incrementRateLimit();
+    if (newCount >= MAX_QUESTIONS_PER_DAY) {
+      setRateLimitReached(true);
+    }
 
     const userMsg = { role: "user", content: input };
     setMessages((prev) => [...prev, userMsg]);
