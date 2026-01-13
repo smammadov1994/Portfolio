@@ -322,7 +322,8 @@ const ChatInterface = ({
     const toolMessages = [];
     toolCalls.forEach(({ tool, params }) => {
       const maybeMsg = executeTool(tool, params);
-      if (maybeMsg?.content) toolMessages.push({ ...maybeMsg, _fromTool: tool });
+      if (maybeMsg?.content)
+        toolMessages.push({ ...maybeMsg, _fromTool: tool });
     });
 
     // Clean the content for display (remove tool syntax)
