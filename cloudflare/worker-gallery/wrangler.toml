@@ -1,0 +1,16 @@
+name = "portfolio-gallery"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# Bind your R2 bucket here (change the binding name if you want).
+# In Cloudflare dashboard: R2 -> your bucket -> Settings -> Create API Token / Bindings via Workers
+[[r2_buckets]]
+binding = "GALLERY_BUCKET"
+bucket_name = "YOUR_BUCKET_NAME"
+
+# Optional: set a public base URL for objects (custom domain or r2.dev public domain)
+# You can also set this in the Workers dashboard as an environment variable.
+[vars]
+PUBLIC_BASE_URL = "https://pub-ff564ecf6a774d3790f002ea3efa02ec.r2.dev"
+
+

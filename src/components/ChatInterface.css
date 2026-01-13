@@ -27,7 +27,7 @@
 
 .chat-stream {
     width: 100%;
-    max-width: 800px; /* Constrained width so bubbles look like bubbles, not blocks */
+    max-width: 1000px; /* Increased from 800px to match wider layout */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
 /* Hero View (Empty State) */
 .hero-center {
     position: absolute;
-    top: 42%; /* Slightly lower to balance with larger input */
+    top: 38%; /* Adjusted higher to accommodate prompts below input */
     left: 50%;
     transform: translate(-50%, -50%); /* Structural centering */
     display: flex;
@@ -74,8 +74,8 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem;
-    max-width: 700px;
-    margin-top: 1rem;
+    max-width: 100%; /* Take full width of parent input-area */
+    margin-top: 1.5rem; /* Space from input field */
     animation: fadeInUp 0.6s ease 0.3s both;
 }
 
@@ -168,7 +168,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 95%; /* Wider on mobile */
-    max-width: 900px; /* Much larger max width */
+    max-width: 1100px; /* Increased from 900px */
     z-index: 100;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -176,13 +176,13 @@
 .input-hero {
     top: 50%; 
     bottom: auto;
-    /* Reduce distance from center. 
-       Hero is at 42%. Input starts at 50%. 
-       With logo size, this should be tight.
-    */
     margin-top: 1rem; 
     transform: translate(-50%, 0); 
-    max-width: 800px; /* Slightly wider in hero mode too */
+    width: 100%; /* Ensure it spans the container's width */
+    max-width: 1100px; /* Match input-area's expansive max-width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .input-fixed {
@@ -252,6 +252,7 @@
     border-radius: 24px; /* Less pill, more modern rect-pill */
     box-shadow: 0 20px 60px rgba(0,0,0,0.6);
     transition: all 0.3s ease;
+    width: 100%; /* Ensure it fills container width */
 }
 
 /* ... existing styles ... */

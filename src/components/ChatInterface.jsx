@@ -162,27 +162,6 @@ const ChatInterface = ({ artifact, isArtifactOpen, openArtifact, closeArtifact }
                 <div className="hero-center">
                     <h1 className="hero-logo">Portfolio</h1>
                     <p className="hero-subtitle">Ask me anything about Seymur's work.</p>
-                    
-                    <div className="starter-prompts" key={promptSetIndex}>
-                        {currentPrompts.map((prompt, idx) => (
-                            <button 
-                                key={idx}
-                                className="starter-chip"
-                                onClick={() => handlePromptClick(prompt.text)}
-                            >
-                                <span className="chip-emoji">{prompt.emoji}</span>
-                                <span className="chip-text">{prompt.text}</span>
-                            </button>
-                        ))}
-                        <button 
-                            className="starter-chip refresh-chip"
-                            onClick={cyclePrompts}
-                            title="More suggestions"
-                        >
-                            <span className="chip-emoji">🔄</span>
-                        </button>
-                    </div>
-
                 </div>
             )}
 
@@ -225,6 +204,29 @@ const ChatInterface = ({ artifact, isArtifactOpen, openArtifact, closeArtifact }
                         →
                     </button>
                 </form>
+
+                {/* Prompts moved here to be below input in hero mode */}
+                {isHero && (
+                    <div className="starter-prompts" key={promptSetIndex}>
+                        {currentPrompts.map((prompt, idx) => (
+                            <button 
+                                key={idx}
+                                className="starter-chip"
+                                onClick={() => handlePromptClick(prompt.text)}
+                            >
+                                <span className="chip-emoji">{prompt.emoji}</span>
+                                <span className="chip-text">{prompt.text}</span>
+                            </button>
+                        ))}
+                        <button 
+                            className="starter-chip refresh-chip"
+                            onClick={cyclePrompts}
+                            title="More suggestions"
+                        >
+                            <span className="chip-emoji">🔄</span>
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );
