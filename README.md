@@ -8,7 +8,7 @@ This is **Seymur Mammadov’s portfolio** — a space-themed, chat-first experie
 
 - **Ask questions** about Seymur (background, experience, skills, hobbies, etc.)
 - **Open artifacts** to view richer content:
-  - **Gallery** (photos/visuals)
+  - **Gallery** (photos/visuals) Some pictures from Seymur's life.
   - **Live website previews** (e.g. Weaszel, UI components/storybook)
   - **Contact** (write and send an email)
 - **Browse writing** (Medium/LinkedIn posts) from the sidebar
