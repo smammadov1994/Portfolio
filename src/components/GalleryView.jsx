@@ -78,11 +78,11 @@ const GalleryView = ({ images = [] }) => {
 
     // Use placeholder colored squares while loading (or if no remote images found).
     return PLACEHOLDER_COLORS.map((color, i) => ({
-      id: i,
+            id: i, 
       type: "placeholder",
-      color,
+            color,
       height: Math.floor(Math.random() * 150) + 200, // Random heights for masonry
-    }));
+        }));
   }, [effectiveImages]);
 
   const closeLightbox = () => setActiveImage(null);
@@ -105,8 +105,8 @@ const GalleryView = ({ images = [] }) => {
     };
   }, [activeImage]);
 
-  return (
-    <div className="gallery-view">
+    return (
+        <div className="gallery-view">
       {isLoading && images.length === 0 ? (
         <div className="gallery-loading">Loading images…</div>
       ) : null}
@@ -116,11 +116,11 @@ const GalleryView = ({ images = [] }) => {
       loadError ? (
         <div className="gallery-loading">Couldn’t load images: {loadError}</div>
       ) : null}
-
-      <div className="masonry-grid">
-        {items.map((item, index) => (
-          <div
-            key={item.id || index}
+            
+            <div className="masonry-grid">
+                {items.map((item, index) => (
+                    <div 
+                        key={item.id || index}
             className={`masonry-item ${
               item.type === "placeholder"
                 ? "masonry-item--placeholder"
@@ -147,23 +147,23 @@ const GalleryView = ({ images = [] }) => {
                 });
               }
             }}
-            style={{
+                        style={{ 
               height: item.type === "placeholder" ? item.height || 250 : "auto",
-            }}
-          >
+                        }}
+                    >
             {item.type === "placeholder" ? (
-              <div className="placeholder-content">
+                            <div className="placeholder-content">
                 <div className="gallery-spinner" aria-label="Loading" />
-              </div>
-            ) : (
+                            </div>
+                        ) : (
               <img
                 src={item.src}
                 alt={item.alt || "Gallery image"}
                 loading="lazy"
               />
-            )}
-          </div>
-        ))}
+                        )}
+                    </div>
+                ))}
       </div>
 
       {activeImage ? (
@@ -189,11 +189,11 @@ const GalleryView = ({ images = [] }) => {
               src={activeImage.src}
               alt={activeImage.alt}
             />
-          </div>
+            </div>
         </div>
       ) : null}
-    </div>
-  );
+        </div>
+    );
 };
 
 export default GalleryView;

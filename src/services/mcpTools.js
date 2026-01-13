@@ -203,11 +203,10 @@ export const parseToolCalls = (content) => {
 };
 
 // Remove tool call syntax from display text
+// NOTE: Keep {{DISPLAY_ALL_PROJECTS}} and {{DISPLAY_PROJECT:...}} — they're rendered by renderMessageContent
 export const cleanContentForDisplay = (content) => {
   const cleaned = content
     .replace(/\{\{TOOL:\w+(?::[^}]*)?\}\}/g, "")
-    .replace(/\{\{DISPLAY_ALL_PROJECTS\}\}/g, "")
-    .replace(/\{\{DISPLAY_PROJECT:\w+\}\}/g, "")
     .trim();
   console.log("MCP: Cleaned content:", cleaned);
   return cleaned;

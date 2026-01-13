@@ -417,7 +417,9 @@ const ChatInterface = ({
 
   const renderMessageContent = (content) => {
     // Handle inline DISPLAY_PROJECT and DISPLAY_ALL_PROJECTS tags
-    const parts = content.split(/({{DISPLAY_PROJECT:\w+}}|{{DISPLAY_ALL_PROJECTS}})/g);
+    const parts = content.split(
+      /({{DISPLAY_PROJECT:\w+}}|{{DISPLAY_ALL_PROJECTS}})/g
+    );
 
     return parts.map((part, i) => {
       // Display all projects as clickable cards
@@ -431,10 +433,14 @@ const ChatInterface = ({
                 onClick={() => handleProjectClick(project)}
                 role="button"
                 tabIndex={0}
-                onKeyDown={(e) => e.key === "Enter" && handleProjectClick(project)}
+                onKeyDown={(e) =>
+                  e.key === "Enter" && handleProjectClick(project)
+                }
               >
                 <div className="chat-project-card-title">{project.title}</div>
-                <div className="chat-project-card-desc">{project.description}</div>
+                <div className="chat-project-card-desc">
+                  {project.description}
+                </div>
               </div>
             ))}
           </div>
@@ -451,10 +457,7 @@ const ChatInterface = ({
         if (project) {
           return (
             <div key={i} className="chat-project-embed">
-              <ProjectCard
-                project={project}
-                onClick={handleProjectClick}
-              />
+              <ProjectCard project={project} onClick={handleProjectClick} />
             </div>
           );
         }
