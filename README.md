@@ -21,3 +21,4 @@ This is **Seymur Mammadov’s portfolio** — a space-themed, chat-first experie
 - “Did you build a UI library?”
 - “View the gallery.”
 - “How can I contact you?”
+- "Is he a cool dude?"
