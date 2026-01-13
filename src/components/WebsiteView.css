@@ -1,7 +1,6 @@
 .website-view {
     display: flex;
     flex-direction: column;
-    height: 100%;
     animation: fadeIn 0.4s ease;
 }
 
@@ -34,8 +33,10 @@
 }
 
 .iframe-container {
-    flex: 1;
-    min-height: 400px;
+    /* Make the embedded page itself tall so the artifact drawer can scroll through it */
+    height: 220vh;
+    max-height: 3200px;
+    min-height: 700px;
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -76,5 +77,11 @@
     
     .website-info h2 {
         font-size: 1.5rem;
+    }
+
+    .iframe-container {
+        height: 160vh;
+        min-height: 520px;
+        max-height: 2200px;
     }
 }

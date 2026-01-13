@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import projectsData from './data/projects.json';
+import React, { useState } from "react";
 import GalaxyBackground from './components/GalaxyBackground';
 import ChatInterface from './components/ChatInterface';
 import Sidebar from './components/Sidebar';
+import TopRightActions from "./components/TopRightActions";
 import './App.css';
 
 function App() {
@@ -31,7 +31,8 @@ function App() {
   return (
     <div className="app-container">
       <GalaxyBackground />
-      <Sidebar onToggleArtifact={toggleArtifact} />
+      <Sidebar />
+      <TopRightActions onOpenContact={() => openArtifact("contact", {})} />
       <ChatInterface 
         artifact={artifact}
         isArtifactOpen={isArtifactOpen}

@@ -2,75 +2,75 @@ import React, { useState } from "react";
 import writings from "../data/writings.json";
 import "./Sidebar.css";
 
-const Sidebar = ({ onToggleArtifact }) => {
-    const [isPinned, setIsPinned] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
+const Sidebar = () => {
+  const [isPinned, setIsPinned] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-    const togglePin = () => setIsPinned(!isPinned);
+  const togglePin = () => setIsPinned(!isPinned);
 
-    return (
-        <div 
-            className={`sidebar-container ${isPinned ? 'pinned' : ''} ${isHovered ? 'hovered' : ''}`}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
-            <div className="sidebar-content">
-                <div className="sidebar-header">
-                    <div className="sidebar-logo">P</div>
-                    {/* Only show pin button if expanded */}
-                    <button className="pin-btn" onClick={togglePin}>
-                        {isPinned ? '📌' : '📍'}
-                    </button>
-                </div>
-                
-                <nav className="sidebar-nav">
-                    <div className="nav-item active" data-tooltip="New Chat">
-                        <span className="icon">+</span>
-                        <span className="label">New Chat</span>
-                    </div>
-                    <div className="nav-item" data-tooltip="Projects">
-                        <span className="icon">📂</span>
-                        <span className="label">Projects</span>
-                    </div>
-                    <div className="nav-item" onClick={onToggleArtifact} data-tooltip="Artifacts">
-                        <span className="icon">📦</span>
-                        <span className="label">Artifacts</span>
-                    </div>
-                    <div className="nav-item" data-tooltip="About">
-                        <span className="icon">👤</span>
-                        <span className="label">About</span>
-                    </div>
-                    <div className="nav-item">
-                        <span className="icon">✉️</span>
-                        <span className="label">Contact</span>
-                    </div>
-                </nav>
-
-                <div className="sidebar-footer">
-                    <div className="sidebar-writing">
-                        <div className="sidebar-writing-title">Writing</div>
-                        <div className="sidebar-writing-list">
-                            {writings.map((w) => (
-                                <a
-                                    key={w.url}
-                                    className="writing-item"
-                                    href={w.url}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    data-tooltip={w.title}
-                                >
-                                    <span className="writing-icon">
-                                        {w.source === "Medium" ? "✍️" : "🔗"}
-                                    </span>
-                                    <span className="writing-label">{w.title}</span>
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
+  return (
+    <div
+      className={`sidebar-container ${isPinned ? "pinned" : ""} ${
+        isHovered ? "hovered" : ""
+      }`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="sidebar-content">
+        <div className="sidebar-header">
+          <button
+            className={`pin-btn ${isPinned ? "is-pinned" : ""}`}
+            onClick={togglePin}
+            aria-label={isPinned ? "Unpin sidebar" : "Pin sidebar"}
+            title={isPinned ? "Unpin" : "Pin"}
+          >
+            <svg
+              className="pin-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                className="pin-icon-box"
+                d="M7.2 20H16.8C17.9201 20 18.4802 20 18.908 19.782C19.2843 19.5903 19.5903 19.2843 19.782 18.908C20 18.4802 20 17.9201 20 16.8V7.2C20 6.0799 20 5.51984 19.782 5.09202C19.5903 4.71569 19.2843 4.40973 18.908 4.21799C18.4802 4 17.9201 4 16.8 4H7.2C6.0799 4 5.51984 4 5.09202 4.21799C4.71569 4.40973 4.40973 4.71569 4.21799 5.09202C4 5.51984 4 6.07989 4 7.2V16.8C4 17.9201 4 18.4802 4.21799 18.908C4.40973 19.2843 4.71569 19.5903 5.09202 19.782C5.51984 20 6.07989 20 7.2 20Z"
+              />
+              <path
+                className="pin-icon-mark"
+                d={isPinned ? "M12 8V16" : "M8 12H16"}
+              />
+            </svg>
+          </button>
         </div>
-    );
+
+        <div className="sidebar-writing sidebar-writing--main">
+          <div className="sidebar-writing-title">Writing</div>
+          <div className="sidebar-writing-list">
+            {writings.map((w) => (
+              <a
+                key={w.url}
+                className="writing-item"
+                href={w.url}
+                target="_blank"
+                rel="noreferrer"
+                data-tooltip={w.title}
+              >
+                <span
+                  className={`writing-icon ${
+                    w.source === "Medium"
+                      ? "writing-icon--article"
+                      : "writing-icon--link"
+                  }`}
+                  aria-hidden="true"
+                />
+                <span className="writing-label">{w.title}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Sidebar;

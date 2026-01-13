@@ -1,359 +1,443 @@
 .chat-container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    max-width: 1200px; /* Much bulkier/wider */
-    margin: 0 auto;
-    padding-top: 4rem; /* More generous spacer */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 1200px; /* Much bulkier/wider */
+  margin: 0 auto;
+  padding-top: 4rem; /* More generous spacer */
 }
 
 /* Scroll Area */
 .chat-scroll-area {
-    flex: 1;
-    overflow-y: auto;
-    padding: 0 2rem;
-    padding-top: 8rem; /* Start with good margin from top */
-    padding-bottom: 140px; /* Space for fixed input */
-    scrollbar-width: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Start at top */
-    align-items: center; /* Center the stream column itself */
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 2rem;
+  padding-top: 8rem; /* Start with good margin from top */
+  padding-bottom: 140px; /* Space for fixed input */
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Start at top */
+  align-items: center; /* Center the stream column itself */
 }
 
 /* ... scrollbar hidden ... */
 
 .chat-stream {
-    width: 100%;
-    max-width: 1000px; /* Increased from 800px to match wider layout */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  max-width: 1000px; /* Increased from 800px to match wider layout */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Hero View (Empty State) */
 .hero-center {
-    position: absolute;
-    top: 38%; /* Adjusted higher to accommodate prompts below input */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Structural centering */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    /* Use a simple opacity fade to avoid conflicting with the transform above */
-    animation: heroFadeIn 1s ease-out; 
-    pointer-events: none; 
+  position: absolute;
+  top: 38%; /* Adjusted higher to accommodate prompts below input */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Structural centering */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* Use a simple opacity fade to avoid conflicting with the transform above */
+  animation: heroFadeIn 1s ease-out;
+  pointer-events: none;
 }
 
 @keyframes heroFadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .hero-logo {
-    font-size: 5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0; /* Removing gap completely, controlled by input margin */
-    letter-spacing: -2px;
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0; /* Removing gap completely, controlled by input margin */
+  letter-spacing: -2px;
 }
 
 .hero-subtitle {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 1.1rem;
-    margin: 0.5rem 0 2rem 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+  margin: 0.5rem 0 2rem 0;
 }
 
 /* Starter Prompts */
 .starter-prompts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem;
-    max-width: 100%; /* Take full width of parent input-area */
-    margin-top: 1.5rem; /* Space from input field */
-    animation: fadeInUp 0.6s ease 0.3s both;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 100%; /* Take full width of parent input-area */
+  margin-top: 1.5rem; /* Space from input field */
+  animation: fadeInUp 0.6s ease 0.3s both;
 }
 
 @keyframes fadeInUp {
-    from { 
-        opacity: 0; 
-        transform: translateY(20px); 
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .starter-chip {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 100px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .starter-chip:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(130, 170, 255, 0.4);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(100, 80, 200, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(130, 170, 255, 0.4);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(100, 80, 200, 0.2);
 }
 
 .starter-chip:active {
-    transform: translateY(0) scale(0.98);
+  transform: translateY(0) scale(0.98);
 }
 
 .chip-emoji {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 .chip-text {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 @media (max-width: 600px) {
-    .starter-prompts {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .starter-chip {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
-    }
-    
-    .refresh-chip {
-        width: auto;
-    }
+  .starter-prompts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .starter-chip {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .refresh-chip {
+    width: auto;
+  }
 }
 
 /* Refresh button special styling */
 .refresh-chip {
-    padding: 0.75rem 1rem;
-    background: rgba(130, 170, 255, 0.1);
-    border-color: rgba(130, 170, 255, 0.2);
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .refresh-chip:hover {
-    background: rgba(130, 170, 255, 0.2);
-    border-color: rgba(130, 170, 255, 0.4);
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
 }
 
-.refresh-chip .chip-emoji {
-    transition: transform 0.3s ease;
+/* Override shared starter-chip hover/active styles (refresh should be icon-only) */
+.starter-chip.refresh-chip:hover {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  transform: none;
 }
 
-.refresh-chip:hover .chip-emoji {
-    transform: rotate(180deg);
+.starter-chip.refresh-chip:active {
+  transform: none;
+}
+
+.refresh-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.refresh-icon svg {
+  width: 36px;
+  height: 36px;
+  display: block;
+  transform-origin: 50% 50%;
+}
+
+.refresh-chip:hover .refresh-icon svg {
+  animation: refreshWiggle 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes refreshWiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .refresh-chip:hover .refresh-icon svg {
+    animation: none;
+  }
+}
+
+.refresh-path-primary {
+  fill: rgba(255, 255, 255, 0.92);
+}
+
+.refresh-path-secondary {
+  fill: rgba(255, 255, 255, 0.45);
 }
 
 /* Input Transitions */
 .input-area {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 95%; /* Wider on mobile */
-    max-width: 1100px; /* Increased from 900px */
-    z-index: 100;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%; /* Wider on mobile */
+  max-width: 1100px; /* Increased from 900px */
+  z-index: 100;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .input-hero {
-    top: 50%; 
-    bottom: auto;
-    margin-top: 1rem; 
-    transform: translate(-50%, 0); 
-    width: 100%; /* Ensure it spans the container's width */
-    max-width: 1100px; /* Match input-area's expansive max-width */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  top: 50%;
+  bottom: auto;
+  margin-top: 1rem;
+  transform: translate(-50%, 0);
+  width: 100%; /* Ensure it spans the container's width */
+  max-width: 1100px; /* Match input-area's expansive max-width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .input-fixed {
-    bottom: 3rem;
+  bottom: 3rem;
 }
 
 .chat-message {
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
-    animation: fadeIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    width: 100%;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
 }
 
 .chat-message.user {
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
 .chat-message.assistant {
-    align-items: flex-start;
+  align-items: flex-start;
 }
 
 .message-bubble {
-    padding: 1.5rem 2rem;
-    max-width: 85%;
-    color: var(--text-primary);
-    line-height: 1.6;
-    font-size: 1.15rem;
-    font-weight: 400;
-    backdrop-filter: blur(12px);
-    border-radius: 24px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    position: relative;
-    word-wrap: break-word;
+  padding: 1.5rem 2rem;
+  max-width: 85%;
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 1.15rem;
+  font-weight: 400;
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  word-wrap: break-word;
 }
 
 /* User Bubble - Matches Input Field Design */
 .chat-message.user .message-bubble {
-    background: rgba(10, 10, 10, 0.75); /* Darker, like input */
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-bottom-right-radius: 4px; /* iMessage tail effect */
-    color: white;
+  background: rgba(10, 10, 10, 0.75); /* Darker, like input */
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom-right-radius: 4px; /* iMessage tail effect */
+  color: white;
 }
 
 /* Assistant Bubble - Palenight Purple Ish */
 .chat-message.assistant .message-bubble {
-    background: rgba(41, 45, 62, 0.85); /* Material Palenight Base */
-    border: 1px solid rgba(130, 170, 255, 0.2); /* Subtle purple/blue border */
-    border-bottom-left-radius: 4px; /* iMessage tail effect */
-    box-shadow: 0 4px 25px rgba(100, 80, 200, 0.15); /* Purple glow */
+  background: rgba(41, 45, 62, 0.85); /* Material Palenight Base */
+  border: 1px solid rgba(130, 170, 255, 0.2); /* Subtle purple/blue border */
+  border-bottom-left-radius: 4px; /* iMessage tail effect */
+  box-shadow: 0 4px 25px rgba(100, 80, 200, 0.15); /* Purple glow */
 }
 
 .chat-project-embed {
-    margin-top: 2rem;
-    width: 100%;
-    max-width: 500px; 
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 500px;
 }
 
 .input-form {
-    display: flex;
-    align-items: center;
-    padding: 1rem 1.25rem; /* Larger padding */
-    background: rgba(10, 10, 10, 0.75) !important; 
-    backdrop-filter: blur(30px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 24px; /* Less pill, more modern rect-pill */
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-    transition: all 0.3s ease;
-    width: 100%; /* Ensure it fills container width */
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.25rem; /* Larger padding */
+  background: rgba(10, 10, 10, 0.75) !important;
+  backdrop-filter: blur(30px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px; /* Less pill, more modern rect-pill */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+  width: 100%; /* Ensure it fills container width */
 }
 
 /* ... existing styles ... */
 
 .input-form:focus-within {
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 20px 80px rgba(0,0,0,0.8);
-    transform: scale(1.01);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8);
+  transform: scale(1.01);
 }
 
 .chat-input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    padding: 1.25rem 2rem;
-    font-size: 1.25rem; /* Larger input text */
-    color: white;
-    outline: none;
-    font-weight: 500;
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 1.25rem 2rem;
+  font-size: 1.25rem; /* Larger input text */
+  color: white;
+  outline: none;
+  font-weight: 500;
 }
 
 .chat-input::placeholder {
-    color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .send-btn {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: white;
-    color: black;
-    border: none;
-    cursor: pointer;
-    font-size: 1.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s;
-    margin-right: 6px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  margin-right: 6px;
 }
 
 .send-btn:hover:not(:disabled) {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .send-btn:disabled {
-    opacity: 0.5;
-    cursor: default;
+  opacity: 0.5;
+  cursor: default;
 }
 
 /* Beautiful Grok-style Pulse Loader */
 .loading-container {
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 
 .grok-pulse {
-    position: relative;
-    width: 40px;
-    height: 40px;
+  position: relative;
+  width: 40px;
+  height: 40px;
 }
 
-.grok-pulse::before, .grok-pulse::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
+.grok-pulse::before,
+.grok-pulse::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
 }
 
 .grok-pulse::before {
-    animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }
 
 .grok-pulse::after {
-    background: white;
-    width: 12px;
-    height: 12px;
-    animation: pulse-dot 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  background: white;
+  width: 12px;
+  height: 12px;
+  animation: pulse-dot 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
 }
 
 @keyframes pulse-ring {
-    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
-    50% { opacity: 0.5; }
-    100% { transform: translate(-50%, -50%) scale(4); opacity: 0; }
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
 }
 
 @keyframes pulse-dot {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
-    100% { transform: translate(-50%, -50%) scale(1); }
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px) scale(0.95); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

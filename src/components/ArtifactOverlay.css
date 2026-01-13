@@ -94,6 +94,14 @@
     max-width: 1400px; /* Constrain content width for readability */
     margin: 0 auto;
     width: 100%;
+    min-height: 0; /* critical: allow flex child to shrink so overflow scrolling works */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+.artifact-content--website {
+    /* Website previews should use the full drawer width */
+    max-width: 100%;
 }
 
 @media (max-width: 768px) {

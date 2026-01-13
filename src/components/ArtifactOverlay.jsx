@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import GalleryView from './GalleryView';
 import WebsiteView from './WebsiteView';
+import ContactView from './ContactView';
 import './ArtifactOverlay.css';
 
 const ArtifactOverlay = ({ isOpen, onClose, artifact }) => {
@@ -43,6 +44,9 @@ const ArtifactOverlay = ({ isOpen, onClose, artifact }) => {
             
             case 'website':
                 return <WebsiteView url={artifact.data?.url} title={artifact.data?.title || 'Live Preview'} />;
+
+            case 'contact':
+                return <ContactView />;
             
             case 'project':
 
@@ -99,7 +103,7 @@ const ArtifactOverlay = ({ isOpen, onClose, artifact }) => {
                     <button className="artifact-close-btn" onClick={onClose}>×</button>
                 </div>
 
-                <div className="artifact-content">
+                <div className={`artifact-content ${artifact?.type === 'website' ? 'artifact-content--website' : ''}`}>
                     {renderContent()}
                 </div>
             </div>

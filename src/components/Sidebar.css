@@ -30,19 +30,23 @@
     width: 240px;
 }
 
+/* Collapsed state: content width must match the visible rail width */
+.sidebar-container:not(.hovered):not(.pinned) .sidebar-content {
+    width: 60px;
+}
+
 .sidebar-header {
     height: 70px; /* Smaller header */
     display: flex;
     align-items: center;
     padding: 0 1.2rem;
-    justify-content: space-between;
+    justify-content: flex-end; /* pin lives on the right */
 }
 
-.sidebar-logo {
-    font-size: 1.25rem; /* Smaller logo */
-    font-weight: 700;
-    width: 24px;
-    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+/* Collapsed header: center the logo in the rail */
+.sidebar-container:not(.hovered):not(.pinned) .sidebar-header {
+    justify-content: flex-end;
+    padding: 0 10px 0 0;
 }
 
 .pin-btn {
@@ -50,21 +54,42 @@
     border: none;
     color: rgba(255,255,255,0.4);
     cursor: pointer;
-    font-size: 1rem;
-    padding: 6px;
+    padding: 8px;
     opacity: 0;
     transition: all 0.3s;
-    border-radius: 50%;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pin-icon {
+    width: 18px;
+    height: 18px;
+    stroke: rgba(255, 255, 255, 0.9);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.9;
+}
+
+.pin-icon-mark {
+    transition: transform 160ms ease, opacity 160ms ease;
+    opacity: 0.95;
+}
+
+.pin-btn.is-pinned .pin-icon {
+    opacity: 1;
 }
 
 /* ... nav items ... */
 
-.sidebar-nav {
+/* Writing is now the main sidebar content */
+.sidebar-writing--main {
     flex: 1;
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    padding: 0 1.2rem 1.2rem 1.2rem;
+    min-height: 0;
 }
 
 .nav-item {
@@ -80,20 +105,35 @@
     margin: 0 0.5rem;
 }
 
+.nav-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.10),
+        rgba(255, 255, 255, 0.02)
+    );
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
 .nav-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-left-color: rgba(255, 255, 255, 0.6);
-    transform: translateX(4px);
+    background: rgba(10, 10, 10, 0.35);
+    border-left-color: rgba(255, 255, 255, 0.22);
 }
 
 .nav-item:active {
-    transform: translateX(2px) scale(0.98);
+    transform: scale(0.99);
 }
 
 .nav-item .icon {
-    width: 24px;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
     margin-right: 1rem;
-    font-size: 1.1rem;
     display: flex;
     justify-content: center;
     opacity: 0.8;
@@ -101,8 +141,48 @@
 }
 
 .nav-item:hover .icon {
-    transform: scale(1.1);
+    transform: scale(1.05);
     opacity: 1;
+}
+
+.nav-item:hover::after {
+    opacity: 1;
+}
+
+/* Minimal monochrome nav icons */
+.nav-icon {
+    background-color: rgba(255, 255, 255, 0.85);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+}
+
+.nav-icon--newchat {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M11 5a1 1 0 1 1 2 0v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V5Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M11 5a1 1 0 1 1 2 0v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V5Z'/%3E%3C/svg%3E");
+}
+
+.nav-icon--projects {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M3 7a2 2 0 0 1 2-2h5l2 2h8a2 2 0 0 1 2 2v8.5A3.5 3.5 0 0 1 20.5 21h-14A3.5 3.5 0 0 1 3 17.5V7Zm3.5 12h14a1.5 1.5 0 0 0 0-3h-14a1.5 1.5 0 0 0 0 3Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M3 7a2 2 0 0 1 2-2h5l2 2h8a2 2 0 0 1 2 2v8.5A3.5 3.5 0 0 1 20.5 21h-14A3.5 3.5 0 0 1 3 17.5V7Zm3.5 12h14a1.5 1.5 0 0 0 0-3h-14a1.5 1.5 0 0 0 0 3Z'/%3E%3C/svg%3E");
+}
+
+.nav-icon--artifacts {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7 4h10a2 2 0 0 1 2 2v2h1a1 1 0 1 1 0 2h-1v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V12H4a1 1 0 1 1 0-2h1V6a2 2 0 0 1 2-2Zm0 4h10V6H7v2Zm0 3v9h10v-9H7Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7 4h10a2 2 0 0 1 2 2v2h1a1 1 0 1 1 0 2h-1v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V12H4a1 1 0 1 1 0-2h1V6a2 2 0 0 1 2-2Zm0 4h10V6H7v2Zm0 3v9h10v-9H7Z'/%3E%3C/svg%3E");
+}
+
+.nav-icon--about {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z'/%3E%3C/svg%3E");
+}
+
+.nav-icon--contact {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M20 6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6Zm-2 0-6 4L6 6h12Zm0 12H6V8l6 4 6-4v10Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M20 6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6Zm-2 0-6 4L6 6h12Zm0 12H6V8l6 4 6-4v10Z'/%3E%3C/svg%3E");
 }
 
 .nav-item .label {
@@ -122,13 +202,28 @@
     transform: translateX(0);
 }
 
-/* ... footer ... */
-
-.sidebar-footer {
-    padding: 1.5rem 1.2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    background: rgba(0,0,0,0.2);
+/* Collapsed state: center everything and remove hidden-label layout shift */
+.sidebar-container:not(.hovered):not(.pinned) .sidebar-nav {
+    align-items: center;
 }
+
+.sidebar-container:not(.hovered):not(.pinned) .nav-item {
+    justify-content: center;
+    padding: 0.85rem 0;
+    width: 44px;
+    margin: 0.25rem 0;
+    border-left-color: transparent;
+}
+
+.sidebar-container:not(.hovered):not(.pinned) .nav-item .icon {
+    margin-right: 0;
+}
+
+.sidebar-container:not(.hovered):not(.pinned) .nav-item .label {
+    display: none;
+}
+
+/* Remove old footer spacing (writing moved up) */
 
 /* Writing section (replaces user profile footer) */
 .sidebar-writing {
@@ -151,9 +246,10 @@
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-    max-height: 220px;
+    max-height: none;
     overflow: auto;
     padding-right: 4px;
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
 }
 
 .writing-item {
@@ -172,17 +268,53 @@
     position: relative;
 }
 
+.writing-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.10),
+        rgba(255, 255, 255, 0.02)
+    );
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
 .writing-item:hover {
-    border-color: rgba(255, 255, 255, 0.25);
-    background: rgba(10, 10, 10, 0.7);
-    transform: translateX(4px);
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(10, 10, 10, 0.62);
 }
 
 .writing-icon {
-    width: 24px;
-    display: flex;
-    justify-content: center;
-    opacity: 0.85;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    background-color: rgba(255, 255, 255, 0.85);
+    opacity: 0.95;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+}
+
+.writing-item:hover::after {
+    opacity: 1;
+}
+
+.writing-icon--link {
+    /* Minimal link icon */
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M10.59 13.41a1 1 0 0 1 0-1.41l2.83-2.83a1 1 0 1 1 1.41 1.41l-2.83 2.83a1 1 0 0 1-1.41 0Zm-2.12 2.12a4 4 0 0 1 0-5.66l2.12-2.12a4 4 0 0 1 5.66 0 1 1 0 1 1-1.41 1.41 2 2 0 0 0-2.83 0L9.89 11.3a2 2 0 0 0 2.83 2.83l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a4 4 0 0 1-5.66 0Zm9.06-9.06a4 4 0 0 1 0 5.66l-2.12 2.12a4 4 0 0 1-5.66 0 1 1 0 1 1 1.41-1.41 2 2 0 0 0 2.83 0l2.12-2.12a2 2 0 0 0-2.83-2.83l-.71.71a1 1 0 0 1-1.41-1.41l.71-.71a4 4 0 0 1 5.66 0Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M10.59 13.41a1 1 0 0 1 0-1.41l2.83-2.83a1 1 0 1 1 1.41 1.41l-2.83 2.83a1 1 0 0 1-1.41 0Zm-2.12 2.12a4 4 0 0 1 0-5.66l2.12-2.12a4 4 0 0 1 5.66 0 1 1 0 1 1-1.41 1.41 2 2 0 0 0-2.83 0L9.89 11.3a2 2 0 0 0 2.83 2.83l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a4 4 0 0 1-5.66 0Zm9.06-9.06a4 4 0 0 1 0 5.66l-2.12 2.12a4 4 0 0 1-5.66 0 1 1 0 1 1 1.41-1.41 2 2 0 0 0 2.83 0l2.12-2.12a2 2 0 0 0-2.83-2.83l-.71.71a1 1 0 0 1-1.41-1.41l.71-.71a4 4 0 0 1 5.66 0Z'/%3E%3C/svg%3E");
+}
+
+.writing-icon--article {
+    /* Minimal document icon */
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7 3h7l5 5v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm7 1.5V9h4.5L14 4.5ZM8 12a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H8Zm0 4a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H8Z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M7 3h7l5 5v13a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm7 1.5V9h4.5L14 4.5ZM8 12a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H8Zm0 4a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2H8Z'/%3E%3C/svg%3E");
 }
 
 .writing-label {
@@ -197,28 +329,25 @@
     white-space: nowrap;
 }
 
-/* Tooltips for collapsed state */
-.nav-item::before {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 100%;
-    margin-left: 1rem;
-    background: rgba(20, 20, 20, 0.95);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-    z-index: 1000;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+.sidebar-container:not(.hovered):not(.pinned) .sidebar-writing-title {
+    display: none;
 }
 
-.sidebar-container:not(.hovered):not(.pinned) .nav-item:hover::before {
-    opacity: 1;
+.sidebar-container:not(.hovered):not(.pinned) .sidebar-writing-list {
+    align-items: center;
+    padding-right: 0;
+}
+
+.sidebar-container:not(.hovered):not(.pinned) .writing-item {
+    justify-content: center;
+    gap: 0;
+    width: 44px;
+    margin: 0;
+    padding: 0.85rem 0;
+}
+
+.sidebar-container:not(.hovered):not(.pinned) .writing-label {
+    display: none;
 }
 
 /* Tooltips for collapsed state (writing links) */

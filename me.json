@@ -1,0 +1,176 @@
+{
+  "personal": {
+    "name": "Seymur Mammadov",
+    "gender": "male",
+    "location": {
+      "current": "Stamford, CT 06907",
+      "birthplace": "Baku, Azerbaijan",
+      "upbringing": "Stamford, Connecticut"
+    },
+    "contact": {
+      "email": "smammadov494@gmail.com"
+    },
+    "immigration_story": {
+      "age_arrived_usa": 9,
+      "origin_country": "Azerbaijan"
+    },
+    "languages": {
+      "spoken": ["English", "Turkish", "Russian"]
+    }
+  },
+
+  "personality_traits": {
+    "humor": {
+      "self_assessment": "funny",
+      "friends_feedback": "friends often say he's funny, though some like to take that away from him"
+    },
+    "interpersonal": [
+      "connects well with people",
+      "strong communicator",
+      "collaborative team player"
+    ],
+    "work_style": [
+      "problem solver",
+      "hands-on builder",
+      "enjoys building projects",
+      "quick learner",
+      "proactive"
+    ]
+  },
+
+  "interests_and_hobbies": {
+    "physical_activities": [
+      "soccer (played growing up)",
+      "gym and fitness",
+      "staying active",
+      "outdoor activities"
+    ],
+    "culinary": ["enjoys food", "cooking enthusiast"],
+    "gaming": {
+      "history": "huge gamer growing up",
+      "favorite_games": ["Gears of War", "Halo", "God of War", "RuneScape"],
+      "note": "was around computers from a really young age"
+    },
+    "technical": [
+      "building projects",
+      "tinkering with technology",
+      "early exposure to computers"
+    ]
+  },
+
+  "education": {
+    "degree": "Bachelor of Science in Biology",
+    "institution": "Sacred Heart University",
+    "location": "Fairfield, CT",
+    "graduation_date": "June 2017"
+  },
+
+  "professional_summary": {
+    "headline": "Experienced technical leader with 5+ years driving product innovation and engineering excellence",
+    "key_strengths": [
+      "Scaling applications from concept to production",
+      "Leading cross-functional teams",
+      "Transforming complex business requirements into user-centric solutions",
+      "End-to-end product ownership",
+      "Strong problem-solving abilities"
+    ]
+  },
+
+  "work_experience": [
+    {
+      "title": "Tech Lead",
+      "company": "JobTarget",
+      "location": "Stamford, CT",
+      "duration": "May 2022 - September 2025",
+      "key_achievements": [
+        "Led development and optimization of key compliance products with end-to-end ownership",
+        "Served as primary technical contact for partners",
+        "Architected AWS-based infrastructure migrations (DynamoDB, Lambda, EC2)",
+        "Built full-stack features reducing churn by 24%",
+        "Mentored junior engineers on best practices and agile workflows",
+        "Collaborated with stakeholders on roadmap prioritization"
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "JobTarget",
+      "location": "Stamford, CT",
+      "duration": "January 2020 - May 2022",
+      "key_achievements": [
+        "Developed full-stack applications for OFCCP compliance",
+        "Owned end-to-end development of Local Outreach application",
+        "Designed Compliance-Post/Reporting Hub, reducing audit response times by 40%",
+        "Created Compliance CIW Workbook with Salesforce integrations"
+      ]
+    },
+    {
+      "title": "Co-Founder & Software Engineer",
+      "company": "InstantCreatives (AI Startup)",
+      "location": "New York, NY",
+      "duration": "Not specified",
+      "key_achievements": [
+        "Co-founded AI-powered platform achieving 1K+ users within 48 hours",
+        "Developed core features using Python and n8n workflows",
+        "Integrated machine learning models for automation",
+        "Owned product decisions including feature prioritization and UI/UX",
+        "Generated six-figure revenue across multiple brands"
+      ]
+    }
+  ],
+
+  "technical_skills": {
+    "languages_and_frameworks": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "Next.js",
+      "Python",
+      "TypeScript"
+    ],
+    "cloud_and_infrastructure": [
+      "AWS (DynamoDB, Lambda, EC2)",
+      "Docker",
+      "CI/CD pipelines"
+    ],
+    "databases": ["SQL", "MongoDB", "Database design and optimization"],
+    "ai_and_automation": [
+      "n8n workflows",
+      "fast.ai wrappers",
+      "Custom AI solutions",
+      "Machine learning integration"
+    ],
+    "analytics_and_monitoring": [
+      "Google Analytics",
+      "Hotjar",
+      "New Relic",
+      "Custom dashboard development"
+    ],
+    "project_management": [
+      "JIRA",
+      "Agile/Scrum methodologies",
+      "Team leadership",
+      "Sprint planning"
+    ],
+    "tools": [
+      "Git",
+      "Salesforce integration",
+      "Database design",
+      "API development"
+    ]
+  },
+
+  "notable_metrics": {
+    "years_of_experience": "5+",
+    "churn_reduction": "24%",
+    "audit_response_time_improvement": "40%",
+    "startup_user_acquisition": "1K+ users in 48 hours",
+    "revenue_impact": "Six-figure revenue generation"
+  },
+
+  "background_narrative": {
+    "origin_story": "Born in Baku, Azerbaijan and immigrated to the USA at age 9. Grew up in Stamford, Connecticut where he developed his passion for technology from an early age.",
+    "technical_journey": "Was around computers from a really young age, which fostered a natural curiosity for building and problem-solving. This early exposure combined with gaming culture shaped his path into software engineering.",
+    "education_pivot": "Despite studying Biology at Sacred Heart University, transitioned into tech, demonstrating adaptability and self-driven learning.",
+    "entrepreneurial_spirit": "Co-founded an AI startup, showcasing ability to build products from scratch and take ownership of both technical and business decisions."
+  }
+}
