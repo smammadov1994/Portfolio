@@ -15,7 +15,7 @@ Graphite artwork. Handwritten stories. A curious weasel. A ghost who goes fishin
 
 ## Meet the cast
 
-**Astro** fishes up little pieces of my story. Catch a bite and a thought bubble opens beside him. Further down, he introduces my background and answers questions from the portfolio's local profile data.
+**Astro** fishes up little pieces of my story. Catch a bite and a thought bubble opens beside him.
 
 **Weaszel** leads the featured work with a 30-second, scroll-controlled Remotion film. He runs in, stops to look at you, investigates the page, taps a tool into shape, and jumps behind the card before settling on its corner. One character, with distinct actions throughout the story.
 
@@ -64,7 +64,7 @@ The five-person company reached **3,000 users** and, at peak, **300 paying custo
 
 ## JobTarget — opportunities in motion
 
-JobTarget follows SwipeBuilder as the fourth featured experience. An original animated routing desk follows sample job listings from applicant tracking systems, through consistent records and destination matching, into relevant job boards.
+JobTarget follows SwipeBuilder as the fourth and final featured experience. The page ends after this section. An original animated routing desk follows sample job listings from applicant tracking systems, through consistent records and destination matching, into relevant job boards.
 
 ![An illustrated routing desk connecting ATS job listings to relevant job boards](dist/assets/jobtarget-workflow.png)
 
@@ -82,8 +82,6 @@ The jobs, board names, and matching signals in the animation are explanatory exa
 | Scroll films | React + Remotion Player, driven by a frame timeline |
 | Playback controls | Scroll scrubbing, play/pause, chapter navigation, and a timeline slider |
 | Responsive motion | Desktop and mobile compositions, plus a reduced-motion reading mode |
-| Astro's answers | Local profile data and keyword-based retrieval; no remote LLM call |
-| Text reveals | A custom typewriter with reserved layout space |
 | Build | esbuild bundles the animation and interactive story entry points with shared dependencies |
 | Hosting | ChatGPT Sites, serving the `dist/` directory |
 
@@ -117,10 +115,7 @@ The HTML and CSS in `dist/` are authored files and are intentionally tracked. Th
 | `dist/weasel-story.css` | Weaszel section layout and responsive styling |
 | `dist/pumpads-story.css` | PumpAds section layout and responsive styling |
 | `dist/typography.css` | Readable body text, experience details, metrics, and handwritten accents |
-| `dist/astro-guide.css` | Handwritten theme, guide, and thought bubble |
-| `dist/astro-guide.js` | Scroll narration and profile questions |
-| `dist/knowledge.mjs` | Profile knowledge and local retrieval |
-| `dist/typewriter.mjs` | Text reveal behavior |
+| `dist/astro-guide.css` | Shared handwritten theme and thought-bubble styling |
 | `dist/data/` | Profile and project information |
 | `dist/assets/` | Artwork, sprite sheets, and compiled animation bundles |
 | `scripts/build.mjs` | Shared esbuild configuration |
