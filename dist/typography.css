@@ -8,6 +8,10 @@
 body { font-family: var(--font-body); font-size: 17px; line-height: 1.7; }
 button, input, textarea { font-family: var(--font-body); }
 h1, h2, .brand, .scene-note, .hello { font-family: var(--font-display); }
+#weasel-title { color: #d66b27; }
+#pumpads-title { color: #cf4444; }
+#swipebuilder-title { color: #8b59b5; }
+#jobtarget-title { color: #55a9d5; }
 .brand { font-size: 29px; }
 .navlinks { font-family: var(--font-body); font-size: 14px; gap: 28px; }
 .lede { font-size: 23px; line-height: 1.6; max-width: 760px; }

@@ -30,7 +30,7 @@
 .weasel-static-steps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:24px}.weasel-static-steps li{display:flex;gap:22px}.weasel-static-steps li>span{font-size:25px;color:#798570}.weasel-static-steps h4{font-size:31px;line-height:1.25;margin:0 0 6px;font-weight:500}.weasel-static-steps p{font-size:24px;line-height:1.5;margin:0;color:#66715e}
 .weasel-fallback{padding:30px 0}.weasel-fallback img{width:100%;display:block;mix-blend-mode:multiply}.weasel-fallback h3{font-size:33px;margin-bottom:10px}.weasel-fallback p{font-size:25px;line-height:1.5}.weasel-fallback a{font-size:25px;text-decoration:underline}
 /* The pencil stays neutral; a faint olive cast makes the field notes feel lived in. */
-.weasel-feature{filter:grayscale(1)}
+.weasel-feature > :not(.weasel-heading){filter:grayscale(1)}
 @media(min-width:1200px){.weasel-feature{width:1060px}}
 @media(max-width:650px){
  .weasel-feature{padding-top:30px;margin-top:0}.weasel-heading{grid-template-columns:1fr;gap:12px;padding-bottom:22px}.weasel-heading h2{font-size:66px}.weasel-heading p.weasel-intro{font-size:25px;max-width:360px}.weasel-sub{font-size:19px}.weasel-kicker{font-size:19px}
