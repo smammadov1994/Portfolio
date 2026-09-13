@@ -22,6 +22,13 @@
     "githubUrl": "https://github.com/smammadov1994/Weaszel"
   },
   {
+    "id": "swipebuilder",
+    "title": "SwipeBuilder",
+    "description": "A creative research workspace for saving ad references, organizing shared boards, exploring video transcripts, and writing new copy with AI.",
+    "image": "/assets/swipebuilder-graphite.png",
+    "liveUrl": "https://swipebuilder.io/"
+  },
+  {
     "id": "chatbot-ui-components",
     "title": "Chatbot UI Components",
     "description": "A reusable UI component library for building conversational interfaces, documented with Storybook.",

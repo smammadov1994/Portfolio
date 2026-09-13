@@ -23,6 +23,7 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
 </style><link rel="stylesheet" href="astro-guide.css">
 <link rel="stylesheet" href="weasel-story.css">
 <link rel="stylesheet" href="pumpads-story.css">
+<link rel="stylesheet" href="swipebuilder-story.css">
 </head>
 <body>
   <header id="header"><nav class="shell"><a class="brand" href="#"><span class="brand-mark">SM</span>Seymur Mammadov</a><div class="navlinks"><a href="#work">Work</a><a href="#about">About</a><a href="https://github.com/smammadov1994" target="_blank" rel="noreferrer">GitHub ↗</a></div></nav></header>
@@ -79,6 +80,20 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
 <div class="pump-experience"><div><h3>More than a model call.</h3><p>With an eight-person team, we built a multimodal pipeline connecting script generation, voice cloning, image and video generation, lip sync, revoicing, and final FFmpeg assembly.</p><p>My experience spanned the product, backend, AI workflows, and the infrastructure needed to bring them together.</p></div><div><h3>Make it work as a business.</h3><p>We moved long-running jobs into independently scalable services, with queues and persistent job state. That kept n8n as a fast orchestration layer and supported bursts of 100 concurrent requests.</p><p>We also built a usage-credit ledger with reservations, reconciliation, and automatic refunds for failed generations, and secured $50K in platform credits to help manage early costs.</p></div></div><p class="pump-stack">PumpAds / 2xROAS, Inc. · multimodal AI · distributed jobs · n8n · FFmpeg · Replicate &amp; Cog</p>
 </section>
 
+<section id="swipebuilder" class="swipe-feature shell" aria-labelledby="swipebuilder-title">
+  <div class="swipe-heading">
+    <div><p class="swipe-kicker">03 / a home for good ideas</p><h2 id="swipebuilder-title">SwipeBuilder.</h2><p class="swipe-role">Co-founder · Lead Backend &amp; AI Engineer<br>December 2023 — August 2025</p></div>
+    <p class="swipe-intro">I co-founded SwipeBuilder to turn scattered ad inspiration into a searchable creative workspace. I led backend and AI engineering, from ingestion and semantic search to scripts grounded in the right references.</p>
+  </div>
+  <figure class="swipe-art"><img src="assets/swipebuilder-graphite.png" alt="Graphite illustration of ad clippings becoming an organized inspiration board and a handwritten script" width="1536" height="512" loading="lazy"><figcaption>a few things worth keeping. a new idea waiting to happen.</figcaption></figure>
+  <div id="swipebuilder-story">
+    <ol class="swipe-readable"><li><h3>Keep what catches your eye.</h3><p>Collect ad references from platforms such as Meta, TikTok, and Google.</p></li><li><h3>Give your ideas a home.</h3><p>Organize references into folders and share creative boards with your team.</p></li><li><h3>Find the useful thread.</h3><p>Explore saved ads and video transcripts to understand the ideas behind the creative.</p></li><li><h3>Make the next story yours.</h3><p>Use AI copywriting to adapt a reference to a different product or offer.</p></li></ol>
+  </div>
+  <div class="swipe-results" aria-label="SwipeBuilder company results"><div><strong>3,000</strong><span>users</span><small>product adoption</small></div><div><strong>300</strong><span>paying customers</span><small>at peak</small></div><div><strong>$25K</strong><span>monthly recurring revenue</span><small>at peak</small></div></div>
+  <div class="swipe-notes"><div><h3>Find the thread between ideas.</h3><p>I built natural-language and hybrid semantic search across 100K+ transcribed ads, combining embeddings, vector retrieval, metadata filters, personalized signals, and diverse results.</p><p>A production RAG pipeline brought relevant transcripts together with the customer's product, offer, and audience to generate scripts grounded in useful creative examples.</p></div><div><h3>Keep the creative work moving.</h3><p>I built the backend for a five-person company: core APIs, billing, collaboration, recommendations, and asynchronous jobs. Crawlers and Chrome-extension imports fed the ingestion and transcription pipeline.</p><p>Lambda, SQS, SNS, and persistent job state handled long-running work, with retries, dead-letter queues, and status tracking. Daily budgets and query caching kept repeated research faster and costs under control.</p></div></div>
+  <div class="swipe-footer"><p>The Swipe Company, LLC · OpenAI embeddings · Pinecone · production RAG · AWS</p><a href="https://swipebuilder.io/" target="_blank" rel="noreferrer">Explore SwipeBuilder <span aria-hidden="true">↗</span></a></div>
+</section>
+
 <div class="journey shell">
 <aside class="astro-rail" aria-label="Astro’s guide">
 <div class="astro-guide">
@@ -124,15 +139,15 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
       <div class="projects">
         <article class="project reveal">
           <div class="visual"><img src="assets/cosmocache-graphite.png" alt="Graphite concept illustration of an indexed memory archive connected by routing paths" width="1536" height="512" loading="lazy"></div>
-          <div class="project-info"><div><div class="project-num">03 · AI INFRASTRUCTURE</div><h3>CosmoCache</h3><p>A persistent knowledge universe that gives coding agents cross-session memory—2.3× cheaper at 100 domains while retaining accuracy.</p><div class="tags"><span class="tag">Agent memory</span><span class="tag">Python</span><span class="tag">Evaluation</span></div></div><a class="project-link" href="https://github.com/smammadov1994/CosmoCache" target="_blank" rel="noreferrer">Explore the universe <b>↗</b></a></div>
+          <div class="project-info"><div><div class="project-num">04 · AI INFRASTRUCTURE</div><h3>CosmoCache</h3><p>A persistent knowledge universe that gives coding agents cross-session memory—2.3× cheaper at 100 domains while retaining accuracy.</p><div class="tags"><span class="tag">Agent memory</span><span class="tag">Python</span><span class="tag">Evaluation</span></div></div><a class="project-link" href="https://github.com/smammadov1994/CosmoCache" target="_blank" rel="noreferrer">Explore the universe <b>↗</b></a></div>
         </article>
         <article class="project reveal">
           <div class="visual"><img src="assets/stickstorm-graphite.png" alt="Graphite concept illustration of a multi-level multiplayer arena with bridges and cover" width="1536" height="512" loading="lazy"></div>
-          <div class="project-info"><div><div class="project-num">04 · REAL-TIME SYSTEMS</div><h3>StickStorm</h3><p>A browser-native multiplayer arena shooter with 50 weapons, 14 maps, authoritative 30 Hz simulation, bots, progression, and 101 passing tests.</p><div class="tags"><span class="tag">Three.js</span><span class="tag">WebSockets</span><span class="tag">Node.js</span></div></div><a class="project-link" href="https://github.com/smammadov1994/StickStorm" target="_blank" rel="noreferrer">Enter the storm <b>↗</b></a></div>
+          <div class="project-info"><div><div class="project-num">05 · REAL-TIME SYSTEMS</div><h3>StickStorm</h3><p>A browser-native multiplayer arena shooter with 50 weapons, 14 maps, authoritative 30 Hz simulation, bots, progression, and 101 passing tests.</p><div class="tags"><span class="tag">Three.js</span><span class="tag">WebSockets</span><span class="tag">Node.js</span></div></div><a class="project-link" href="https://github.com/smammadov1994/StickStorm" target="_blank" rel="noreferrer">Enter the storm <b>↗</b></a></div>
         </article>
         <article class="project reveal">
           <div class="visual"><img src="assets/component-lab-graphite.png" alt="Graphite concept illustration of modular interfaces and component blueprints" width="1536" height="512" loading="lazy"></div>
-          <div class="project-info"><div><div class="project-num">05 · DEVELOPER TOOLS</div><h3>LLM Component Generator</h3><p>A multi-model workspace for generating the same React component across leading LLMs, comparing code and previews, and choosing the best output.</p><div class="tags"><span class="tag">React</span><span class="tag">Multi-LLM</span><span class="tag">Product UI</span></div></div><a class="project-link" href="https://github.com/smammadov1994/llm-component-generator" target="_blank" rel="noreferrer">View source <b>↗</b></a></div>
+          <div class="project-info"><div><div class="project-num">06 · DEVELOPER TOOLS</div><h3>LLM Component Generator</h3><p>A multi-model workspace for generating the same React component across leading LLMs, comparing code and previews, and choosing the best output.</p><div class="tags"><span class="tag">React</span><span class="tag">Multi-LLM</span><span class="tag">Product UI</span></div></div><a class="project-link" href="https://github.com/smammadov1994/llm-component-generator" target="_blank" rel="noreferrer">View source <b>↗</b></a></div>
         </article>
 
       </div>
@@ -181,4 +196,4 @@ const blink=reduce?28:(t%3800>3620?3:28);document.querySelectorAll('#eyes ellips
 for(let i=1;i<3;i++){const k=reduce?i*.28:((t/2200+i*.5)%1);$('#ripple'+i).setAttribute('rx',20+k*48);$('#ripple'+i).setAttribute('ry',4+k*10);$('#ripple'+i).setAttribute('opacity',1-k)}
 requestAnimationFrame(frame)}
 requestAnimationFrame(frame);
-</script><script type="module" src="astro-guide.js"></script><script type="module" src="assets/weasel-story.js"></script><script type="module" src="assets/pumpads-story.js"></script></body></html>
+</script><script type="module" src="astro-guide.js"></script><script type="module" src="assets/weasel-story.js"></script><script type="module" src="assets/pumpads-story.js"></script><script type="module" src="assets/swipebuilder-story.js"></script></body></html>

@@ -46,6 +46,18 @@ Our shared company results included:
 
 The pipeline combined script generation, voice cloning, image and video generation, lip sync, revoicing, and FFmpeg assembly. The portfolio also covers the credit ledger, automatic refunds, and infrastructure work behind the product.
 
+## SwipeBuilder — a home for good ideas
+
+[SwipeBuilder](https://swipebuilder.io/) follows PumpAds as the third featured project. A graphite research desk and a scroll-driven animated paper storyboard follow the workflow from collecting ad references to organizing a board, reading the creative, and developing new copy.
+
+![Ad clippings becoming an inspiration board and a handwritten script](dist/assets/swipebuilder-graphite.png)
+
+The 24-second Remotion film supports scroll scrubbing, chapter selection, play/pause, a timeline slider, and a reduced-motion reading mode. The storyboard uses illustrative creative examples. Product capabilities are described from [SwipeBuilder’s website](https://swipebuilder.io/).
+
+Seymur co-founded SwipeBuilder and led backend and AI engineering (December 2023–August 2025). His work covered core APIs, billing, collaboration, ingestion, hybrid semantic search over 100K+ transcribed ads, and a production RAG pipeline for new scripts. Asynchronous AWS workflows, retries, job state, budget limits, and query caching supported the product behind the scenes.
+
+The five-person company reached **3,000 users** and, at peak, **300 paying customers** and **$25K in monthly recurring revenue**.
+
 ## How the portfolio works
 
 | Part | Implementation |
@@ -56,7 +68,7 @@ The pipeline combined script generation, voice cloning, image and video generati
 | Responsive motion | Desktop and mobile compositions, plus a reduced-motion reading mode |
 | Astro's answers | Local profile data and keyword-based retrieval; no remote LLM call |
 | Text reveals | A custom typewriter with reserved layout space |
-| Build | esbuild bundles both animation entry points with shared dependencies |
+| Build | esbuild bundles the animation and interactive story entry points with shared dependencies |
 | Hosting | ChatGPT Sites, serving the `dist/` directory |
 
 ![The paper browser landscape behind Weaszel's adventure](dist/assets/weasel-world.png)
@@ -82,6 +94,8 @@ The HTML and CSS in `dist/` are authored files and are intentionally tracked. Th
 | `dist/index.html` | Portfolio content, project order, and Astro's fishing interaction |
 | `src/weasel-story.jsx` | Weaszel's acting, scene content, and scroll controls |
 | `src/pumpads-story.jsx` | PumpAds creator cards and animated business story |
+| `src/swipebuilder-story.jsx` | SwipeBuilder’s interactive paper storyboard |
+| `dist/swipebuilder-story.css` | SwipeBuilder section layout and responsive styling |
 | `dist/weasel-story.css` | Weaszel section layout and responsive styling |
 | `dist/pumpads-story.css` | PumpAds section layout and responsive styling |
 | `dist/astro-guide.css` | Handwritten theme, guide, and thought bubble |
