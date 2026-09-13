@@ -15,7 +15,7 @@ Graphite artwork. Handwritten stories. A curious weasel. A ghost who goes fishin
 
 ## Meet the cast
 
-**Astro** fishes up little pieces of my story. Catch a bite and a thought bubble opens beside him. Occasionally, mountains rise, a white sun comes up, and he looks up with closed eyes before a brief monochrome glitch reveals a graphite portrait of me. The scene returns to fishing and keeps your collected facts. The “a little sunshine” control replays it; reduced-motion mode shows a still portrait on request.
+**Astro** fishes up little pieces of my story. Catch a bite and a thought bubble opens beside him. Occasionally, mountains rise, a white sun comes up, and he looks up with closed eyes before a burst of monochrome TV static reveals a graphite portrait of me at Astro’s scale. The scene returns to fishing and keeps your collected facts. The “a little sunshine” control replays it; reduced-motion mode shows a still portrait on request.
 
 **Weaszel** leads the featured work with a 30-second, scroll-controlled Remotion film. He runs in, stops to look at you, investigates the page, taps a tool into shape, and jumps behind the card before settling on its corner. One character, with distinct actions throughout the story.
 

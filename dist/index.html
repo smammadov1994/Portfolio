@@ -47,12 +47,15 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
 <radialGradient id="ghostSunwash" cx=".92" cy=".12" r=".9"><stop stop-color="white" stop-opacity=".9"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
 <radialGradient id="sunHalo"><stop stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
 <linearGradient id="portraitFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="white"/><stop offset=".78" stop-color="white"/><stop offset="1" stop-color="black"/></linearGradient>
-<mask id="portraitMask"><rect x="130" y="50" width="225" height="265" fill="url(#portraitFade)"/></mask>
+<mask id="portraitMask"><rect x="174" y="112" width="124" height="163" fill="url(#portraitFade)"/></mask>
 <clipPath id="landscapeClip"><rect x="35" y="30" width="470" height="274" rx="20"/></clipPath>
 <clipPath id="portraitOutline" clipPathUnits="objectBoundingBox"><path d="M.255 .17Q.25 .10 .315 .064Q.35 .014 .48 .018Q.60 .003 .68 .042Q.745 .072 .749 .155Q.80 .20 .733 .244L.704 .265L.69 .325L.64 .378L.641 .393L.70 .416L.874 .463Q.96 .49 .985 .64L.99 .89L.975 .963Q.5 1 .03 .963L.011 .895L.009 .63Q.02 .53 .072 .486L.318 .416L.362 .394L.365 .367L.33 .331L.30 .271L.276 .237Q.242 .23 .255 .17Z"/></clipPath>
-<clipPath id="glitchClipA"><rect x="135" y="119" width="210" height="15"/></clipPath>
-<clipPath id="glitchClipB"><rect x="135" y="173" width="210" height="9"/></clipPath>
-<clipPath id="glitchClipC"><rect x="135" y="224" width="210" height="18"/></clipPath>
+<filter id="tvStatic" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence id="tvNoise" type="fractalNoise" baseFrequency=".92 .66" numOctaves="1" seed="71" stitchTiles="stitch"/><feColorMatrix type="matrix" values=".333 .333 .333 0 0 .333 .333 .333 0 0 .333 .333 .333 0 0 0 0 0 0 1"/><feComponentTransfer><feFuncR type="linear" slope="3.8" intercept="-1.4"/><feFuncG type="linear" slope="3.8" intercept="-1.4"/><feFuncB type="linear" slope="3.8" intercept="-1.4"/></feComponentTransfer></filter>
+<pattern id="tvScanlines" patternUnits="userSpaceOnUse" width="4" height="4"><rect y="2" width="4" height="1" fill="#171717" opacity=".35"/></pattern>
+<clipPath id="tvSilhouette"><path d="M230.809 115.385V249.411C230.809 269.923 214.985 287.282 194.495 288.411C184.544 288.949 175.364 285.718 168.26 280C159.746 273.154 147.769 273.461 139.178 280.23C132.638 285.384 124.381 288.462 115.379 288.462C106.377 288.462 98.1451 285.384 91.6055 280.23C82.912 273.385 70.9353 273.385 62.2415 280.23C55.7532 285.334 47.598 288.411 38.7246 288.462C17.4132 288.615 0 270.667 0 249.359V115.385C0 51.6667 51.6756 0 115.404 0C179.134 0 230.809 51.6667 230.809 115.385Z" transform="translate(177 120) scale(.51)"/></clipPath>
+<clipPath id="glitchClipA"><rect x="172" y="151" width="128" height="11"/></clipPath>
+<clipPath id="glitchClipB"><rect x="172" y="193" width="128" height="8"/></clipPath>
+<clipPath id="glitchClipC"><rect x="172" y="233" width="128" height="15"/></clipPath>
 </defs>
 <g id="sunriseLandscape" opacity="0" clip-path="url(#landscapeClip)" aria-hidden="true">
 <g id="risingSun"><circle cx="353" cy="99" r="91" fill="url(#sunHalo)"/><circle cx="353" cy="99" r="31" fill="#fafafa" stroke="#bcbcbc" stroke-width="1"/><g id="sunRays" stroke="#c2c2c2" stroke-linecap="round" opacity=".65"><path d="M353 52V44 M353 146V154 M306 99H298 M400 99H408 M320 66L314 60 M386 132L392 138 M320 132L314 138 M386 66L392 60"/></g></g>
@@ -71,8 +74,8 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
 <g id="rodGroup"><path d="M261 224 Q315 181 379 172" fill="none" stroke="#636363" stroke-width="4" stroke-linecap="round"/><path d="M262 224 L285 209" stroke="#4c4c4c" stroke-width="6" stroke-linecap="round"/></g>
 
 </g>
-<g id="seymurActor" opacity="0" mask="url(#portraitMask)" aria-hidden="true"><image id="seymurArtwork" clip-path="url(#portraitOutline)" href="assets/seymur-sunrise-portrait.png" x="141" y="58" width="200" height="267" preserveAspectRatio="xMidYMid meet"/></g>
-<g id="heroGlitch" opacity="0" aria-hidden="true" style="mix-blend-mode:multiply"><g clip-path="url(#glitchClipA)"><use id="glitchSliceA" href="#seymurArtwork"/></g><g clip-path="url(#glitchClipB)"><use id="glitchSliceB" href="#ghostBody"/></g><g clip-path="url(#glitchClipC)"><use id="glitchSliceC" href="#seymurArtwork"/></g><path id="glitchLines" d="M180 134H285 M156 183H315 M201 225H320" fill="none" stroke="#818181" stroke-width="1.5"/></g>
+<g id="seymurActor" opacity="0" mask="url(#portraitMask)" aria-hidden="true"><image id="seymurArtwork" clip-path="url(#portraitOutline)" href="assets/seymur-sunrise-portrait.png" x="177" y="116" width="118" height="157.5" preserveAspectRatio="xMidYMid meet"/></g>
+<g id="heroGlitch" opacity="0" aria-hidden="true"><g clip-path="url(#tvSilhouette)"><rect x="174" y="116" width="126" height="158" fill="#888" filter="url(#tvStatic)"/><rect x="174" y="116" width="126" height="158" fill="url(#tvScanlines)"/><g id="tvTrackingBand"><rect x="174" width="126" height="15" fill="#f6f6f6" opacity=".42"/><rect x="174" y="15" width="126" height="2" fill="#181818" opacity=".75"/></g></g><g opacity=".25" clip-path="url(#glitchClipA)"><use id="glitchSliceA" href="#seymurArtwork"/></g><g opacity=".2" clip-path="url(#glitchClipB)"><use id="glitchSliceB" href="#ghostBody"/></g><g opacity=".25" clip-path="url(#glitchClipC)"><use id="glitchSliceC" href="#seymurArtwork"/></g></g>
 <path id="fishingLine" fill="none" stroke="#878787" stroke-width="1.2"/>
 <g id="bobber"><path d="M0 -9V-2" stroke="#767676"/><ellipse rx="4" ry="6" fill="#a6a6a6"/><path d="M-4 1H4" stroke="white" stroke-width="2"/></g>
 <g id="catchToken" opacity="0"><rect x="-11" y="-14" width="22" height="28" rx="4" fill="#f9f9f9" stroke="#9b9b9b"/><text text-anchor="middle" y="4" font-size="14" fill="#7e7e7e">✦</text></g>
