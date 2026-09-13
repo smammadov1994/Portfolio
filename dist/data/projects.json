@@ -1,0 +1,46 @@
+[
+  {
+    "id": "weaszel",
+    "title": "Weaszel",
+    "description": "A local website-to-MCP adapter prototype that observes pages, accessibility trees, and forms, generates callable tools, and publishes an inspectable OpenAPI / Swagger reference.",
+    "stats": [
+      {
+        "label": "Type",
+        "value": "Website-to-MCP adapter"
+      },
+      {
+        "label": "Tech",
+        "value": "Python, browser automation, OpenAPI"
+      },
+      {
+        "label": "Status",
+        "value": "Local prototype"
+      }
+    ],
+    "image": "/assets/weaszel-graphite.png",
+    "liveUrl": "https://weaszel-youtube-swagger.smammadov494.chatgpt.site",
+    "githubUrl": "https://github.com/smammadov1994/Weaszel"
+  },
+  {
+    "id": "chatbot-ui-components",
+    "title": "Chatbot UI Components",
+    "description": "A reusable UI component library for building conversational interfaces, documented with Storybook.",
+    "stats": [
+      {
+        "label": "Type",
+        "value": "UI Library"
+      },
+      {
+        "label": "Tech",
+        "value": "React, Storybook"
+      },
+      {
+        "label": "Status",
+        "value": "Open Source"
+      }
+    ],
+    "image": "/images/ui-components-preview.png",
+    "liveUrl": "https://smammadov1994.github.io/chatbot-ui-components/?path=/story/getting-started--introduction",
+    "githubUrl": "https://github.com/smammadov1994/chatbot-ui-components"
+  }
+]

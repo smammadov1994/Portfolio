@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Seymur Mammadov — full-stack and AI engineer building playful, useful software.">
+  <title>Seymur Mammadov · Full-stack & AI engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23484b4b'/%3E%3Cpath d='M9 21c4-2 10-2 14 0M11 17c2-6 8-6 10 0' stroke='%23d3d3d1' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='13' cy='14' r='1' fill='white'/%3E%3Ccircle cx='19' cy='14' r='1' fill='white'/%3E%3C/svg%3E">
+  <style>
+:root{--ink:#383838;--muted:#7f7f7f;--blue:#898989;--paper:#eeedeb;--line:#ededed}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,system-ui,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}a:focus-visible,button:focus-visible{outline:2px solid #7e7e7e;outline-offset:5px}
+.shell{width:min(980px,calc(100% - 44px));margin:auto}header{background:var(--paper)}nav{height:80px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:16px;font-weight:500;letter-spacing:.02em}.brand-mark{display:none}.navlinks{display:flex;gap:32px;font-size:14px;color:#838383}.navlinks a:hover{color:#383838}
+.hero{padding:25px 0 70px}.hero-grid{display:flex;flex-direction:column-reverse}.hero-copy{width:100%}.eyebrow{font-size:16px;color:#898989}.hero h1{font-size:54px;font-weight:400;letter-spacing:-.04em;margin:8px 0 18px;line-height:1.18}.lede{font-size:25px;line-height:1.5;font-weight:400;margin:0}.micro{font:12px/1.8 'DM Mono',monospace;color:#939393;margin-top:20px}
+.mascot-stage{width:100%;height:410px;position:relative;margin-bottom:24px}.scene-button{display:block;position:absolute;width:540px;max-width:100%;left:50%;top:0;transform:translateX(-50%);border:0;padding:0;background:transparent;cursor:pointer;touch-action:manipulation}.scene{display:block;width:100%;height:auto;overflow:visible}.scene-note{position:absolute;right:-15px;top:62px;max-width:205px;font:21px/1.6 'Caveat',cursive;color:#6c6c6c;transform:rotate(-4deg);pointer-events:none}.scene-note span{display:block;font-size:35px;padding-left:30px}
+.scene-status{position:absolute;bottom:12px;left:0;right:0;text-align:center;font:12px 'DM Mono',monospace;color:#858585}.catch-panel{position:absolute;left:50%;bottom:12px;transform:translate(-50%,8px);width:350px;max-width:90%;padding:16px 20px;background:#fff;border:1px solid #e9e9e9;border-radius:9px;box-shadow:0 8px 26px #2c325510;opacity:0;pointer-events:none;transition:.25s;z-index:5}.catch-panel.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}.catch-label{font:11px 'DM Mono',monospace;color:#858585}.catch-text{font-size:15px;line-height:1.5;margin-top:7px}.bucket{display:flex;gap:9px;margin-top:12px}.chip{border:0;background:transparent;font:16px 'DM Mono',monospace;color:#d6d6d6;padding:2px;cursor:pointer}.chip.filled{color:#7d7d7d}.scroll-note{display:none}
+section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-size:20px;font-weight:400;margin:0}.section-head .eyebrow,.section-head p{display:none}.projects{display:grid;grid-template-columns:1fr 1fr;gap:48px 25px}.project{min-width:0}.visual{height:300px;overflow:hidden;border-radius:6px;background:#f0f0f0;position:relative}.visual img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.project:hover .visual img{transform:scale(1.025)}.project-info{padding:18px 1px 0}.project-num{font:11px 'DM Mono',monospace;color:#9d9d9d}.project h3{font-size:22px;font-weight:500;letter-spacing:-.02em;margin:9px 0}.project p{font-size:15px;line-height:1.7;color:#828282;margin:0}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tag{font-size:12px;color:#939393;background:#f2f2f2;padding:4px 8px;border-radius:4px}.project-link{font-size:13px;color:#737373}.synthetic{display:grid;place-items:center;background:#f1f1f1;padding:24px}.ui-mock{background:white;border:1px solid #e4e4e4;border-radius:6px;width:100%}.ui-bar{height:25px;border-bottom:1px solid #eee;display:flex;gap:4px;padding:9px}.dot{width:5px;height:5px;background:#ccc;border-radius:50%}.ui-body{display:grid;grid-template-columns:1fr 1fr;padding:16px;gap:16px}.ui-col{font:11px/1.6 'DM Mono',monospace;color:#848484}.ui-code{height:100px;background:repeating-linear-gradient(#cacaca 0 2px,transparent 2px 12px)}
+#about{padding-top:100px}.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:50px}.about-kicker,.stats{display:none}.about-wrap h2{font-weight:400;font-size:28px;margin:0}.about-copy{font-size:17px;line-height:1.8;color:#828282;margin:0}footer{padding:100px 0 40px}.hello{font-size:40px;font-weight:400;letter-spacing:-.03em;margin:0 0 18px}footer>.eyebrow{display:none}.email{font-size:17px;border-bottom:1px solid #d2d2d2}.footer-row{display:flex;justify-content:space-between;gap:15px;margin-top:75px;font:11px 'DM Mono',monospace;color:#9e9e9e}.reveal{opacity:1}
+@media(max-width:700px){nav{height:66px}.brand{font-size:14px}.navlinks{gap:16px;font-size:13px}.hero{padding:10px 0 40px}.mascot-stage{height:320px;margin-bottom:10px}.scene-button{width:420px;top:20px}.scene-note{font-size:17px;right:0;top:0;max-width:145px}.scene-note span{display:none}.hero h1{font-size:39px}.lede{font-size:20px}.micro{font-size:12px}.projects{grid-template-columns:1fr;gap:38px}.visual{height:280px}.about-grid{grid-template-columns:1fr;gap:20px}.footer-row{flex-direction:column;margin-top:45px}.scene-status{font-size:11px;bottom:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style><link rel="stylesheet" href="astro-guide.css">
+<link rel="stylesheet" href="weasel-story.css">
+<link rel="stylesheet" href="pumpads-story.css">
+</head>
+<body>
+  <header id="header"><nav class="shell"><a class="brand" href="#"><span class="brand-mark">SM</span>Seymur Mammadov</a><div class="navlinks"><a href="#work">Work</a><a href="#about">About</a><a href="https://github.com/smammadov1994" target="_blank" rel="noreferrer">GitHub ↗</a></div></nav></header>
+  <main>
+    <section class="hero shell">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Hi! I’m</div>
+          <h1>Seymur Mammadov</h1>
+          <p class="lede">a full-stack engineer building thoughtful interfaces and useful AI tools</p>
+          <p class="micro">react · typescript · python · ai systems</p>
+        </div>
+
+<div class="mascot-stage">
+<button class="scene-button" id="fish" aria-label="Astro is fishing. Wait for a bite, then click to reel in.">
+<svg class="scene" viewBox="0 0 540 375" role="img" aria-label="Astro the ghost holding a fishing rod beside a pool">
+<defs><linearGradient id="ghostGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#c0c0c0"/><stop offset=".36" stop-color="#9b9b9b"/><stop offset=".72" stop-color="#727272"/><stop offset="1" stop-color="#4a4a4a"/></linearGradient></defs>
+<ellipse cx="245" cy="309" rx="112" ry="10" fill="#eeeeee"/>
+<path d="M173 281 Q215 257 277 281 L293 305 Q237 320 163 303Z" fill="#f3f3f3" stroke="#d4d4d4"/>
+<ellipse cx="368" cy="311" rx="73" ry="16" fill="#f5f5f5"/>
+<ellipse id="ripple1" cx="368" cy="311" rx="30" ry="6" fill="none" stroke="#bcbcbc" stroke-width="1.5"/>
+<ellipse id="ripple2" cx="368" cy="311" rx="52" ry="11" fill="none" stroke="#d5d5d5"/>
+<g id="ghostActor"><g transform="translate(177 120) scale(.51)">
+<path d="M230.809 115.385V249.411C230.809 269.923 214.985 287.282 194.495 288.411C184.544 288.949 175.364 285.718 168.26 280C159.746 273.154 147.769 273.461 139.178 280.23C132.638 285.384 124.381 288.462 115.379 288.462C106.377 288.462 98.1451 285.384 91.6055 280.23C82.912 273.385 70.9353 273.385 62.2415 280.23C55.7532 285.334 47.598 288.411 38.7246 288.462C17.4132 288.615 0 270.667 0 249.359V115.385C0 51.6667 51.6756 0 115.404 0C179.134 0 230.809 51.6667 230.809 115.385Z" fill="url(#ghostGradient)"/>
+<g id="eyes"><ellipse cx="88" cy="120" rx="18" ry="28" fill="white"/><ellipse cx="157" cy="120" rx="18" ry="28" fill="white"/></g>
+</g>
+<g id="rodGroup"><path d="M261 224 Q315 181 379 172" fill="none" stroke="#636363" stroke-width="4" stroke-linecap="round"/><path d="M262 224 L285 209" stroke="#4c4c4c" stroke-width="6" stroke-linecap="round"/></g>
+
+</g>
+<path id="fishingLine" fill="none" stroke="#878787" stroke-width="1.2"/>
+<g id="bobber"><path d="M0 -9V-2" stroke="#767676"/><ellipse rx="4" ry="6" fill="#a6a6a6"/><path d="M-4 1H4" stroke="white" stroke-width="2"/></g>
+<g id="catchToken" opacity="0"><rect x="-11" y="-14" width="22" height="28" rx="4" fill="#f9f9f9" stroke="#9b9b9b"/><text text-anchor="middle" y="4" font-size="14" fill="#7e7e7e">✦</text></g>
+<g id="biteMark" opacity="0"><text x="230" y="94" text-anchor="middle" fill="#595959" font-family="Georgia,serif" font-size="34">!</text></g>
+<g><path d="M128 278 L134 308 Q151 314 166 306 L171 278Z" fill="#f8f8f8" stroke="#9a9a9a" stroke-width="2"/><ellipse cx="150" cy="278" rx="22" ry="5" fill="#fdfdfd" stroke="#9a9a9a" stroke-width="2"/><path d="M129 282 Q122 309 150 312 Q171 312 172 282" fill="none" stroke="#9a9a9a" stroke-width="2"/></g>
+</svg></button>
+<div class="scene-note">when the ! appears,<br>tap to fish up<br>a little of my story<span>↙</span></div>
+<div class="scene-status" id="status">fishing… · 0 / 8 collected</div>
+<div class="catch-panel" id="catch" aria-live="polite" inert><div class="catch-label">reeled in · <span id="rarity"></span></div><div class="catch-text" id="fact"></div><div class="bucket" id="bucket"></div></div>
+</div>
+      </div>
+      <div class="scroll-note"><div class="scroll-line"></div>scroll to explore</div>
+    </section>
+
+
+<section id="work" class="weasel-feature shell" aria-labelledby="weasel-title">
+  <div class="weasel-heading"><div><p class="weasel-kicker">01 / the first app · a work in progress</p><h2 id="weasel-title">Weaszel.</h2></div><div><p class="weasel-intro">A curious little scout.<br>A bridge between websites and agents.</p><span class="weasel-sub">Website → callable MCP tools → Swagger</span></div></div>
+  <div id="weasel-story"><div class="weasel-fallback"><img src="assets/weaszel-graphite.png" alt="A graphite weasel navigating browser windows" width="2048" height="683"><h3>Follow the little scout.</h3><p>Point Weaszel at a page. It observes the page, accessibility tree, and forms; builds callable tools; and generates a Swagger reference. An agent can use those tools through the local adapter.</p><a href="https://weaszel-youtube-swagger.smammadov494.chatgpt.site" target="_blank" rel="noreferrer">Explore the YouTube Swagger ↗</a><p>Local adapter prototype. Live calls run on your computer.</p></div></div>
+</section>
+
+<section id="pumpads" class="pump-feature shell" aria-labelledby="pumpads-title">
+<div class="pump-heading"><div><p class="pump-kicker">02 / building a business</p><h2 id="pumpads-title">PumpAds AI.</h2><p class="pump-role">Co-founder · product &amp; engineering<br>November 2024 — August 2025</p></div><p class="pump-intro">I co-founded PumpAds AI with my partners to turn product ideas into creator-style video ads. We took it from a complex AI workflow to a business with paying customers.</p></div>
+<div id="pumpads-story"><div class="pump-gallery"><figure><img src="assets/pumpads-skincare.png" alt="Illustrative AI creator presenting skincare"><figcaption>01 / skincare</figcaption></figure><figure><img src="assets/pumpads-tumbler.png" alt="Illustrative AI creator presenting a travel tumbler"><figcaption>02 / everyday essentials</figcaption></figure><figure><img src="assets/pumpads-headphones.png" alt="Illustrative AI creator presenting headphones"><figcaption>03 / audio</figcaption></figure></div><p class="pump-example-note">Illustrative AI creator concepts · not customer campaigns</p><p>Product brief → script → voice and visuals → lip sync → finished ad.</p></div>
+<div class="pump-results" aria-label="Shared PumpAds company results"><div><strong>1,000+</strong><span>paying customers</span><small>within two months of launch</small></div><div><strong>$15K</strong><span>monthly revenue</span><small>within two months of launch</small></div><div><strong>10 → 2 min</strong><span>average generation time</span><small>after separating long-running AI work</small></div></div>
+<div class="pump-experience"><div><h3>More than a model call.</h3><p>With an eight-person team, we built a multimodal pipeline connecting script generation, voice cloning, image and video generation, lip sync, revoicing, and final FFmpeg assembly.</p><p>My experience spanned the product, backend, AI workflows, and the infrastructure needed to bring them together.</p></div><div><h3>Make it work as a business.</h3><p>We moved long-running jobs into independently scalable services, with queues and persistent job state. That kept n8n as a fast orchestration layer and supported bursts of 100 concurrent requests.</p><p>We also built a usage-credit ledger with reservations, reconciliation, and automatic refunds for failed generations, and secured $50K in platform credits to help manage early costs.</p></div></div><p class="pump-stack">PumpAds / 2xROAS, Inc. · multimodal AI · distributed jobs · n8n · FFmpeg · Replicate &amp; Cog</p>
+</section>
+
+<div class="journey shell">
+<aside class="astro-rail" aria-label="Astro’s guide">
+<div class="astro-guide">
+<button class="astro-toggle" id="astro-toggle" aria-label="Pause Astro’s scroll narration" aria-pressed="false"><svg class="astro-mini" viewBox="0 0 231 289" aria-hidden="true"><path d="M230.809 115.385V249.411C230.809 269.923 214.985 287.282 194.495 288.411C184.544 288.949 175.364 285.718 168.26 280C159.746 273.154 147.769 273.461 139.178 280.23C132.638 285.384 124.381 288.462 115.379 288.462C106.377 288.462 98.1451 285.384 91.6055 280.23C82.912 273.385 70.9353 273.385 62.2415 280.23C55.7532 285.334 47.598 288.411 38.7246 288.462C17.4132 288.615 0 270.667 0 249.359V115.385C0 51.6667 51.6756 0 115.404 0C179.134 0 230.809 51.6667 230.809 115.385Z" fill="url(#ghostGradient)"/><g class="astro-eyes"><ellipse cx="80" cy="120" rx="18" ry="28" fill="white"/><ellipse cx="151" cy="120" rx="18" ry="28" fill="white"/></g></svg><span>Astro<span class="astro-subtitle">a little company along the way</span></span></button>
+<div class="astro-bubble">
+<div class="astro-meta"><span id="chapter-label">01 / the beginning</span><button id="pause-guide" type="button">Pause</button></div>
+<p id="astro-speech">Hi, I’m Astro. I know a few things about Seymur. Scroll slowly; I’ll introduce you.</p>
+<div class="astro-steps" aria-label="Story chapters"></div>
+<button id="ask-astro" class="quiet-button" aria-expanded="false" aria-controls="astro-questions">ask me something ↗</button>
+</div>
+<div id="astro-questions" hidden>
+<form id="ask-form"><label for="question">What would you like to know?</label><div class="ask-row"><input id="question" maxlength="240" placeholder="How did he get into tech?" autocomplete="off"><button aria-label="Ask Astro" type="submit">↗</button></div></form>
+<div class="suggestions"><button type="button" data-question="What is his experience?">experience</button><button type="button" data-question="What are his skills?">skills</button><button type="button" data-question="What are his hobbies?">off the clock</button></div>
+<p id="astro-answer"></p><p id="answer-source"></p>
+</div>
+<p class="guide-footnote" id="guide-state">I’ll follow your scroll.</p>
+</div></aside>
+<div class="story-content">
+<section class="story-chapter" id="beginnings" data-chapter="background">
+<div class="chapter-number">01 / the beginning</div><h2>A curious start.</h2>
+<p>Born in Baku. Raised in Stamford. Around computers from an early age.</p>
+<p>Seymur moved from Azerbaijan to the United States at nine. Games and a curiosity for how things work eventually led him toward building software.</p>
+<a class="chapter-next" href="#the-pivot">a different route into tech ↓</a>
+</section>
+<section class="story-chapter" id="the-pivot" data-chapter="education">
+<div class="chapter-number">02 / the unexpected turn</div><h2>Biology, then building.</h2>
+<p>A degree in Biology from Sacred Heart University. A career built in software.</p>
+<p>That transition reflects the same drive behind his projects today: learn the system, understand the problem, and make something useful.</p>
+</section>
+<section class="story-chapter" id="experience" data-chapter="experience">
+<div class="chapter-number">03 / putting it to work</div><h2>From engineer to tech lead.</h2>
+<div class="role-row"><span>JobTarget</span><span>2020 — 2025</span></div>
+<p>Full-stack compliance products, AWS infrastructure, partner relationships, and mentoring engineers. Seymur grew from Software Engineer to Tech Lead, owning products from planning through delivery.</p>
+<div class="outcomes"><span><strong>24%</strong>reduction in churn</span><span><strong>40%</strong>faster audit responses</span></div>
+</section>
+<section class="story-chapter" id="startup" data-chapter="startup">
+<div class="chapter-number">04 / building from zero</div><h2>An entrepreneurial streak.</h2>
+<p>As a co-founder and engineer at InstantCreatives, Seymur worked on the product, its AI automation, and the decisions behind the experience.</p>
+<p>The platform reached more than 1,000 users in its first 48 hours.</p><p>He also co-founded PumpAds AI, building creator-style video ad generation with his partners. <a href="#pumpads">Explore the PumpAds story above ↗</a></p>
+</section>
+    <section id="more-work" class="story-chapter" data-chapter="projects">
+      <div class="section-head reveal"><div><div class="eyebrow">Selected builds · 2025—26</div><div class="chapter-number">05 / a few things I’ve built</div><h2>A few more things.</h2></div></div>
+      <div class="projects">
+        <article class="project reveal">
+          <div class="visual"><img src="assets/cosmocache-graphite.png" alt="Graphite concept illustration of an indexed memory archive connected by routing paths" width="1536" height="512" loading="lazy"></div>
+          <div class="project-info"><div><div class="project-num">03 · AI INFRASTRUCTURE</div><h3>CosmoCache</h3><p>A persistent knowledge universe that gives coding agents cross-session memory—2.3× cheaper at 100 domains while retaining accuracy.</p><div class="tags"><span class="tag">Agent memory</span><span class="tag">Python</span><span class="tag">Evaluation</span></div></div><a class="project-link" href="https://github.com/smammadov1994/CosmoCache" target="_blank" rel="noreferrer">Explore the universe <b>↗</b></a></div>
+        </article>
+        <article class="project reveal">
+          <div class="visual"><img src="assets/stickstorm-graphite.png" alt="Graphite concept illustration of a multi-level multiplayer arena with bridges and cover" width="1536" height="512" loading="lazy"></div>
+          <div class="project-info"><div><div class="project-num">04 · REAL-TIME SYSTEMS</div><h3>StickStorm</h3><p>A browser-native multiplayer arena shooter with 50 weapons, 14 maps, authoritative 30 Hz simulation, bots, progression, and 101 passing tests.</p><div class="tags"><span class="tag">Three.js</span><span class="tag">WebSockets</span><span class="tag">Node.js</span></div></div><a class="project-link" href="https://github.com/smammadov1994/StickStorm" target="_blank" rel="noreferrer">Enter the storm <b>↗</b></a></div>
+        </article>
+        <article class="project reveal">
+          <div class="visual"><img src="assets/component-lab-graphite.png" alt="Graphite concept illustration of modular interfaces and component blueprints" width="1536" height="512" loading="lazy"></div>
+          <div class="project-info"><div><div class="project-num">05 · DEVELOPER TOOLS</div><h3>LLM Component Generator</h3><p>A multi-model workspace for generating the same React component across leading LLMs, comparing code and previews, and choosing the best output.</p><div class="tags"><span class="tag">React</span><span class="tag">Multi-LLM</span><span class="tag">Product UI</span></div></div><a class="project-link" href="https://github.com/smammadov1994/llm-component-generator" target="_blank" rel="noreferrer">View source <b>↗</b></a></div>
+        </article>
+
+      </div>
+    </section>
+
+
+<section id="about" class="story-chapter" data-chapter="hobbies"><div class="chapter-number">06 / beyond the keyboard</div><h2>Still a little playful.</h2><p>Cooking, soccer, fitness, and games. Growing up, the favorites included Halo, Gears of War, God of War, and RuneScape.</p><p>The curiosity doesn’t stop when the laptop closes.</p></section>
+</div></div>
+  </main><div class="sr-only" id="astro-announcement" role="status" aria-live="polite" aria-atomic="true"></div>
+  <footer class="shell" data-chapter="contact"><div class="eyebrow">Have an interesting problem?</div><h2 class="hello">say hello.</h2><a class="email" href="mailto:smammadov494@gmail.com">smammadov494@gmail.com ↗</a><div class="footer-row"><span>© 2026 Seymur Mammadov</span><span>Designed with care · coded with curiosity</span><span><a href="https://github.com/smammadov1994">GitHub</a></span></div></footer>
+  <script>
+    const facts=[["common", "Seymur was born in Baku, Azerbaijan and moved to the United States at age nine."], ["common", "He grew up in Stamford, Connecticut, around computers and games."], ["uncommon", "He earned a Biology degree at Sacred Heart University before moving into software engineering."], ["uncommon", "He worked at JobTarget as a Software Engineer, then Tech Lead, from 2020 to 2025."], ["rare", "At JobTarget, he built full-stack features that reduced churn by 24%."], ["rare", "He co-founded InstantCreatives, an AI startup that reached 1,000+ users in 48 hours."], ["uncommon", "Away from code, he enjoys cooking, fitness, soccer, and games."], ["rare", "He speaks English, Turkish, and Russian."]];
+
+const $=s=>document.querySelector(s), fish=$('#fish'), panel=$('#catch'), bucket=$('#bucket'), status=$('#status');
+let caught=[],state='waiting',since=performance.now(),deadline=since+2200,choice=0;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function showFact(i){$('#fact').textContent=facts[i][1];$('#rarity').textContent=facts[i][0];panel.classList.add('show');panel.inert=false}
+function renderBucket(){bucket.replaceChildren();facts.forEach((f,i)=>{const b=document.createElement('button');b.className='chip'+(caught.includes(i)?' filled':'');b.textContent=caught.includes(i)?'◆':'·';b.disabled=!caught.includes(i);b.setAttribute('aria-label',caught.includes(i)?'Read collected fact '+(i+1):'Fact not collected');b.onclick=()=>showFact(i);bucket.append(b)})}
+renderBucket();
+fish.onclick=()=>{if(state==='bite'){choice=facts.map((_,i)=>i).find(i=>!caught.includes(i));state='reeling';since=performance.now();panel.classList.remove('show');panel.inert=true;fish.setAttribute('aria-label','Reeling in a catch')}else if(state==='caught'&&caught.length===8){showFact(caught[0])}};
+function frame(t){
+const age=t-since;
+if(state==='waiting'&&t>=deadline){state='bite';since=t;fish.setAttribute('aria-label','A bite! Click or press Enter to reel in')}
+if(state==='reeling'&&age>1500){caught.push(choice);renderBucket();showFact(choice);state='caught';since=t;status.textContent=caught.length+' / 8 collected';fish.setAttribute('aria-label','Catch collected')}
+if(state==='caught'&&age>5500&&caught.length<8){panel.classList.remove('show');panel.inert=true;state='waiting';since=t;deadline=t+2500+Math.random()*1800;status.textContent='fishing… · '+caught.length+' / 8 collected';fish.setAttribute('aria-label','Astro is fishing. Wait for a bite')}
+let lift=0,a=0,dy=reduce?0:Math.sin(t/1000)*1.5;
+let bx=368,by=310+(reduce?0:Math.sin(t/420)*1.5),tokenOpacity=0;
+if(state==='bite'&&!reduce){by+=Math.sin(t/95)*4}
+if(state==='reeling'){
+const q=Math.min(1,age/950),ease=1-Math.pow(1-q,3);
+a=-32*ease;dy=-8*Math.sin(q*Math.PI);
+bx=368-100*ease;by=310-175*ease;tokenOpacity=1;
+if(age>950){const z=Math.min(1,(age-950)/550);bx=268+(150-268)*z;by=135+(278-135)*z-70*Math.sin(z*Math.PI);tokenOpacity=1-z*.4}
+}
+const rad=a*Math.PI/180,tx=261+118*Math.cos(rad)+52*Math.sin(rad),ty=224+118*Math.sin(rad)-52*Math.cos(rad)+dy;
+$('#ghostActor').setAttribute('transform','translate(0 '+dy+')');
+$('#rodGroup').setAttribute('transform','rotate('+a+' 261 224)');
+$('#fishingLine').setAttribute('d','M'+tx+' '+ty+' Q'+(tx+3)+' '+((ty+by)/2)+' '+bx+' '+by);
+$('#fishingLine').setAttribute('opacity',state==='reeling'&&age>950?0:1);
+$('#bobber').setAttribute('transform','translate('+bx+' '+by+')');
+$('#bobber').setAttribute('opacity',state==='reeling'?0:1);
+$('#catchToken').setAttribute('opacity',tokenOpacity);$('#catchToken').setAttribute('transform','translate('+bx+' '+by+') rotate('+(state==='reeling'?Math.sin(age/140)*12:0)+')');
+$('#biteMark').setAttribute('opacity',state==='bite'?1:0);
+$('#biteMark').setAttribute('transform','translate(0 '+(state==='bite'&&!reduce?Math.sin(t/100)*3:0)+')');
+const blink=reduce?28:(t%3800>3620?3:28);document.querySelectorAll('#eyes ellipse').forEach(e=>e.setAttribute('ry',blink));
+for(let i=1;i<3;i++){const k=reduce?i*.28:((t/2200+i*.5)%1);$('#ripple'+i).setAttribute('rx',20+k*48);$('#ripple'+i).setAttribute('ry',4+k*10);$('#ripple'+i).setAttribute('opacity',1-k)}
+requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+</script><script type="module" src="astro-guide.js"></script><script type="module" src="assets/weasel-story.js"></script><script type="module" src="assets/pumpads-story.js"></script></body></html>

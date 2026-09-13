@@ -1,0 +1,43 @@
+.weasel-feature{padding:45px 0 0;scroll-margin-top:20px;margin-top:25px}
+.weasel-heading{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;padding-bottom:28px;border-bottom:1px solid #c9cbc4}
+.weasel-kicker{font-size:20px;color:#6d746b;letter-spacing:.02em;margin:0 0 5px}
+.weasel-heading h2{font-size:88px;line-height:1.05;font-weight:500;margin:0;letter-spacing:-.03em}
+.weasel-heading p.weasel-intro{font-size:29px;line-height:1.4;margin:0 0 5px;color:#5c6658}
+.weasel-sub{font-size:21px;color:#697361;display:block;margin-top:10px}
+.weasel-scroll{height:420svh;position:relative;padding:0}
+.weasel-sticky{position:sticky;top:12px;padding-top:20px}
+.weasel-caption{min-height:143px;max-width:900px;padding:0 2px 17px}
+.weasel-take{color:#717b69;font-size:18px}
+.weasel-caption h3{font-size:38px;line-height:1.15;font-weight:500;margin:5px 0 8px;letter-spacing:-.01em}
+.weasel-caption p{font-size:23px;line-height:1.4;color:#687160;margin:0;max-width:830px}
+.weasel-cinema{width:100%;max-width:calc((100svh - 335px) * 1.8462);min-width:500px;margin:auto;border:1px solid #babeb4;border-radius:12px;overflow:hidden;box-shadow:0 14px 35px #41463809;isolation:isolate;background:#eeedeb}
+.weasel-transport{display:flex;align-items:center;gap:24px;padding:12px 0 2px;color:#56614e}
+.weasel-play{min-width:134px;background:none;border:0;color:inherit;padding:5px 0;font:23px 'Caveat',cursive;text-align:left;cursor:pointer}
+.weasel-scrub{flex:1;display:flex;align-items:center}.weasel-scrub input{width:100%;height:26px;accent-color:#626f56;cursor:pointer}
+.weasel-time{font-size:19px;min-width:75px;text-align:right;font-variant-numeric:tabular-nums}
+.weasel-chapters{height:auto;display:flex;align-items:stretch;justify-content:space-between;gap:12px;padding:3px 0}
+.weasel-chapters button{flex:1;min-width:0;padding:10px 5px;border:0;border-top:2px solid #cdd0c8;background:none;color:#737c6c;font:23px/1.2 'Caveat',cursive;cursor:pointer;text-align:left}
+.weasel-chapters button span{font-size:16px;display:block;margin-bottom:4px;color:#7b8573}
+.weasel-chapters button.active{border-color:#525e48;color:#343e2d}
+.weasel-scroll-hint{font-size:19px;text-align:center;color:#75806c;margin:2px 0 0}
+.weasel-after{padding:38px 0 65px;border-bottom:1px solid #c9cbc4}
+.weasel-after>p:first-child{font-size:35px;line-height:1.25;margin:0 0 20px}
+.weasel-actions{display:flex;flex-wrap:wrap;gap:18px 34px;align-items:center}
+.weasel-actions a{font-size:25px;line-height:1.4;border-bottom:1px solid #818d77;padding:5px 0;color:#4d5b43}
+.weasel-scope{font-size:20px;line-height:1.5;color:#737c6a;margin:22px 0 8px;max-width:670px}
+.weasel-motion{font:20px 'Caveat',cursive;color:#65735a;cursor:pointer;border:0;border-bottom:1px dashed #a1ac96;background:none;padding:5px 0}.weasel-motion:disabled{cursor:default;border:0}
+.weasel-static{height:auto}.weasel-static .weasel-sticky{position:relative;top:0}.weasel-static-art img{width:100%;display:block;mix-blend-mode:multiply}
+.weasel-static-steps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:24px}.weasel-static-steps li{display:flex;gap:22px}.weasel-static-steps li>span{font-size:25px;color:#798570}.weasel-static-steps h4{font-size:31px;line-height:1.25;margin:0 0 6px;font-weight:500}.weasel-static-steps p{font-size:24px;line-height:1.5;margin:0;color:#66715e}
+.weasel-fallback{padding:30px 0}.weasel-fallback img{width:100%;display:block;mix-blend-mode:multiply}.weasel-fallback h3{font-size:33px;margin-bottom:10px}.weasel-fallback p{font-size:25px;line-height:1.5}.weasel-fallback a{font-size:25px;text-decoration:underline}
+/* The pencil stays neutral; a faint olive cast makes the field notes feel lived in. */
+.weasel-feature{filter:grayscale(1)}
+@media(min-width:1200px){.weasel-feature{width:1060px}}
+@media(max-width:650px){
+ .weasel-feature{padding-top:30px;margin-top:0}.weasel-heading{grid-template-columns:1fr;gap:12px;padding-bottom:22px}.weasel-heading h2{font-size:66px}.weasel-heading p.weasel-intro{font-size:25px;max-width:360px}.weasel-sub{font-size:19px}.weasel-kicker{font-size:19px}
+ .weasel-scroll{height:390svh}.weasel-sticky{top:5px;padding-top:13px}.weasel-caption{min-height:155px;padding-bottom:13px}.weasel-caption h3{font-size:30px;line-height:1.13}.weasel-caption p{font-size:21px;line-height:1.32}.weasel-take{font-size:17px}
+ .weasel-cinema{max-width:calc((100svh - 355px) * .894);min-width:0;border-radius:8px}
+ .weasel-transport{gap:12px;padding-top:6px}.weasel-play{min-width:106px;font-size:21px}.weasel-time{font-size:17px;min-width:57px}.weasel-chapters{gap:6px}.weasel-chapters button{font-size:18px;padding:8px 0;min-height:62px;line-height:1.12}.weasel-chapters button span{font-size:15px}.weasel-scroll-hint{font-size:17px;margin:0}
+ .weasel-after{padding:25px 0 50px}.weasel-after>p:first-child{font-size:30px}.weasel-actions{gap:12px}.weasel-actions a{font-size:23px}.weasel-scope{font-size:20px}.weasel-static{height:auto}
+}
+@media(max-height:620px) and (min-width:651px){.weasel-scroll{height:auto}.weasel-sticky{position:relative}.weasel-cinema{max-width:760px;min-width:0}.weasel-caption{min-height:120px}.weasel-scroll-hint{visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.weasel-scroll{height:auto}.weasel-sticky{position:relative;top:0}}
