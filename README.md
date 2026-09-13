@@ -48,11 +48,15 @@ The pipeline combined script generation, voice cloning, image and video generati
 
 ## SwipeBuilder — a home for good ideas
 
-[SwipeBuilder](https://swipebuilder.io/) follows PumpAds as the third featured project. A graphite research desk and a scroll-driven animated paper storyboard follow the workflow from collecting ad references to organizing a board, reading the creative, and developing new copy.
+[SwipeBuilder](https://swipebuilder.io/) follows PumpAds as the third featured project. A scroll-driven animated paper storyboard follows the workflow from collecting ad references to organizing a board, reading the creative, and developing new copy.
 
-![Ad clippings becoming an inspiration board and a handwritten script](dist/assets/swipebuilder-graphite.png)
+<p align="center">
+  <img src="dist/assets/swipebuilder-food-creator.png" width="180" alt="Fictional food creator at a neighborhood noodle spot">
+  <img src="dist/assets/swipebuilder-city-creator.png" width="180" alt="Fictional city guide sharing a side street">
+  <img src="dist/assets/swipebuilder-coast-creator.png" width="180" alt="Fictional travel creator overlooking a harbor">
+</p>
 
-The 24-second Remotion film supports scroll scrubbing, chapter selection, play/pause, a timeline slider, and a reduced-motion reading mode. The storyboard uses three original graphite creative concepts made for SwipeBuilder: a morning coffee ritual, canvas sneakers, and a vintage camera. Product capabilities are described from [SwipeBuilder’s website](https://swipebuilder.io/).
+The 24-second Remotion film supports scroll scrubbing, chapter selection, play/pause, a timeline slider, and a reduced-motion reading mode. The storyboard uses three original monochrome creator portraits made for SwipeBuilder: a food diary, a city walk, and a coastal location diary. These fictional examples appear in vertical video cards with captions; the section opens directly into the animation without a banner. Product capabilities are described from [SwipeBuilder’s website](https://swipebuilder.io/).
 
 Seymur co-founded SwipeBuilder and led backend and AI engineering (December 2023–August 2025). His work covered core APIs, billing, collaboration, ingestion, hybrid semantic search over 100K+ transcribed ads, and a production RAG pipeline for new scripts. Asynchronous AWS workflows, retries, job state, budget limits, and query caching supported the product behind the scenes.
 

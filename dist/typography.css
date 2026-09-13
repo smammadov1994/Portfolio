@@ -48,7 +48,7 @@ h1, h2, .brand, .scene-note, .hello { font-family: var(--font-display); }
 .weasel-chapters button span { font-family: var(--font-body); font-size: 11px; }
 .weasel-time, .pump-controls > span, .swipe-controls > span { font-family: var(--font-body); font-size: 12px; font-variant-numeric: tabular-nums; }
 .weasel-motion, .pump-read-toggle, .swipe-read-toggle { font-family: var(--font-body); font-size: 13px; line-height: 1.7; }
-.weasel-scroll-hint, .pump-hint, .swipe-hint, .swipe-art figcaption { font-family: var(--font-display); }
+.weasel-scroll-hint, .pump-hint, .swipe-hint { font-family: var(--font-display); }
 .weasel-static-steps p, .pump-readable p, .swipe-readable p { font-family: var(--font-body); font-size: 17px; line-height: 1.8; color: var(--text-body); }
 .weasel-static-steps li > span { font-family: var(--font-body); font-size: 15px; }
 .weasel-after > p:first-child { font-family: var(--font-display); }
