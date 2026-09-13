@@ -20,28 +20,46 @@ const PAPER = '#eeedeb';
 const smooth=x=>{x=clamp(x);return x*x*(3-2*x);};
 const between=(f,a,b)=>smooth((f-a)/(b-a));
 const lerp=(a,b,t)=>a+(b-a)*t;
+// Crop in source pixels, keeping a fixed scale instead of stretching wider poses.
+// The sniffing nose and landing tail cross grid lines; the last cell contains
+// the previous pose's tail. These bounds include each complete actor only.
+const ACTING_SHEET={width:1774,height:887,cell:443.5};
+const ACTING_CROPS=[
+ [0,0,443.5,443.5],[443.5,0,443.5,443.5],
+ [887,0,490,443.5],[1357,0,417,443.5],
+ [0,443.5,443.5,443.5],[443.5,443.5,443.5,443.5],
+ [887,443.5,461,443.5],[1355,443.5,419,443.5],
+];
+const cardTop=compact=>compact?230:225;
+// Contact points measured on the sheet: landing feet and seated haunch.
+const LANDING_CONTACT=.72,PERCH_CONTACT=.56;
+const perchedY=(compact,size)=>cardTop(compact)+size*(.84-PERCH_CONTACT);
+const landedY=(compact,size)=>cardTop(compact)+size*(.84-LANDING_CONTACT);
 export function actorAt(frame,compact=false){
  const floor=compact?790:590,home=compact?215:230,investigate=compact?270:300;
  let actor={x:home,y:floor,size:compact?245:320,pose:0,rotation:0,sx:1,sy:1,run:false};
  if(frame<72){const t=between(frame,0,72);actor.x=lerp(-130,home,t);actor.run=true;actor.y=floor-Math.sin(frame*.58)*3;}
  else if(frame<96){const t=between(frame,72,96);actor.pose=0;actor.x=home+Math.sin(t*Math.PI)*14;actor.sx=1+.07*Math.sin(t*Math.PI);actor.sy=1-.05*Math.sin(t*Math.PI);}
- else if(frame<180){actor.pose=frame<126?0:1;actor.rotation=Math.sin(between(frame,128,155)*Math.PI)*-4;}
- else if(frame<245){actor.pose=2;actor.x=lerp(home,investigate,between(frame,180,230));actor.y=floor+Math.sin(between(frame,225,245)*Math.PI)*6;}
- else if(frame<330){actor.pose=3;actor.x=investigate;actor.y=floor-8*Math.sin(between(frame,250,275)*Math.PI);}
+ else if(frame<180){actor.pose=frame<126?0:1;actor.rotation=Math.sin(between(frame,128,155)*Math.PI)*-4;actor.x=lerp(home,investigate,between(frame,155,180));}
+ else if(frame<245){actor.pose=2;actor.x=investigate;actor.y=floor+Math.sin(between(frame,225,245)*Math.PI)*6;}
+ else if(frame<330){actor.pose=3;actor.x=compact?investigate:investigate+60;actor.y=floor-8*Math.sin(between(frame,250,275)*Math.PI);}
  else if(frame<370){actor.pose=1;actor.x=investigate;}
- else if(frame<470){actor.pose=3;actor.x=investigate;actor.rotation=-3*Math.sin(between(frame,390,425)*Math.PI);actor.y=floor-6*Math.sin(between(frame,390,425)*Math.PI);}
+ else if(frame<470){actor.pose=3;actor.x=compact?investigate:investigate+60;actor.rotation=-3*Math.sin(between(frame,390,425)*Math.PI);actor.y=floor-6*Math.sin(between(frame,390,425)*Math.PI);}
  else if(frame<510){actor.pose=0;actor.x=investigate;}
  else if(frame<578){actor.pose=4;actor.x=lerp(investigate,compact?380:650,between(frame,510,570));actor.size=lerp(compact?245:320,compact?230:260,between(frame,510,560));const anticipation=Math.sin(between(frame,550,578)*Math.PI);actor.sy=1-.1*anticipation;actor.sx=1+.06*anticipation;actor.y=floor+20*between(frame,510,550)+9*anticipation;}
- else if(frame<654){const t=clamp((frame-578)/76),endX=compact?615:1010;actor.pose=5;actor.x=lerp(compact?380:650,endX,t);actor.y=lerp(floor+20,275,t)-Math.sin(t*Math.PI)*115;actor.size=lerp(compact?230:260,compact?210:235,t);actor.rotation=lerp(-14,8,t);}
- else if(frame<680){const t=between(frame,654,680);actor.pose=6;actor.x=compact?615:1010;actor.y=275+Math.sin(t*Math.PI)*10;actor.size=compact?210:235;actor.sy=1-.1*Math.sin(t*Math.PI);}
- else{actor.pose=7;actor.x=compact?615:1010;actor.y=275;actor.size=compact?210:235;actor.rotation=frame<720?-2*Math.sin(between(frame,680,720)*Math.PI):0;}
+ else if(frame<654){const t=clamp((frame-578)/76),endX=compact?615:1010;actor.pose=5;actor.x=lerp(compact?380:650,endX,t);actor.y=lerp(floor+20,landedY(compact,compact?210:235),t)-Math.sin(t*Math.PI)*115;actor.size=lerp(compact?230:260,compact?210:235,t);actor.rotation=lerp(-14,8,t);}
+ else if(frame<680){const t=between(frame,654,680);actor.pose=6;actor.x=compact?615:1010;actor.size=compact?210:235;actor.y=landedY(compact,actor.size);actor.sy=1-.1*Math.sin(t*Math.PI);actor.sx=1+.04*Math.sin(t*Math.PI);}
+ else{actor.pose=7;actor.x=compact?615:1010;actor.size=compact?210:235;actor.y=perchedY(compact,actor.size);actor.rotation=frame<720?-2*Math.sin(between(frame,680,720)*Math.PI):0;}
  return actor;
 }
 function Actor({frame,compact}){
- const a=actorAt(frame,compact);const cell=a.run?Math.floor(frame/3)%8:a.pose;
- // Both sheets use equal 4×2 cells; white acting-sheet pixels blend into the paper.
- const airborne=frame>=578&&frame<680;
- return <AbsoluteFill data-actor-layer={airborne?'behind-card-jump':frame>=680?'perched':'behind-card'} style={{zIndex:frame>=680?5:airborne?4:1,pointerEvents:'none',mixBlendMode:a.run?'normal':'multiply',clipPath:airborne?`inset(0 0 calc(100% - ${compact?230:225}px) 0)`:undefined}}><div data-weasel-actor="true" style={{position:'absolute',left:a.x-a.size/2,top:a.y-a.size*.84,width:a.size,height:a.size,backgroundImage:`url(/assets/${a.run?'weasel-run.png':'weasel-acting.png'})`,backgroundSize:'400% 200%',backgroundPosition:`${cell%4/3*100}% ${Math.floor(cell/4)*100}%`,backgroundRepeat:'no-repeat',clipPath:!a.run&&cell===3?'inset(0 0 0 6%)':undefined,transform:`rotate(${a.rotation}deg) scale(${a.sx},${a.sy})`,transformOrigin:'50% 70%'}}/></AbsoluteFill>;
+ const a=actorAt(frame,compact),cell=a.run?Math.floor(frame/3)%8:a.pose;
+ const airborne=frame>=578&&frame<654,landed=frame>=654;
+ const scale=a.size/ACTING_SHEET.cell;
+ const crop=a.run?[cell%4*ACTING_SHEET.cell,Math.floor(cell/4)*ACTING_SHEET.cell,ACTING_SHEET.cell,ACTING_SHEET.cell]:ACTING_CROPS[cell];
+ const insetX=(crop[0]-cell%4*ACTING_SHEET.cell)*scale;
+ const origin=a.pose===7&&!a.run?`${a.size*.61-insetX}px ${a.size*PERCH_CONTACT}px`:a.pose===6&&!a.run?`${a.size*.5-insetX}px ${a.size*LANDING_CONTACT}px`:`${a.size*.5-insetX}px ${a.size*.70}px`;
+ return <AbsoluteFill data-actor-layer={landed?'perched':airborne?'behind-card-jump':'behind-card'} style={{zIndex:landed?5:airborne?4:1,pointerEvents:'none',mixBlendMode:a.run?'normal':'multiply',clipPath:airborne?`inset(0 0 calc(100% - ${cardTop(compact)}px) 0)`:undefined}}><div data-weasel-actor="true" data-pose={a.run?'run':a.pose} style={{position:'absolute',left:a.x-a.size/2+insetX,top:a.y-a.size*.84,width:crop[2]*scale,height:crop[3]*scale,backgroundImage:`url(/assets/${a.run?'weasel-run.png':'weasel-acting.png'})`,backgroundSize:`${ACTING_SHEET.width*scale}px ${ACTING_SHEET.height*scale}px`,backgroundPosition:`${-crop[0]*scale}px ${-crop[1]*scale}px`,backgroundRepeat:'no-repeat',transform:`rotate(${a.rotation}deg) scale(${a.sx},${a.sy})`,transformOrigin:origin}}/></AbsoluteFill>;
 }
 function Window({children,left,top,width,scene,frame}){
  return <div style={{position:'absolute',left,top,width,border:'1.5px solid #999a96',borderRadius:14,background:'#f8f7f3',zIndex:3,boxShadow:'7px 12px 0 #393c3608',overflow:'hidden',transform:`translateY(${frame<72?(1-between(frame,0,72))*10:0}px)`}}><div style={{height:42,borderBottom:'1px solid #cdcec7',display:'flex',alignItems:'center',justifyContent:'space-between',padding:'0 20px',fontSize:19,color:'#74766e'}}><span style={{fontSize:12,letterSpacing:5}}>● ● ●</span><span>{['a new place','a closer look','a useful tool','the open reference','your move'][scene]}</span></div><div style={{padding:24}}>{children}</div></div>;

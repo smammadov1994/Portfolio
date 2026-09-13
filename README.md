@@ -52,7 +52,7 @@ The pipeline combined script generation, voice cloning, image and video generati
 
 ![Ad clippings becoming an inspiration board and a handwritten script](dist/assets/swipebuilder-graphite.png)
 
-The 24-second Remotion film supports scroll scrubbing, chapter selection, play/pause, a timeline slider, and a reduced-motion reading mode. The storyboard uses illustrative creative examples. Product capabilities are described from [SwipeBuilder’s website](https://swipebuilder.io/).
+The 24-second Remotion film supports scroll scrubbing, chapter selection, play/pause, a timeline slider, and a reduced-motion reading mode. The storyboard uses three original graphite creative concepts made for SwipeBuilder: a morning coffee ritual, canvas sneakers, and a vintage camera. Product capabilities are described from [SwipeBuilder’s website](https://swipebuilder.io/).
 
 Seymur co-founded SwipeBuilder and led backend and AI engineering (December 2023–August 2025). His work covered core APIs, billing, collaboration, ingestion, hybrid semantic search over 100K+ transcribed ads, and a production RAG pipeline for new scripts. Asynchronous AWS workflows, retries, job state, budget limits, and query caching supported the product behind the scenes.
 

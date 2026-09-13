@@ -11,9 +11,9 @@ export const chapters=[
  {name:'Rewrite',title:'Make the next story yours.',copy:'Retrieved examples meet a new product, offer, and audience. A grounded first draft begins to take shape.'},
 ];
 const references=[
- {image:'pumpads-tumbler.png',name:'The morning ritual',tag:'everyday essentials'},
- {image:'pumpads-skincare.png',name:'A moment for yourself',tag:'little daily rituals'},
- {image:'pumpads-headphones.png',name:'Room for your sound',tag:'a different perspective'},
+ {image:'swipebuilder-coffee.png',name:'The morning ritual',tag:'everyday essentials'},
+ {image:'swipebuilder-sneakers.png',name:'One step outside',tag:'a fresh start'},
+ {image:'swipebuilder-camera.png',name:'A new angle',tag:'a little discovery'},
 ];
 const clamp=x=>Math.max(0,Math.min(1,x));
 const ease=x=>{x=clamp(x);return x*x*(3-2*x)};
@@ -21,7 +21,7 @@ const mix=(a,b,t)=>a+(b-a)*t;
 function PaperCard({item,index,width,height}){
  return <div style={{width,height,padding:10,background:'#f8f7f2',border:'1px solid #b8b9b1',boxShadow:'3px 10px 18px #383b2f20',position:'relative'}}>
   <div style={{position:'absolute',width:54,height:19,left:'calc(50% - 27px)',top:-9,zIndex:1,background:'#d6d4c8bb',border:'1px solid #b4b2a655',transform:'rotate(-5deg)'}}/>
-  <Img src={`/assets/${item.image}`} alt={`Illustrative creative reference: ${item.name}`} style={{width:'100%',height:height-100,display:'block',objectFit:'cover',objectPosition:'50% 38%',filter:'grayscale(1)'}}/>
+  <Img src={`/assets/${item.image}`} alt={`Illustrative creative reference: ${item.name}`} style={{width:'100%',height:height-100,display:'block',objectFit:'contain',background:'#ebe9e3',filter:'grayscale(1)'}}/>
   <div style={{padding:'12px 8px 0'}}><div style={{fontSize:19,color:'#777b71'}}>0{index+1} / {item.tag}</div><div style={{fontSize:30,marginTop:4,lineHeight:1.1}}>{item.name}</div></div>
  </div>;
 }

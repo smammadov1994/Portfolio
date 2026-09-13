@@ -3,7 +3,7 @@
 - Asset: `dist/assets/swipebuilder-graphite.png`
 - Method: built-in image generation tool, created for this portfolio.
 - Treatment in the page: grayscale paper illustration with multiply blending and soft CSS edge masks.
-- The animation reuses the portfolio's illustrative PumpAds creator assets as example ad references; they are not customer campaigns.
+- The animation uses three original graphite illustrations created specifically for SwipeBuilder: `dist/assets/swipebuilder-coffee.png`, `dist/assets/swipebuilder-sneakers.png`, and `dist/assets/swipebuilder-camera.png`. These are fictional creative concepts, not actual customer campaigns.
 
 ## Generation prompt
 
@@ -12,3 +12,20 @@ Use case: illustration-story. Create a new high-quality wide landscape graphite 
 ## Content reference
 
 Product capabilities were checked against [SwipeBuilder](https://swipebuilder.io/) on September 13, 2026. Seymur confirmed the role and contributions used in the portfolio. The stated revenue and paying-customer figures describe the company's peak, not current performance.
+
+
+## Original animated creative concepts
+
+Created with the built-in image generation tool. Each prompt produces one portrait image.
+
+### coffee
+
+Create a new standalone portrait editorial illustration for a paper-and-pencil portfolio's SwipeBuilder animation. Aspect ratio 2:3. Detailed realistic graphite pencil drawing, rich fine crosshatching and soft paper texture, restrained warm gray monochrome, no color. A beautiful conceptual product advertising photograph translated into a meticulous pencil sketch. Main object fills 65% of frame and remains fully visible with generous margin; pleasing visual depth, gentle daylight, no visible border. No words, labels, logos, people, hands, watermarks, frames, or UI. This is a fictional creative concept, not an actual campaign. Subject: a sculptural ceramic pour-over coffee dripper over a small rounded mug on a wooden kitchen counter. Thin steam rises softly, a folded linen cloth and scattered coffee beans nearby. Quiet morning window light, blurred plant silhouette in the distant background. Intimate everyday ritual, angled three-quarter view.
+
+### sneakers
+
+Create a new standalone portrait editorial illustration for a paper-and-pencil portfolio's SwipeBuilder animation. Aspect ratio 2:3. Detailed realistic graphite pencil drawing, rich fine crosshatching and soft paper texture, restrained warm gray monochrome, no color. A beautiful conceptual product advertising photograph translated into a meticulous pencil sketch. Main object fills 65% of frame and remains fully visible with generous margin; pleasing visual depth, gentle daylight, no visible border. No words, labels, logos, people, hands, watermarks, frames, or UI. This is a fictional creative concept, not an actual campaign. Subject: a pair of beautifully detailed unbranded canvas walking sneakers, one resting naturally on its side and its shoelaces flowing across a sunlit entryway floor. A hint of a leafy plant and open doorway in the soft background. A small moment before heading out, grounded, tactile, charming.
+
+### camera
+
+Create a new standalone portrait editorial illustration for a paper-and-pencil portfolio's SwipeBuilder animation. Aspect ratio 2:3. Detailed realistic graphite pencil drawing, rich fine crosshatching and soft paper texture, restrained warm gray monochrome, no color. A beautiful conceptual product advertising photograph translated into a meticulous pencil sketch. Main object fills 65% of frame and remains fully visible with generous margin; pleasing visual depth, gentle daylight, no visible border. No words, labels, logos, people, hands, watermarks, frames, or UI. This is a fictional creative concept, not an actual campaign. Subject: an unbranded vintage rangefinder camera with a fabric strap resting across a folded paper map on a stone windowsill. An out-of-focus mountain landscape beyond the window. Careful etched lens details, tactile woven strap, quiet sense of discovery. No readable text on the map.
