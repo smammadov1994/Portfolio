@@ -7,7 +7,7 @@ const attr=(id,key,value)=>nodes[id].setAttribute(key,String(value));
 const opacity=(id,value)=>attr(id,'opacity',value);
 const originalNote=note.innerHTML,motion=matchMedia('(prefers-reduced-motion: reduce)');
 let reduced=motion.matches,caught=[],state='waiting',since=0,deadline=2200,choice=0,now=0,lastTime=null,raf=0,visible=true,moment=null,nextSunrise=11000,portraitReady=false,lastStaticFrame=-1;
-const portrait=new Image();portrait.src='assets/seymur-fishing-full-body.png';
+const portrait=new Image();portrait.src='assets/seymur-fishing-refined.png';
 portrait.decode().then(()=>{portraitReady=true;trigger.disabled=false}).catch(()=>{trigger.hidden=true});trigger.disabled=true;
 function hideFact(){panel.classList.remove('show');panel.inert=true}
 function showFact(i){$('#fact').textContent=facts[i][1];$('#rarity').textContent=facts[i][0];panel.classList.add('show');panel.inert=false}
