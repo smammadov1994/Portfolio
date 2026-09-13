@@ -1,0 +1,7 @@
+.mascot-stage .scene-button{mix-blend-mode:multiply}
+.mascot-stage .scene-controls{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;align-items:center;gap:20px;color:#858585}
+.mascot-stage .scene-controls .scene-status{position:static;text-align:center;font-size:12px;line-height:1.5}
+#sunrise-trigger{padding:5px 0;border:0;border-bottom:1px dashed #b8b8b8;background:none;color:#777;font:13px/1.5 var(--font-display);cursor:pointer}
+#sunrise-trigger:disabled{opacity:.45;cursor:default}
+.mascot-stage[data-scene] .scene-note{max-width:185px}
+@media(max-width:700px){.mascot-stage{padding-bottom:42px}.mascot-stage .scene-controls{bottom:0;gap:14px}.mascot-stage .scene-controls .scene-status{font-size:11px}#sunrise-trigger{font-size:16px}.mascot-stage[data-scene] .scene-note{right:0;top:0;max-width:145px;font-size:19px}}

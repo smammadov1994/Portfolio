@@ -26,6 +26,7 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
 <link rel="stylesheet" href="swipebuilder-story.css">
 <link rel="stylesheet" href="jobtarget-story.css">
 <link rel="stylesheet" href="typography.css">
+<link rel="stylesheet" href="hero-scene.css">
 </head>
 <body>
   <header id="header"><nav class="shell"><a class="brand" href="#"><span class="brand-mark">SM</span>Seymur Mammadov</a><div class="navlinks"><a href="#work">Work</a><a href="https://github.com/smammadov1994" target="_blank" rel="noreferrer">GitHub ↗</a></div></nav></header>
@@ -42,19 +43,36 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
 <div class="mascot-stage">
 <button class="scene-button" id="fish" aria-label="Astro is fishing. Wait for a bite, then click to reel in.">
 <svg class="scene" viewBox="0 0 540 375" role="img" aria-label="Astro the ghost holding a fishing rod beside a pool">
-<defs><linearGradient id="ghostGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#c0c0c0"/><stop offset=".36" stop-color="#9b9b9b"/><stop offset=".72" stop-color="#727272"/><stop offset="1" stop-color="#4a4a4a"/></linearGradient></defs>
+<defs><linearGradient id="ghostGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#c0c0c0"/><stop offset=".36" stop-color="#9b9b9b"/><stop offset=".72" stop-color="#727272"/><stop offset="1" stop-color="#4a4a4a"/></linearGradient><linearGradient id="mountainShade" x1="0" y1="0" x2=".5" y2="1"><stop stop-color="#b5b5b5"/><stop offset="1" stop-color="#e5e5e5"/></linearGradient>
+<radialGradient id="ghostSunwash" cx=".92" cy=".12" r=".9"><stop stop-color="white" stop-opacity=".9"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
+<radialGradient id="sunHalo"><stop stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<linearGradient id="portraitFade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="white"/><stop offset=".78" stop-color="white"/><stop offset="1" stop-color="black"/></linearGradient>
+<mask id="portraitMask"><rect x="130" y="50" width="225" height="265" fill="url(#portraitFade)"/></mask>
+<clipPath id="landscapeClip"><rect x="35" y="30" width="470" height="274" rx="20"/></clipPath>
+<clipPath id="portraitOutline" clipPathUnits="objectBoundingBox"><path d="M.255 .17Q.25 .10 .315 .064Q.35 .014 .48 .018Q.60 .003 .68 .042Q.745 .072 .749 .155Q.80 .20 .733 .244L.704 .265L.69 .325L.64 .378L.641 .393L.70 .416L.874 .463Q.96 .49 .985 .64L.99 .89L.975 .963Q.5 1 .03 .963L.011 .895L.009 .63Q.02 .53 .072 .486L.318 .416L.362 .394L.365 .367L.33 .331L.30 .271L.276 .237Q.242 .23 .255 .17Z"/></clipPath>
+<clipPath id="glitchClipA"><rect x="135" y="119" width="210" height="15"/></clipPath>
+<clipPath id="glitchClipB"><rect x="135" y="173" width="210" height="9"/></clipPath>
+<clipPath id="glitchClipC"><rect x="135" y="224" width="210" height="18"/></clipPath>
+</defs>
+<g id="sunriseLandscape" opacity="0" clip-path="url(#landscapeClip)" aria-hidden="true">
+<g id="risingSun"><circle cx="353" cy="99" r="91" fill="url(#sunHalo)"/><circle cx="353" cy="99" r="31" fill="#fafafa" stroke="#bcbcbc" stroke-width="1"/><g id="sunRays" stroke="#c2c2c2" stroke-linecap="round" opacity=".65"><path d="M353 52V44 M353 146V154 M306 99H298 M400 99H408 M320 66L314 60 M386 132L392 138 M320 132L314 138 M386 66L392 60"/></g></g>
+<g id="farMountains"><path d="M37 304L81 238L128 172L164 218L213 93L257 186L288 151L329 223L376 129L424 209L459 181L508 304Z" fill="url(#mountainShade)" stroke="#b8b8b8" stroke-width="1.2"/><path d="M164 218L213 93L231 168L219 151L205 183L195 171 M329 223L376 129L394 178L381 166L372 185L362 177 M81 238L128 172L150 211L133 200L119 219" fill="#f0f0f0" stroke="#ccc" stroke-width=".7"/><path d="M213 95L244 261 M376 131L407 279 M128 173L173 285" fill="none" stroke="#b2b2b2" opacity=".4"/></g>
+<g id="nearMountains"><path d="M37 306L93 254L130 270L181 199L231 257L273 218L321 276L365 230L402 265L447 213L508 306Z" fill="#dedede" stroke="#c5c5c5"/><path d="M130 270L181 199L195 239L184 229L171 247 M402 265L447 213L463 250L448 239L437 253" fill="#eeeeee"/><path d="M44 304Q135 271 227 289T498 300" fill="none" stroke="#c7c7c7"/></g>
+</g>
 <ellipse cx="245" cy="309" rx="112" ry="10" fill="#eeeeee"/>
 <path d="M173 281 Q215 257 277 281 L293 305 Q237 320 163 303Z" fill="#f3f3f3" stroke="#d4d4d4"/>
 <ellipse cx="368" cy="311" rx="73" ry="16" fill="#f5f5f5"/>
 <ellipse id="ripple1" cx="368" cy="311" rx="30" ry="6" fill="none" stroke="#bcbcbc" stroke-width="1.5"/>
 <ellipse id="ripple2" cx="368" cy="311" rx="52" ry="11" fill="none" stroke="#d5d5d5"/>
-<g id="ghostActor"><g transform="translate(177 120) scale(.51)">
-<path d="M230.809 115.385V249.411C230.809 269.923 214.985 287.282 194.495 288.411C184.544 288.949 175.364 285.718 168.26 280C159.746 273.154 147.769 273.461 139.178 280.23C132.638 285.384 124.381 288.462 115.379 288.462C106.377 288.462 98.1451 285.384 91.6055 280.23C82.912 273.385 70.9353 273.385 62.2415 280.23C55.7532 285.334 47.598 288.411 38.7246 288.462C17.4132 288.615 0 270.667 0 249.359V115.385C0 51.6667 51.6756 0 115.404 0C179.134 0 230.809 51.6667 230.809 115.385Z" fill="url(#ghostGradient)"/>
-<g id="eyes"><ellipse cx="88" cy="120" rx="18" ry="28" fill="white"/><ellipse cx="157" cy="120" rx="18" ry="28" fill="white"/></g>
-</g>
+<g id="ghostActor"><g id="ghostLean"><g id="ghostBody" transform="translate(177 120) scale(.51)">
+<path d="M230.809 115.385V249.411C230.809 269.923 214.985 287.282 194.495 288.411C184.544 288.949 175.364 285.718 168.26 280C159.746 273.154 147.769 273.461 139.178 280.23C132.638 285.384 124.381 288.462 115.379 288.462C106.377 288.462 98.1451 285.384 91.6055 280.23C82.912 273.385 70.9353 273.385 62.2415 280.23C55.7532 285.334 47.598 288.411 38.7246 288.462C17.4132 288.615 0 270.667 0 249.359V115.385C0 51.6667 51.6756 0 115.404 0C179.134 0 230.809 51.6667 230.809 115.385Z" fill="url(#ghostGradient)"/><path d="M230.809 115.385V249.411C230.809 269.923 214.985 287.282 194.495 288.411C184.544 288.949 175.364 285.718 168.26 280C159.746 273.154 147.769 273.461 139.178 280.23C132.638 285.384 124.381 288.462 115.379 288.462C106.377 288.462 98.1451 285.384 91.6055 280.23C82.912 273.385 70.9353 273.385 62.2415 280.23C55.7532 285.334 47.598 288.411 38.7246 288.462C17.4132 288.615 0 270.667 0 249.359V115.385C0 51.6667 51.6756 0 115.404 0C179.134 0 230.809 51.6667 230.809 115.385Z" id="ghostLight" fill="url(#ghostSunwash)" opacity="0"/>
+<g id="ghostGaze"><g id="eyes"><ellipse cx="88" cy="120" rx="18" ry="28" fill="white"/><ellipse cx="157" cy="120" rx="18" ry="28" fill="white"/></g><g id="closedEyes" opacity="0" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"><path d="M73 120Q88 131 103 120 M142 120Q157 131 172 120"/><path d="M109 166Q124 177 139 166" stroke-width="4"/></g></g>
+</g></g>
 <g id="rodGroup"><path d="M261 224 Q315 181 379 172" fill="none" stroke="#636363" stroke-width="4" stroke-linecap="round"/><path d="M262 224 L285 209" stroke="#4c4c4c" stroke-width="6" stroke-linecap="round"/></g>
 
 </g>
+<g id="seymurActor" opacity="0" mask="url(#portraitMask)" aria-hidden="true"><image id="seymurArtwork" clip-path="url(#portraitOutline)" href="assets/seymur-sunrise-portrait.png" x="141" y="58" width="200" height="267" preserveAspectRatio="xMidYMid meet"/></g>
+<g id="heroGlitch" opacity="0" aria-hidden="true" style="mix-blend-mode:multiply"><g clip-path="url(#glitchClipA)"><use id="glitchSliceA" href="#seymurArtwork"/></g><g clip-path="url(#glitchClipB)"><use id="glitchSliceB" href="#ghostBody"/></g><g clip-path="url(#glitchClipC)"><use id="glitchSliceC" href="#seymurArtwork"/></g><path id="glitchLines" d="M180 134H285 M156 183H315 M201 225H320" fill="none" stroke="#818181" stroke-width="1.5"/></g>
 <path id="fishingLine" fill="none" stroke="#878787" stroke-width="1.2"/>
 <g id="bobber"><path d="M0 -9V-2" stroke="#767676"/><ellipse rx="4" ry="6" fill="#a6a6a6"/><path d="M-4 1H4" stroke="white" stroke-width="2"/></g>
 <g id="catchToken" opacity="0"><rect x="-11" y="-14" width="22" height="28" rx="4" fill="#f9f9f9" stroke="#9b9b9b"/><text text-anchor="middle" y="4" font-size="14" fill="#7e7e7e">✦</text></g>
@@ -62,7 +80,7 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
 <g><path d="M128 278 L134 308 Q151 314 166 306 L171 278Z" fill="#f8f8f8" stroke="#9a9a9a" stroke-width="2"/><ellipse cx="150" cy="278" rx="22" ry="5" fill="#fdfdfd" stroke="#9a9a9a" stroke-width="2"/><path d="M129 282 Q122 309 150 312 Q171 312 172 282" fill="none" stroke="#9a9a9a" stroke-width="2"/></g>
 </svg></button>
 <div class="scene-note">when the ! appears,<br>tap to fish up<br>a little of my story<span>↙</span></div>
-<div class="scene-status" id="status">fishing… · 0 / 8 collected</div>
+<div class="scene-controls"><div class="scene-status" id="status">fishing… · 0 / 8 collected</div><button type="button" id="sunrise-trigger" aria-pressed="false">a little sunshine ↗</button></div>
 <div class="catch-panel" id="catch" aria-live="polite" inert><div class="catch-label">reeled in · <span id="rarity"></span></div><div class="catch-text" id="fact"></div><div class="bucket" id="bucket"></div></div>
 </div>
       </div>
@@ -109,42 +127,4 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
 </section>
 
   </main>
-  <script>
-    const facts=[["common", "Seymur was born in Baku, Azerbaijan and moved to the United States at age nine."], ["common", "He grew up in Stamford, Connecticut, around computers and games."], ["uncommon", "He earned a Biology degree at Sacred Heart University before moving into software engineering."], ["uncommon", "He worked at JobTarget as a Software Engineer, then Tech Lead, from 2020 to 2025."], ["rare", "At JobTarget, he built full-stack features that reduced churn by 24%."], ["rare", "He co-founded 2xROAS, Inc., the company behind PumpAds, a product for creating video ads."], ["uncommon", "Away from code, he enjoys cooking, fitness, soccer, and games."], ["rare", "He speaks English, Turkish, and Russian."]];
-
-const $=s=>document.querySelector(s), fish=$('#fish'), panel=$('#catch'), bucket=$('#bucket'), status=$('#status');
-let caught=[],state='waiting',since=performance.now(),deadline=since+2200,choice=0;
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function showFact(i){$('#fact').textContent=facts[i][1];$('#rarity').textContent=facts[i][0];panel.classList.add('show');panel.inert=false}
-function renderBucket(){bucket.replaceChildren();facts.forEach((f,i)=>{const b=document.createElement('button');b.className='chip'+(caught.includes(i)?' filled':'');b.textContent=caught.includes(i)?'◆':'·';b.disabled=!caught.includes(i);b.setAttribute('aria-label',caught.includes(i)?'Read collected fact '+(i+1):'Fact not collected');b.onclick=()=>showFact(i);bucket.append(b)})}
-renderBucket();
-fish.onclick=()=>{if(state==='bite'){choice=facts.map((_,i)=>i).find(i=>!caught.includes(i));state='reeling';since=performance.now();panel.classList.remove('show');panel.inert=true;fish.setAttribute('aria-label','Reeling in a catch')}else if(state==='caught'&&caught.length===8){showFact(caught[0])}};
-function frame(t){
-const age=t-since;
-if(state==='waiting'&&t>=deadline){state='bite';since=t;fish.setAttribute('aria-label','A bite! Click or press Enter to reel in')}
-if(state==='reeling'&&age>1500){caught.push(choice);renderBucket();showFact(choice);state='caught';since=t;status.textContent=caught.length+' / 8 collected';fish.setAttribute('aria-label','Catch collected')}
-if(state==='caught'&&age>5500&&caught.length<8){panel.classList.remove('show');panel.inert=true;state='waiting';since=t;deadline=t+2500+Math.random()*1800;status.textContent='fishing… · '+caught.length+' / 8 collected';fish.setAttribute('aria-label','Astro is fishing. Wait for a bite')}
-let lift=0,a=0,dy=reduce?0:Math.sin(t/1000)*1.5;
-let bx=368,by=310+(reduce?0:Math.sin(t/420)*1.5),tokenOpacity=0;
-if(state==='bite'&&!reduce){by+=Math.sin(t/95)*4}
-if(state==='reeling'){
-const q=Math.min(1,age/950),ease=1-Math.pow(1-q,3);
-a=-32*ease;dy=-8*Math.sin(q*Math.PI);
-bx=368-100*ease;by=310-175*ease;tokenOpacity=1;
-if(age>950){const z=Math.min(1,(age-950)/550);bx=268+(150-268)*z;by=135+(278-135)*z-70*Math.sin(z*Math.PI);tokenOpacity=1-z*.4}
-}
-const rad=a*Math.PI/180,tx=261+118*Math.cos(rad)+52*Math.sin(rad),ty=224+118*Math.sin(rad)-52*Math.cos(rad)+dy;
-$('#ghostActor').setAttribute('transform','translate(0 '+dy+')');
-$('#rodGroup').setAttribute('transform','rotate('+a+' 261 224)');
-$('#fishingLine').setAttribute('d','M'+tx+' '+ty+' Q'+(tx+3)+' '+((ty+by)/2)+' '+bx+' '+by);
-$('#fishingLine').setAttribute('opacity',state==='reeling'&&age>950?0:1);
-$('#bobber').setAttribute('transform','translate('+bx+' '+by+')');
-$('#bobber').setAttribute('opacity',state==='reeling'?0:1);
-$('#catchToken').setAttribute('opacity',tokenOpacity);$('#catchToken').setAttribute('transform','translate('+bx+' '+by+') rotate('+(state==='reeling'?Math.sin(age/140)*12:0)+')');
-$('#biteMark').setAttribute('opacity',state==='bite'?1:0);
-$('#biteMark').setAttribute('transform','translate(0 '+(state==='bite'&&!reduce?Math.sin(t/100)*3:0)+')');
-const blink=reduce?28:(t%3800>3620?3:28);document.querySelectorAll('#eyes ellipse').forEach(e=>e.setAttribute('ry',blink));
-for(let i=1;i<3;i++){const k=reduce?i*.28:((t/2200+i*.5)%1);$('#ripple'+i).setAttribute('rx',20+k*48);$('#ripple'+i).setAttribute('ry',4+k*10);$('#ripple'+i).setAttribute('opacity',1-k)}
-requestAnimationFrame(frame)}
-requestAnimationFrame(frame);
-</script><script type="module" src="assets/weasel-story.js"></script><script type="module" src="assets/pumpads-story.js"></script><script type="module" src="assets/swipebuilder-story.js"></script><script type="module" src="assets/jobtarget-story.js"></script></body></html>
+  <script type="module" src="assets/hero-scene.js"></script><script type="module" src="assets/weasel-story.js"></script><script type="module" src="assets/pumpads-story.js"></script><script type="module" src="assets/swipebuilder-story.js"></script><script type="module" src="assets/jobtarget-story.js"></script></body></html>
