@@ -3,14 +3,14 @@ import {createRoot} from 'react-dom/client';
 import {AbsoluteFill,Img,interpolate,useCurrentFrame,useVideoConfig} from 'remotion';
 import {Player} from '@remotion/player';
 export const TOTAL=600;
-export const acts=[['The idea','One product. More ways to tell its story.','We built PumpAds AI to turn a product brief into creator-style video ads.'],['The creative','Find the hook. Give it a voice.','LLM scripts, voice generation, and image and video models came together in one creative workflow.'],['The production','Make the moving parts work together.','Lip sync, revoicing, and FFmpeg assembly turned separate generations into finished ads.'],['The business','Build something people will pay for.','Together, we reached 1,000+ paying customers and $15K in monthly revenue within two months of launch.']];
+export const acts=[['The idea','One product. More ways to tell its story.','At 2xROAS, Inc., we built PumpAds to turn a product brief into creator-style video ads.'],['The creative','Find the hook. Give it a voice.','LLM scripts, voice generation, and image and video models came together in one creative workflow.'],['The production','Make the moving parts work together.','Lip sync, revoicing, and FFmpeg assembly turned separate generations into finished ads.'],['The business','Build something people will pay for.','Together, we reached 1,000+ paying customers and $15K in monthly revenue within two months of launch.']];
 const creators=[{src:'/assets/pumpads-skincare.png',label:'01 / skincare',line:'A little moment for yourself.',alt:'Fictional adult creator presenting a skincare bottle'},{src:'/assets/pumpads-tumbler.png',label:'02 / everyday essentials',line:'Meet your new morning companion.',alt:'Fictional adult creator holding a travel tumbler'},{src:'/assets/pumpads-headphones.png',label:'03 / audio',line:'Make room for your favorite sound.',alt:'Fictional adult creator presenting headphones'}];
 const clamp=x=>Math.max(0,Math.min(1,x));
 export function PumpFilm({compact=false}){
  const f=useCurrentFrame(),{width:w}=useVideoConfig(),act=Math.min(3,Math.floor(f/150)),t=f%150;
  const fan=1-clamp(f/130),focus=interpolate(f,[0,170,230,370,430,599],[0,0,1,1,2,2],{extrapolateRight:'clamp'});
  return <AbsoluteFill style={{background:'#eeedeb',color:'#3c3c3c',fontFamily:"'Caveat',cursive",lineHeight:1.2,overflow:'hidden'}}>
-  <div style={{position:'absolute',left:30,right:30,top:22,display:'flex',justifyContent:'space-between',fontSize:compact?25:22,borderBottom:'1px solid #bcbcb7',paddingBottom:15}}><span>PumpAds AI / creative studio</span><span>0{act+1} / 04</span></div>
+  <div style={{position:'absolute',left:30,right:30,top:22,display:'flex',justifyContent:'space-between',fontSize:compact?25:22,borderBottom:'1px solid #bcbcb7',paddingBottom:15}}><span>PumpAds / creative studio</span><span>0{act+1} / 04</span></div>
   {creators.map((c,i)=>{
    const cw=compact?390:280,ch=compact?585:420;
    const center=compact?w/2+(i-focus)*310:225+i*375;

@@ -1,0 +1,123 @@
+/* Handwriting supplies the personality; Manrope carries the information. */
+:root {
+  --font-body: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive;
+  --text-body: #454b49;
+  --text-secondary: #606763;
+}
+body { font-family: var(--font-body); font-size: 17px; line-height: 1.7; }
+button, input, textarea { font-family: var(--font-body); }
+h1, h2, .brand, .scene-note, .hello { font-family: var(--font-display); }
+.brand { font-size: 29px; }
+.navlinks { font-family: var(--font-body); font-size: 14px; gap: 28px; }
+.lede { font-size: 23px; line-height: 1.6; max-width: 760px; }
+.micro { font-family: var(--font-body); font-size: 14px; color: var(--text-secondary); }
+.eyebrow { font-family: var(--font-display); }
+
+/* Clear roles, dates, outcomes, and paragraphs across the featured work. */
+.pump-heading .pump-intro, .swipe-heading .swipe-intro, .weasel-heading p.weasel-intro {
+  font-family: var(--font-body); font-size: 18px; line-height: 1.75; color: var(--text-body);
+}
+.pump-role, .swipe-role { font-family: var(--font-body); font-size: 14px; line-height: 1.8; color: var(--text-secondary); }
+.pump-role strong { color: var(--text-body); font-size: 16px; font-weight: 650; }
+.pump-kicker, .swipe-kicker, .weasel-kicker, .chapter-number {
+  font-family: var(--font-body); font-size: 12px; line-height: 1.5; letter-spacing: .06em; color: var(--text-secondary);
+}
+.weasel-sub { font-family: var(--font-body); font-size: 14px; line-height: 1.6; }
+.pump-experience h3, .swipe-notes h3 { font-family: var(--font-body); font-size: 21px; font-weight: 650; line-height: 1.4; margin-bottom: 16px; color: #343a37; }
+.pump-experience p, .swipe-notes p { font-family: var(--font-body); font-size: 17px; line-height: 1.85; color: var(--text-body); margin-bottom: 20px; }
+.pump-results strong, .swipe-results strong, .outcomes strong { font-family: var(--font-body); font-size: 42px; font-weight: 650; line-height: 1.2; letter-spacing: -.045em; font-variant-numeric: tabular-nums; color: #343a37; }
+.pump-results span, .swipe-results span, .outcomes span { font-family: var(--font-body); font-size: 15px; line-height: 1.6; color: var(--text-body); }
+.pump-results small, .swipe-results small { font-family: var(--font-body); font-size: 12px; line-height: 1.65; color: var(--text-secondary); }
+.pump-stack, .swipe-footer p { font-family: var(--font-body); font-size: 13px; line-height: 1.9; color: var(--text-secondary); }
+.swipe-footer a { font-family: var(--font-body); font-size: 16px; font-weight: 600; }
+
+/* Film headings remain handwritten. The explanatory copy is easy to scan. */
+.weasel-caption h3, .pump-caption h3, .swipe-caption h3,
+.weasel-static-steps h4, .pump-readable h3, .swipe-readable h3 { font-family: var(--font-display); }
+.weasel-caption p, .pump-caption p, .swipe-caption p {
+  font-family: var(--font-body); font-size: 16px; line-height: 1.65; color: var(--text-body); max-width: 850px;
+}
+.weasel-take, .pump-caption > span, .swipe-caption > span, .swipe-readable li > span {
+  font-family: var(--font-body); font-size: 12px; line-height: 1.5; color: var(--text-secondary);
+}
+.weasel-play, .pump-controls button, .swipe-controls button {
+  font-family: var(--font-body); font-size: 14px; font-weight: 500; min-width: 125px; line-height: 1.6;
+}
+.weasel-chapters button, .pump-chapters button, .swipe-chapters button { font-family: var(--font-body); font-size: 14px; line-height: 1.5; }
+.weasel-chapters button span { font-family: var(--font-body); font-size: 11px; }
+.weasel-time, .pump-controls > span, .swipe-controls > span { font-family: var(--font-body); font-size: 12px; font-variant-numeric: tabular-nums; }
+.weasel-motion, .pump-read-toggle, .swipe-read-toggle { font-family: var(--font-body); font-size: 13px; line-height: 1.7; }
+.weasel-scroll-hint, .pump-hint, .swipe-hint, .swipe-art figcaption { font-family: var(--font-display); }
+.weasel-static-steps p, .pump-readable p, .swipe-readable p { font-family: var(--font-body); font-size: 17px; line-height: 1.8; color: var(--text-body); }
+.weasel-static-steps li > span { font-family: var(--font-body); font-size: 15px; }
+.weasel-after > p:first-child { font-family: var(--font-display); }
+.weasel-actions a { font-family: var(--font-body); font-size: 16px; line-height: 1.7; }
+.weasel-scope, .pump-example-note { font-family: var(--font-body); font-size: 13px; line-height: 1.8; color: var(--text-secondary); }
+.pump-gallery figcaption { font-family: var(--font-body); font-size: 13px; line-height: 1.6; margin-top: 8px; }
+
+/* Experience and project information use one consistent reading rhythm. */
+.story-chapter > p, .story-chapter > p:first-of-type {
+  font-family: var(--font-body); font-size: 17px; line-height: 1.85; color: var(--text-body); max-width: 64ch;
+}
+.story-chapter > p:first-of-type { font-size: 19px; line-height: 1.75; color: #343a37; }
+.role-row { font-family: var(--font-body); font-size: 14px; line-height: 1.65; color: var(--text-secondary); flex-wrap: wrap; }
+.role-row span:first-child { font-size: 16px; font-weight: 650; color: #343a37; }
+.chapter-next, .project-link { font-family: var(--font-body); font-size: 14px; line-height: 1.7; font-weight: 600; color: #454e49; }
+.project h3 { font-family: var(--font-body); font-size: 22px; line-height: 1.35; font-weight: 650; margin: 12px 0; }
+.project p { font-family: var(--font-body); font-size: 15px; line-height: 1.85; color: var(--text-body); }
+.project-num, .tag { font-family: var(--font-body); font-size: 11px; line-height: 1.65; color: var(--text-secondary); }
+.tags { gap: 6px 12px; }
+.email { font-family: var(--font-body); font-size: 20px; }
+.footer-row { font-family: var(--font-body); font-size: 12px; line-height: 1.7; }
+
+/* Astro keeps his handwritten name and margin notes, but readable answers. */
+.astro-toggle { font-family: var(--font-display); }
+.astro-subtitle { font-family: var(--font-body); font-size: 11px; line-height: 1.65; }
+.astro-meta, .astro-meta button { font-family: var(--font-body); font-size: 11px; line-height: 1.6; }
+#astro-speech { font-family: var(--font-body); font-size: 14px; line-height: 1.85; color: var(--text-body); }
+.quiet-button { font-family: var(--font-body); font-size: 13px; line-height: 1.6; }
+.guide-footnote, #answer-source { font-family: var(--font-body); font-size: 11px; line-height: 1.7; }
+#ask-form label { font-family: var(--font-body); font-size: 13px; }
+.ask-row input { font-family: var(--font-body); font-size: 16px; }
+.suggestions button { font-family: var(--font-body); font-size: 11px; }
+#astro-answer { font-family: var(--font-body); font-size: 14px; line-height: 1.8; }
+.mascot-stage .catch-text { font-family: var(--font-body); font-size: 15px; line-height: 1.75; }
+.catch-label { font-family: var(--font-body); font-size: 11px; }
+.scene-status { font-family: var(--font-body); font-size: 12px; }
+
+@media(max-width:650px) {
+  .navlinks { font-size: 13px; gap: 18px; }
+  .brand { font-size: 23px; }
+  .lede { font-size: 20px; line-height: 1.7; }
+  .micro { font-size: 12px; }
+  .pump-heading .pump-intro, .swipe-heading .swipe-intro, .weasel-heading p.weasel-intro { font-size: 17px; line-height: 1.75; }
+  .pump-role, .swipe-role { font-size: 13px; }
+  .pump-experience p, .swipe-notes p { font-size: 16px; line-height: 1.85; }
+  .pump-experience h3, .swipe-notes h3 { font-size: 20px; }
+  .pump-results strong, .swipe-results strong { font-size: clamp(25px,7.5vw,35px); }
+  .pump-results span, .swipe-results span { font-size: 12px; }
+  .pump-results small, .swipe-results small { font-size: 11px; }
+  .pump-stack, .swipe-footer p { font-size: 12px; }
+  .weasel-caption p, .pump-caption p, .swipe-caption p { font-size: 14px; line-height: 1.65; }
+  .weasel-play, .pump-controls button, .swipe-controls button { font-size: 12px; min-width: 103px; }
+  .weasel-chapters button, .pump-chapters button, .swipe-chapters button { font-size: 12px; }
+  .weasel-time, .pump-controls > span, .swipe-controls > span { font-size: 11px; }
+  .story-chapter { scroll-margin-top: 155px; }
+  .story-chapter > p { font-size: 16px; }
+  .story-chapter > p:first-of-type { font-size: 18px; }
+  .project p { font-size: 15px; }
+  .chapter-number { font-size: 11px; }
+  .email { font-size: 17px; }
+  .footer-row { font-size: 11px; }
+  .astro-meta, .astro-meta button { font-size: 10px; }
+  #astro-speech { font-size: 13px; line-height: 1.65; }
+  .quiet-button { font-size: 12px; }
+  #astro-answer { font-size: 14px; }
+}
+@media(max-width:380px) {
+  .brand { font-size: 21px; }
+  .navlinks { font-size: 12px; gap: 10px; }
+  .pump-results, .swipe-results { gap: 12px; }
+  .weasel-chapters button { font-size: 11px; }
+}

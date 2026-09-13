@@ -23,9 +23,9 @@ Graphite artwork. Handwritten stories. A curious weasel. A ghost who goes fishin
 
 The film explains the website-to-MCP adapter prototype: observe a page and its controls, describe useful actions as tools, inspect the generated OpenAPI reference, and call the local adapter. The portfolio illustrates that workflow; it does not run the adapter in the hosted page.
 
-## PumpAds AI — building a business
+## PumpAds — a product by 2xROAS, Inc.
 
-I co-founded PumpAds AI with my partners to turn product ideas into creator-style video ads. The second featured story uses three monochrome creator cards to walk through the creative and production process.
+I co-founded 2xROAS, Inc., the company behind PumpAds, with my partners to turn product ideas into creator-style video ads. The second featured story uses three monochrome creator cards to walk through the creative and production process.
 
 <table>
   <tr>
@@ -62,7 +62,7 @@ The five-person company reached **3,000 users** and, at peak, **300 paying custo
 
 | Part | Implementation |
 | --- | --- |
-| Page and styling | Static HTML, CSS, graphite imagery, and Caveat typography |
+| Page and styling | Static HTML, CSS, graphite imagery, Manrope for readable content, and Caveat for headings and illustrated notes |
 | Scroll films | React + Remotion Player, driven by a frame timeline |
 | Playback controls | Scroll scrubbing, play/pause, chapter navigation, and a timeline slider |
 | Responsive motion | Desktop and mobile compositions, plus a reduced-motion reading mode |
@@ -98,6 +98,7 @@ The HTML and CSS in `dist/` are authored files and are intentionally tracked. Th
 | `dist/swipebuilder-story.css` | SwipeBuilder section layout and responsive styling |
 | `dist/weasel-story.css` | Weaszel section layout and responsive styling |
 | `dist/pumpads-story.css` | PumpAds section layout and responsive styling |
+| `dist/typography.css` | Readable body text, experience details, metrics, and handwritten accents |
 | `dist/astro-guide.css` | Handwritten theme, guide, and thought bubble |
 | `dist/astro-guide.js` | Scroll narration and profile questions |
 | `dist/knowledge.mjs` | Profile knowledge and local retrieval |

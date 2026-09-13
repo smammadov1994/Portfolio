@@ -111,29 +111,22 @@
       ]
     },
     {
-      "title": "Co-Founder & Software Engineer",
-      "company": "InstantCreatives (AI Startup)",
-      "location": "New York, NY",
-      "duration": "Not specified",
+      "title": "Co-Founder · Product & Engineering",
+      "company": "2xROAS, Inc.",
+      "duration": "November 2024 - August 2025",
       "key_achievements": [
-        "Co-founded AI-powered platform achieving 1K+ users within 48 hours",
+        "Co-founded 2xROAS, Inc., the company behind PumpAds, building a multimodal video-ad pipeline with an eight-person team",
+        "Shared company results: 1,000+ paying customers and $15K monthly revenue within two months of launch",
+        "Reduced average generation time from 10 minutes to 2 minutes with independently scalable queued services and persistent job state",
+        "Supported bursts of 100 concurrent requests; built usage-credit reservations, reconciliation, and automatic refunds",
+        "Secured $50K in platform credits to help control infrastructure and model costs",
         "Developed core features using Python and n8n workflows",
         "Integrated machine learning models for automation",
         "Owned product decisions including feature prioritization and UI/UX",
         "Generated six-figure revenue across multiple brands"
-      ]
-    },
-    {
-      "title": "Co-Founder \u00b7 Product & Engineering",
-      "company": "PumpAds AI / 2xROAS, Inc.",
-      "duration": "November 2024 - August 2025",
-      "key_achievements": [
-        "Co-founded PumpAds AI with partners, building a multimodal video-ad pipeline with an eight-person team",
-        "Shared company results: 1,000+ paying customers and $15K monthly revenue within two months of launch",
-        "Reduced average generation time from 10 minutes to 2 minutes with independently scalable queued services and persistent job state",
-        "Supported bursts of 100 concurrent requests; built usage-credit reservations, reconciliation, and automatic refunds",
-        "Secured $50K in platform credits to help control infrastructure and model costs"
-      ]
+      ],
+      "product": "PumpAds",
+      "location": "New York, NY"
     }
   ],
   "technical_skills": {
