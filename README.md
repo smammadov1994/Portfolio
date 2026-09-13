@@ -62,6 +62,18 @@ Seymur co-founded SwipeBuilder and led backend and AI engineering (December 2023
 
 The five-person company reached **3,000 users** and, at peak, **300 paying customers** and **$25K in monthly recurring revenue**.
 
+## JobTarget — opportunities in motion
+
+JobTarget follows SwipeBuilder as the fourth featured experience. An original animated routing desk follows sample job listings from applicant tracking systems, through consistent records and destination matching, into relevant job boards.
+
+![An illustrated routing desk connecting ATS job listings to relevant job boards](dist/assets/jobtarget-workflow.png)
+
+The 24-second React + Remotion story has four chapters: **Pull → Prepare → Match → Distribute**. Job tickets travel along drawn routes as the desk prepares a record, matches job context to a destination, and confirms delivery. Desktop uses a left-to-right flow; mobile rearranges the diagram from top to bottom. Playback, scrubbing, chapter selection, and an accessible reading mode match the other portfolio stories.
+
+Seymur worked as a **Software Engineer (January 2020–May 2022)** and **Tech Lead (May 2022–September 2025)** at JobTarget. The section covers compliance product ownership, Local Outreach, Compliance-Post / Reporting Hub, Salesforce integrations, AWS migrations, and mentoring. Existing career outcomes are presented separately from the illustrative workflow: **24% lower churn** through full-stack features and **40% faster audit responses** through the reporting hub.
+
+The jobs, board names, and matching signals in the animation are explanatory examples, not a representation of proprietary routing logic or live delivery data.
+
 ## How the portfolio works
 
 | Part | Implementation |
@@ -99,6 +111,8 @@ The HTML and CSS in `dist/` are authored files and are intentionally tracked. Th
 | `src/weasel-story.jsx` | Weaszel's acting, scene content, and scroll controls |
 | `src/pumpads-story.jsx` | PumpAds creator cards and animated business story |
 | `src/swipebuilder-story.jsx` | SwipeBuilder’s interactive paper storyboard |
+| `src/jobtarget-story.jsx` | JobTarget’s ATS-to-job-board routing animation |
+| `dist/jobtarget-story.css` | JobTarget experience layout and responsive styling |
 | `dist/swipebuilder-story.css` | SwipeBuilder section layout and responsive styling |
 | `dist/weasel-story.css` | Weaszel section layout and responsive styling |
 | `dist/pumpads-story.css` | PumpAds section layout and responsive styling |

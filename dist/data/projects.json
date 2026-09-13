@@ -29,6 +29,13 @@
     "liveUrl": "https://swipebuilder.io/"
   },
   {
+    "id": "jobtarget",
+    "title": "JobTarget",
+    "description": "Software Engineer to Tech Lead: full-stack compliance products, AWS infrastructure, partner integrations, and an illustrated ATS-to-job-board distribution workflow.",
+    "image": "/assets/jobtarget-workflow.png",
+    "liveUrl": "#jobtarget"
+  },
+  {
     "id": "chatbot-ui-components",
     "title": "Chatbot UI Components",
     "description": "A reusable UI component library for building conversational interfaces, documented with Storybook.",
