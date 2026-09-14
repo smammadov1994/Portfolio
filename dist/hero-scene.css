@@ -1,4 +1,4 @@
-.mascot-stage .scene-button{mix-blend-mode:normal}
+.mascot-stage .scene-button{mix-blend-mode:multiply}
 .mascot-stage .scene-controls{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;align-items:center;gap:20px;color:#858585}
 .mascot-stage .scene-controls .scene-status{position:static;text-align:center;font-size:12px;line-height:1.5}
 #sunrise-trigger{padding:5px 0;border:0;border-bottom:1px dashed #b8b8b8;background:none;color:#777;font:13px/1.5 var(--font-display);cursor:pointer}
@@ -12,10 +12,4 @@
 .hero + .weasel-feature{margin-top:0;padding-top:24px}
 @media(max-width:700px){.hero{min-height:calc(100vh - 66px);min-height:calc(100dvh - 66px);padding:12px 0 28px}}
 
-/* A continuous meadow surrounds the interactive character, with a clear center. */
 #header nav{justify-content:flex-end}
-.mascot-stage{isolation:isolate}
-.wilderness-field{position:absolute;z-index:-1;pointer-events:none;left:50%;top:-35px;transform:translateX(-50%);width:min(1400px,100vw);height:450px;max-width:none;mix-blend-mode:multiply;opacity:.83;mask-image:linear-gradient(to right,transparent,black 5%,black 95%,transparent),linear-gradient(transparent,black 18%,black 79%,transparent);mask-composite:intersect}
-.wilderness-field img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-copy{position:relative}
-@media(max-width:700px){.wilderness-field{width:100vw;height:380px;top:-40px;opacity:.8}.mascot-stage .scene-note{font-size:18px;text-shadow:0 1px 9px var(--paper),0 1px 5px var(--paper)}}

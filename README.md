@@ -15,7 +15,7 @@ Graphite artwork. Handwritten stories. A curious weasel. A ghost who goes fishin
 
 ## Meet the cast
 
-The opening screen pairs my name with an interactive fishing scene in an illustrated wilderness meadow. Pine and birch groves, wild grasses, misty hills, and a footpath surround the clearing, with a separate composition for mobile. Featured work begins below the first viewport.
+The opening screen pairs my name with the interactive fishing scene on a quiet paper background. Featured work begins below the first viewport, with project headings in the site’s neutral text color.
 
 **Astro** fishes up little pieces of my story. Catch a bite and a thought bubble opens beside him. Occasionally, mountains rise, a golden sun comes up above blue and sage-green mountains, and he looks up with closed eyes before monochrome TV static slowly reshapes his silhouette into a larger, full-body graphite illustration of me fishing on a rock, looking toward the sunlight in a consistent graphite style. The figure distorts and shrinks back into Astro before returning to fishing, keeping your collected facts. The “a little sunshine” control replays it; reduced-motion mode shows the still fishing illustration on request.
 
