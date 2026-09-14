@@ -5,3 +5,9 @@
 #sunrise-trigger:disabled{opacity:.45;cursor:default}
 .mascot-stage[data-scene] .scene-note{max-width:185px}
 @media(max-width:700px){.mascot-stage{padding-bottom:42px}.mascot-stage .scene-controls{bottom:0;gap:14px}.mascot-stage .scene-controls .scene-status{font-size:11px}#sunrise-trigger{font-size:16px}.mascot-stage[data-scene] .scene-note{right:0;top:0;max-width:145px;font-size:19px}}
+
+/* The opening viewport is reserved for the name and interactive scene. */
+.hero{min-height:calc(100vh - 80px);min-height:calc(100dvh - 80px);display:flex;flex-direction:column;justify-content:center;padding:24px 0 40px}
+.hero-grid{width:100%}
+.hero + .weasel-feature{margin-top:0;padding-top:24px}
+@media(max-width:700px){.hero{min-height:calc(100vh - 66px);min-height:calc(100dvh - 66px);padding:12px 0 28px}}
