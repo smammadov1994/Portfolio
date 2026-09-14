@@ -15,7 +15,7 @@ Graphite artwork. Handwritten stories. A curious weasel. A ghost who goes fishin
 
 ## Meet the cast
 
-**Astro** fishes up little pieces of my story. Catch a bite and a thought bubble opens beside him. Occasionally, mountains rise, a white sun comes up, and he looks up with closed eyes before a burst of monochrome TV static reveals a larger, full-body graphite illustration of me fishing on a rock, looking toward the sunlight in a consistent graphite style. The scene returns to fishing and keeps your collected facts. The “a little sunshine” control replays it; reduced-motion mode shows the still fishing illustration on request.
+**Astro** fishes up little pieces of my story. Catch a bite and a thought bubble opens beside him. Occasionally, mountains rise, a white sun comes up, and he looks up with closed eyes before monochrome TV static slowly reshapes his silhouette into a larger, full-body graphite illustration of me fishing on a rock, looking toward the sunlight in a consistent graphite style. The scene returns to fishing and keeps your collected facts. The “a little sunshine” control replays it; reduced-motion mode shows the still fishing illustration on request.
 
 **Weaszel** leads the featured work with a 30-second, scroll-controlled Remotion film. He runs in, stops to look at you, investigates the page, taps a tool into shape, and jumps behind the card before settling on its corner. One character, with distinct actions throughout the story.
 
@@ -107,7 +107,7 @@ The HTML and CSS in `dist/` are authored files and are intentionally tracked. Th
 | --- | --- |
 | `dist/index.html` | Portfolio content, project order, and Astro's fishing interaction |
 | `src/hero-scene.js` | Fishing, occasional sunrise transformation, and playback lifecycle |
-| `src/hero-sunrise.js` | The 14-second sunrise and portrait timing |
+| `src/hero-sunrise.js` | The 18-second sunrise, gradual morph, and portrait timing |
 | `dist/hero-scene.css` | Hero controls and portrait blending |
 | `src/weasel-story.jsx` | Weaszel's acting, scene content, and scroll controls |
 | `src/pumpads-story.jsx` | PumpAds creator cards and animated business story |

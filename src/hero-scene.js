@@ -2,9 +2,40 @@ const facts=[["common", "Seymur was born in Baku, Azerbaijan and moved to the Un
 import {sunrisePose} from './hero-sunrise.js';
 const $=s=>document.querySelector(s);
 const fish=$('#fish'),panel=$('#catch'),bucket=$('#bucket'),status=$('#status'),trigger=$('#sunrise-trigger'),stage=$('.mascot-stage'),note=$('.scene-note'),scene=$('.scene');
-const nodes=Object.fromEntries(['fishingRock','fishingPool','tvNoise','tvTrackingBand','ghostLight','ghostActor','ghostLean','ghostGaze','eyes','closedEyes','rodGroup','fishingLine','bobber','catchToken','biteMark','ripple1','ripple2','sunriseLandscape','farMountains','nearMountains','risingSun','sunRays','seymurActor','heroGlitch','glitchSliceA','glitchSliceB','glitchSliceC'].map(id=>[id,$('#'+id)]));
+const nodes=Object.fromEntries(['fishingRock','fishingPool','tvNoise','tvTrackingBand','ghostLight','ghostActor','ghostLean','ghostGaze','eyes','closedEyes','rodGroup','fishingLine','bobber','catchToken','biteMark','ripple1','ripple2','sunriseLandscape','farMountains','nearMountains','risingSun','sunRays','seymurActor','heroGlitch','morphContour','morphRod','morphDisplacement','morphNoise','seymurReveal'].map(id=>[id,$('#'+id)]));
 const attr=(id,key,value)=>nodes[id].setAttribute(key,String(value));
 const opacity=(id,value)=>attr(id,'opacity',value);
+// Match equally spaced contour points, starting at the crown of each silhouette.
+function sampleContour(path,map){
+ const count=160,length=path.getTotalLength();
+ const points=Array.from({length:count},(_,i)=>map(path.getPointAtLength(length*i/count)));
+ const crown=points.reduce((best,p,i)=>p.y<points[best].y?i:best,0);
+ return points.slice(crown).concat(points.slice(0,crown));
+}
+const ghostContour=sampleContour($('#ghostBody > path'),p=>{
+ const x=177+p.x*.51,y=120+p.y*.51,a=7*Math.PI/180;
+ return {x:237+(x-237)*Math.cos(a)-(y-242)*Math.sin(a),y:239+(x-237)*Math.sin(a)+(y-242)*Math.cos(a)};
+});
+const personContour=sampleContour($('#fullBodyOutline > path'),p=>({x:92+p.x*384/1448,y:28+p.y*288/1086}));
+attr('morphRod','d',$('#fullBodyOutline > path:nth-child(2)').getAttribute('d'));
+attr('morphRod','transform','translate(92 28) scale('+384/1448+')');
+function drawMorph(p){
+ const active=!reduced&&p.glitch>0;
+ if(active){
+  const points=ghostContour.map((a,i)=>{const b=personContour[i];return `${(a.x+(b.x-a.x)*p.morph).toFixed(2)} ${(a.y+(b.y-a.y)*p.morph).toFixed(2)}`});
+  attr('morphContour','d','M'+points.join('L')+'Z');
+  attr('morphRod','transform',`translate(${261+24*p.morph} ${224-49*p.morph}) scale(${.656+.344*p.morph} ${.385+.615*p.morph}) translate(-285 -175) translate(92 28) scale(${384/1448})`);
+  attr('seymurReveal','clip-path','url(#morphClip)');
+  attr('seymurActor','filter','url(#morphDistortion)');
+  attr('ghostActor','filter','url(#morphDistortion)');
+ }else{
+  nodes.seymurReveal.removeAttribute('clip-path');
+  nodes.seymurActor.removeAttribute('filter');
+  nodes.ghostActor.removeAttribute('filter');
+ }
+ attr('morphDisplacement','scale',active?p.distortion:0);
+ attr('morphNoise','baseFrequency',`${.025+p.morph*.009} ${.06+p.morph*.016}`);
+}
 const originalNote=note.innerHTML,motion=matchMedia('(prefers-reduced-motion: reduce)');
 let reduced=motion.matches,caught=[],state='waiting',since=0,deadline=2200,choice=0,now=0,lastTime=null,raf=0,visible=true,moment=null,nextSunrise=11000,portraitReady=false,lastStaticFrame=-1;
 const portrait=new Image();portrait.src='assets/seymur-fishing-natural.png';
@@ -13,7 +44,7 @@ function hideFact(){panel.classList.remove('show');panel.inert=true}
 function showFact(i){$('#fact').textContent=facts[i][1];$('#rarity').textContent=facts[i][0];panel.classList.add('show');panel.inert=false}
 function renderBucket(){bucket.replaceChildren();facts.forEach((f,i)=>{const b=document.createElement('button');b.className='chip'+(caught.includes(i)?' filled':'');b.textContent=caught.includes(i)?'◆':'·';b.disabled=!caught.includes(i);b.setAttribute('aria-label',caught.includes(i)?'Read collected fact '+(i+1):'Fact not collected');b.onclick=()=>{if(moment)finishSunrise();showFact(i)};bucket.append(b)})}
 function startSunrise(){if(!portraitReady||state==='reeling')return;hideFact();moment={start:now,still:reduced};lastStaticFrame=-1;stage.dataset.scene='sunrise';trigger.setAttribute('aria-pressed','true');trigger.textContent='back to fishing ↙';note.innerHTML='a little sunlight.<br>a familiar face.';fish.setAttribute('aria-label','Enjoying the sunshine. Click to return to fishing.');schedule()}
-function finishSunrise(){moment=null;nextSunrise=now+35000+Math.random()*20000;state=caught.length===8?'complete':'waiting';since=now;deadline=now+2200;delete stage.dataset.scene;trigger.setAttribute('aria-pressed','false');trigger.textContent=reduced?'show portrait ↗':'a little sunshine ↗';note.innerHTML=originalNote;status.textContent='fishing… · '+caught.length+' / 8 collected';fish.setAttribute('aria-label',state==='complete'?'Read collected stories':'Astro is fishing. Wait for a bite, then click to reel in.');scene.setAttribute('aria-label','Astro the ghost holding a fishing rod beside a pool');['sunriseLandscape','seymurActor','heroGlitch','closedEyes','ghostLight'].forEach(id=>opacity(id,0));opacity('fishingRock',1);attr('fishingPool','transform','');opacity('ghostActor',1);opacity('eyes',1);opacity('rodGroup',1);attr('ghostLean','transform','');attr('ghostGaze','transform','')}
+function finishSunrise(){drawMorph({glitch:0,morph:0});moment=null;nextSunrise=now+35000+Math.random()*20000;state=caught.length===8?'complete':'waiting';since=now;deadline=now+2200;delete stage.dataset.scene;trigger.setAttribute('aria-pressed','false');trigger.textContent=reduced?'show portrait ↗':'a little sunshine ↗';note.innerHTML=originalNote;status.textContent='fishing… · '+caught.length+' / 8 collected';fish.setAttribute('aria-label',state==='complete'?'Read collected stories':'Astro is fishing. Wait for a bite, then click to reel in.');scene.setAttribute('aria-label','Astro the ghost holding a fishing rod beside a pool');['sunriseLandscape','seymurActor','heroGlitch','closedEyes','ghostLight'].forEach(id=>opacity(id,0));opacity('fishingRock',1);attr('fishingPool','transform','');opacity('ghostActor',1);opacity('eyes',1);opacity('rodGroup',1);attr('ghostLean','transform','');attr('ghostGaze','transform','')}
 trigger.onclick=()=>moment?finishSunrise():startSunrise();
 fish.onclick=()=>{if(moment){finishSunrise();return}if(state==='bite'){choice=facts.findIndex((_,i)=>!caught.includes(i));state='reeling';since=now;hideFact();fish.setAttribute('aria-label','Reeling in a catch')}else if(state==='complete')showFact(caught[0]);schedule()};
 function drawFishing(t){
@@ -29,8 +60,8 @@ function drawFishing(t){
  const blink=reduced?28:t%3800>3620?3:28;nodes.eyes.querySelectorAll('ellipse').forEach(e=>e.setAttribute('ry',blink));
 }
 function drawSunrise(){const p=sunrisePose(now-moment.start,moment.still);if(p.done){finishSunrise();drawFishing(now);return}
- opacity('sunriseLandscape',p.landscape);attr('farMountains','transform',`translate(0 ${(1-p.mountains)*190})`);attr('nearMountains','transform',`translate(0 ${(1-p.mountains)*140})`);attr('risingSun','transform',`translate(0 ${(1-p.sun)*195})`);opacity('sunRays',p.sun*.65);opacity('ghostActor',1-p.portrait);attr('ghostActor','transform',`translate(0 ${-p.look*3})`);attr('ghostLean','transform',`rotate(${p.look*7} 237 242)`);attr('ghostGaze','transform',`translate(${p.look*9} ${-p.look*13})`);opacity('eyes',1-p.eyes);opacity('closedEyes',p.eyes);opacity('ghostLight',p.eyes*.4);nodes.eyes.querySelectorAll('ellipse').forEach(e=>e.setAttribute('ry',28-p.look*7));opacity('rodGroup',1-p.look*.85);['fishingLine','bobber','catchToken','biteMark'].forEach(id=>opacity(id,0));opacity('seymurActor',p.portrait);opacity('fishingRock',1-p.portrait);attr('fishingPool','transform',`translate(${p.portrait*80} 0)`);const floatY=311+(reduced?0:Math.sin(now/650)*1.2);attr('fishingLine','d',`M465 40Q475 190 448 ${floatY}`);opacity('fishingLine',p.portrait);attr('bobber','transform',`translate(448 ${floatY})`);opacity('bobber',p.portrait);attr('seymurActor','transform','');opacity('heroGlitch',p.glitch*.94);if(p.glitch>0&&p.staticFrame!==lastStaticFrame){attr('tvNoise','seed',71+p.staticFrame*13);lastStaticFrame=p.staticFrame}attr('tvTrackingBand','transform',`translate(0 ${p.trackingY})`);attr('glitchSliceA','transform',`translate(${p.glitchX} 0)`);attr('glitchSliceB','transform',`translate(${-p.glitchX*.8} 0)`);attr('glitchSliceC','transform',`translate(${p.glitchX*.6} 0)`);
- const phase=p.glitch>.05?'glitch':p.portrait>.7?'portrait':p.eyes>.8?'basking':'sunrise';stage.dataset.scene=phase;status.textContent=phase==='portrait'?'a little more me.':phase==='basking'?'taking in the sunshine…':'a change of scenery…';scene.setAttribute('aria-label',phase==='portrait'?'A full-body graphite illustration of Seymur seated on a rock fishing, looking toward the sunlight, drawn throughout in a consistent graphite style':'Astro looks up and closes his eyes as the sun rises behind the mountains');
+ opacity('sunriseLandscape',p.landscape);attr('farMountains','transform',`translate(0 ${(1-p.mountains)*190})`);attr('nearMountains','transform',`translate(0 ${(1-p.mountains)*140})`);attr('risingSun','transform',`translate(0 ${(1-p.sun)*195})`);opacity('sunRays',p.sun*.65);opacity('ghostActor',p.ghost);attr('ghostActor','transform',`translate(0 ${-p.look*3})`);attr('ghostLean','transform',`rotate(${p.look*7} 237 242)`);attr('ghostGaze','transform',`translate(${p.look*9} ${-p.look*13})`);opacity('eyes',1-p.eyes);opacity('closedEyes',p.eyes);opacity('ghostLight',p.eyes*.4);nodes.eyes.querySelectorAll('ellipse').forEach(e=>e.setAttribute('ry',28-p.look*7));opacity('rodGroup',1-p.look*.85);['fishingLine','bobber','catchToken','biteMark'].forEach(id=>opacity(id,0));opacity('seymurActor',p.portrait);opacity('fishingRock',1-p.portrait);attr('fishingPool','transform',`translate(${p.portrait*80} 0)`);const floatY=311+(reduced?0:Math.sin(now/650)*1.2);attr('fishingLine','d',`M465 40Q475 190 448 ${floatY}`);opacity('fishingLine',p.portrait);attr('bobber','transform',`translate(448 ${floatY})`);opacity('bobber',p.portrait);attr('seymurActor','transform','');drawMorph(p);opacity('heroGlitch',p.glitch*.82);if(p.glitch>0&&p.staticFrame!==lastStaticFrame){attr('tvNoise','seed',71+p.staticFrame*13);lastStaticFrame=p.staticFrame}attr('tvTrackingBand','transform',`translate(0 ${p.trackingY})`);
+ const phase=p.glitch>.05?'glitch':p.portrait>.7?'portrait':p.eyes>.8?'basking':'sunrise';stage.dataset.scene=phase;status.textContent=phase==='glitch'?'slowly becoming me…':phase==='portrait'?'a little more me.':phase==='basking'?'taking in the sunshine…':'a change of scenery…';scene.setAttribute('aria-label',phase==='portrait'?'A full-body graphite illustration of Seymur seated on a rock fishing, looking toward the sunlight, drawn throughout in a consistent graphite style':'Astro looks up and closes his eyes as the sun rises behind the mountains');
 }
 function tick(t){raf=0;if(document.hidden||!visible){lastTime=null;return}now+=lastTime===null?0:Math.min(100,t-lastTime);lastTime=t;if(!moment&&!reduced&&portraitReady&&now>=nextSunrise&&state!=='reeling'&&!panel.classList.contains('show'))startSunrise();if(moment)drawSunrise();else drawFishing(now);for(let i=1;i<3;i++){const k=reduced?i*.28:(now/2200+i*.5)%1;attr('ripple'+i,'rx',20+k*48);attr('ripple'+i,'ry',4+k*10);opacity('ripple'+i,1-k)}schedule()}
 function schedule(){if(!raf&&visible&&!document.hidden)raf=requestAnimationFrame(tick)}
