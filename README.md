@@ -5,9 +5,9 @@
 
 Graphite artwork. Handwritten stories. A curious weasel. A ghost who goes fishing.
 
-[Explore the portfolio](https://seymur-mammadov-portfolio.smammadov494.chatgpt.site) · [Weaszel Swagger reference](https://weaszel-youtube-swagger.smammadov494.chatgpt.site)
+[Explore the portfolio](https://www.seymurmammadov.com/) · [Weaszel Swagger reference](https://weaszel-youtube-swagger.smammadov494.chatgpt.site)
 
-*The hosted sites currently require the owner's ChatGPT account.*
+*The portfolio is public; the hosted Swagger reference may require the owner’s ChatGPT account.*
 
 </div>
 
@@ -17,7 +17,7 @@ Graphite artwork. Handwritten stories. A curious weasel. A ghost who goes fishin
 
 The opening screen pairs my name with the interactive fishing scene on a quiet paper background. Featured work begins below the first viewport, with project headings in the site’s neutral text color.
 
-**Astro** begins quietly fishing. After about three seconds, mountains rise and the golden sun appears; monochrome TV static reshapes him into a full-body graphite illustration of me. I then reel a little contact card out of the water. It flies out of the scene and settles onto the page with email, LinkedIn, and GitHub links, remaining available after the figure returns to Astro. There is no exclamation mark or tap-to-catch step. The story can be replayed, and reduced-motion mode makes the contact card immediately available with an optional still portrait.
+**Astro** begins quietly fishing. After about three seconds, mountains rise and the golden sun appears; monochrome TV static reshapes him into a full-body graphite illustration of me. Four new illustrated poses then tell the story: noticing a catch, reeling it in, retrieving the card from the bucket, and stepping close to the camera with a smile and an outstretched “Let’s connect” card. The card arcs through the air into the bucket before I retrieve it. The final close-up stays on screen with usable email, LinkedIn, and GitHub links. Replay and skip controls are available, and reduced-motion mode goes directly to the still contact portrait. Artwork prompts and asset details are in [the art notes](docs/fishing-contact-art.md).
 
 **Weaszel** leads the featured work with a 30-second, scroll-controlled Remotion film. He runs in, stops to look at you, investigates the page, taps a tool into shape, and jumps behind the card before settling on its corner. One character, with distinct actions throughout the story.
 

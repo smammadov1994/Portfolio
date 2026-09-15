@@ -1,0 +1,24 @@
+# Fishing contact sequence
+
+Generated with the built-in image-generation tool. References: the existing fishing illustration and the owner's supplied smiling face photograph. New transparent graphite artwork; the source photograph is not committed.
+
+Assets: `dist/assets/seymur-catch-notice.png`, `dist/assets/seymur-catch-pull.png`, `dist/assets/seymur-catch-retrieve.png`, `dist/assets/seymur-connect-close.png`.
+
+## Prompts
+
+### Frame 1
+
+Use case: illustration-story. Create a production-ready new animation frame, matching the finely shaded black and white graphite pencil illustration in reference 1. Reference 1 defines SAME man, natural athletic proportions, dark short-sleeve T shirt, dark trousers, sneakers, fishing rock and rod. Reference 2 is the actual man's face and likeness: preserve his distinctive voluminous wavy hair, thick eyebrows, nose, angular jaw, stubble and warm expression, drawn integrally in graphite, never a photographic face pasted onto a drawing. Transparent background with real alpha, no scenery, no text, no border. Landscape 4:3 composition, full figure fits comfortably. Frame NOTICE: seated on the same low rock left of center, full body, suddenly leans forward slightly looking down and right at water offscreen, interested small smile, both hands hold fishing rod, rod bends gently up toward upper right corner as he feels a catch. No exclamation mark, no card, no bucket.
+
+### Frame 2
+
+Use case: illustration-story. Create a production-ready new animation frame, matching the finely shaded black and white graphite pencil illustration in reference 1. Reference 1 defines SAME man, natural athletic proportions, dark short-sleeve T shirt, dark trousers, sneakers, fishing rock and rod. Reference 2 is the actual man's face and likeness: preserve his distinctive voluminous wavy hair, thick eyebrows, nose, angular jaw, stubble and warm expression, drawn integrally in graphite, never a photographic face pasted onto a drawing. Transparent background with real alpha, no scenery, no text, no border. Landscape 4:3 composition, full figure fits comfortably. Frame PULL: same seated low rock and full figure left of center, leaning back and actively pulling fishing rod upward in a lively but anatomically believable gesture. Both hands grip rod in front of chest; elbows bent, gaze follows the catch toward the upper right, pleased curious expression. Rod arcs up to upper right. No catch object, no card and no bucket: these are animated separately.
+
+### Frame 3
+
+Use case: illustration-story. Create a production-ready new animation frame, matching the finely shaded black and white graphite pencil illustration in reference 1. Reference 1 defines SAME man, natural athletic proportions, dark short-sleeve T shirt, dark trousers, sneakers, fishing rock and rod. Reference 2 is the actual man's face and likeness: preserve his distinctive voluminous wavy hair, thick eyebrows, nose, angular jaw, stubble and warm expression, drawn integrally in graphite, never a photographic face pasted onto a drawing. Transparent background with real alpha, no scenery, no text, no border. Landscape 4:3 composition, full figure fits comfortably. Frame RETRIEVE: same man full body at same scale left of center, half standing from the low rock and bending down toward a small simple metal fishing bucket at lower right near his foot. His right hand reaches inside the bucket and is just lifting a small blank rectangular business card from it; left hand braces on knee. Rod laid on ground behind him. Face looks down toward bucket. Show whole bucket, feet and rock. Scene is a candid natural movement.
+
+### Frame 4
+
+Use case: illustration-story. Final frame for a personal portfolio animation. Reference 1 establishes fine black-and-white graphite pencil rendering, SAME man and plain dark T shirt. Reference 2 is his actual face, and is the PRIMARY facial identity and happy expression reference: closely preserve his voluminous wavy hair, thick eyebrows, eyes, distinctive nose, stubbled angular jaw and excited open smile. Draw the entire face naturally in the same graphite medium, no pasted photographic face. He has just walked right up to the camera to show a business card. Tight waist-up portrait, his happy face prominent in upper center and looking directly at viewer. One arm extends toward camera in convincing foreshortening; his hand holds a large BLANK cream rectangular business card horizontally in lower center foreground. Thumb and fingers grip only the edges, leaving the card face fully visible and nearly front-facing for text overlay. Card corners approximately at 28%/60% and 79%/86% of image width/height. Natural athletic build, not exaggerated. His head is not cropped, hair fully visible with small top margin. No fishing rod, bucket, rock, background scenery or text. Transparent background with real alpha. Landscape 4:3 image. Warm, playful, personal, carefully observed illustration.
+
