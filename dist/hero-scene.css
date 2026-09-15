@@ -13,3 +13,14 @@
 @media(max-width:700px){.hero{min-height:calc(100vh - 66px);min-height:calc(100dvh - 66px);padding:12px 0 28px}}
 
 #header nav{justify-content:flex-end}
+
+/* The illustrated catch becomes a real, persistent card below the scene. */
+.contact-card{align-self:center;width:min(530px,100%);padding:24px 30px;margin:12px 0 24px;background:#f9f8f4;border:1px solid #c9c7c1;border-radius:12px;box-shadow:3px 5px 0 #dddcd6,0 12px 32px #3838380a;transform-origin:center}
+.contact-card[hidden]{display:none}
+.contact-card .contact-kicker{font:20px/1.3 var(--font-display);color:#777;margin:0 0 8px}
+.contact-card h2{font:36px/1.15 var(--font-display);color:var(--ink);margin:0 0 18px}
+.contact-card .contact-email{display:block;font:500 16px/1.6 Manrope,system-ui,sans-serif;overflow-wrap:anywhere}
+.contact-card .contact-email span{float:right}.contact-links{display:flex;gap:24px;margin-top:18px;font:14px/1.5 Manrope,system-ui,sans-serif}
+.contact-card a{padding:5px 0;border-bottom:1px solid #d7d5ce}.contact-card a:hover{color:#111;border-color:#777}
+@media(max-width:700px){.contact-card{padding:22px;margin-top:10px}.contact-card h2{font-size:32px}.contact-card .contact-email{font-size:14px}}
+@media(min-width:900px){.hero{position:relative}.contact-card{position:absolute;left:0;top:130px;width:300px;padding:22px;z-index:3}.contact-card h2{font-size:32px}.contact-card .contact-email{font-size:13px}.contact-links{font-size:13px;gap:22px}.hero:has(.contact-card:not([hidden])) .scene-note{opacity:.7}}

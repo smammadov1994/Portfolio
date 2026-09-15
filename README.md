@@ -17,7 +17,7 @@ Graphite artwork. Handwritten stories. A curious weasel. A ghost who goes fishin
 
 The opening screen pairs my name with the interactive fishing scene on a quiet paper background. Featured work begins below the first viewport, with project headings in the site’s neutral text color.
 
-**Astro** fishes up little pieces of my story. Catch a bite and a thought bubble opens beside him. About three seconds after arrival, and occasionally afterward, mountains rise, a golden sun comes up above blue and sage-green mountains, and he looks up with closed eyes before monochrome TV static slowly reshapes his silhouette into a larger, full-body graphite illustration of me fishing on a rock, looking toward the sunlight in a consistent graphite style. The figure distorts and shrinks back into Astro before returning to fishing, keeping your collected facts. The “a little sunshine” control replays it; reduced-motion mode shows the still fishing illustration on request.
+**Astro** begins quietly fishing. After about three seconds, mountains rise and the golden sun appears; monochrome TV static reshapes him into a full-body graphite illustration of me. I then reel a little contact card out of the water. It flies out of the scene and settles onto the page with email, LinkedIn, and GitHub links, remaining available after the figure returns to Astro. There is no exclamation mark or tap-to-catch step. The story can be replayed, and reduced-motion mode makes the contact card immediately available with an optional still portrait.
 
 **Weaszel** leads the featured work with a 30-second, scroll-controlled Remotion film. He runs in, stops to look at you, investigates the page, taps a tool into shape, and jumps behind the card before settling on its corner. One character, with distinct actions throughout the story.
 
@@ -108,7 +108,7 @@ The HTML and CSS in `dist/` are authored files and are intentionally tracked. Th
 | File | Purpose |
 | --- | --- |
 | `dist/index.html` | Portfolio content, project order, and Astro's fishing interaction |
-| `src/hero-scene.js` | Fishing, occasional sunrise transformation, and playback lifecycle |
+| `src/hero-scene.js` | Fishing, sunrise transformation, contact-card catch, and playback lifecycle |
 | `src/hero-sunrise.js` | The 18-second sunrise, gradual morph, and portrait timing |
 | `dist/hero-scene.css` | Hero controls and portrait blending |
 | `src/weasel-story.jsx` | Weaszel's acting, scene content, and scroll controls |
