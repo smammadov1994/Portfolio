@@ -38,7 +38,7 @@ function drawMorph(p){
 }
 const motion=matchMedia('(prefers-reduced-motion: reduce)');
 let reduced=motion.matches,now=0,lastTime=null,raf=0,visible=true,moment=null,nextSunrise=3000,portraitReady=false,lastStaticFrame=-1,contactShown=false;
-const artwork=['seymur-fishing-natural','seymur-catch-notice','seymur-catch-pull','seymur-catch-retrieve','seymur-connect-close'];
+const artwork=['seymur-fishing-natural','seymur-catch-notice-v2','seymur-catch-pull-v2','seymur-catch-retrieve-v2','seymur-connect-close-v2'];
 trigger.disabled=true;
 Promise.all(artwork.map(name=>{const image=new Image();image.src=`assets/${name}.png`;return image.decode()}))
  .then(()=>{portraitReady=true;trigger.disabled=false;if(reduced)showFinal()})
@@ -96,7 +96,7 @@ function drawContactCatch(elapsed){
  attr('fishingBucket','transform',`translate(394 251) rotate(${wobble}) scale(1.2 1.6) translate(-150 -278)`);
  attr('closePose','transform',`translate(270 310) scale(${.38+.62*p.approach}) translate(-270 -310)`);
  opacity('catchToken',p.card);attr('catchToken','transform',`translate(${p.x} ${p.y}) rotate(${p.angle}) scale(${p.scale})`);
- attr('fishingLine','d',`M453 40 Q480 100 ${p.x} ${p.y-18*p.scale}`);
+ attr('fishingLine','d',`M469 34 Q480 100 ${p.x} ${p.y-18*p.scale}`);
  opacity('fishingLine',p.attached?1:0);opacity('bobber',0);
  stage.dataset.scene=p.phase;
  const captions={notice:'wait… there’s something there.',pull:'oh, I’ve got something…',flight:'straight into the bucket.',land:'got it.',retrieve:'one second…',approach:'this is for you.',connect:'let’s connect.'};
