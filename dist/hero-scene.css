@@ -1,8 +1,4 @@
 .mascot-stage .scene-button{mix-blend-mode:multiply}
-.mascot-stage .scene-controls{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;align-items:center;gap:20px;color:#858585}
-.mascot-stage .scene-controls .scene-status{position:static;text-align:center;font-size:12px;line-height:1.5}
-.mascot-stage[data-scene] .scene-note{max-width:185px}
-@media(max-width:700px){.mascot-stage{padding-bottom:42px}.mascot-stage .scene-controls{bottom:0;gap:14px}.mascot-stage .scene-controls .scene-status{font-size:11px}.mascot-stage[data-scene] .scene-note{right:0;top:0;max-width:145px;font-size:19px}}
 
 /* The opening viewport is reserved for the name and interactive scene. */
 .hero{min-height:calc(100vh - 80px);min-height:calc(100dvh - 80px);display:flex;flex-direction:column;justify-content:center;padding:24px 0 40px}
@@ -13,13 +9,9 @@
 #header nav{justify-content:flex-end}
 
 
-/* Native links are printed on the illustrated card itself. */
+/* Invisible native link regions follow the lettering printed in the artwork. */
 .mascot-stage{height:var(--scene-height,410px)}
 .mascot-stage .scene-button{cursor:default}
-.held-title{fill:#353535;font:20px Caveat,cursive}
-.held-email{fill:#353535;font:500 11.7px Manrope,sans-serif;letter-spacing:-.25px}
-.held-social{fill:#454545;font:500 12px Manrope,sans-serif}
 #held-contact a{cursor:pointer}
-#held-contact a:hover text,#held-contact a:focus-visible text{fill:#000;text-decoration:underline}
 #held-contact a:focus-visible{outline:1px solid #555;outline-offset:1px}
 @media(max-width:700px){.mascot-stage{height:auto}.scene{overflow:hidden}}

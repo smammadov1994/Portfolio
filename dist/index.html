@@ -40,7 +40,7 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
 <div class="mascot-stage">
 <div class="scene-button" id="fish">
 <svg class="scene" viewBox="0 0 540 375" role="group" aria-label="Astro the ghost holding a fishing rod beside a pool">
-<defs><linearGradient id="ghostGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#c0c0c0"/><stop offset=".36" stop-color="#9b9b9b"/><stop offset=".72" stop-color="#727272"/><stop offset="1" stop-color="#4a4a4a"/></linearGradient><linearGradient id="mountainShade" x1="0" y1="0" x2=".5" y2="1"><stop stop-color="#7e9eae"/><stop offset="1" stop-color="#c4d4d3"/></linearGradient>
+<defs><clipPath id="cardPrintArea"><rect x="216" y="246" width="142" height="70"/></clipPath><linearGradient id="ghostGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#c0c0c0"/><stop offset=".36" stop-color="#9b9b9b"/><stop offset=".72" stop-color="#727272"/><stop offset="1" stop-color="#4a4a4a"/></linearGradient><linearGradient id="mountainShade" x1="0" y1="0" x2=".5" y2="1"><stop stop-color="#7e9eae"/><stop offset="1" stop-color="#c4d4d3"/></linearGradient>
 <radialGradient id="ghostSunwash" cx=".92" cy=".12" r=".9"><stop stop-color="white" stop-opacity=".9"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
 <radialGradient id="sunHalo"><stop stop-color="#f6cd79" stop-opacity=".6"/><stop offset="1" stop-color="#f6cd79" stop-opacity="0"/></radialGradient>
 <clipPath id="landscapeClip"><rect x="35" y="-60" width="470" height="364" rx="20"/></clipPath>
@@ -77,16 +77,15 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
 <g id="fishingBucket"><path d="M128 278 L134 308 Q151 314 166 306 L171 278Z" fill="#f8f8f8" stroke="#9a9a9a" stroke-width="2"/><ellipse cx="150" cy="278" rx="22" ry="5" fill="#fdfdfd" stroke="#9a9a9a" stroke-width="2"/><path d="M129 282 Q122 309 150 312 Q171 312 172 282" fill="none" stroke="#9a9a9a" stroke-width="2"/></g>
 <g id="closePose" opacity="0" aria-hidden="true">
 <image href="assets/seymur-connect-close-v2.png" x="30" y="10" width="480" height="360"/>
-<g id="held-contact" opacity="0" pointer-events="none" aria-label="Contact Seymur">
-<text x="284" y="257" text-anchor="middle" class="held-title">Let’s connect.</text>
-<a href="mailto:smammadov494@gmail.com" tabindex="-1" aria-label="Email Seymur at smammadov494@gmail.com"><rect x="207" y="263" width="153" height="25" fill="transparent"/><text x="284" y="279" text-anchor="middle" class="held-email">smammadov494@gmail.com</text></a>
-<a href="https://www.linkedin.com/in/seymur-mammadov/" target="_blank" rel="noreferrer" tabindex="-1" aria-label="Seymur’s LinkedIn profile"><rect x="207" y="289" width="79" height="29" fill="transparent"/><text x="212" y="308" class="held-social">LinkedIn ↗</text></a>
-<a href="https://github.com/smammadov1994" target="_blank" rel="noreferrer" tabindex="-1" aria-label="Seymur’s GitHub profile"><rect x="289" y="289" width="71" height="29" fill="transparent"/><text x="300" y="308" class="held-social">GitHub ↗</text></a>
+<image href="assets/seymur-business-card-print.png" x="30" y="10" width="480" height="360" clip-path="url(#cardPrintArea)" aria-hidden="true"/>
+<g id="held-contact" opacity="0" pointer-events="none" aria-label="Seymur Mammadov, full-stack and AI engineer. Contact details on his business card.">
+<a href="mailto:smammadov494@gmail.com" tabindex="-1" aria-label="Email Seymur at smammadov494@gmail.com"><rect x="207" y="241" width="153" height="57" fill="transparent"/></a>
+<a href="https://www.linkedin.com/in/seymur-mammadov/" target="_blank" rel="noreferrer" tabindex="-1" aria-label="Seymur’s LinkedIn profile"><rect x="216" y="298" width="43" height="21" fill="transparent"/></a>
+<a href="https://github.com/smammadov1994" target="_blank" rel="noreferrer" tabindex="-1" aria-label="Seymur’s GitHub profile"><rect x="259" y="298" width="47" height="21" fill="transparent"/></a>
 </g>
 </g>
 </svg></div>
-<div class="scene-note">a little sunshine,<br>then a little hello.<span>↙</span></div>
-<div class="scene-controls"><div class="scene-status" id="status">a moment by the water…</div></div>
+<span class="sr-only" id="status">Seymur’s illustrated fishing scene</span>
 
 </div>
       </div>
