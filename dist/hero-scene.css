@@ -1,10 +1,8 @@
 .mascot-stage .scene-button{mix-blend-mode:multiply}
 .mascot-stage .scene-controls{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;align-items:center;gap:20px;color:#858585}
 .mascot-stage .scene-controls .scene-status{position:static;text-align:center;font-size:12px;line-height:1.5}
-#sunrise-trigger{padding:5px 0;border:0;border-bottom:1px dashed #b8b8b8;background:none;color:#777;font:13px/1.5 var(--font-display);cursor:pointer}
-#sunrise-trigger:disabled{opacity:.45;cursor:default}
 .mascot-stage[data-scene] .scene-note{max-width:185px}
-@media(max-width:700px){.mascot-stage{padding-bottom:42px}.mascot-stage .scene-controls{bottom:0;gap:14px}.mascot-stage .scene-controls .scene-status{font-size:11px}#sunrise-trigger{font-size:16px}.mascot-stage[data-scene] .scene-note{right:0;top:0;max-width:145px;font-size:19px}}
+@media(max-width:700px){.mascot-stage{padding-bottom:42px}.mascot-stage .scene-controls{bottom:0;gap:14px}.mascot-stage .scene-controls .scene-status{font-size:11px}.mascot-stage[data-scene] .scene-note{right:0;top:0;max-width:145px;font-size:19px}}
 
 /* The opening viewport is reserved for the name and interactive scene. */
 .hero{min-height:calc(100vh - 80px);min-height:calc(100dvh - 80px);display:flex;flex-direction:column;justify-content:center;padding:24px 0 40px}
@@ -14,13 +12,14 @@
 
 #header nav{justify-content:flex-end}
 
-/* The illustrated catch becomes a real, persistent card below the scene. */
-.contact-card{align-self:center;width:min(530px,100%);padding:24px 30px;margin:12px 0 24px;background:#f9f8f4;border:1px solid #c9c7c1;border-radius:12px;box-shadow:3px 5px 0 #dddcd6,0 12px 32px #3838380a;transform-origin:center}
-.contact-card[hidden]{display:none}
-.contact-card .contact-kicker{font:20px/1.3 var(--font-display);color:#777;margin:0 0 8px}
-.contact-card h2{font:36px/1.15 var(--font-display);color:var(--ink);margin:0 0 18px}
-.contact-card .contact-email{display:block;font:500 16px/1.6 Manrope,system-ui,sans-serif;overflow-wrap:anywhere}
-.contact-card .contact-email span{float:right}.contact-links{display:flex;gap:24px;margin-top:18px;font:14px/1.5 Manrope,system-ui,sans-serif}
-.contact-card a{padding:5px 0;border-bottom:1px solid #d7d5ce}.contact-card a:hover{color:#111;border-color:#777}
-@media(max-width:700px){.contact-card{padding:22px;margin-top:10px}.contact-card h2{font-size:32px}.contact-card .contact-email{font-size:14px}}
-@media(min-width:900px){.hero{position:relative}.contact-card{position:absolute;left:0;top:130px;width:300px;padding:22px;z-index:3}.contact-card h2{font-size:32px}.contact-card .contact-email{font-size:13px}.contact-links{font-size:13px;gap:22px}.hero:has(.contact-card:not([hidden])) .scene-note{opacity:.7}}
+
+/* Native links are printed on the illustrated card itself. */
+.mascot-stage{height:var(--scene-height,410px)}
+.mascot-stage .scene-button{cursor:default}
+.held-title{fill:#353535;font:20px Caveat,cursive}
+.held-email{fill:#353535;font:500 11.7px Manrope,sans-serif;letter-spacing:-.25px}
+.held-social{fill:#454545;font:500 12px Manrope,sans-serif}
+#held-contact a{cursor:pointer}
+#held-contact a:hover text,#held-contact a:focus-visible text{fill:#000;text-decoration:underline}
+#held-contact a:focus-visible{outline:1px solid #555;outline-offset:1px}
+@media(max-width:700px){.mascot-stage{height:auto}.scene{overflow:hidden}}
