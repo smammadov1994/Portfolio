@@ -19,15 +19,23 @@ The opening screen pairs my name with the interactive fishing scene on a quiet p
 
 **Astro** begins quietly fishing. After about one and a half seconds, mountains rise and the golden sun appears; monochrome TV static reshapes him into a full-body graphite illustration of me. Four new illustrated poses then tell the story: noticing a catch, reeling it in, retrieving the card from the bucket, and stepping close to the camera with a smile and an outstretched “Let’s connect” card. The card arcs through the air into the bucket before I retrieve it. The final close-up stays on screen with a professional business card: name, role, email, LinkedIn, and GitHub printed into the graphite artwork. Invisible, accessible link regions make the printed contact details clickable. There is no side commentary or running caption. The sequence starts automatically without a summon button or separate contact panel. Reduced-motion mode goes directly to the still contact portrait. Artwork prompts and asset details are in [the art notes](docs/fishing-contact-art.md), with [the photo-led facial likeness corrections](docs/fishing-likeness-correction.md).
 
-**Weaszel** leads the featured work with a 30-second, scroll-controlled Remotion film. He runs in, stops to look at you, investigates the page, taps a tool into shape, and jumps behind the card before settling on its corner. One character, with distinct actions throughout the story.
+**Weaszel** follows Skadden’s legal AI work with a 30-second, scroll-controlled Remotion film. He runs in, stops to look at you, investigates the page, taps a tool into shape, and jumps behind the card before settling on its corner. One character, with distinct actions throughout the story.
 
 ![Weaszel's eight acting poses: eye contact, curiosity, investigation, reaching, crouching, jumping, landing, and perching](dist/assets/weasel-acting.png)
 
 The film explains the website-to-MCP adapter prototype: observe a page and its controls, describe useful actions as tools, inspect the generated OpenAPI reference, and call the local adapter. The portfolio illustrates that workflow; it does not run the adapter in the hosted page.
 
+## Skadden — legal AI and knowledge systems
+
+Skadden is the first featured experience, directly below the hero. Seymur helps build some of the firm’s leading AI tools, including a RAG system over a corpus of legal documents, categorical models, AI-powered search and retrieval, and work with Harvey and Legora. He owned the AI components of the team’s new intranet and helped migrate content from the older CMS.
+
+![A graphite legal library and research workspace](dist/assets/skadden-library-v1.png)
+
+The 24-second illustrated film follows **Organize → Retrieve → Ground**. Papers move from a collection into a retrieval window; relevant passages appear and connect to a source-grounded answer. It uses fictional documents and a conceptual workflow, not internal firm content or a depiction of Harvey or Legora’s interfaces.
+
 ## PumpAds — a product by 2xROAS, Inc.
 
-I co-founded 2xROAS, Inc., the company behind PumpAds, with my partners to turn product ideas into creator-style video ads. The second featured story uses three monochrome creator cards to walk through the creative and production process.
+I co-founded 2xROAS, Inc., the company behind PumpAds, with my partners to turn product ideas into creator-style video ads. The PumpAds story uses three monochrome creator cards to walk through the creative and production process.
 
 <table>
   <tr>
@@ -50,7 +58,7 @@ The pipeline combined script generation, voice cloning, image and video generati
 
 ## SwipeBuilder — a home for good ideas
 
-[SwipeBuilder](https://swipebuilder.io/) follows PumpAds as the third featured project. A scroll-driven animated paper storyboard follows the workflow from collecting ad references to organizing a board, reading the creative, and developing new copy.
+[SwipeBuilder](https://swipebuilder.io/) follows PumpAds as the fourth featured project. A scroll-driven animated paper storyboard follows the workflow from collecting ad references to organizing a board, reading the creative, and developing new copy.
 
 <p align="center">
   <img src="dist/assets/swipebuilder-food-creator.png" width="180" alt="Fictional food creator at a neighborhood noodle spot">
@@ -66,7 +74,7 @@ The five-person company reached **3,000 users** and, at peak, **300 paying custo
 
 ## JobTarget — opportunities in motion
 
-JobTarget follows SwipeBuilder as the fourth featured experience. An original animated routing desk follows sample job listings from applicant tracking systems, through consistent records and destination matching, into relevant job boards.
+JobTarget follows SwipeBuilder as the fifth featured experience. An original animated routing desk follows sample job listings from applicant tracking systems, through consistent records and destination matching, into relevant job boards.
 
 ![An illustrated routing desk connecting ATS job listings to relevant job boards](dist/assets/jobtarget-workflow.png)
 
@@ -84,13 +92,9 @@ The jobs, board names, and matching signals in the animation are explanatory exa
 
 ![Signal98 dashboard with demo data](dist/assets/signal98-dashboard.jpg)
 
-The portfolio's three-step diagram explains **Capture → JEV assessment → Review a fix** with an illustrative checkout issue. Its model description follows [TypeSafe AI's System One documentation](https://docs.typesafe.ai/concepts/system-one); project details come from Signal98's implementation.
+The portfolio’s 24-second illustrated film explains **Capture → Assess → Investigate** with an illustrative checkout issue. A generated graphite debugging workbench sets the scene as context cards move into an assessment window, JEV’s judgments appear, and Ghost prepares a proposed change for review. Its model description follows [TypeSafe AI's System One documentation](https://docs.typesafe.ai/concepts/system-one); project details come from Signal98's implementation.
 
-## Skadden — intranet and AI knowledge systems
-
-At Skadden, Seymur built the AI components of a new intranet alongside his team and helped migrate content from a legacy CMS. His ownership covered categorical models for content classification, AI search and retrieval, and retrieval-augmented generation. The section distinguishes that AI ownership from the team's broader intranet and migration work.
-
-A conceptual **Migrate → Classify → Retrieve** diagram illustrates the work without depicting internal content. Both new diagrams play once when visible, support manual steps and play/pause, respect reduced motion, and retain readable content without JavaScript.
+Both new films support play/pause, scrubbing, chapter selection, mobile compositions, and a reduced-motion reading view. Generation prompts and asset details are in [the art notes](docs/ai-work-art.md).
 
 ## How the portfolio works
 
@@ -131,7 +135,7 @@ The HTML and CSS in `dist/` are authored files and are intentionally tracked. Th
 | `src/pumpads-story.jsx` | PumpAds creator cards and animated business story |
 | `src/swipebuilder-story.jsx` | SwipeBuilder’s interactive paper storyboard |
 | `src/jobtarget-story.jsx` | JobTarget’s ATS-to-job-board routing animation |
-| `src/ai-work.js` | Signal98 and Skadden diagram playback and accessibility |
+| `src/ai-stories.jsx` | Signal98 and Skadden illustrated films, playback, and accessibility |
 | `dist/ai-work.css` | Signal98 and Skadden sections and responsive diagrams |
 | `dist/jobtarget-story.css` | JobTarget experience layout and responsive styling |
 | `dist/swipebuilder-story.css` | SwipeBuilder section layout and responsive styling |
