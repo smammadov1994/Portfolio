@@ -2,6 +2,7 @@ import React, {useEffect, useMemo, useRef, useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import {AbsoluteFill, Img, useCurrentFrame} from 'remotion';
 import {Player} from '@remotion/player';
+import {SignalBugFilm} from './signal98-bug-film.jsx';
 
 const TOTAL = 720;
 const body = "'Manrope',sans-serif", hand = "'Caveat',cursive";
@@ -21,8 +22,8 @@ const stories = {
   signal98: {
     name:'Signal98', art:'signal98-workbench-v1.png', label:'Follow the error. Understand the impact.',
     chapters:[
-      {name:'Capture', title:'Repeated errors become one issue.', copy:'The SDK collects the error and the steps before it. Matching events are grouped, retaining the context needed to investigate.'},
-      {name:'Assess', title:'JEV gives the issue structure.', copy:'JEV by TypeSafe AI assesses category, likely cause, severity, and user impact. Application rules turn those judgments into priorities.'},
+      {name:'Capture', title:'A bug enters the picture.', copy:'Signal98 captures the error, stack trace, and user steps. Repeated events are grouped into an issue that travels to assessment.'},
+      {name:'Assess', title:'JEV by TypeSafe AI sizes up the bug.', copy:'JEV by TypeSafe AI assesses category, likely cause, severity, and user impact. Application rules turn those judgments into priorities.'},
       {name:'Investigate', title:'Carry that context into the fix.', copy:'Ghost investigates the issue separately from JEV. A proposed change is prepared in an isolated worktree for review before applying.'}
     ],
   }
@@ -101,15 +102,15 @@ export function AIStoryFilm({kind,compact=false}) {
 }
 
 function AIStory({kind}) {
-  const story=stories[kind],player=useRef(null),root=useRef(null),started=useRef(false),running=useRef(false),position=useRef(0);
+  const story=stories[kind],player=useRef(null),root=useRef(null),running=useRef(false),position=useRef(0),raf=useRef(0),visible=useRef(false);
   const [frame,setFrame]=useState(0),[playing,setPlaying]=useState(false),[reading,setReading]=useState(false);
   const [compact,setCompact]=useState(()=>matchMedia('(max-width:700px)').matches);
   const [reduced,setReduced]=useState(()=>matchMedia('(prefers-reduced-motion:reduce)').matches);
   const still=reading||reduced, act=Math.min(2,Math.floor(frame/240));
   const props=useMemo(()=>({kind,compact}),[kind,compact]);
   function pause(){player.current?.pause();running.current=false;setPlaying(false);}
-  function seek(n){position.current=n;player.current?.seekTo(n);setFrame(n);}
-  function play(){started.current=true;if(position.current>=TOTAL-2)seek(0);player.current?.play();running.current=true;setPlaying(true);}
+  function seek(value){const n=Math.round(Math.max(0,Math.min(TOTAL-1,value)));position.current=n;player.current?.seekTo(n);setFrame(n);}
+  function play(){if(position.current>=TOTAL-2)seek(0);player.current?.play();running.current=true;setPlaying(true);}
   useEffect(()=>{
     const size=matchMedia('(max-width:700px)'),motion=matchMedia('(prefers-reduced-motion:reduce)');
     const change=()=>{pause();setCompact(size.matches);setReduced(motion.matches);};
@@ -123,21 +124,40 @@ function AIStory({kind}) {
     const ended=()=>{running.current=false;setPlaying(false);};
     p.addEventListener('frameupdate',update);p.addEventListener('ended',ended);
     p.seekTo(position.current);
+    const scroll=()=>{
+      if(raf.current)return;
+      raf.current=requestAnimationFrame(()=>{
+        raf.current=0;
+        if(!visible.current||running.current||matchMedia('(max-height:620px) and (min-width:701px)').matches)return;
+        const element=root.current;
+        const distance=element.offsetHeight-innerHeight;
+        seek(clamp(-element.getBoundingClientRect().top/Math.max(1,distance))*(TOTAL-1));
+      });
+    };
     const observer=new IntersectionObserver(([e])=>{
-      if(e.intersectionRatio<.35){pause();return;}
-      if(!started.current&&!document.hidden)play();
-    },{threshold:[0,.35]});
+      visible.current=e.isIntersecting;
+      if(!visible.current)pause();else scroll();
+    });
     observer.observe(root.current);
-    const hide=()=>{if(document.hidden)pause();};document.addEventListener('visibilitychange',hide);
-    return()=>{observer.disconnect();document.removeEventListener('visibilitychange',hide);p.removeEventListener('frameupdate',update);p.removeEventListener('ended',ended);};
+    const hide=()=>{if(document.hidden)pause();};
+    document.addEventListener('visibilitychange',hide);
+    addEventListener('scroll',scroll,{passive:true});addEventListener('resize',scroll);
+    return()=>{
+      observer.disconnect();document.removeEventListener('visibilitychange',hide);
+      removeEventListener('scroll',scroll);removeEventListener('resize',scroll);
+      cancelAnimationFrame(raf.current);raf.current=0;
+      p.removeEventListener('frameupdate',update);p.removeEventListener('ended',ended);
+    };
   },[still,compact]);
-  return <div className="ai-film-wrap" ref={root}>
+  return <div className="ai-film-wrap"><div className={`ai-film-track ${still?'ai-film-still':''}`} ref={root}><div className="ai-film-sticky">
     {still?<ol className="ai-film-readable">{story.chapters.map(c=><li key={c.name}><h3>{c.title}</h3><p>{c.copy}</p></li>)}</ol>:<>
       <div className="ai-film-caption"><span>0{act+1} / {story.chapters[act].name}</span><h3>{story.chapters[act].title}</h3><p>{story.chapters[act].copy}</p></div>
-      <div className="ai-film-cinema" role="img" aria-label={`${story.name} illustrated workflow: ${story.chapters[act].title}`}><Player ref={player} component={AIStoryFilm} inputProps={props} durationInFrames={TOTAL} fps={30} compositionWidth={compact?760:1200} compositionHeight={compact?1000:720} style={{width:'100%'}} controls={false} autoPlay={false} clickToPlay={false} doubleClickToFullscreen={false} spaceKeyToPlayOrPause={false} acknowledgeRemotionLicense/></div>
-      <div className="ai-film-controls"><button type="button" onClick={()=>playing?pause():play()} aria-label={`${playing?'Pause':frame>=TOTAL-2?'Replay':'Play'} ${story.name} story`}>{playing?'Ⅱ Pause':frame>=TOTAL-2?'↻ Replay':'▷ Play'}</button><label><span className="sr-only">{story.name} animation position</span><input type="range" min="0" max={TOTAL-1} value={frame} aria-valuetext={`${story.chapters[act].name}, ${Math.floor(frame/30)} seconds`} onChange={e=>{started.current=true;pause();seek(Number(e.target.value));}}/></label><span>{Math.floor(frame/30)} / 24s</span></div>
-      <div className="ai-film-chapters" role="group" aria-label={`${story.name} story chapters`}>{story.chapters.map((c,i)=><button type="button" key={c.name} aria-current={i===act?'step':undefined} onClick={()=>{started.current=true;pause();seek(i*240+195);}}><small>0{i+1}</small>{c.name}</button>)}</div>
+      <div className="ai-film-cinema" role="img" aria-label={`${story.name} illustrated workflow: ${story.chapters[act].title}`}><Player ref={player} component={kind==='signal98'?SignalBugFilm:AIStoryFilm} inputProps={props} durationInFrames={TOTAL} fps={30} compositionWidth={compact?760:1200} compositionHeight={compact?1000:720} style={{width:'100%'}} controls={false} autoPlay={false} clickToPlay={false} doubleClickToFullscreen={false} spaceKeyToPlayOrPause={false} acknowledgeRemotionLicense/></div>
+      <div className="ai-film-controls"><button type="button" onClick={()=>playing?pause():play()} aria-label={`${playing?'Pause':frame>=TOTAL-2?'Replay':'Play'} ${story.name} story`}>{playing?'Ⅱ Pause':frame>=TOTAL-2?'↻ Replay':'▷ Play'}</button><label><span className="sr-only">{story.name} animation position</span><input type="range" min="0" max={TOTAL-1} value={frame} aria-valuetext={`${story.chapters[act].name}, ${Math.floor(frame/30)} seconds`} onChange={e=>{pause();seek(Number(e.target.value));}}/></label><span>{Math.floor(frame/30)} / 24s</span></div>
+      <div className="ai-film-chapters" role="group" aria-label={`${story.name} story chapters`}>{story.chapters.map((c,i)=><button type="button" key={c.name} aria-current={i===act?'step':undefined} onClick={()=>{pause();seek(i*240+195);}}><small>0{i+1}</small>{c.name}</button>)}</div>
+      <p className="ai-film-scroll-hint">{playing?'Playing the story.':'Scroll to move the story. Scroll back to rewind.'}</p>
     </>}
+    </div></div>
     <button className="ai-film-reading" type="button" disabled={reduced} onClick={()=>{pause();setReading(!reading);}}>{reduced?'Reduced motion enabled':reading?'Show animation':'Read without animation'}</button>
   </div>;
 }

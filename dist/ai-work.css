@@ -78,3 +78,14 @@
 .ai-film-readable{display:grid;grid-template-columns:repeat(3,1fr);list-style:none;padding:0;gap:30px}.ai-film-readable h3{font:500 29px/1.2 var(--font-display);margin:0 0 12px}.ai-film-readable p{font:16px/1.8 var(--font-body);color:var(--text-body)}
 #work{scroll-margin-top:25px}
 @media(max-width:700px){.ai-film-caption{min-height:187px}.ai-film-caption h3{font-size:30px}.ai-film-caption p{font-size:14px}.ai-film-controls{gap:12px}.ai-film-controls button{font-size:12px;min-width:66px}.ai-film-chapters{gap:12px}.ai-film-chapters button{font-size:12px}.ai-film-readable{grid-template-columns:1fr;gap:14px}}
+
+/* A sticky stage maps the whole story to scroll position, like Weaszel. */
+.ai-film-track{height:350svh;position:relative}
+.ai-film-sticky{position:sticky;top:12px;padding-top:12px}
+.ai-film-track .ai-film-caption{min-height:140px;padding-bottom:14px}
+.ai-film-track .ai-film-cinema{max-width:calc((100svh - 340px)*1.666667);margin:0 auto}
+.ai-film-scroll-hint{font:18px/1.4 var(--font-display);text-align:center;color:var(--text-secondary);margin:5px 0 0}
+.ai-film-still{height:auto}.ai-film-still .ai-film-sticky{position:relative;top:0}
+@media(max-width:700px){.ai-film-track{height:350svh}.ai-film-sticky{top:5px;padding-top:10px}.ai-film-track .ai-film-caption{min-height:175px}.ai-film-track .ai-film-cinema{max-width:calc((100svh - 340px)*.76)}.ai-film-scroll-hint{font-size:16px}.ai-film-still{height:auto}}
+@media(max-height:620px) and (min-width:701px){.ai-film-track{height:auto}.ai-film-sticky{position:relative;top:0}.ai-film-track .ai-film-cinema{max-width:850px}.ai-film-scroll-hint{display:none}}
+@media(prefers-reduced-motion:reduce){.ai-film-track{height:auto}.ai-film-sticky{position:relative;top:0}}

@@ -31,7 +31,7 @@ Skadden is the first featured experience, directly below the hero. Seymur helps 
 
 ![A graphite legal library and research workspace](dist/assets/skadden-library-v1.png)
 
-The 24-second illustrated film follows **Organize → Retrieve → Ground**. Papers move from a collection into a retrieval window; relevant passages appear and connect to a source-grounded answer. It uses fictional documents and a conceptual workflow, not internal firm content or a depiction of Harvey or Legora’s interfaces.
+The 24-second scroll-controlled illustrated film follows **Organize → Retrieve → Ground**. Its stage stays visible while scrolling advances or reverses the timeline, matching Weaszel’s interaction. Papers move from a collection into a retrieval window; relevant passages appear and connect to a source-grounded answer. It uses fictional documents and a conceptual workflow, not internal firm content or a depiction of Harvey or Legora’s interfaces.
 
 ## PumpAds — a product by 2xROAS, Inc.
 
@@ -92,9 +92,9 @@ The jobs, board names, and matching signals in the animation are explanatory exa
 
 ![Signal98 dashboard with demo data](dist/assets/signal98-dashboard.jpg)
 
-The portfolio’s 24-second illustrated film explains **Capture → Assess → Investigate** with an illustrative checkout issue. A generated graphite debugging workbench sets the scene as context cards move into an assessment window, JEV’s judgments appear, and Ghost prepares a proposed change for review. Its model description follows [TypeSafe AI's System One documentation](https://docs.typesafe.ai/concepts/system-one); project details come from Signal98's implementation.
+The portfolio’s original 24-second bug story explains **Capture → Assess → Investigate**. A graphite bug floats in with an illustrative checkout issue, enters a JEV assessment machine, receives category/severity/user-impact judgments, and travels to Ghost for investigation. Both the character and scanner are new transparent assets made for Signal98, with their own layout and continuous frame-based choreography. Scroll forward or backward to follow or rewind the bug’s journey. Its model description follows [TypeSafe AI's System One documentation](https://docs.typesafe.ai/concepts/system-one); project details come from Signal98's implementation.
 
-Both new films support play/pause, scrubbing, chapter selection, mobile compositions, and a reduced-motion reading view. Generation prompts and asset details are in [the art notes](docs/ai-work-art.md).
+Both films use scroll-controlled sticky stages and support play/pause, scrubbing, chapter selection, mobile compositions, and a reduced-motion reading view. On short desktop viewports, a normal-flow player keeps the controls reachable. Generation prompts and asset details are in [the original art notes](docs/ai-work-art.md) and [the Signal98 bug art notes](docs/signal98-bug-art.md).
 
 ## How the portfolio works
 
@@ -135,7 +135,8 @@ The HTML and CSS in `dist/` are authored files and are intentionally tracked. Th
 | `src/pumpads-story.jsx` | PumpAds creator cards and animated business story |
 | `src/swipebuilder-story.jsx` | SwipeBuilder’s interactive paper storyboard |
 | `src/jobtarget-story.jsx` | JobTarget’s ATS-to-job-board routing animation |
-| `src/ai-stories.jsx` | Signal98 and Skadden illustrated films, playback, and accessibility |
+| `src/ai-stories.jsx` | Shared scroll timeline, playback, accessibility, and Skadden film |
+| `src/signal98-bug-film.jsx` | Signal98 bug choreography, JEV scanner, and Ghost investigation |
 | `dist/ai-work.css` | Signal98 and Skadden sections and responsive diagrams |
 | `dist/jobtarget-story.css` | JobTarget experience layout and responsive styling |
 | `dist/swipebuilder-story.css` | SwipeBuilder section layout and responsive styling |
