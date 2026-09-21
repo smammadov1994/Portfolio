@@ -27,6 +27,7 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
 <link rel="stylesheet" href="jobtarget-story.css">
 <link rel="stylesheet" href="typography.css">
 <link rel="stylesheet" href="hero-scene.css">
+<link rel="stylesheet" href="ai-work.css">
 </head>
 <body>
   <header id="header"><nav class="shell"><div class="navlinks"><a href="#work">Work</a><a href="https://github.com/smammadov1994" target="_blank" rel="noreferrer">GitHub ↗</a></div></nav></header>
@@ -132,5 +133,43 @@ section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-si
   <div class="job-footer"><p>JobTarget · Stamford, Connecticut · Full-stack engineering · AWS · Partner integrations</p></div>
 </section>
 
+<section id="signal98" class="ai-feature shell" aria-labelledby="signal98-title">
+  <div class="ai-heading">
+    <div><p class="ai-kicker">05 / independent project</p><h2 id="signal98-title">Signal98.</h2><p class="ai-role">Error monitoring · AI triage · Developer tools</p></div>
+    <p class="ai-intro">I built Signal98 to connect application errors to the people and workflows they affect. It captures issues, uses <strong>JEV by TypeSafe AI</strong> to assess them, and gives each issue a Ghost conversation for investigation and a reviewed fix.</p>
+  </div>
+  <div class="ai-walkthrough" data-walkthrough data-step="0" aria-label="Signal98 workflow illustration">
+    <div class="ai-window-bar"><span><i aria-hidden="true"></i> Signal98 / from error to action</span><span>Illustrative example</span></div>
+    <div class="ai-flow">
+      <article class="ai-flow-card" data-phase="0"><p class="ai-card-label">01 / Capture</p><div class="ai-error-icon" aria-hidden="true">{ ! }</div><h3>One issue. Its context.</h3><div class="ai-log"><code>TypeError · checkout</code><span>Payment form → submit → error</span><span>Repeated events grouped together</span></div><p>Browser and server SDKs capture the error and the steps leading up to it.</p></article>
+      <article class="ai-flow-card ai-judge" data-phase="1"><p class="ai-card-label">02 / Assess</p><div class="ai-model-mark"><span>JEV</span><small>by TypeSafe AI</small></div><dl class="ai-decisions"><div><dt>Category</dt><dd>Payments</dd></div><div><dt>Severity</dt><dd>Major</dd></div><div><dt>User-facing</dt><dd>Likely</dd></div></dl><p>Typed judgments inform the priority and alert rules in my code.</p></article>
+      <article class="ai-flow-card" data-phase="2"><p class="ai-card-label">03 / Investigate</p><div class="ai-review-icon" aria-hidden="true"><span>−</span><span>+</span></div><h3>Context to a code fix.</h3><div class="ai-review-list"><span>Investigate with Ghost</span><span>Prepare an isolated change</span><span>Review the diff, then apply</span></div><p>The assessment stays attached to the conversation and proposed fix.</p></article>
+    </div>
+    <div class="ai-walk-controls" hidden><div class="ai-steps" aria-label="Signal98 workflow steps"><button type="button" data-go="0" aria-pressed="true">Capture</button><button type="button" data-go="1" aria-pressed="false">JEV assessment</button><button type="button" data-go="2" aria-pressed="false">Review a fix</button></div><button type="button" class="ai-play" aria-label="Play Signal98 animation">Play</button></div>
+  </div>
+  <div class="ai-notes"><div><h3>JEV is the decision layer.</h3><p>I integrated TypeSafe AI’s System One model with explicit questions about each issue. Choice answers identify category and likely cause; scores assess severity and fix complexity; probability judgments assess urgency, user impact, and risk.</p><p>The application combines those answers with event counts and thresholds to decide what deserves attention. Repeated errors reuse the assessment; regressions or meaningful growth trigger another look.</p></div><div><h3>From assessment to investigation.</h3><p>I built the capture SDK, monitoring dashboard, and issue workflow around that context. Ghost handles the conversation and code investigation separately from JEV’s structured assessments.</p><p>Proposed code changes are prepared in an isolated Git worktree, with a diff to review before applying. If JEV is unavailable, the dashboard clearly labels its fallback assessment.</p></div></div>
+  <details class="ai-product-preview"><summary>See the Signal98 dashboard <span aria-hidden="true">↗</span></summary><figure><a href="assets/signal98-dashboard.jpg" target="_blank" rel="noreferrer"><img src="assets/signal98-dashboard.jpg" alt="Signal98 demo dashboard showing error activity, affected users, issue priorities, and Ghost investigation tools" width="1932" height="1324" loading="lazy"></a><figcaption>The working application, shown with demo data. Open the image for a closer look.</figcaption></figure></details>
+  <div class="ai-footer"><p>JavaScript SDK · Next.js · SQLite · JEV · Isolated Git worktrees</p><div><a href="https://github.com/smammadov1994/Signal98" target="_blank" rel="noreferrer">Explore Signal98 ↗</a><a href="https://docs.typesafe.ai/concepts/system-one" target="_blank" rel="noreferrer">About JEV / TypeSafe AI ↗</a></div></div>
+</section>
+
+<section id="skadden" class="ai-feature shell" aria-labelledby="skadden-title">
+  <div class="ai-heading">
+    <div><p class="ai-kicker">06 / enterprise knowledge systems</p><h2 id="skadden-title">Skadden.</h2><p class="ai-role">Intranet · Content classification · AI search &amp; RAG</p></div>
+    <p class="ai-intro">At Skadden, I built the AI components of a new intranet alongside my team. We moved content from a legacy CMS into an AI-driven knowledge system, bringing classification, search, and retrieval into the experience.</p>
+  </div>
+  <div class="ai-walkthrough ai-knowledge" data-walkthrough data-step="0" aria-label="Skadden knowledge workflow illustration">
+    <div class="ai-window-bar"><span><i aria-hidden="true"></i> From content to knowledge</span><span>Conceptual illustration</span></div>
+    <div class="ai-flow">
+      <article class="ai-flow-card" data-phase="0"><p class="ai-card-label">01 / Migrate</p><div class="ai-document-stack" aria-hidden="true"><span></span><span></span><span><b></b><b></b><b></b></span></div><h3>A new home for content.</h3><p>Move existing knowledge from the older CMS into the new intranet built by our team.</p><div class="ai-source-label">Legacy CMS <span aria-hidden="true">→</span> New intranet</div></article>
+      <article class="ai-flow-card" data-phase="1"><p class="ai-card-label">02 / Classify</p><div class="ai-taxonomy" aria-hidden="true"><span>Content</span><i></i><div><span>Topic</span><span>Category</span><span>Type</span></div></div><h3>Give content structure.</h3><p>Use categorical models to classify content and support its organization in the new system.</p><div class="ai-source-label">AI content classification</div></article>
+      <article class="ai-flow-card" data-phase="2"><p class="ai-card-label">03 / Retrieve</p><div class="ai-search-example"><span aria-hidden="true">⌕</span> Find relevant knowledge</div><div class="ai-search-docs" aria-hidden="true"><span><b></b><i></i><i></i></span><span><b></b><i></i><i></i></span></div><h3>Make knowledge useful.</h3><p>Connect AI-powered search and retrieval with RAG to bring relevant content into answers.</p></article>
+    </div>
+    <div class="ai-walk-controls" hidden><div class="ai-steps" aria-label="Skadden workflow steps"><button type="button" data-go="0" aria-pressed="true">Migrate</button><button type="button" data-go="1" aria-pressed="false">Classify</button><button type="button" data-go="2" aria-pressed="false">Retrieve</button></div><button type="button" class="ai-play" aria-label="Play Skadden animation">Play</button></div>
+  </div>
+  <div class="ai-notes"><div><h3>My ownership: the AI.</h3><p>I owned the AI work across the system: categorical models for content classification, AI-powered search and information retrieval, and retrieval-augmented generation. My focus was making existing knowledge easier to find and use.</p></div><div><h3>Built with the team.</h3><p>The intranet and CMS migration were a shared effort. I helped move older content into the new platform and built the AI capabilities that became part of the team’s intranet experience.</p></div></div>
+  <div class="ai-footer"><p>Skadden · Intranet engineering · CMS migration · Classification models · Search &amp; RAG</p></div>
+</section>
+
   </main>
+  <script type="module" src="assets/ai-work.js"></script>
   <script type="module" src="assets/hero-scene.js"></script><script type="module" src="assets/weasel-story.js"></script><script type="module" src="assets/pumpads-story.js"></script><script type="module" src="assets/swipebuilder-story.js"></script><script type="module" src="assets/jobtarget-story.js"></script></body></html>

@@ -66,7 +66,7 @@ The five-person company reached **3,000 users** and, at peak, **300 paying custo
 
 ## JobTarget — opportunities in motion
 
-JobTarget follows SwipeBuilder as the fourth and final featured experience. The page ends after this section. An original animated routing desk follows sample job listings from applicant tracking systems, through consistent records and destination matching, into relevant job boards.
+JobTarget follows SwipeBuilder as the fourth featured experience. An original animated routing desk follows sample job listings from applicant tracking systems, through consistent records and destination matching, into relevant job boards.
 
 ![An illustrated routing desk connecting ATS job listings to relevant job boards](dist/assets/jobtarget-workflow.png)
 
@@ -75,6 +75,22 @@ The 24-second React + Remotion story has four chapters: **Pull → Prepare → M
 Seymur worked as a **Software Engineer (January 2020–May 2022)** and **Tech Lead (May 2022–September 2025)** at JobTarget. The section covers compliance product ownership, Local Outreach, Compliance-Post / Reporting Hub, Salesforce integrations, AWS migrations, and mentoring. Existing career outcomes are presented separately from the illustrative workflow: **24% lower churn** through full-stack features and **40% faster audit responses** through the reporting hub.
 
 The jobs, board names, and matching signals in the animation are explanatory examples, not a representation of proprietary routing logic or live delivery data.
+
+## Signal98 — error monitoring with JEV
+
+[Signal98](https://github.com/smammadov1994/Signal98) connects captured errors, grouped issues, AI assessments, and code investigations. Seymur built its JavaScript SDK, monitoring dashboard, classification pipeline, and Ghost workflow.
+
+**JEV by TypeSafe AI** provides structured assessments: category, likely cause, severity, fix complexity, urgency, and user impact. Signal98 combines the answers with counts and thresholds in code to prioritize issues and determine alerts. Repeat occurrences reuse an assessment; regressions and significant growth trigger reassessment. Ghost handles the separate investigation and fix workflow, preparing changes in an isolated Git worktree for review.
+
+![Signal98 dashboard with demo data](dist/assets/signal98-dashboard.jpg)
+
+The portfolio's three-step diagram explains **Capture → JEV assessment → Review a fix** with an illustrative checkout issue. Its model description follows [TypeSafe AI's System One documentation](https://docs.typesafe.ai/concepts/system-one); project details come from Signal98's implementation.
+
+## Skadden — intranet and AI knowledge systems
+
+At Skadden, Seymur built the AI components of a new intranet alongside his team and helped migrate content from a legacy CMS. His ownership covered categorical models for content classification, AI search and retrieval, and retrieval-augmented generation. The section distinguishes that AI ownership from the team's broader intranet and migration work.
+
+A conceptual **Migrate → Classify → Retrieve** diagram illustrates the work without depicting internal content. Both new diagrams play once when visible, support manual steps and play/pause, respect reduced motion, and retain readable content without JavaScript.
 
 ## How the portfolio works
 
@@ -85,7 +101,7 @@ The jobs, board names, and matching signals in the animation are explanatory exa
 | Playback controls | Scroll scrubbing, play/pause, chapter navigation, and a timeline slider |
 | Responsive motion | Desktop and mobile compositions, plus a reduced-motion reading mode |
 | Build | esbuild bundles the animation and interactive story entry points with shared dependencies |
-| Hosting | ChatGPT Sites, serving the `dist/` directory |
+| Hosting | Vercel, serving the `dist/` directory at seymurmammadov.com |
 
 ![The paper browser landscape behind Weaszel's adventure](dist/assets/weasel-world.png)
 
@@ -115,6 +131,8 @@ The HTML and CSS in `dist/` are authored files and are intentionally tracked. Th
 | `src/pumpads-story.jsx` | PumpAds creator cards and animated business story |
 | `src/swipebuilder-story.jsx` | SwipeBuilder’s interactive paper storyboard |
 | `src/jobtarget-story.jsx` | JobTarget’s ATS-to-job-board routing animation |
+| `src/ai-work.js` | Signal98 and Skadden diagram playback and accessibility |
+| `dist/ai-work.css` | Signal98 and Skadden sections and responsive diagrams |
 | `dist/jobtarget-story.css` | JobTarget experience layout and responsive styling |
 | `dist/swipebuilder-story.css` | SwipeBuilder section layout and responsive styling |
 | `dist/weasel-story.css` | Weaszel section layout and responsive styling |
@@ -125,7 +143,7 @@ The HTML and CSS in `dist/` are authored files and are intentionally tracked. Th
 | `dist/assets/` | Artwork, sprite sheets, and compiled animation bundles |
 | `scripts/build.mjs` | Shared esbuild configuration |
 
-The `.openai/hosting.json` file identifies this existing Sites project. GitHub stores the source; a push to GitHub alone does not deploy the portfolio.
+The `.openai/hosting.json` file records the original Sites project. The current custom-domain portfolio deploys from `master` through the connected Vercel `portfolio` project.
 
 ---
 
