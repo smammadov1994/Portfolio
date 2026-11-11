@@ -239,6 +239,7 @@ h2 .serif{letter-spacing:-.03em}
 .pit{position:relative;height:clamp(420px,66vh,640px);border-radius:28px;background:var(--ink);overflow:hidden;touch-action:pan-y}
 .ball{position:absolute;left:0;top:0;border-radius:50%;display:grid;place-items:center;font-weight:600;letter-spacing:-.035em;line-height:1;text-align:center;cursor:grab;-webkit-user-select:none;user-select:none;touch-action:none;will-change:transform;box-shadow:inset 0 -8px 0 rgba(12,12,12,.13)}
 .ball:active{cursor:grabbing}
+.h-tilt,html.tilt .h-drag{display:none}html.tilt .h-tilt{display:inline}
 .pit .hint{position:absolute;left:18px;top:16px;color:rgba(239,237,231,.5);pointer-events:none}
 .caps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,4vw,60px);padding-top:clamp(40px,7vh,80px);padding-bottom:clamp(80px,14vh,170px)}
 .caps h3{font-size:clamp(1.3rem,2vw,1.7rem);font-weight:500;letter-spacing:-.03em;margin:12px 0 14px}
@@ -464,7 +465,7 @@ h2 .serif{letter-spacing:-.03em}
     </div>
     <div class="kit wrap">
       <div class="khead"><h2 class="rv">Tool<span class="serif">kit</span></h2><span class="mono rv" style="--d:.1s">Grab one. Throw it.</span></div>
-      <div class="pit" id="pit"><span class="hint mono">Drag ↔ toss</span></div>
+      <div class="pit" id="pit"><span class="hint mono"><span class="h-drag">Drag ↔ toss</span><span class="h-tilt">Tilt your phone</span></span></div>
     </div>
     <div class="caps wrap">
       <div class="rv"><span class="mono">01</span><h3>AI & retrieval</h3><ul><li>Retrieval-augmented generation</li><li>Embeddings and vector search</li><li>Classification models</li><li>Multimodal generation pipelines</li></ul></div>
@@ -602,6 +603,33 @@ gl_FragColor=vec4(col,1.);}`;
   const pc = $('#pt'), heroEl = $('.hero');
   let pg = null, pOK = false, pU = {}, PN = innerWidth < 700 ? 6000 : 18000;
   let hmx = .3, hmy = .2, tmx = .3, tmy = .2, energy = 0, lpx = null, lpy = null;
+  /* ---------- phone tilt: steers the particles and sets gravity in the toolkit pit ---------- */
+  const tilt = { on: false, gx: 0, gy: 1 };
+  if (!reduce && 'DeviceOrientationEvent' in window) {
+    let b0 = null, g0 = 0, lb = 0, lg = 0;
+    const onTilt = e => {
+      if (e.beta === null || e.gamma === null) return;
+      const rad = Math.PI / 180, a = ((screen.orientation && screen.orientation.angle) || 0) * rad;
+      if (b0 === null) { b0 = e.beta; g0 = e.gamma; lb = e.beta; lg = e.gamma; }
+      // slowly re-centre so whatever angle the phone is held at becomes neutral
+      b0 += (e.beta - b0) * .004; g0 += (e.gamma - g0) * .004;
+      const rot = (x, y) => [x * Math.cos(a) + y * Math.sin(a), -x * Math.sin(a) + y * Math.cos(a)];
+      const [dx, dy] = rot((e.gamma - g0) / 28, (e.beta - b0) / 28);
+      tmx = clamp(dx, -1, 1); tmy = clamp(-dy, -1, 1);
+      pmx = tmx * .5; pmy = tmy * .5;
+      energy = Math.min(1, energy + (Math.abs(e.beta - lb) + Math.abs(e.gamma - lg)) * .012);
+      lb = e.beta; lg = e.gamma;
+      // gravity as it falls across the screen
+      [tilt.gx, tilt.gy] = rot(Math.sin(e.gamma * rad) * Math.cos(e.beta * rad), Math.sin(e.beta * rad));
+      if (!tilt.on) { tilt.on = true; document.documentElement.classList.add('tilt'); }
+    };
+    const listen = () => addEventListener('deviceorientation', onTilt, { passive: true });
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+      // iOS only hands out motion data after a tap and a yes on its own prompt
+      const ask = () => DeviceOrientationEvent.requestPermission().then(r => { if (r === 'granted') listen(); }).catch(() => {});
+      addEventListener('touchend', ask, { once: true });
+    } else listen();
+  }
   try { pg = pc.getContext('webgl', { antialias: false, alpha: true, premultipliedAlpha: false, powerPreference: 'high-performance' }); } catch (e) {}
   if (pg && !reduce) {
     const vs = `attribute vec3 p;attribute vec2 sd;
@@ -703,8 +731,10 @@ gl_FragColor=vec4(c,a);}`;
           const nx = b.x + (qx - b.x) * .4, ny = b.y + (qy - b.y) * .4;
           b.vx = (nx - b.x) / dt; b.vy = (ny - b.y) / dt; b.x = nx; b.y = ny;
         } else {
-          b.vy += 2200 * dt; b.vx *= .996; b.x += b.vx * dt; b.y += b.vy * dt;
+          if (tilt.on) { b.vx += 2600 * tilt.gx * dt; b.vy += 2600 * tilt.gy * dt; } else b.vy += 2200 * dt;
+          b.vx *= .996; b.x += b.vx * dt; b.y += b.vy * dt;
         }
+        if (tilt.on && b.y < b.r && b.vy < 0) { b.y = b.r; b.vy = Math.abs(b.vy) * .42; }
         if (b.x < b.r) { b.x = b.r; b.vx = Math.abs(b.vx) * .5; }
         if (b.x > W - b.r) { b.x = W - b.r; b.vx = -Math.abs(b.vx) * .5; }
         if (b.y > H - b.r) { b.y = H - b.r; b.vy = -Math.abs(b.vy) * .42; b.vx *= .985; if (Math.abs(b.vy) < 40) b.vy = 0; }
