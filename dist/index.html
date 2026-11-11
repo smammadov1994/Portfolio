@@ -606,18 +606,21 @@ gl_FragColor=vec4(col,1.);}`;
   /* ---------- phone tilt: steers the particles and sets gravity in the toolkit pit ---------- */
   const tilt = { on: false, gx: 0, gy: 1 };
   if (!reduce && 'DeviceOrientationEvent' in window) {
-    let b0 = null, g0 = 0, lb = 0, lg = 0;
+    let b0 = null, g0 = 0, lb = 0, lg = 0, sb = 0, sg = 0;
     const onTilt = e => {
       if (e.beta === null || e.gamma === null) return;
       const rad = Math.PI / 180, a = ((screen.orientation && screen.orientation.angle) || 0) * rad;
-      if (b0 === null) { b0 = e.beta; g0 = e.gamma; lb = e.beta; lg = e.gamma; }
+      if (b0 === null) { b0 = sb = lb = e.beta; g0 = sg = lg = e.gamma; }
+      // smooth the raw sensor first: it jitters even when the phone is still
+      sb += (e.beta - sb) * .07; sg += (e.gamma - sg) * .07;
       // slowly re-centre so whatever angle the phone is held at becomes neutral
       b0 += (e.beta - b0) * .004; g0 += (e.gamma - g0) * .004;
       const rot = (x, y) => [x * Math.cos(a) + y * Math.sin(a), -x * Math.sin(a) + y * Math.cos(a)];
-      const [dx, dy] = rot((e.gamma - g0) / 28, (e.beta - b0) / 28);
+      const [dx, dy] = rot((sg - g0) / 55, (sb - b0) / 55);
       tmx = clamp(dx, -1, 1); tmy = clamp(-dy, -1, 1);
       pmx = tmx * .5; pmy = tmy * .5;
-      energy = Math.min(1, energy + (Math.abs(e.beta - lb) + Math.abs(e.gamma - lg)) * .012);
+      // only a real swing of the phone stirs the particles, and only gently
+      energy = Math.min(.3, energy + Math.max(0, Math.abs(e.beta - lb) + Math.abs(e.gamma - lg) - 1.2) * .0015);
       lb = e.beta; lg = e.gamma;
       // gravity as it falls across the screen
       [tilt.gx, tilt.gy] = rot(Math.sin(e.gamma * rad) * Math.cos(e.beta * rad), Math.sin(e.beta * rad));
@@ -805,13 +808,13 @@ gl_FragColor=vec4(c,a);}`;
       spin.style.transform = `rotate(${now * .012 + y * .25}deg)`;
       if (glOK) {
         sizeGL();
-        smx += (pmx - smx) * .04; smy += (pmy - smy) * .04;
+        const sk = tilt.on ? .018 : .04; smx += (pmx - smx) * sk; smy += (pmy - smy) * sk;
         gl.uniform1f(uT, (now - t0) / 1000); gl.uniform2f(uR, cv.width, cv.height); gl.uniform2f(uM, smx, smy);
         gl.drawArrays(gl.TRIANGLES, 0, 3);
       }
       if (pOK) {
         const d = sizePT();
-        hmx += (tmx - hmx) * .06; hmy += (tmy - hmy) * .06; energy *= .955;
+        const hk = tilt.on ? .022 : .06; hmx += (tmx - hmx) * hk; hmy += (tmy - hmy) * hk; energy *= .955;
         pg.clear(pg.COLOR_BUFFER_BIT);
         pg.uniform1f(pU.t, (now - t0) / 1000); pg.uniform1f(pU.e, energy); pg.uniform1f(pU.sc, clamp(y / vh));
         pg.uniform1f(pU.dpr, d); pg.uniform2f(pU.m, hmx, hmy); pg.uniform2f(pU.r, pc.width, pc.height);
