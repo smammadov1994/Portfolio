@@ -69,6 +69,16 @@ html.js.ready .loader{transform:translateY(-101%)}
 .htop{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
 .htop p{font-size:clamp(1.25rem,2.3vw,2rem);line-height:1.18;letter-spacing:-.02em;max-width:17em;font-weight:500}
 .htop p .serif{font-size:1.1em}
+.nowc{display:grid;gap:clamp(22px,4vh,40px);min-width:clamp(190px,17vw,250px);padding:16px 18px 18px;border-radius:22px;background:var(--ink);color:var(--bone);box-shadow:0 18px 40px -18px rgba(12,12,12,.55);transition:rotate .6s var(--ease),scale .6s var(--ease)}
+.nowc:hover{rotate:-2deg;scale:1.04}
+.nrow{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.nlive{display:inline-flex;align-items:center;gap:8px}
+.nlive b{width:9px;height:9px;border-radius:50%;background:var(--coral);animation:npl 2s infinite}
+@keyframes npl{0%{box-shadow:0 0 0 0 rgba(255,92,53,.7)}70%,100%{box-shadow:0 0 0 12px rgba(255,92,53,0)}}
+.eq{display:flex;align-items:flex-end;gap:4px;height:26px}
+.eq i{width:6px;border-radius:3px;background:var(--butter);height:100%;transform-origin:50% 100%;animation:eq 1.1s ease-in-out infinite;animation-delay:calc(-.17s*var(--k))}
+@keyframes eq{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
+.nowc strong{font-weight:600;font-size:clamp(1.15rem,1.6vw,1.5rem);line-height:1.05;letter-spacing:-.03em}
 .now{display:grid;gap:6px;justify-items:end;text-align:right}
 .now span:first-child{display:inline-flex;align-items:center;gap:8px}
 .now b{width:7px;height:7px;border-radius:50%;background:var(--coral);animation:pulse 2.2s infinite}
@@ -84,7 +94,7 @@ html.js.ready .hero .ln>span{transform:none;transition:transform 1.3s var(--ease
 html.js .hero .fd{opacity:0;transform:translateY(18px)}
 html.js.ready .hero .fd{opacity:1;transform:none;transition:opacity 1.1s var(--ease) var(--d,.9s),transform 1.1s var(--ease) var(--d,.9s)}
 .hfoot{display:flex;justify-content:space-between;gap:16px;margin-top:clamp(14px,2.4vh,26px);padding-top:14px;border-top:1px solid var(--line);color:var(--soft)}
-@media (max-width:700px){.htop{grid-template-columns:1fr}.now{justify-items:start;text-align:left}.badge{display:none}.hfoot span:nth-child(2){display:none}}
+@media (max-width:700px){.htop{grid-template-columns:1fr}.now{justify-items:start;text-align:left}.nowc{justify-self:start}.badge{display:none}.hfoot span:nth-child(2){display:none}}
 
 /* statement */
 .say{padding-top:clamp(110px,22vh,240px);padding-bottom:clamp(110px,22vh,240px);display:grid;grid-template-columns:minmax(90px,1fr) 5fr;gap:24px}
@@ -222,6 +232,14 @@ h2 .serif{letter-spacing:-.03em}
 .marq div+div{margin-top:.08em}
 .marq i{font-style:normal;color:var(--coral);font-size:.55em}
 .marq .serif{letter-spacing:-.02em}
+.kit{padding-top:clamp(50px,9vh,110px)}
+.khead{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:clamp(18px,3vh,30px)}
+.khead h2{font-weight:500;font-size:clamp(3rem,9vw,9rem);line-height:.9;letter-spacing:-.055em}
+.khead h2 .serif{letter-spacing:-.02em;color:var(--coral)}
+.pit{position:relative;height:clamp(420px,66vh,640px);border-radius:28px;background:var(--ink);overflow:hidden;touch-action:pan-y}
+.ball{position:absolute;left:0;top:0;border-radius:50%;display:grid;place-items:center;font-weight:600;letter-spacing:-.035em;line-height:1;text-align:center;cursor:grab;-webkit-user-select:none;user-select:none;touch-action:none;will-change:transform;box-shadow:inset 0 -8px 0 rgba(12,12,12,.13)}
+.ball:active{cursor:grabbing}
+.pit .hint{position:absolute;left:18px;top:16px;color:rgba(239,237,231,.5);pointer-events:none}
 .caps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,4vw,60px);padding-top:clamp(40px,7vh,80px);padding-bottom:clamp(80px,14vh,170px)}
 .caps h3{font-size:clamp(1.3rem,2vw,1.7rem);font-weight:500;letter-spacing:-.03em;margin:12px 0 14px}
 .caps li{padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;color:var(--soft)}
@@ -244,7 +262,7 @@ h2 .serif{letter-spacing:-.03em}
   html.js .ln>span,html.js .hero .ln>span,html.js .sp .ln>span{transform:none;transition:none}
   html.js .loader{display:none}
   .say .w{opacity:1!important}
-  .col,.wave i,.live .p2,.now b{animation:none}
+  .col,.wave i,.live .p2,.now b,.nlive b,.eq i{animation:none}
   .cur{display:none}
 }
 </style>
@@ -270,7 +288,10 @@ h2 .serif{letter-spacing:-.03em}
     <canvas id="pt" aria-hidden="true"></canvas>
     <div class="htop">
       <p class="fd" style="--d:.8s">I build AI products, from the first idea to <span class="serif">paying customers.</span></p>
-      <div class="now mono fd" style="--d:.95s"><span><b></b>Currently</span><span>Legal AI at Skadden</span></div>
+      <div class="nowc fd" style="--d:.95s">
+        <div class="nrow"><span class="mono nlive"><b></b>Now</span><span class="eq" aria-hidden="true"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i></span></div>
+        <strong>Legal AI at Skadden</strong>
+      </div>
     </div>
     <div class="badge fd" style="--d:1.2s" aria-hidden="true">
       <svg viewBox="0 0 120 120" id="spin"><defs><path id="circ" d="M60 60 m-48 0 a48 48 0 1 1 96 0 a48 48 0 1 1 -96 0"/></defs><text><textPath href="#circ" textLength="296">SCROLL TO EXPLORE · SCROLL TO EXPLORE · </textPath></text></svg>
@@ -440,6 +461,10 @@ h2 .serif{letter-spacing:-.03em}
     <div class="marq" aria-hidden="true">
       <div id="m1"><span>Retrieval</span><i>●</i><span class="serif">Semantic search</span><i>●</i><span>Distributed jobs</span><i>●</i><span class="serif">Multimodal pipelines</span><i>●</i><span>Retrieval</span><i>●</i><span class="serif">Semantic search</span><i>●</i><span>Distributed jobs</span><i>●</i><span class="serif">Multimodal pipelines</span><i>●</i></div>
       <div id="m2"><span class="serif">Product engineering</span><i>●</i><span>AWS</span><i>●</i><span class="serif">Billing systems</span><i>●</i><span>Tech leadership</span><i>●</i><span class="serif">Product engineering</span><i>●</i><span>AWS</span><i>●</i><span class="serif">Billing systems</span><i>●</i><span>Tech leadership</span><i>●</i></div>
+    </div>
+    <div class="kit wrap">
+      <div class="khead"><h2 class="rv">Tool<span class="serif">kit</span></h2><span class="mono rv" style="--d:.1s">Grab one. Throw it.</span></div>
+      <div class="pit" id="pit"><span class="hint mono">Drag ↔ toss</span></div>
     </div>
     <div class="caps wrap">
       <div class="rv"><span class="mono">01</span><h3>AI & retrieval</h3><ul><li>Retrieval-augmented generation</li><li>Embeddings and vector search</li><li>Classification models</li><li>Multimodal generation pipelines</li></ul></div>
@@ -645,6 +670,68 @@ gl_FragColor=vec4(c,a);}`;
     if (pc.width !== w || pc.height !== h) { pc.width = w; pc.height = h; pg.viewport(0, 0, w, h); }
     return d;
   };
+
+  /* ---------- toolkit pit: draggable physics balls ---------- */
+  {
+    const pit = $('#pit');
+    const C = { coral: ['#ff5c35', '#0c0c0c'], butter: ['#f1e28f', '#0c0c0c'], mint: ['#b9ecd0', '#0c0c0c'], lilac: ['#cfc8ff', '#0c0c0c'], bone: ['#efede7', '#0c0c0c'], forest: ['#1f5a44', '#efede7'], sky: ['#9ad4ff', '#0c0c0c'] };
+    const labels = [['RAG', 'coral'], ['AWS', 'butter'], ['Next.js', 'bone'], ['Embeddings', 'forest'], ['Pinecone', 'mint'], ['Lambda', 'lilac'], ['SQS', 'sky'], ['SNS', 'bone'], ['DynamoDB', 'coral'], ['EC2', 'mint'], ['n8n', 'butter'], ['FFmpeg', 'lilac'], ['Replicate', 'sky'], ['MCP', 'forest'], ['SQLite', 'butter'], ['JavaScript', 'mint'], ['Vector search', 'bone'], ['Salesforce', 'forest'], ['Classifiers', 'lilac'], ['Billing', 'coral']];
+    const small = innerWidth < 700;
+    const balls = labels.slice(0, small ? 13 : labels.length).map(([t, c]) => {
+      const el = document.createElement('div'), r = clamp(30 + t.length * 5.6, 44, 96) * (small ? .74 : 1);
+      el.className = 'ball'; el.textContent = t;
+      el.style.cssText = `width:${r * 2}px;height:${r * 2}px;background:${C[c][0]};color:${C[c][1]};font-size:${Math.max(13, r * (t.length > 8 ? .27 : .36))}px`;
+      pit.appendChild(el);
+      return { el, r, x: 0, y: 0, vx: 0, vy: 0, a: 0 };
+    });
+    let live = false, init = false, drag = null, qx = 0, qy = 0;
+    const spawn = () => {
+      const W = pit.clientWidth;
+      balls.forEach((b, i) => { b.x = b.r + Math.random() * (W - b.r * 2); b.y = -b.r - i * 70 - Math.random() * 60; b.vx = (Math.random() - .5) * 200; b.vy = 0; });
+      init = true;
+    };
+    new IntersectionObserver(es => es.forEach(e => { live = e.isIntersecting; if (live && !init) spawn(); }), { threshold: .15 }).observe(pit);
+    const pt = e => { const r = pit.getBoundingClientRect(); qx = e.clientX - r.left; qy = e.clientY - r.top; };
+    balls.forEach(b => b.el.addEventListener('pointerdown', e => { drag = b; pt(e); b.el.setPointerCapture(e.pointerId); b.el.style.zIndex = 5; e.preventDefault(); }));
+    addEventListener('pointermove', e => { if (drag) pt(e); });
+    const drop = () => { if (drag) { drag.el.style.zIndex = ''; drag = null; } };
+    addEventListener('pointerup', drop); addEventListener('pointercancel', drop);
+    const physics = dt => {
+      const W = pit.clientWidth, H = pit.clientHeight;
+      for (const b of balls) {
+        if (b === drag) {
+          const nx = b.x + (qx - b.x) * .4, ny = b.y + (qy - b.y) * .4;
+          b.vx = (nx - b.x) / dt; b.vy = (ny - b.y) / dt; b.x = nx; b.y = ny;
+        } else {
+          b.vy += 2200 * dt; b.vx *= .996; b.x += b.vx * dt; b.y += b.vy * dt;
+        }
+        if (b.x < b.r) { b.x = b.r; b.vx = Math.abs(b.vx) * .5; }
+        if (b.x > W - b.r) { b.x = W - b.r; b.vx = -Math.abs(b.vx) * .5; }
+        if (b.y > H - b.r) { b.y = H - b.r; b.vy = -Math.abs(b.vy) * .42; b.vx *= .985; if (Math.abs(b.vy) < 40) b.vy = 0; }
+        b.a += b.vx / b.r * dt;
+      }
+      for (let k = 0; k < 3; k++) for (let i = 0; i < balls.length; i++) for (let j = i + 1; j < balls.length; j++) {
+        const A = balls[i], B = balls[j], dx = B.x - A.x, dy = B.y - A.y, min = A.r + B.r, d2 = dx * dx + dy * dy;
+        if (d2 >= min * min || d2 === 0) continue;
+        const d = Math.sqrt(d2), nx = dx / d, ny = dy / d, ov = min - d;
+        const wa = A === drag ? 0 : B === drag ? 1 : .5, wb = 1 - wa;
+        A.x -= nx * ov * wa; A.y -= ny * ov * wa; B.x += nx * ov * wb; B.y += ny * ov * wb;
+        const rv = (B.vx - A.vx) * nx + (B.vy - A.vy) * ny;
+        if (rv < 0) { const imp = -1.35 * rv; A.vx -= nx * imp * wa; A.vy -= ny * imp * wa; B.vx += nx * imp * wb; B.vy += ny * imp * wb; }
+      }
+    };
+    const draw = () => { for (const b of balls) b.el.style.transform = `translate3d(${b.x - b.r}px,${b.y - b.r}px,0) rotate(${b.a}rad)`; };
+    if (reduce) { spawn(); for (let i = 0; i < 900; i++) physics(1 / 120); draw(); }
+    else {
+      let last = performance.now();
+      const step = now => {
+        requestAnimationFrame(step);
+        const dt = Math.min(.033, (now - last) / 1000) || .016; last = now;
+        if (live && init) { physics(dt / 2); physics(dt / 2); draw(); }
+      };
+      requestAnimationFrame(step);
+    }
+  }
 
   /* ---------- pointer: cursor + magnets ---------- */
   const cur = $('#cur');
