@@ -1,178 +1,745 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Seymur Mammadov — full-stack and AI engineer building playful, useful software.">
-  <title>Seymur Mammadov · Full-stack & AI engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23484b4b'/%3E%3Cpath d='M9 21c4-2 10-2 14 0M11 17c2-6 8-6 10 0' stroke='%23d3d3d1' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='13' cy='14' r='1' fill='white'/%3E%3Ccircle cx='19' cy='14' r='1' fill='white'/%3E%3C/svg%3E">
-  <style>
-:root{--ink:#383838;--muted:#7f7f7f;--blue:#898989;--paper:#eeedeb;--line:#ededed}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,system-ui,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}a:focus-visible,button:focus-visible{outline:2px solid #7e7e7e;outline-offset:5px}
-.shell{width:min(980px,calc(100% - 44px));margin:auto}header{background:var(--paper)}nav{height:80px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:16px;font-weight:500;letter-spacing:.02em}.brand-mark{display:none}.navlinks{display:flex;gap:32px;font-size:14px;color:#838383}.navlinks a:hover{color:#383838}
-.hero{padding:25px 0 70px}.hero-grid{display:flex;flex-direction:column-reverse}.hero-copy{width:100%}.eyebrow{font-size:16px;color:#898989}.hero h1{font-size:54px;font-weight:400;letter-spacing:-.04em;margin:8px 0 18px;line-height:1.18}.lede{font-size:25px;line-height:1.5;font-weight:400;margin:0}.micro{font:12px/1.8 'DM Mono',monospace;color:#939393;margin-top:20px}
-.mascot-stage{width:100%;height:410px;position:relative;margin-bottom:24px}.scene-button{display:block;position:absolute;width:540px;max-width:100%;left:50%;top:0;transform:translateX(-50%);border:0;padding:0;background:transparent;cursor:pointer;touch-action:manipulation}.scene{display:block;width:100%;height:auto;overflow:visible}.scene-note{position:absolute;right:-15px;top:62px;max-width:205px;font:21px/1.6 'Caveat',cursive;color:#6c6c6c;transform:rotate(-4deg);pointer-events:none}.scene-note span{display:block;font-size:35px;padding-left:30px}
-.scene-status{position:absolute;bottom:12px;left:0;right:0;text-align:center;font:12px 'DM Mono',monospace;color:#858585}.catch-panel{position:absolute;left:50%;bottom:12px;transform:translate(-50%,8px);width:350px;max-width:90%;padding:16px 20px;background:#fff;border:1px solid #e9e9e9;border-radius:9px;box-shadow:0 8px 26px #2c325510;opacity:0;pointer-events:none;transition:.25s;z-index:5}.catch-panel.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}.catch-label{font:11px 'DM Mono',monospace;color:#858585}.catch-text{font-size:15px;line-height:1.5;margin-top:7px}.bucket{display:flex;gap:9px;margin-top:12px}.chip{border:0;background:transparent;font:16px 'DM Mono',monospace;color:#d6d6d6;padding:2px;cursor:pointer}.chip.filled{color:#7d7d7d}.scroll-note{display:none}
-section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-size:20px;font-weight:400;margin:0}.section-head .eyebrow,.section-head p{display:none}.projects{display:grid;grid-template-columns:1fr 1fr;gap:48px 25px}.project{min-width:0}.visual{height:300px;overflow:hidden;border-radius:6px;background:#f0f0f0;position:relative}.visual img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.project:hover .visual img{transform:scale(1.025)}.project-info{padding:18px 1px 0}.project-num{font:11px 'DM Mono',monospace;color:#9d9d9d}.project h3{font-size:22px;font-weight:500;letter-spacing:-.02em;margin:9px 0}.project p{font-size:15px;line-height:1.7;color:#828282;margin:0}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tag{font-size:12px;color:#939393;background:#f2f2f2;padding:4px 8px;border-radius:4px}.project-link{font-size:13px;color:#737373}.synthetic{display:grid;place-items:center;background:#f1f1f1;padding:24px}.ui-mock{background:white;border:1px solid #e4e4e4;border-radius:6px;width:100%}.ui-bar{height:25px;border-bottom:1px solid #eee;display:flex;gap:4px;padding:9px}.dot{width:5px;height:5px;background:#ccc;border-radius:50%}.ui-body{display:grid;grid-template-columns:1fr 1fr;padding:16px;gap:16px}.ui-col{font:11px/1.6 'DM Mono',monospace;color:#848484}.ui-code{height:100px;background:repeating-linear-gradient(#cacaca 0 2px,transparent 2px 12px)}
-#about{padding-top:100px}.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:50px}.about-kicker,.stats{display:none}.about-wrap h2{font-weight:400;font-size:28px;margin:0}.about-copy{font-size:17px;line-height:1.8;color:#828282;margin:0}footer{padding:100px 0 40px}.hello{font-size:40px;font-weight:400;letter-spacing:-.03em;margin:0 0 18px}footer>.eyebrow{display:none}.email{font-size:17px;border-bottom:1px solid #d2d2d2}.footer-row{display:flex;justify-content:space-between;gap:15px;margin-top:75px;font:11px 'DM Mono',monospace;color:#9e9e9e}.reveal{opacity:1}
-@media(max-width:700px){nav{height:66px}.brand{font-size:14px}.navlinks{gap:16px;font-size:13px}.hero{padding:10px 0 40px}.mascot-stage{height:320px;margin-bottom:10px}.scene-button{width:420px;top:20px}.scene-note{font-size:17px;right:0;top:0;max-width:145px}.scene-note span{display:none}.hero h1{font-size:39px}.lede{font-size:20px}.micro{font-size:12px}.projects{grid-template-columns:1fr;gap:38px}.visual{height:280px}.about-grid{grid-template-columns:1fr;gap:20px}.footer-row{flex-direction:column;margin-top:45px}.scene-status{font-size:11px;bottom:0}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-</style><link rel="stylesheet" href="astro-guide.css">
-<link rel="stylesheet" href="weasel-story.css">
-<link rel="stylesheet" href="pumpads-story.css">
-<link rel="stylesheet" href="swipebuilder-story.css">
-<link rel="stylesheet" href="jobtarget-story.css">
-<link rel="stylesheet" href="typography.css">
-<link rel="stylesheet" href="hero-scene.css">
-<link rel="stylesheet" href="ai-work.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Seymur Mammadov · Full-stack & AI engineer</title>
+<meta name="description" content="Seymur Mammadov is a full-stack and AI engineer. Co-founder of PumpAds and SwipeBuilder, former Tech Lead at JobTarget, now building legal AI at Skadden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#efede7; --ink:#0c0c0c; --soft:#4a4a47; --muted:#8a8882; --line:rgba(12,12,12,.14);
+  --coral:#ff5c35; --forest:#10271e; --mint:#b9ecd0; --lilac:#cfc8ff; --butter:#f1e28f;
+  --sans:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --pad:clamp(18px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--bone)}
+body{background:var(--bone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::selection{background:var(--ink);color:var(--bone)}
+:focus-visible{outline:2px solid var(--coral);outline-offset:4px;border-radius:6px}
+.wrap{padding-left:var(--pad);padding-right:var(--pad)}
+.mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+.serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em}
+body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* masked line reveals */
+.ln{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
+.ln>span{display:block}
+html.js .sp .ln>span{transform:translateY(112%)}
+html.js .sp.in .ln>span{transform:none;transition:transform 1.15s var(--ease);transition-delay:calc(.09s*var(--i,0))}
+html.js .rv{opacity:0;transform:translateY(26px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+html.js .rv.in{opacity:1;transform:none}
+
+/* loader */
+.loader{display:none}
+html.js .loader{display:flex;position:fixed;inset:0;z-index:100;background:var(--ink);color:var(--bone);padding:var(--pad);flex-direction:column;justify-content:space-between;transition:transform 1s var(--ease)}
+html.js.ready .loader{transform:translateY(-101%)}
+.loader b{font-weight:500;font-size:clamp(4rem,16vw,14rem);line-height:.85;letter-spacing:-.05em;align-self:flex-end;font-variant-numeric:tabular-nums}
+
+/* cursor */
+.cur{position:fixed;left:0;top:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:95;opacity:0;transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),opacity .3s}
+.cur.on{opacity:1}
+.cur.big{width:72px;height:72px;margin:-36px 0 0 -36px}
+
+/* nav */
+.nav{position:fixed;top:14px;left:50%;z-index:60;translate:-50% 0;display:flex;align-items:center;gap:clamp(12px,2vw,26px);padding:7px 7px 7px 18px;border-radius:999px;background:rgba(239,237,231,.72);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border:1px solid var(--line);font-size:14px;font-weight:500;white-space:nowrap;transition:translate .6s var(--ease)}
+.nav.hide{translate:-50% -90px}
+.nav .me{display:flex;align-items:center;gap:9px}
+.nav .me i{width:8px;height:8px;border-radius:50%;background:var(--coral)}
+.nav a.l{color:var(--soft);transition:color .2s}.nav a.l:hover{color:var(--ink)}
+.nav .go{background:var(--ink);color:var(--bone);padding:9px 16px;border-radius:999px;transition:background .25s}
+.nav .go:hover{background:var(--coral)}
+@media (max-width:620px){.nav a.l{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding-top:104px;padding-bottom:clamp(18px,3vh,34px);overflow:hidden}
+#gl{position:absolute;inset:0;width:100%;height:100%;z-index:0;background:radial-gradient(60% 60% at 78% 22%,var(--lilac),transparent 70%),radial-gradient(40% 45% at 92% 55%,#ffb49e,transparent 70%)}
+#pt{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero>*:not(canvas){position:relative;z-index:1;will-change:transform}
+.htop{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
+.htop p{font-size:clamp(1.25rem,2.3vw,2rem);line-height:1.18;letter-spacing:-.02em;max-width:17em;font-weight:500}
+.htop p .serif{font-size:1.1em}
+.now{display:grid;gap:6px;justify-items:end;text-align:right}
+.now span:first-child{display:inline-flex;align-items:center;gap:8px}
+.now b{width:7px;height:7px;border-radius:50%;background:var(--coral);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,92,53,.55)}70%,100%{box-shadow:0 0 0 10px rgba(255,92,53,0)}}
+.badge{position:absolute!important;right:var(--pad);bottom:clamp(250px,44vh,420px);width:clamp(92px,11vw,132px);aspect-ratio:1;display:grid;place-items:center}
+.badge svg{position:absolute;inset:0;width:100%;height:100%}
+.badge text{font-family:var(--mono);font-size:10.4px;letter-spacing:.2em;fill:var(--ink)}
+.badge span{font-size:clamp(22px,2.6vw,32px);line-height:1}
+h1{font-weight:500;font-size:clamp(3.3rem,17.4vw,19rem);line-height:.86;letter-spacing:-.055em;margin-left:-.04em}
+h1 .serif{letter-spacing:-.03em;font-size:1.04em;color:var(--coral)}
+html.js .hero .ln>span{transform:translateY(112%)}
+html.js.ready .hero .ln>span{transform:none;transition:transform 1.3s var(--ease);transition-delay:calc(.12s*var(--i,0) + .35s)}
+html.js .hero .fd{opacity:0;transform:translateY(18px)}
+html.js.ready .hero .fd{opacity:1;transform:none;transition:opacity 1.1s var(--ease) var(--d,.9s),transform 1.1s var(--ease) var(--d,.9s)}
+.hfoot{display:flex;justify-content:space-between;gap:16px;margin-top:clamp(14px,2.4vh,26px);padding-top:14px;border-top:1px solid var(--line);color:var(--soft)}
+@media (max-width:700px){.htop{grid-template-columns:1fr}.now{justify-items:start;text-align:left}.badge{display:none}.hfoot span:nth-child(2){display:none}}
+
+/* statement */
+.say{padding-top:clamp(110px,22vh,240px);padding-bottom:clamp(110px,22vh,240px);display:grid;grid-template-columns:minmax(90px,1fr) 5fr;gap:24px}
+.say p{font-size:clamp(1.9rem,4.9vw,5rem);line-height:1.04;letter-spacing:-.04em;font-weight:500;max-width:17em}
+.say .w{opacity:.13}
+.say .w.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em;font-size:1.06em}
+@media (max-width:700px){.say{grid-template-columns:1fr}}
+
+/* section title */
+.title{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding-bottom:clamp(20px,4vh,40px)}
+h2{font-weight:500;font-size:clamp(3rem,10.5vw,12rem);line-height:.88;letter-spacing:-.055em}
+h2 .serif{letter-spacing:-.03em}
+.title .mono{padding-bottom:1.2em;color:var(--soft)}
+
+/* stacked work cards */
+.cardw{padding:10px}
+.pcard{position:relative;border-radius:28px;background:var(--c);color:var(--t);padding:clamp(22px,3vw,44px);display:grid;grid-template-columns:1fr;gap:28px;overflow:hidden;transform-origin:50% 0;will-change:transform}
+.pinfo{display:flex;flex-direction:column;min-height:0}
+.ptop{display:flex;justify-content:space-between;gap:16px;opacity:.8}
+.pcard h3{font-weight:500;font-size:clamp(2.9rem,6.7vw,7rem);line-height:.9;letter-spacing:-.05em;margin:clamp(22px,5vh,56px) 0 clamp(14px,2.2vh,22px);margin-left:-.04em}
+.prole{font-size:15px;font-weight:500;display:flex;flex-wrap:wrap;gap:4px 10px;opacity:.78}
+.prole span+span::before{content:"/";margin-right:10px;opacity:.5}
+.psum{font-size:clamp(1.05rem,1.55vw,1.32rem);line-height:1.34;letter-spacing:-.012em;max-width:27em;margin-top:clamp(12px,2vh,20px)}
+.pnum{display:grid;grid-template-columns:repeat(3,1fr);margin-top:auto;padding-top:26px}
+.pnum div{border-top:1px solid color-mix(in srgb,var(--t) 28%,transparent);padding:14px 14px 0 0}
+.pnum strong{display:block;font-weight:500;font-size:clamp(1.7rem,3.3vw,3.3rem);line-height:1;letter-spacing:-.045em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pnum strong.sm{font-size:clamp(1.25rem,2vw,1.9rem);letter-spacing:-.03em}
+.pnum span{display:block;margin-top:8px;font-size:13px;line-height:1.3;opacity:.72;max-width:15em}
+.plink{align-self:flex-start;margin-top:18px;display:inline-flex;gap:8px;align-items:center;padding:9px 15px;border-radius:999px;background:var(--t);color:var(--c);font-size:13.5px;font-weight:500;transition:gap .3s var(--ease)}
+.plink:hover{gap:13px}
+.viz{position:relative;border-radius:20px;background:color-mix(in srgb,var(--t) 9%,transparent);overflow:hidden;min-height:340px}
+.viz small{position:absolute;left:16px;bottom:13px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;opacity:.55}
+@media (min-width:900px) and (min-height:620px){
+  .cardw{position:sticky;top:0;height:100vh}
+  .pcard{height:100%;grid-template-columns:1.08fr .92fr;gap:clamp(22px,3vw,48px);padding-top:clamp(64px,9vh,84px)}
+  .viz{min-height:0}
+}
+
+/* viz A: retrieval */
+.vz-a{padding:clamp(22px,2.6vw,40px);padding-bottom:48px;display:flex;flex-direction:column;justify-content:center;gap:clamp(12px,1.6vh,20px)}
+.q{display:flex;align-items:center;gap:10px;padding:13px 16px;border-radius:999px;background:var(--mint);color:var(--forest);font-size:14px;font-weight:500}
+.q span{overflow:hidden;white-space:nowrap;width:0;border-right:2px solid var(--forest)}
+.live .q span{animation:type 2.6s steps(34) .3s forwards,caret .8s steps(2) infinite}
+@keyframes type{to{width:17.2em}}@keyframes caret{50%{border-color:transparent}}
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.doc{border-radius:12px;padding:clamp(12px,1.4vw,20px);background:rgba(185,236,208,.09);border:1px solid rgba(185,236,208,.18);opacity:.35;transform:translateY(14px);transition:opacity .8s var(--ease),transform .8s var(--ease),border-color .6s,background .6s}
+.doc b,.ans b{display:block;font:500 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;opacity:.8}
+.doc u,.ans u{display:block;height:5px;border-radius:3px;background:currentColor;opacity:.22;margin-top:7px}
+.doc u:nth-of-type(2){width:82%}.doc u:nth-of-type(4){width:64%}
+.live .doc{opacity:1;transform:none}
+.live .doc:nth-child(1){transition-delay:1.6s}.live .doc:nth-child(2){transition-delay:1.8s}.live .doc:nth-child(3){transition-delay:2s}
+.live .doc.hit{border-color:var(--mint);background:rgba(185,236,208,.18);transition-delay:2.9s}
+.doc.hit u.h{transition:opacity .5s 3.1s,background .5s 3.1s}
+.live .doc.hit u.h{opacity:1;background:var(--mint)}
+.wire{flex:0 0 34px;margin:0 auto;width:1px;background:linear-gradient(var(--mint),transparent);transform:scaleY(0);transform-origin:50% 0;transition:transform .7s var(--ease) 3.4s}
+.live .wire{transform:none}
+.ans{border-radius:14px;padding:clamp(16px,1.8vw,26px);background:var(--mint);color:var(--forest);opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease) 3.7s,transform .8s var(--ease) 3.7s}
+.live .ans{opacity:1;transform:none}
+.ans u{opacity:.3;height:6px}.ans u:nth-of-type(3){width:58%}
+.ans p{display:flex;align-items:center;gap:6px;margin-top:14px;font-size:12px;font-weight:500}
+.ans p i{font-style:normal;width:20px;height:20px;border-radius:50%;background:var(--forest);color:var(--mint);display:grid;place-items:center;font-size:10px}
+
+/* viz B: video ads */
+.vz-b{display:grid;place-items:center;padding-bottom:96px}
+.fan{position:relative;width:min(84%,360px);aspect-ratio:1/1}
+.ph{position:absolute;top:10%;left:50%;width:44%;aspect-ratio:9/16;margin-left:-22%;border-radius:18px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 24px 50px -22px rgba(12,12,12,.55);transition:transform 1.2s var(--ease)}
+.ph em{font:500 9.5px var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase}
+.ph i{align-self:center;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--ink);display:grid;place-items:center;font-style:normal;font-size:12px;padding-left:3px}
+.ph u{display:block;height:5px;border-radius:3px;background:currentColor;opacity:.5;margin-top:6px}.ph u+u{width:60%}
+.p1{background:linear-gradient(160deg,#ffe3c2,#ff9d7a);color:var(--ink)}
+.p2{background:linear-gradient(160deg,#1b1b1b,#3a2a26);color:#fff;z-index:2}
+.p3{background:linear-gradient(160deg,#fff6d8,#f3c7ff);color:var(--ink)}
+.live .p1{transform:translate(-62%,6%) rotate(-11deg)}
+.live .p3{transform:translate(62%,6%) rotate(11deg)}
+.live .p2{animation:bob 5s ease-in-out infinite}
+@keyframes bob{50%{translate:0 -8px}}
+.wave{position:absolute;left:18px;right:18px;bottom:42px;height:34px;display:flex;align-items:center;gap:3px}
+.wave i{flex:1;border-radius:2px;background:var(--ink);height:var(--h);opacity:.8;transform-origin:50% 50%;animation:wv 1.3s ease-in-out infinite;animation-delay:var(--wd)}
+@keyframes wv{50%{transform:scaleY(.35)}}
+
+/* viz C: creative library */
+.vz-c{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 14px}
+.col{display:grid;gap:10px;align-content:start;animation:up 26s linear infinite}
+.col+.col{animation-name:down}
+@keyframes up{to{transform:translateY(-50%)}}@keyframes down{from{transform:translateY(-50%)}to{transform:none}}
+.ad{border-radius:14px;padding:12px;height:var(--h,150px);display:flex;flex-direction:column;justify-content:flex-end;background:var(--b,#fff);color:var(--ink)}
+.ad em{font:500 9.5px var(--mono);font-style:normal;letter-spacing:.08em;text-transform:uppercase;opacity:.6;margin-bottom:auto}
+.ad b{font-weight:500;font-size:15px;line-height:1.12;letter-spacing:-.02em}
+.find{position:absolute;left:50%;top:18px;translate:-50% 0;z-index:2;display:flex;align-items:center;gap:9px;padding:12px 18px;border-radius:999px;background:var(--ink);color:#fff;font-size:13.5px;font-weight:500;white-space:nowrap;box-shadow:0 18px 40px -16px rgba(12,12,12,.6)}
+.vz-c::after{content:"";position:absolute;inset:0;background:linear-gradient(var(--lilac),transparent 22%,transparent 80%,var(--lilac));pointer-events:none}
+.vz-c small{z-index:2}
+
+/* viz D: routing */
+.vz-d svg{position:absolute;inset:0;width:100%;height:100%}
+.vz-d path{fill:none;stroke:var(--ink);stroke-width:1.4;opacity:.45;stroke-dasharray:4 6}
+.vz-d rect{fill:rgba(255,255,255,.62);stroke:var(--ink);stroke-width:1.2}
+.vz-d rect.hub{fill:var(--ink)}
+.vz-d text{font-family:var(--sans);font-size:13px;font-weight:500;fill:var(--ink);text-anchor:middle}
+.vz-d text.k{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;opacity:.6}
+.vz-d text.w{fill:var(--butter)}
+.vz-d circle{fill:var(--coral)}
+
+/* numbers */
+.nums{padding-top:clamp(90px,16vh,180px);padding-bottom:clamp(60px,10vh,120px)}
+.ngrid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--ink)}
+.ngrid div{padding:clamp(22px,4vh,44px) 0 clamp(26px,5vh,56px);border-bottom:1px solid var(--line);display:grid;gap:clamp(18px,2.4vw,34px);align-content:start}
+.ngrid div:nth-child(odd){padding-right:24px;border-right:1px solid var(--line)}
+.ngrid div:nth-child(even){padding-left:clamp(18px,3vw,44px)}
+.ngrid strong{font-weight:500;font-size:clamp(4rem,13vw,15rem);line-height:.84;letter-spacing:-.065em;font-variant-numeric:tabular-nums;margin-left:-.04em}
+.ngrid p{font-size:clamp(1rem,1.5vw,1.3rem);line-height:1.25;letter-spacing:-.01em;max-width:17em}
+.ngrid p em{font-style:normal;color:var(--muted)}
+@media (max-width:640px){.ngrid{grid-template-columns:1fr}.ngrid div:nth-child(n){padding-left:0;padding-right:0;border-right:0}}
+
+/* independent projects */
+.side{padding-top:clamp(50px,9vh,110px);padding-bottom:clamp(70px,12vh,140px)}
+.row{position:relative;display:grid;grid-template-columns:minmax(60px,1fr) 5fr 4fr auto;gap:clamp(14px,2.4vw,36px);align-items:center;padding:clamp(24px,4.4vh,46px) 0;border-top:1px solid var(--ink);transition:color .45s var(--ease),padding .6s var(--ease)}
+.row:last-child{border-bottom:1px solid var(--ink)}
+.row::before{content:"";position:absolute;inset:0 calc(var(--pad)*-1);background:var(--ink);transform:scaleY(0);transform-origin:50% 100%;transition:transform .6s var(--ease)}
+.row>*{position:relative}
+.row h3{font-weight:500;font-size:clamp(2.6rem,7vw,7.4rem);line-height:.9;letter-spacing:-.055em;transition:transform .6s var(--ease)}
+.row p{font-size:clamp(.98rem,1.3vw,1.14rem);line-height:1.36;max-width:26em;opacity:.8}
+.row .acts{display:grid;gap:8px;justify-items:end}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid currentColor;font-size:13.5px;font-weight:500;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+@media (hover:hover){
+  .row:hover{color:var(--bone)}
+  .row:hover::before{transform:none}
+  .row:hover h3{transform:translateX(clamp(8px,1.4vw,22px))}
+  .row:hover .pill:hover{background:var(--coral);border-color:var(--coral);color:var(--ink)}
+}
+@media (max-width:860px){.row{grid-template-columns:1fr}.row .acts{justify-items:start;grid-auto-flow:column;justify-content:start}}
+
+/* marquee */
+.marq{overflow:hidden;padding:clamp(16px,3vh,30px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.marq div{display:flex;align-items:center;gap:.42em;white-space:nowrap;width:max-content;font-weight:500;font-size:clamp(2.6rem,8vw,8rem);line-height:1;letter-spacing:-.05em;will-change:transform}
+.marq div+div{margin-top:.08em}
+.marq i{font-style:normal;color:var(--coral);font-size:.55em}
+.marq .serif{letter-spacing:-.02em}
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,4vw,60px);padding-top:clamp(40px,7vh,80px);padding-bottom:clamp(80px,14vh,170px)}
+.caps h3{font-size:clamp(1.3rem,2vw,1.7rem);font-weight:500;letter-spacing:-.03em;margin:12px 0 14px}
+.caps li{padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;color:var(--soft)}
+@media (max-width:760px){.caps{grid-template-columns:1fr}}
+
+/* closer */
+.end{position:relative;background:var(--ink);color:var(--bone);border-radius:clamp(26px,4vw,48px) clamp(26px,4vw,48px) 0 0;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding-top:clamp(40px,8vh,90px);padding-bottom:26px;overflow:hidden}
+.end .mono{opacity:.6}
+.end h2{font-size:clamp(3.6rem,15.5vw,19rem);line-height:.84;margin-top:clamp(18px,4vh,40px)}
+.end h2 .serif{color:var(--coral)}
+.emid{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-top:clamp(30px,6vh,70px)}
+.emid p{font-size:clamp(1.15rem,2vw,1.7rem);line-height:1.2;letter-spacing:-.02em;max-width:19em;opacity:.86}
+.orb{flex:none;width:clamp(132px,15vw,188px);aspect-ratio:1;border-radius:50%;background:var(--coral);color:var(--ink);display:grid;place-items:center;text-align:center;font-weight:500;font-size:clamp(15px,1.4vw,18px);line-height:1.15;transition:background .3s;will-change:transform}
+.orb:hover{background:var(--bone)}
+.efoot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;margin-top:clamp(40px,8vh,90px);padding-top:18px;border-top:1px solid rgba(239,237,231,.2);font-size:13.5px;color:rgba(239,237,231,.6)}
+.efoot a:hover{color:var(--bone)}
+
+@media (prefers-reduced-motion:reduce){
+  html.js .rv,html.js .hero .fd{opacity:1;transform:none;transition:none}
+  html.js .ln>span,html.js .hero .ln>span,html.js .sp .ln>span{transform:none;transition:none}
+  html.js .loader{display:none}
+  .say .w{opacity:1!important}
+  .col,.wave i,.live .p2,.now b{animation:none}
+  .cur{display:none}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <header id="header"><nav class="shell"><div class="navlinks"><a href="#work">Work</a><a href="https://github.com/smammadov1994" target="_blank" rel="noreferrer">GitHub ↗</a></div></nav></header>
-  <main>
-    <section class="hero shell">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <h1>Seymur Mammadov</h1>
+
+<div class="loader" aria-hidden="true"><span class="mono">Seymur Mammadov — Portfolio</span><b id="pct">0</b></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="me" href="#top"><i></i>Seymur Mammadov</a>
+  <a class="l" href="#work">Work</a>
+  <a class="l" href="#projects">Projects</a>
+  <a class="l" href="#skills">Skills</a>
+  <a class="go" href="#contact">Get in touch</a>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero wrap">
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <canvas id="pt" aria-hidden="true"></canvas>
+    <div class="htop">
+      <p class="fd" style="--d:.8s">I build AI products, from the first idea to <span class="serif">paying customers.</span></p>
+      <div class="now mono fd" style="--d:.95s"><span><b></b>Currently</span><span>Legal AI at Skadden</span></div>
+    </div>
+    <div class="badge fd" style="--d:1.2s" aria-hidden="true">
+      <svg viewBox="0 0 120 120" id="spin"><defs><path id="circ" d="M60 60 m-48 0 a48 48 0 1 1 96 0 a48 48 0 1 1 -96 0"/></defs><text><textPath href="#circ" textLength="296">SCROLL TO EXPLORE · SCROLL TO EXPLORE · </textPath></text></svg>
+      <span>↓</span>
+    </div>
+    <div>
+      <h1 aria-label="Full-stack and AI engineer">
+        <span class="ln" style="--i:0"><span>Full-stack</span></span>
+        <span class="ln" style="--i:1"><span><span class="serif">&amp;</span> AI engineer</span></span>
+      </h1>
+      <div class="hfoot mono fd" style="--d:1.25s"><span>Seymur Mammadov</span><span>Co-founder ×2 · Tech lead · Builder</span><span>Portfolio — 2026</span></div>
+    </div>
+  </div>
+
+  <!-- STATEMENT -->
+  <div class="say wrap" id="say">
+    <span class="mono rv">(About)</span>
+    <p id="sayText">I like the <em>whole</em> problem: the model, the backend that keeps it running, and the product people <em>pay for.</em> Two companies, a thousand paying customers, and search across 100,000 ads taught me how to ship <em>all three.</em></p>
+  </div>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="title wrap sp">
+      <h2><span class="ln"><span>Selected <span class="serif">work</span></span></span></h2>
+      <span class="mono">(04) · 2020 — today</span>
+    </div>
+
+    <div class="stack" id="stack">
+      <div class="cardw"><article class="pcard" style="--c:var(--forest);--t:#e9f6ee">
+        <div class="pinfo">
+          <div class="ptop mono"><span>01 — Legal AI & knowledge systems</span><span>Present</span></div>
+          <h3>Skadden</h3>
+          <div class="prole"><span>AI engineering</span><span>Retrieval, classification, search</span></div>
+          <p class="psum">I help build some of the firm's leading AI tools: retrieval over a corpus of legal documents, content classification, and AI-powered search. I owned the AI components of the firm's new intranet.</p>
+          <div class="pnum">
+            <div><strong class="sm">RAG</strong><span>over a corpus of legal documents</span></div>
+            <div><strong class="sm">Intranet</strong><span>AI components, plus migration from the legacy CMS</span></div>
+            <div><strong class="sm">Harvey · Legora</strong><span>building out the firm's AI tools</span></div>
+          </div>
         </div>
+        <div class="viz vz-a" aria-hidden="true">
+          <div class="q">⌕ <span>precedent on indemnification caps</span></div>
+          <div class="docs">
+            <div class="doc"><b>Agreement</b><u></u><u></u><u></u><u></u></div>
+            <div class="doc hit"><b>Precedent</b><u></u><u class="h"></u><u class="h"></u><u></u></div>
+            <div class="doc"><b>Legal memo</b><u></u><u></u><u></u><u></u></div>
+          </div>
+          <div class="wire"></div>
+          <div class="ans"><b>Grounded answer</b><u></u><u></u><u></u><p><i>1</i><i>2</i> sources cited</p></div>
+          <small>Conceptual · fictional documents and query</small>
+        </div>
+      </article></div>
 
-<div class="mascot-stage">
-<div class="scene-button" id="fish">
-<svg class="scene" viewBox="0 0 540 375" role="group" aria-label="Astro the ghost holding a fishing rod beside a pool">
-<defs><clipPath id="cardPrintArea"><rect x="216" y="246" width="142" height="70"/></clipPath><linearGradient id="ghostGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#c0c0c0"/><stop offset=".36" stop-color="#9b9b9b"/><stop offset=".72" stop-color="#727272"/><stop offset="1" stop-color="#4a4a4a"/></linearGradient><linearGradient id="mountainShade" x1="0" y1="0" x2=".5" y2="1"><stop stop-color="#7e9eae"/><stop offset="1" stop-color="#c4d4d3"/></linearGradient>
-<radialGradient id="ghostSunwash" cx=".92" cy=".12" r=".9"><stop stop-color="white" stop-opacity=".9"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
-<radialGradient id="sunHalo"><stop stop-color="#f6cd79" stop-opacity=".6"/><stop offset="1" stop-color="#f6cd79" stop-opacity="0"/></radialGradient>
-<clipPath id="landscapeClip"><rect x="35" y="-60" width="470" height="364" rx="20"/></clipPath>
-<clipPath id="fullBodyOutline" clipPathUnits="objectBoundingBox"><path transform="scale(.0006906077 .0009208103)" d="M325 110Q321 80 350 54Q373 25 423 22Q444 8 465 24Q503 4 527 25Q557 14 564 61Q571 84 553 113L561 140L570 190L561 214L540 226L542 258Q599 266 639 298Q663 323 675 365L691 443Q709 483 737 521L750 538L778 535L807 544L803 573Q866 570 892 591Q911 609 917 647L940 720L982 815L979 850L985 895L1006 917L1013 938Q1057 950 1096 964Q1130 974 1133 993L1128 1005Q1031 1030 889 1016L882 1004L889 978L894 957L891 922L866 881L850 831L819 758L805 711Q747 742 682 754L695 782L711 825L719 854L716 882L732 912L753 940L761 972L796 1001Q809 1021 803 1043Q734 1072 672 1042L644 1021L618 1018Q411 1028 200 1008L195 985L199 948L214 902L225 868L239 832L241 805Q267 754 349 730L349 707L334 675L332 654L329 638L334 615L328 600L324 561L309 511L296 453L285 400L284 382Q300 326 344 289L389 260L417 243L412 229L388 228L369 211L360 193L346 180L338 156L331 133Z"/><path transform="scale(.0006906077 .0009208103)" d="M686 590L716 522L859 407L1005 294L1148 184L1294 88L1402 27L1424 31L1428 62L1408 58L1310 110L1170 221L1022 339L1008 328L891 453L821 520L773 574Z"/></clipPath>
-<filter id="tvStatic" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence id="tvNoise" type="fractalNoise" baseFrequency=".92 .66" numOctaves="1" seed="71" stitchTiles="stitch"/><feColorMatrix type="matrix" values=".333 .333 .333 0 0 .333 .333 .333 0 0 .333 .333 .333 0 0 0 0 0 0 1"/><feComponentTransfer><feFuncR type="linear" slope="3.8" intercept="-1.4"/><feFuncG type="linear" slope="3.8" intercept="-1.4"/><feFuncB type="linear" slope="3.8" intercept="-1.4"/></feComponentTransfer></filter>
-<pattern id="tvScanlines" patternUnits="userSpaceOnUse" width="4" height="4"><rect y="2" width="4" height="1" fill="#171717" opacity=".35"/></pattern>
-<clipPath id="morphClip"><path id="morphContour"/><path id="morphRod"/></clipPath>
-<filter id="morphDistortion" x="-12%" y="-12%" width="124%" height="124%" color-interpolation-filters="sRGB"><feTurbulence id="morphNoise" type="fractalNoise" baseFrequency=".025 .06" numOctaves="2" seed="14" result="warp"/><feDisplacementMap id="morphDisplacement" in="SourceGraphic" in2="warp" scale="0" xChannelSelector="R" yChannelSelector="G"/></filter>
-</defs>
-<g id="sunriseLandscape" opacity="0" clip-path="url(#landscapeClip)" aria-hidden="true">
-<g id="risingSun"><g transform="translate(0 -55)"><circle cx="353" cy="99" r="91" fill="url(#sunHalo)"/><circle cx="353" cy="99" r="31" fill="#f4bd55" stroke="#d69a3b" stroke-width="1"/><g id="sunRays" transform="translate(353 99) scale(.78) translate(-353 -99)" stroke="#d7a448" stroke-linecap="round" opacity=".65"><path d="M353 52V44 M353 146V154 M306 99H298 M400 99H408 M320 66L314 60 M386 132L392 138 M320 132L314 138 M386 66L392 60"/></g></g></g>
-<g id="farMountains"><path d="M37 304L81 238L128 172L164 218L213 93L257 186L288 151L329 223L376 129L424 209L459 181L508 304Z" fill="url(#mountainShade)" stroke="#7898a4" stroke-width="1.2"/><path d="M164 218L213 93L231 168L219 151L205 183L195 171 M329 223L376 129L394 178L381 166L372 185L362 177 M81 238L128 172L150 211L133 200L119 219" fill="#e9f0ed" stroke="#b6cacb" stroke-width=".7"/><path d="M213 95L244 261 M376 131L407 279 M128 173L173 285" fill="none" stroke="#7695a1" opacity=".4"/></g>
-<g id="nearMountains"><path d="M37 306L93 254L130 270L181 199L231 257L273 218L321 276L365 230L402 265L447 213L508 306Z" fill="#a9bf9f" stroke="#88a181"/><path d="M130 270L181 199L195 239L184 229L171 247 M402 265L447 213L463 250L448 239L437 253" fill="#e4ead5"/><path d="M44 304Q135 271 227 289T498 300" fill="none" stroke="#8da582"/></g>
-</g>
-<ellipse cx="245" cy="309" rx="112" ry="10" fill="#eeeeee"/>
-<path id="fishingRock" d="M173 281 Q215 257 277 281 L293 305 Q237 320 163 303Z" fill="#f3f3f3" stroke="#d4d4d4"/>
-<g id="fishingPool"><ellipse cx="368" cy="311" rx="73" ry="16" fill="#f5f5f5"/>
-<ellipse id="ripple1" cx="368" cy="311" rx="30" ry="6" fill="none" stroke="#bcbcbc" stroke-width="1.5"/>
-<ellipse id="ripple2" cx="368" cy="311" rx="52" ry="11" fill="none" stroke="#d5d5d5"/>
-</g>
-<g id="ghostActor"><g id="ghostLean"><g id="ghostBody" transform="translate(177 120) scale(.51)">
-<path d="M230.809 115.385V249.411C230.809 269.923 214.985 287.282 194.495 288.411C184.544 288.949 175.364 285.718 168.26 280C159.746 273.154 147.769 273.461 139.178 280.23C132.638 285.384 124.381 288.462 115.379 288.462C106.377 288.462 98.1451 285.384 91.6055 280.23C82.912 273.385 70.9353 273.385 62.2415 280.23C55.7532 285.334 47.598 288.411 38.7246 288.462C17.4132 288.615 0 270.667 0 249.359V115.385C0 51.6667 51.6756 0 115.404 0C179.134 0 230.809 51.6667 230.809 115.385Z" fill="url(#ghostGradient)"/><path d="M230.809 115.385V249.411C230.809 269.923 214.985 287.282 194.495 288.411C184.544 288.949 175.364 285.718 168.26 280C159.746 273.154 147.769 273.461 139.178 280.23C132.638 285.384 124.381 288.462 115.379 288.462C106.377 288.462 98.1451 285.384 91.6055 280.23C82.912 273.385 70.9353 273.385 62.2415 280.23C55.7532 285.334 47.598 288.411 38.7246 288.462C17.4132 288.615 0 270.667 0 249.359V115.385C0 51.6667 51.6756 0 115.404 0C179.134 0 230.809 51.6667 230.809 115.385Z" id="ghostLight" fill="url(#ghostSunwash)" opacity="0"/>
-<g id="ghostGaze"><g id="eyes"><ellipse cx="88" cy="120" rx="18" ry="28" fill="white"/><ellipse cx="157" cy="120" rx="18" ry="28" fill="white"/></g><g id="closedEyes" opacity="0" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"><path d="M73 120Q88 131 103 120 M142 120Q157 131 172 120"/><path d="M109 166Q124 177 139 166" stroke-width="4"/></g></g>
-</g></g>
-<g id="rodGroup"><path d="M261 224 Q315 181 379 172" fill="none" stroke="#636363" stroke-width="4" stroke-linecap="round"/><path d="M262 224 L285 209" stroke="#4c4c4c" stroke-width="6" stroke-linecap="round"/></g>
+      <div class="cardw"><article class="pcard" style="--c:var(--coral);--t:var(--ink)">
+        <div class="pinfo">
+          <div class="ptop mono"><span>02 — Building a business</span><span>Nov 2024 — Aug 2025</span></div>
+          <h3>PumpAds</h3>
+          <div class="prole"><span>Co-founder, product & engineering</span><span>2xROAS, Inc.</span></div>
+          <p class="psum">We turned a complex AI workflow into a product that makes creator-style video ads from a product brief: script, cloned voice, image and video generation, lip sync, and final assembly in one pipeline.</p>
+          <div class="pnum">
+            <div><strong data-n="1000" data-suf="+">1,000+</strong><span>paying customers within two months of launch</span></div>
+            <div><strong data-n="15" data-pre="$" data-suf="K">$15K</strong><span>monthly revenue within two months</span></div>
+            <div><strong>10 → 2 min</strong><span>average generation time</span></div>
+          </div>
+        </div>
+        <div class="viz vz-b" aria-hidden="true">
+          <div class="fan">
+            <div class="ph p1"><em>01 · Skincare</em><i>▶</i><div><u></u><u></u></div></div>
+            <div class="ph p3"><em>03 · Audio</em><i>▶</i><div><u></u><u></u></div></div>
+            <div class="ph p2"><em>02 · Essentials</em><i>▶</i><div><u></u><u></u></div></div>
+          </div>
+          <div class="wave" id="wave"></div>
+          <small>Brief → script → voice → video</small>
+        </div>
+      </article></div>
 
-</g>
-<g id="seymurActor" opacity="0" aria-hidden="true"><g id="seymurReveal"><image id="seymurArtwork" clip-path="url(#fullBodyOutline)" href="assets/seymur-fishing-natural.png" x="92" y="28" width="384" height="288" preserveAspectRatio="xMidYMid meet"/></g></g>
-<g id="storyPoses" aria-hidden="true"><image id="noticePose" opacity="0" href="assets/seymur-catch-notice-v2.png" x="92" y="28" width="384" height="288"/><image id="pullPose" opacity="0" href="assets/seymur-catch-pull-v2.png" x="92" y="28" width="384" height="288"/><image id="retrievePose" opacity="0" href="assets/seymur-catch-retrieve-v2.png" x="92" y="28" width="384" height="288"/></g>
-<g id="heroGlitch" opacity="0" aria-hidden="true" filter="url(#morphDistortion)"><use href="#morphContour" fill="url(#ghostGradient)" opacity=".7"/><g clip-path="url(#morphClip)"><rect x="90" y="15" width="390" height="310" fill="#888" filter="url(#tvStatic)"/><rect x="90" y="15" width="390" height="310" fill="url(#tvScanlines)"/><g id="tvTrackingBand"><rect x="90" width="390" height="12" fill="#f6f6f6" opacity=".25"/><rect x="90" y="12" width="390" height="2" fill="#181818" opacity=".5"/></g></g></g>
-<path id="fishingLine" fill="none" stroke="#878787" stroke-width="1.2"/>
-<g id="bobber"><path d="M0 -9V-2" stroke="#767676"/><ellipse rx="4" ry="6" fill="#a6a6a6"/><path d="M-4 1H4" stroke="white" stroke-width="2"/></g>
-<g id="catchToken" opacity="0" aria-hidden="true"><rect x="-33" y="-18" width="66" height="40" rx="4" fill="#f9f8f4" stroke="#777" stroke-width="1.3"/><circle cx="-20" cy="-3" r="5" fill="none" stroke="#888"/><path d="M-27 11Q-20 0-13 11 M-5 -7H22 M-5 0H16 M-5 9H22" fill="none" stroke="#999" stroke-width="1.6"/><path d="M-5 -18Q0 -25 5 -18" fill="none" stroke="#888"/></g>
-<g id="fishingBucket"><path d="M128 278 L134 308 Q151 314 166 306 L171 278Z" fill="#f8f8f8" stroke="#9a9a9a" stroke-width="2"/><ellipse cx="150" cy="278" rx="22" ry="5" fill="#fdfdfd" stroke="#9a9a9a" stroke-width="2"/><path d="M129 282 Q122 309 150 312 Q171 312 172 282" fill="none" stroke="#9a9a9a" stroke-width="2"/></g>
-<g id="closePose" opacity="0" aria-hidden="true">
-<image href="assets/seymur-connect-close-v2.png" x="30" y="10" width="480" height="360"/>
-<image href="assets/seymur-business-card-print.png" x="30" y="10" width="480" height="360" clip-path="url(#cardPrintArea)" aria-hidden="true"/>
-<g id="held-contact" opacity="0" pointer-events="none" aria-label="Seymur Mammadov, full-stack and AI engineer. Contact details on his business card.">
-<a href="mailto:smammadov494@gmail.com" tabindex="-1" aria-label="Email Seymur at smammadov494@gmail.com"><rect x="207" y="241" width="153" height="57" fill="transparent"/></a>
-<a href="https://www.linkedin.com/in/seymur-mammadov/" target="_blank" rel="noreferrer" tabindex="-1" aria-label="Seymur’s LinkedIn profile"><rect x="216" y="298" width="43" height="21" fill="transparent"/></a>
-<a href="https://github.com/smammadov1994" target="_blank" rel="noreferrer" tabindex="-1" aria-label="Seymur’s GitHub profile"><rect x="259" y="298" width="47" height="21" fill="transparent"/></a>
-</g>
-</g>
-</svg></div>
-<span class="sr-only" id="status">Seymur’s illustrated fishing scene</span>
+      <div class="cardw"><article class="pcard" style="--c:var(--lilac);--t:var(--ink)">
+        <div class="pinfo">
+          <div class="ptop mono"><span>03 — A home for good ideas</span><span>Dec 2023 — Aug 2025</span></div>
+          <h3>SwipeBuilder</h3>
+          <div class="prole"><span>Co-founder, Lead Backend & AI Engineer</span></div>
+          <p class="psum">A searchable creative workspace for ad inspiration. I built hybrid semantic search across 100K+ transcribed ads, a RAG pipeline that writes scripts from the right references, and the backend behind it all.</p>
+          <a class="plink" href="https://swipebuilder.io/" target="_blank" rel="noopener">swipebuilder.io <span>↗</span></a>
+          <div class="pnum">
+            <div><strong data-n="3000">3,000</strong><span>users</span></div>
+            <div><strong data-n="300">300</strong><span>paying customers at peak</span></div>
+            <div><strong data-n="25" data-pre="$" data-suf="K">$25K</strong><span>monthly recurring revenue at peak</span></div>
+          </div>
+        </div>
+        <div class="viz vz-c" aria-hidden="true">
+          <div class="find">⌕ ads that open with a question</div>
+          <div class="col" id="colA"></div>
+          <div class="col" id="colB"></div>
+          <small>Fictional creators</small>
+        </div>
+      </article></div>
 
-</div>
+      <div class="cardw"><article class="pcard" style="--c:var(--butter);--t:var(--ink)">
+        <div class="pinfo">
+          <div class="ptop mono"><span>04 — Opportunities in motion</span><span>Jan 2020 — Sep 2025</span></div>
+          <h3>JobTarget</h3>
+          <div class="prole"><span>Tech Lead</span><span>Software Engineer before that</span></div>
+          <p class="psum">I grew from Software Engineer to Tech Lead, owning compliance products end to end, architecting AWS migrations, and mentoring engineers, on a platform that carries jobs from applicant tracking systems to the right job boards.</p>
+          <div class="pnum">
+            <div><strong data-n="24" data-suf="%">24%</strong><span>reduction in churn</span></div>
+            <div><strong data-n="40" data-suf="%">40%</strong><span>faster audit responses</span></div>
+            <div><strong class="sm">AWS</strong><span>DynamoDB, Lambda, and EC2 migrations</span></div>
+          </div>
+        </div>
+        <div class="viz vz-d" aria-hidden="true">
+          <svg viewBox="0 0 400 560" preserveAspectRatio="xMidYMid meet">
+            <path id="r1" d="M70 96 C70 190 200 170 200 262"/><path id="r2" d="M200 96 L200 262"/><path id="r3" d="M330 96 C330 190 200 170 200 262"/>
+            <path id="r4" d="M200 318 C200 400 70 380 70 462"/><path id="r5" d="M200 318 L200 462"/><path id="r6" d="M200 318 C200 400 330 380 330 462"/>
+            <g><rect x="18" y="52" width="104" height="44" rx="12"/><text class="k" x="70" y="69">ATS / A</text><text x="70" y="86">Engineering</text></g>
+            <g><rect x="148" y="52" width="104" height="44" rx="12"/><text class="k" x="200" y="69">ATS / B</text><text x="200" y="86">Nursing</text></g>
+            <g><rect x="278" y="52" width="104" height="44" rx="12"/><text class="k" x="330" y="69">ATS / C</text><text x="330" y="86">Operations</text></g>
+            <rect class="hub" x="120" y="262" width="160" height="56" rx="28"/><text class="w" x="200" y="295">Routing desk</text>
+            <g><rect x="18" y="462" width="104" height="44" rx="12"/><text class="k" x="70" y="479">Job board</text><text x="70" y="496">Tech careers</text></g>
+            <g><rect x="148" y="462" width="104" height="44" rx="12"/><text class="k" x="200" y="479">Job board</text><text x="200" y="496">Healthcare</text></g>
+            <g><rect x="278" y="462" width="104" height="44" rx="12"/><text class="k" x="330" y="479">Job board</text><text x="330" y="496">Local jobs</text></g>
+            <circle r="5"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#r1"/></animateMotion></circle>
+            <circle r="5"><animateMotion dur="2.6s" begin=".8s" repeatCount="indefinite"><mpath href="#r2"/></animateMotion></circle>
+            <circle r="5"><animateMotion dur="2.6s" begin="1.6s" repeatCount="indefinite"><mpath href="#r3"/></animateMotion></circle>
+            <circle r="5"><animateMotion dur="2.6s" begin="1.3s" repeatCount="indefinite"><mpath href="#r4"/></animateMotion></circle>
+            <circle r="5"><animateMotion dur="2.6s" begin="2.1s" repeatCount="indefinite"><mpath href="#r5"/></animateMotion></circle>
+            <circle r="5"><animateMotion dur="2.6s" begin=".4s" repeatCount="indefinite"><mpath href="#r6"/></animateMotion></circle>
+          </svg>
+          <small>Illustrative workflow</small>
+        </div>
+      </article></div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="nums wrap">
+    <div class="title sp"><h2><span class="ln"><span>In <span class="serif">numbers</span></span></span></h2><span class="mono">Things that shipped</span></div>
+    <div class="ngrid">
+      <div class="rv"><strong data-n="1000" data-suf="+">1,000+</strong><p>paying customers in two months <em>· PumpAds</em></p></div>
+      <div class="rv" style="--d:.08s"><strong data-n="25" data-pre="$" data-suf="K">$25K</strong><p>monthly recurring revenue at peak <em>· SwipeBuilder</em></p></div>
+      <div class="rv"><strong data-n="100" data-suf="K+">100K+</strong><p>transcribed ads searchable by meaning <em>· SwipeBuilder</em></p></div>
+      <div class="rv" style="--d:.08s"><strong data-n="24" data-suf="%">24%</strong><p>reduction in customer churn <em>· JobTarget</em></p></div>
+    </div>
+  </section>
+
+  <!-- INDEPENDENT PROJECTS -->
+  <section class="side wrap" id="projects">
+    <div class="title sp"><h2><span class="ln"><span>Side <span class="serif">projects</span></span></span></h2><span class="mono">(02) · Built on my own time</span></div>
+    <div class="row rv">
+      <span class="mono">01</span>
+      <h3>Signal98</h3>
+      <p>Error monitoring with AI triage. It captures issues, assesses severity and user impact with JEV by TypeSafe AI, and prepares a reviewed fix in an isolated Git worktree.</p>
+      <div class="acts"><a class="pill" href="https://github.com/smammadov1994/Signal98" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
+    <div class="row rv">
+      <span class="mono">02</span>
+      <h3>Weaszel</h3>
+      <p>A bridge between websites and agents. Point it at a URL and it turns the page into callable MCP tools, with a Swagger reference an agent can read. Work in progress.</p>
+      <div class="acts">
+        <a class="pill" href="https://github.com/smammadov1994/Weaszel/tree/codex/website-mcp-adapter/adapter" target="_blank" rel="noopener">Adapter code ↗</a>
+        <a class="pill" href="https://weaszel-youtube-swagger.smammadov494.chatgpt.site/" target="_blank" rel="noopener">Swagger demo ↗</a>
       </div>
-      <div id="contact-announcement" class="sr-only" role="status" aria-live="polite"></div>
-      <div class="scroll-note"><div class="scroll-line"></div>scroll to explore</div>
-    </section>
-
-
-<div id="work"></div>
-<section id="skadden" class="ai-feature shell" aria-labelledby="skadden-title">
-  <div class="ai-heading">
-    <div><p class="ai-kicker">01 / legal AI &amp; knowledge systems</p><h2 id="skadden-title">Skadden.</h2><p class="ai-role">Legal-document RAG · Intranet · Harvey &amp; Legora</p></div>
-    <p class="ai-intro">At Skadden, I help build some of the firm’s leading AI tools. My work spans RAG over a corpus of legal documents, content classification, and AI-powered search, alongside work with Harvey and Legora. I owned the AI components of a new intranet built with my team.</p>
-  </div>
-  <div class="ai-walkthrough ai-knowledge" data-walkthrough data-step="0" id="skadden-ai-story" aria-label="Skadden knowledge workflow illustration">
-    <div class="ai-window-bar"><span><i aria-hidden="true"></i> From content to knowledge</span><span>Conceptual illustration</span></div>
-    <div class="ai-flow">
-      <article class="ai-flow-card" data-phase="0"><p class="ai-card-label">01 / Migrate</p><div class="ai-document-stack" aria-hidden="true"><span></span><span></span><span><b></b><b></b><b></b></span></div><h3>A new home for content.</h3><p>Move existing knowledge from the older CMS into the new intranet built by our team.</p><div class="ai-source-label">Legacy CMS <span aria-hidden="true">→</span> New intranet</div></article>
-      <article class="ai-flow-card" data-phase="1"><p class="ai-card-label">02 / Classify</p><div class="ai-taxonomy" aria-hidden="true"><span>Content</span><i></i><div><span>Topic</span><span>Category</span><span>Type</span></div></div><h3>Give content structure.</h3><p>Use categorical models to classify content and support its organization in the new system.</p><div class="ai-source-label">AI content classification</div></article>
-      <article class="ai-flow-card" data-phase="2"><p class="ai-card-label">03 / Retrieve</p><div class="ai-search-example"><span aria-hidden="true">⌕</span> Find relevant knowledge</div><div class="ai-search-docs" aria-hidden="true"><span><b></b><i></i><i></i></span><span><b></b><i></i><i></i></span></div><h3>Make knowledge useful.</h3><p>Retrieve relevant passages from a corpus of legal documents and bring them into the context for RAG answers.</p></article>
     </div>
-    <div class="ai-walk-controls" hidden><div class="ai-steps" aria-label="Skadden workflow steps"><button type="button" data-go="0" aria-pressed="true">Migrate</button><button type="button" data-go="1" aria-pressed="false">Classify</button><button type="button" data-go="2" aria-pressed="false">Retrieve</button></div><button type="button" class="ai-play" aria-label="Play Skadden animation">Play</button></div>
-  </div>
-  <div class="ai-notes"><div><h3>RAG for legal knowledge.</h3><p>I built a retrieval-augmented generation system for a corpus of legal documents, bringing relevant material into the context used to generate answers. My work also covered categorical models, AI-powered search, and information retrieval across the firm’s knowledge systems.</p></div><div><h3>Building the firm’s AI tools.</h3><p>I work with Harvey and Legora as part of the broader effort to build out the firm’s AI tools. For our new intranet, I owned the AI components and worked with my team to migrate content from the older CMS into the new AI-driven platform.</p></div></div>
-  <div class="ai-footer"><p>Skadden · Legal-document RAG · Classification models · CMS migration · Harvey · Legora</p></div>
-</section>
+  </section>
 
-<section id="weaszel" class="weasel-feature shell" aria-labelledby="weasel-title">
-  <div class="weasel-heading"><div><p class="weasel-kicker">02 / the first app · a work in progress</p><h2 id="weasel-title">Weaszel.</h2></div><div><p class="weasel-intro">A curious little scout.<br>A bridge between websites and agents.</p><span class="weasel-sub">Website → callable MCP tools → Swagger</span></div></div>
-  <div id="weasel-story"><div class="weasel-fallback"><img src="assets/weaszel-graphite.png" alt="A graphite weasel navigating browser windows" width="2048" height="683"><h3>Follow the little scout.</h3><p>Point Weaszel at a page. It observes the page, accessibility tree, and forms; builds callable tools; and generates a Swagger reference. An agent can use those tools through the local adapter.</p><a href="https://weaszel-youtube-swagger.smammadov494.chatgpt.site" target="_blank" rel="noreferrer">Explore the YouTube Swagger ↗</a><p>Local adapter prototype. Live calls run on your computer.</p></div></div>
-</section>
-
-<section id="pumpads" class="pump-feature shell" aria-labelledby="pumpads-title">
-<div class="pump-heading"><div><p class="pump-kicker">03 / building a business</p><h2 id="pumpads-title">PumpAds.</h2><p class="pump-role"><strong>2xROAS, Inc.</strong><br>Co-founder · product &amp; engineering<br>November 2024 — August 2025</p></div><p class="pump-intro">I co-founded 2xROAS, Inc., the company behind PumpAds. With my partners, I helped turn a complex AI workflow into a product that creates creator-style video ads for paying customers.</p></div>
-<div id="pumpads-story"><div class="pump-gallery"><figure><img src="assets/pumpads-skincare.png" alt="Illustrative AI creator presenting skincare"><figcaption>01 / skincare</figcaption></figure><figure><img src="assets/pumpads-tumbler.png" alt="Illustrative AI creator presenting a travel tumbler"><figcaption>02 / everyday essentials</figcaption></figure><figure><img src="assets/pumpads-headphones.png" alt="Illustrative AI creator presenting headphones"><figcaption>03 / audio</figcaption></figure></div><p class="pump-example-note">Illustrative AI creator concepts · not customer campaigns</p><p>Product brief → script → voice and visuals → lip sync → finished ad.</p></div>
-<div class="pump-results" aria-label="2xROAS, Inc. results for PumpAds"><div><strong>1,000+</strong><span>paying customers</span><small>within two months of launch</small></div><div><strong>$15K</strong><span>monthly revenue</span><small>within two months of launch</small></div><div><strong>10 → 2 min</strong><span>average generation time</span><small>after separating long-running AI work</small></div></div>
-<div class="pump-experience"><div><h3>More than a model call.</h3><p>With an eight-person team, we built a multimodal pipeline connecting script generation, voice cloning, image and video generation, lip sync, revoicing, and final FFmpeg assembly.</p><p>My experience spanned the product, backend, AI workflows, and the infrastructure needed to bring them together.</p></div><div><h3>Make it work as a business.</h3><p>We moved long-running jobs into independently scalable services, with queues and persistent job state. That kept n8n as a fast orchestration layer and supported bursts of 100 concurrent requests.</p><p>We also built a usage-credit ledger with reservations, reconciliation, and automatic refunds for failed generations, and secured $50K in platform credits to help manage early costs.</p></div></div><p class="pump-stack">2xROAS, Inc. · Product: PumpAds · multimodal AI · distributed jobs · n8n · FFmpeg · Replicate &amp; Cog</p>
-</section>
-
-<section id="swipebuilder" class="swipe-feature shell" aria-labelledby="swipebuilder-title">
-  <div class="swipe-heading">
-    <div><p class="swipe-kicker">04 / a home for good ideas</p><h2 id="swipebuilder-title">SwipeBuilder.</h2><p class="swipe-role">Co-founder · Lead Backend &amp; AI Engineer<br>December 2023 — August 2025</p></div>
-    <p class="swipe-intro">I co-founded SwipeBuilder to turn scattered ad inspiration into a searchable creative workspace. I led backend and AI engineering, from ingestion and semantic search to scripts grounded in the right references.</p>
-  </div>
-  <div id="swipebuilder-story">
-    <ol class="swipe-readable"><li><h3>Keep what catches your eye.</h3><p>Collect ad references from platforms such as Meta, TikTok, and Google.</p></li><li><h3>Give your ideas a home.</h3><p>Organize references into folders and share creative boards with your team.</p></li><li><h3>Find the useful thread.</h3><p>Explore saved ads and video transcripts to understand the ideas behind the creative.</p></li><li><h3>Make the next story yours.</h3><p>Use AI copywriting to adapt a reference to a different product or offer.</p></li></ol>
-  </div>
-  <div class="swipe-results" aria-label="SwipeBuilder company results"><div><strong>3,000</strong><span>users</span><small>product adoption</small></div><div><strong>300</strong><span>paying customers</span><small>at peak</small></div><div><strong>$25K</strong><span>monthly recurring revenue</span><small>at peak</small></div></div>
-  <div class="swipe-notes"><div><h3>Find the thread between ideas.</h3><p>I built natural-language and hybrid semantic search across 100K+ transcribed ads, combining embeddings, vector retrieval, metadata filters, personalized signals, and diverse results.</p><p>A production RAG pipeline brought relevant transcripts together with the customer's product, offer, and audience to generate scripts grounded in useful creative examples.</p></div><div><h3>Keep the creative work moving.</h3><p>I built the backend for a five-person company: core APIs, billing, collaboration, recommendations, and asynchronous jobs. Crawlers and Chrome-extension imports fed the ingestion and transcription pipeline.</p><p>Lambda, SQS, SNS, and persistent job state handled long-running work, with retries, dead-letter queues, and status tracking. Daily budgets and query caching kept repeated research faster and costs under control.</p></div></div>
-  <div class="swipe-footer"><p>The Swipe Company, LLC · OpenAI embeddings · Pinecone · production RAG · AWS</p><a href="https://swipebuilder.io/" target="_blank" rel="noreferrer">Explore SwipeBuilder <span aria-hidden="true">↗</span></a></div>
-</section>
-
-<section id="jobtarget" class="job-feature shell" aria-labelledby="jobtarget-title">
-  <div class="job-heading">
-    <div><p class="job-kicker">05 / opportunities in motion</p><h2 id="jobtarget-title">JobTarget.</h2><p class="job-role">Tech Lead · May 2022 — September 2025<br>Software Engineer · January 2020 — May 2022</p></div>
-    <p class="job-intro">At JobTarget, I grew from Software Engineer to Tech Lead, building full-stack products and taking ownership from planning through delivery. The system story below follows jobs from applicant tracking systems to the job boards where they can reach the right audience.</p>
-  </div>
-  <div id="jobtarget-story">
-    <ol class="job-readable"><li><h3>Every opportunity starts somewhere.</h3><p>Pull job listings from applicant tracking systems into the distribution workflow.</p></li><li><h3>Different systems. A common language.</h3><p>Prepare consistent job records with role, location, and source information.</p></li><li><h3>Find the right place for each role.</h3><p>Match each job to relevant boards using its context and destination requirements.</p></li><li><h3>One opening. The right audience.</h3><p>Distribute each job to its selected destinations and track delivery.</p></li></ol>
-  </div>
-  <div class="job-results" aria-label="JobTarget experience outcomes"><div><strong>24%</strong><span>reduction in churn</span><small>through full-stack product improvements</small></div><div><strong>40%</strong><span>faster audit responses</span><small>with Compliance-Post / Reporting Hub</small></div></div>
-  <div class="job-notes"><div><h3>Own the product, end to end.</h3><p>I led the development and optimization of compliance products, collaborating with stakeholders on priorities and serving as the primary technical contact for partners.</p><p>My work included the Local Outreach application, Compliance-Post / Reporting Hub, and the Compliance CIW Workbook with Salesforce integrations.</p></div><div><h3>Build the foundation. Grow the team.</h3><p>I architected AWS infrastructure migrations using DynamoDB, Lambda, and EC2, alongside the full-stack features that supported customers’ day-to-day work.</p><p>As Tech Lead, I mentored junior engineers in engineering practices and agile workflows, helping the team carry work from technical decisions through delivery.</p></div></div>
-  <div class="job-footer"><p>JobTarget · Stamford, Connecticut · Full-stack engineering · AWS · Partner integrations</p></div>
-</section>
-
-<section id="signal98" class="ai-feature shell" aria-labelledby="signal98-title">
-  <div class="ai-heading">
-    <div><p class="ai-kicker">06 / independent project</p><h2 id="signal98-title">Signal98.</h2><p class="ai-role">Error monitoring · AI triage · Developer tools</p></div>
-    <p class="ai-intro">I built Signal98 to connect application errors to the people and workflows they affect. It captures issues, uses <strong>JEV by TypeSafe AI</strong> to assess them, and gives each issue a Ghost conversation for investigation and a reviewed fix.</p>
-  </div>
-  <div class="ai-walkthrough" data-walkthrough data-step="0" id="signal98-ai-story" aria-label="Signal98 workflow illustration">
-    <div class="ai-window-bar"><span><i aria-hidden="true"></i> Signal98 / from error to action</span><span>Illustrative example</span></div>
-    <div class="ai-flow">
-      <article class="ai-flow-card" data-phase="0"><p class="ai-card-label">01 / Capture</p><div class="ai-error-icon" aria-hidden="true">{ ! }</div><h3>One issue. Its context.</h3><div class="ai-log"><code>TypeError · checkout</code><span>Payment form → submit → error</span><span>Repeated events grouped together</span></div><p>Browser and server SDKs capture the error and the steps leading up to it.</p></article>
-      <article class="ai-flow-card ai-judge" data-phase="1"><p class="ai-card-label">02 / Assess</p><div class="ai-model-mark"><span>JEV</span><small>by TypeSafe AI</small></div><dl class="ai-decisions"><div><dt>Category</dt><dd>Payments</dd></div><div><dt>Severity</dt><dd>Major</dd></div><div><dt>User-facing</dt><dd>Likely</dd></div></dl><p>Typed judgments inform the priority and alert rules in my code.</p></article>
-      <article class="ai-flow-card" data-phase="2"><p class="ai-card-label">03 / Investigate</p><div class="ai-review-icon" aria-hidden="true"><span>−</span><span>+</span></div><h3>Context to a code fix.</h3><div class="ai-review-list"><span>Investigate with Ghost</span><span>Prepare an isolated change</span><span>Review the diff, then apply</span></div><p>The assessment stays attached to the conversation and proposed fix.</p></article>
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="marq" aria-hidden="true">
+      <div id="m1"><span>Retrieval</span><i>●</i><span class="serif">Semantic search</span><i>●</i><span>Distributed jobs</span><i>●</i><span class="serif">Multimodal pipelines</span><i>●</i><span>Retrieval</span><i>●</i><span class="serif">Semantic search</span><i>●</i><span>Distributed jobs</span><i>●</i><span class="serif">Multimodal pipelines</span><i>●</i></div>
+      <div id="m2"><span class="serif">Product engineering</span><i>●</i><span>AWS</span><i>●</i><span class="serif">Billing systems</span><i>●</i><span>Tech leadership</span><i>●</i><span class="serif">Product engineering</span><i>●</i><span>AWS</span><i>●</i><span class="serif">Billing systems</span><i>●</i><span>Tech leadership</span><i>●</i></div>
     </div>
-    <div class="ai-walk-controls" hidden><div class="ai-steps" aria-label="Signal98 workflow steps"><button type="button" data-go="0" aria-pressed="true">Capture</button><button type="button" data-go="1" aria-pressed="false">JEV assessment</button><button type="button" data-go="2" aria-pressed="false">Review a fix</button></div><button type="button" class="ai-play" aria-label="Play Signal98 animation">Play</button></div>
+    <div class="caps wrap">
+      <div class="rv"><span class="mono">01</span><h3>AI & retrieval</h3><ul><li>Retrieval-augmented generation</li><li>Embeddings and vector search</li><li>Classification models</li><li>Multimodal generation pipelines</li></ul></div>
+      <div class="rv" style="--d:.1s"><span class="mono">02</span><h3>Backend & infrastructure</h3><ul><li>AWS: Lambda, SQS, SNS, DynamoDB, EC2</li><li>Queues and long-running jobs</li><li>Billing and usage ledgers</li><li>APIs and partner integrations</li></ul></div>
+      <div class="rv" style="--d:.2s"><span class="mono">03</span><h3>Product & leadership</h3><ul><li>Zero-to-one product building</li><li>Full-stack delivery with Next.js</li><li>Technical leadership</li><li>Mentoring engineers</li></ul></div>
+    </div>
+  </section>
+</main>
+
+<!-- CLOSER -->
+<footer class="end wrap" id="contact">
+  <div>
+    <span class="mono">(Contact)</span>
+    <h2 class="sp"><span class="ln"><span>Let's build</span></span><span class="ln" style="--i:1"><span>something <span class="serif">useful.</span></span></span></h2>
   </div>
-  <div class="ai-notes"><div><h3>JEV is the decision layer.</h3><p>I integrated TypeSafe AI’s System One model with explicit questions about each issue. Choice answers identify category and likely cause; scores assess severity and fix complexity; probability judgments assess urgency, user impact, and risk.</p><p>The application combines those answers with event counts and thresholds to decide what deserves attention. Repeated errors reuse the assessment; regressions or meaningful growth trigger another look.</p></div><div><h3>From assessment to investigation.</h3><p>I built the capture SDK, monitoring dashboard, and issue workflow around that context. Ghost handles the conversation and code investigation separately from JEV’s structured assessments.</p><p>Proposed code changes are prepared in an isolated Git worktree, with a diff to review before applying. If JEV is unavailable, the dashboard clearly labels its fallback assessment.</p></div></div>
-  <details class="ai-product-preview"><summary>See the Signal98 dashboard <span aria-hidden="true">↗</span></summary><figure><a href="assets/signal98-dashboard.jpg" target="_blank" rel="noreferrer"><img src="assets/signal98-dashboard.jpg" alt="Signal98 demo dashboard showing error activity, affected users, issue priorities, and Ghost investigation tools" width="1932" height="1324" loading="lazy"></a><figcaption>The working application, shown with demo data. Open the image for a closer look.</figcaption></figure></details>
-  <div class="ai-footer"><p>JavaScript SDK · Next.js · SQLite · JEV · Isolated Git worktrees</p><div><a href="https://github.com/smammadov1994/Signal98" target="_blank" rel="noreferrer">Explore Signal98 ↗</a><a href="https://docs.typesafe.ai/concepts/system-one" target="_blank" rel="noreferrer">About JEV / TypeSafe AI ↗</a></div></div>
-</section>
+  <div>
+    <div class="emid">
+      <p class="rv">Always glad to talk about AI products, retrieval systems, and the engineering it takes to make them real.</p>
+      <a class="orb mag" href="https://github.com/smammadov1994" target="_blank" rel="noopener">Find me on<br>GitHub ↗</a>
+    </div>
+    <div class="efoot">
+      <span>© <span id="yr">2026</span> Seymur Mammadov</span>
+      <span>Full-stack & AI engineer</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
 
+<script>
+(() => {
+  const root = document.documentElement;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+  $('#yr').textContent = new Date().getFullYear();
 
+  /* ---------- loader ---------- */
+  const pct = $('#pct');
+  let n = 0;
+  const done = () => { root.classList.add('ready'); setTimeout(() => { $('.loader').style.display = 'none'; }, 1400); };
+  if (reduce) done();
+  else {
+    const iv = setInterval(() => {
+      n = Math.min(100, n + 3 + Math.random() * 6);
+      pct.textContent = Math.floor(n);
+      if (n >= 100) { clearInterval(iv); setTimeout(done, 220); }
+    }, 55);
+  }
 
-  </main>
-  <script type="module" src="assets/ai-stories.js"></script>
-  <script type="module" src="assets/hero-scene.js"></script><script type="module" src="assets/weasel-story.js"></script><script type="module" src="assets/pumpads-story.js"></script><script type="module" src="assets/swipebuilder-story.js"></script><script type="module" src="assets/jobtarget-story.js"></script></body></html>
+  /* ---------- generated bits ---------- */
+  $('#wave').innerHTML = Array.from({ length: 44 }, (_, i) =>
+    `<i style="--h:${18 + Math.round(Math.abs(Math.sin(i * 1.7) * Math.cos(i * .45)) * 82)}%;--wd:${-(i % 9) * .14}s"></i>`).join('');
+  const ads = [
+    ['Food diary', 'Worth the detour.', '#fff', 150], ['City walks', 'Take the side street.', '#ffd9c9', 190],
+    ['Skincare', 'Have you tried this yet?', '#0c0c0c', 130], ['Quiet places', 'Stay for the view.', '#f6f1c9', 170],
+    ['Audio', 'What does focus sound like?', '#fff', 200], ['Essentials', 'Out the door in five.', '#c9f0dc', 140]
+  ];
+  const tile = ([k, t, b, h]) => `<div class="ad" style="--b:${b};--h:${h}px;${b === '#0c0c0c' ? 'color:#fff' : ''}"><em>${k}</em><b>${t}</b></div>`;
+  $('#colA').innerHTML = [...ads, ...ads].map(tile).join('');
+  $('#colB').innerHTML = [...ads.slice(3), ...ads.slice(0, 3), ...ads.slice(3), ...ads.slice(0, 3)].map(tile).join('');
+
+  /* ---------- statement words ---------- */
+  const say = $('#sayText');
+  const wrapWords = (txt, cls) => txt.split(/(\s+)/).map(w => /\S/.test(w) ? `<span class="w${cls}">${w}</span>` : w).join('');
+  say.innerHTML = [...say.childNodes].map(nd => nd.nodeType === 3 ? wrapWords(nd.textContent, '') : wrapWords(nd.textContent, ' it')).join('');
+  const words = $$('.w', say);
+
+  /* ---------- reveals ---------- */
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+  $$('.rv,.sp').forEach(el => io.observe(el));
+
+  /* ---------- count-up ---------- */
+  const fmt = (el, v) => (el.dataset.pre || '') + Math.round(v).toLocaleString('en-US') + (el.dataset.suf || '');
+  const cio = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    cio.unobserve(e.target);
+    if (reduce) return;
+    const el = e.target, to = +el.dataset.n, t0 = performance.now(), dur = 1500;
+    const tick = t => {
+      const k = clamp((t - t0) / dur);
+      el.textContent = fmt(el, to * (1 - Math.pow(1 - k, 4)));
+      if (k < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    setTimeout(() => { el.textContent = fmt(el, to); }, dur + 400);
+  }), { threshold: .5 });
+  $$('[data-n]').forEach(el => cio.observe(el));
+
+  /* ---------- hero shader ---------- */
+  const cv = $('#gl');
+  let gl = null, uT, uR, uM, glOK = false;
+  try { gl = cv.getContext('webgl', { antialias: false, alpha: false, powerPreference: 'low-power' }); } catch (e) {}
+  if (gl && !reduce) {
+    const vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+    const fs = `precision highp float;uniform vec2 r;uniform float t;uniform vec2 m;
+float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+float fbm(vec2 p){float a=.5,s=0.;for(int i=0;i<4;i++){s+=a*n(p);p=p*2.03+7.1;a*=.5;}return s;}
+void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=uv;p.x*=r.x/r.y;
+vec2 q=p*1.15+m*.18;
+float a=fbm(q+vec2(t*.045,t*.03));
+float b=fbm(q*1.35+vec2(-t*.04,t*.05)+a*1.6);
+float c=fbm(q*.9+vec2(t*.03,-t*.04)+b*1.3+4.);
+vec3 bone=vec3(.937,.929,.906);
+vec3 col=bone;
+col=mix(col,vec3(.78,.74,1.),smoothstep(.3,.62,a));
+col=mix(col,vec3(1.,.44,.27),smoothstep(.46,.78,b)*.92);
+col=mix(col,vec3(.96,.88,.5),smoothstep(.52,.8,c)*.7);
+float k=smoothstep(.1,.85,uv.y*.8+uv.x*.5);
+col=mix(bone,col,k);
+gl_FragColor=vec4(col,1.);}`;
+    const mk = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; };
+    const pr = gl.createProgram();
+    gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+    if (gl.getProgramParameter(pr, gl.LINK_STATUS)) {
+      gl.useProgram(pr);
+      gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+      const loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+      uT = gl.getUniformLocation(pr, 't'); uR = gl.getUniformLocation(pr, 'r'); uM = gl.getUniformLocation(pr, 'm');
+      glOK = true;
+    }
+  }
+  const sizeGL = () => {
+    if (!glOK) return;
+    const w = Math.max(2, Math.round(cv.clientWidth * .5)), h = Math.max(2, Math.round(cv.clientHeight * .5));
+    if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; gl.viewport(0, 0, w, h); }
+  };
+
+  /* ---------- hero 3D particles ---------- */
+  const pc = $('#pt'), heroEl = $('.hero');
+  let pg = null, pOK = false, pU = {}, PN = innerWidth < 700 ? 6000 : 18000;
+  let hmx = .3, hmy = .2, tmx = .3, tmy = .2, energy = 0, lpx = null, lpy = null;
+  try { pg = pc.getContext('webgl', { antialias: false, alpha: true, premultipliedAlpha: false, powerPreference: 'high-performance' }); } catch (e) {}
+  if (pg && !reduce) {
+    const vs = `attribute vec3 p;attribute vec2 sd;
+uniform float t,e,sc,dpr;uniform vec2 m,r;
+varying float vA,vB,vC;
+mat2 rot(float a){float c=cos(a),s=sin(a);return mat2(c,-s,s,c);}
+void main(){
+vec3 q=p;
+q.x+=sin(t*.16+sd.x*40.)*.09;q.y+=cos(t*.13+sd.x*31.)*.09;q.z+=sin(t*.11+sd.y*23.)*.12;
+q.xz=rot(m.x*.55+t*.012)*q.xz;
+q.yz=rot(-m.y*.4)*q.yz;
+float z=q.z+2.7-sc*1.5;
+float asp=r.x/r.y;
+vec2 sp=q.xy*1.75/max(z,.05);
+vec2 mm=vec2(m.x*asp,m.y);
+vec2 d=sp-mm;float dist=length(d);
+float push=exp(-dist*dist*3.6)*(.24+e*.7)/max(z,.6)*1.6;
+vec2 dir=d/(dist+.0001);
+sp+=dir*push+vec2(-dir.y,dir.x)*push*.55*e;
+gl_Position=vec4(sp.x/asp,sp.y,0.,1.);
+float nr=1./max(z,.25);
+float focus=abs(z-2.1);
+gl_PointSize=clamp((2.+sd.y*4.6)*dpr*nr*nr*5.4+focus*focus*2.4*dpr,1.,90.*dpr);
+vB=clamp(focus*.55,.06,.95);
+vA=smoothstep(.3,.9,z)*smoothstep(4.6,2.6,z)*mix(1.,.34,clamp(focus*.55,0.,1.))*(1.+e*.25);
+vC=sd.x;}`;
+    const fs = `precision mediump float;varying float vA,vB,vC;
+void main(){float l=length(gl_PointCoord-.5);
+float a=smoothstep(.5,.5-.5*vB,l)*vA;
+vec3 c=vec3(.047);
+if(vC>.8)c=vec3(1.,.36,.21);else if(vC>.66)c=vec3(.42,.36,.92);
+gl_FragColor=vec4(c,a);}`;
+    const mk = (type, src) => { const sh = pg.createShader(type); pg.shaderSource(sh, src); pg.compileShader(sh); return sh; };
+    const pr = pg.createProgram();
+    pg.attachShader(pr, mk(pg.VERTEX_SHADER, vs)); pg.attachShader(pr, mk(pg.FRAGMENT_SHADER, fs)); pg.linkProgram(pr);
+    if (pg.getProgramParameter(pr, pg.LINK_STATUS)) {
+      pg.useProgram(pr);
+      const data = new Float32Array(PN * 5);
+      for (let i = 0; i < PN; i++) {
+        data[i * 5] = (Math.random() * 2 - 1) * 3.8;
+        data[i * 5 + 1] = (Math.random() * 2 - 1) * 2.9;
+        data[i * 5 + 2] = (Math.random() * 2 - 1) * 2.1;
+        data[i * 5 + 3] = Math.random();
+        data[i * 5 + 4] = Math.pow(Math.random(), 2.2);
+      }
+      pg.bindBuffer(pg.ARRAY_BUFFER, pg.createBuffer());
+      pg.bufferData(pg.ARRAY_BUFFER, data, pg.STATIC_DRAW);
+      const aP = pg.getAttribLocation(pr, 'p'), aS = pg.getAttribLocation(pr, 'sd');
+      pg.enableVertexAttribArray(aP); pg.vertexAttribPointer(aP, 3, pg.FLOAT, false, 20, 0);
+      pg.enableVertexAttribArray(aS); pg.vertexAttribPointer(aS, 2, pg.FLOAT, false, 20, 12);
+      ['t', 'e', 'sc', 'dpr', 'm', 'r'].forEach(k => pU[k] = pg.getUniformLocation(pr, k));
+      pg.enable(pg.BLEND); pg.blendFunc(pg.SRC_ALPHA, pg.ONE_MINUS_SRC_ALPHA);
+      pg.clearColor(0, 0, 0, 0);
+      pOK = true;
+      addEventListener('pointermove', e => {
+        const r = heroEl.getBoundingClientRect();
+        tmx = clamp((e.clientX - r.left) / r.width) * 2 - 1;
+        tmy = 1 - clamp((e.clientY - r.top) / r.height) * 2;
+        if (lpx !== null) energy = Math.min(1, energy + Math.hypot(e.clientX - lpx, e.clientY - lpy) * .004);
+        lpx = e.clientX; lpy = e.clientY;
+      }, { passive: true });
+    } else console.warn('particles: shader link failed', pg.getShaderInfoLog && pg.getProgramInfoLog(pr));
+  }
+  const sizePT = () => {
+    const d = Math.min(devicePixelRatio || 1, 2), w = Math.round(pc.clientWidth * d), h = Math.round(pc.clientHeight * d);
+    if (pc.width !== w || pc.height !== h) { pc.width = w; pc.height = h; pg.viewport(0, 0, w, h); }
+    return d;
+  };
+
+  /* ---------- pointer: cursor + magnets ---------- */
+  const cur = $('#cur');
+  let mx = innerWidth / 2, my = innerHeight / 2, cx = mx, cy = my, pmx = 0, pmy = 0, smx = 0, smy = 0;
+  if (fine && !reduce) {
+    addEventListener('pointermove', e => {
+      mx = e.clientX; my = e.clientY; cur.classList.add('on');
+      pmx = e.clientX / innerWidth - .5; pmy = .5 - e.clientY / innerHeight;
+      cur.classList.toggle('big', !!e.target.closest('a,button'));
+    }, { passive: true });
+    document.addEventListener('pointerleave', () => cur.classList.remove('on'));
+    $$('.mag').forEach(el => {
+      el.addEventListener('pointermove', e => {
+        const r = el.getBoundingClientRect();
+        el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .32}px,${(e.clientY - r.top - r.height / 2) * .32}px)`;
+        el.style.transition = 'background .3s';
+      });
+      el.addEventListener('pointerleave', () => { el.style.transition = 'transform .8s cubic-bezier(.16,1,.3,1),background .3s'; el.style.transform = ''; });
+    });
+  }
+
+  /* ---------- main loop ---------- */
+  const nav = $('#nav'), spin = $('#spin'), sayEl = $('#say'), m1 = $('#m1'), m2 = $('#m2');
+  const wraps = $$('.cardw'), cards = wraps.map(w => $('.pcard', w));
+  const stacked = matchMedia('(min-width:900px) and (min-height:620px)');
+  let lastY = scrollY, vel = 0, mo = 0, t0 = performance.now();
+  const loop = now => {
+    requestAnimationFrame(loop);
+    const y = scrollY, vh = innerHeight, dy = y - lastY;
+    if (Math.abs(dy) > 2) nav.classList.toggle('hide', dy > 0 && y > 300);
+    lastY = y;
+    if (reduce) return;
+    vel += (dy - vel) * .12;
+
+    // cursor
+    cx += (mx - cx) * .2; cy += (my - cy) * .2;
+    cur.style.transform = `translate3d(${cx}px,${cy}px,0)`;
+
+    // hero
+    if (y < vh * 1.1) {
+      spin.style.transform = `rotate(${now * .012 + y * .25}deg)`;
+      if (glOK) {
+        sizeGL();
+        smx += (pmx - smx) * .04; smy += (pmy - smy) * .04;
+        gl.uniform1f(uT, (now - t0) / 1000); gl.uniform2f(uR, cv.width, cv.height); gl.uniform2f(uM, smx, smy);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+      }
+      if (pOK) {
+        const d = sizePT();
+        hmx += (tmx - hmx) * .06; hmy += (tmy - hmy) * .06; energy *= .955;
+        pg.clear(pg.COLOR_BUFFER_BIT);
+        pg.uniform1f(pU.t, (now - t0) / 1000); pg.uniform1f(pU.e, energy); pg.uniform1f(pU.sc, clamp(y / vh));
+        pg.uniform1f(pU.dpr, d); pg.uniform2f(pU.m, hmx, hmy); pg.uniform2f(pU.r, pc.width, pc.height);
+        pg.drawArrays(pg.POINTS, 0, PN);
+      }
+    }
+
+    // statement scrub
+    const r = sayEl.getBoundingClientRect();
+    if (r.top < vh && r.bottom > 0) {
+      const p = clamp((vh * .82 - r.top) / (r.height * .78)) * (words.length + 2);
+      for (let i = 0; i < words.length; i++) words[i].style.opacity = .13 + .87 * clamp(p - i);
+    }
+
+    // stacked cards
+    const on = stacked.matches;
+    for (let i = 0; i < wraps.length; i++) {
+      const top = wraps[i].getBoundingClientRect().top;
+      const nextTop = i < wraps.length - 1 ? wraps[i + 1].getBoundingClientRect().top : vh;
+      if (top < vh * .6 && top > -vh) cards[i].classList.add('live');
+      if (!on) { cards[i].style.transform = ''; cards[i].style.filter = ''; continue; }
+      const p = i < wraps.length - 1 ? clamp(1 - nextTop / vh) : 0;
+      cards[i].style.transform = p ? `scale(${1 - p * .07})` : '';
+      cards[i].style.filter = p ? `brightness(${1 - p * .45})` : '';
+    }
+
+    // marquee
+    mo += 1.1 + Math.abs(vel) * .5;
+    const w1 = m1.scrollWidth / 2, w2 = m2.scrollWidth / 2;
+    const skew = clamp(vel * .12, -6, 6);
+    m1.style.transform = `translate3d(${-(mo % w1)}px,0,0) skewX(${-skew}deg)`;
+    m2.style.transform = `translate3d(${-w2 + (mo % w2)}px,0,0) skewX(${skew}deg)`;
+  };
+  requestAnimationFrame(loop);
+})();
+</script>
+<style>
+#vsw{position:fixed;left:14px;bottom:14px;z-index:2147483000;display:flex;align-items:center;gap:2px;padding:4px;border-radius:999px;
+  background:#111;box-shadow:0 6px 24px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.14);font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase}
+#vsw span{padding:0 8px 0 10px;color:#8a8a8a}
+#vsw a{display:block;padding:8px 11px;border-radius:999px;color:#fff;text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+#vsw a:hover{background:#2c2c2c}
+#vsw a[aria-current]{background:#fff;color:#111}
+@media(max-width:560px){#vsw span{display:none}#vsw{left:10px;bottom:10px}}
+@media print{#vsw{display:none}}
+</style><nav id="vsw" aria-label="Switch design"><span>Design</span><a href="./" aria-current="page" title="Design 1: Soft">1 Soft</a><a href="2/" title="Design 2: Bold">2 Bold</a><a href="3/" title="Design 3: Board">3 Board</a></nav>
+</body>
+</html>

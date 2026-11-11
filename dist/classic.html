@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Seymur Mammadov — full-stack and AI engineer building playful, useful software.">
+  <title>Seymur Mammadov · Full-stack & AI engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23484b4b'/%3E%3Cpath d='M9 21c4-2 10-2 14 0M11 17c2-6 8-6 10 0' stroke='%23d3d3d1' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='13' cy='14' r='1' fill='white'/%3E%3Ccircle cx='19' cy='14' r='1' fill='white'/%3E%3C/svg%3E">
+  <style>
+:root{--ink:#383838;--muted:#7f7f7f;--blue:#898989;--paper:#eeedeb;--line:#ededed}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,system-ui,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}a:focus-visible,button:focus-visible{outline:2px solid #7e7e7e;outline-offset:5px}
+.shell{width:min(980px,calc(100% - 44px));margin:auto}header{background:var(--paper)}nav{height:80px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:16px;font-weight:500;letter-spacing:.02em}.brand-mark{display:none}.navlinks{display:flex;gap:32px;font-size:14px;color:#838383}.navlinks a:hover{color:#383838}
+.hero{padding:25px 0 70px}.hero-grid{display:flex;flex-direction:column-reverse}.hero-copy{width:100%}.eyebrow{font-size:16px;color:#898989}.hero h1{font-size:54px;font-weight:400;letter-spacing:-.04em;margin:8px 0 18px;line-height:1.18}.lede{font-size:25px;line-height:1.5;font-weight:400;margin:0}.micro{font:12px/1.8 'DM Mono',monospace;color:#939393;margin-top:20px}
+.mascot-stage{width:100%;height:410px;position:relative;margin-bottom:24px}.scene-button{display:block;position:absolute;width:540px;max-width:100%;left:50%;top:0;transform:translateX(-50%);border:0;padding:0;background:transparent;cursor:pointer;touch-action:manipulation}.scene{display:block;width:100%;height:auto;overflow:visible}.scene-note{position:absolute;right:-15px;top:62px;max-width:205px;font:21px/1.6 'Caveat',cursive;color:#6c6c6c;transform:rotate(-4deg);pointer-events:none}.scene-note span{display:block;font-size:35px;padding-left:30px}
+.scene-status{position:absolute;bottom:12px;left:0;right:0;text-align:center;font:12px 'DM Mono',monospace;color:#858585}.catch-panel{position:absolute;left:50%;bottom:12px;transform:translate(-50%,8px);width:350px;max-width:90%;padding:16px 20px;background:#fff;border:1px solid #e9e9e9;border-radius:9px;box-shadow:0 8px 26px #2c325510;opacity:0;pointer-events:none;transition:.25s;z-index:5}.catch-panel.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}.catch-label{font:11px 'DM Mono',monospace;color:#858585}.catch-text{font-size:15px;line-height:1.5;margin-top:7px}.bucket{display:flex;gap:9px;margin-top:12px}.chip{border:0;background:transparent;font:16px 'DM Mono',monospace;color:#d6d6d6;padding:2px;cursor:pointer}.chip.filled{color:#7d7d7d}.scroll-note{display:none}
+section{padding:40px 0}.section-head{margin-bottom:24px}.section-head h2{font-size:20px;font-weight:400;margin:0}.section-head .eyebrow,.section-head p{display:none}.projects{display:grid;grid-template-columns:1fr 1fr;gap:48px 25px}.project{min-width:0}.visual{height:300px;overflow:hidden;border-radius:6px;background:#f0f0f0;position:relative}.visual img{width:100%;height:100%;object-fit:cover;transition:transform .6s}.project:hover .visual img{transform:scale(1.025)}.project-info{padding:18px 1px 0}.project-num{font:11px 'DM Mono',monospace;color:#9d9d9d}.project h3{font-size:22px;font-weight:500;letter-spacing:-.02em;margin:9px 0}.project p{font-size:15px;line-height:1.7;color:#828282;margin:0}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tag{font-size:12px;color:#939393;background:#f2f2f2;padding:4px 8px;border-radius:4px}.project-link{font-size:13px;color:#737373}.synthetic{display:grid;place-items:center;background:#f1f1f1;padding:24px}.ui-mock{background:white;border:1px solid #e4e4e4;border-radius:6px;width:100%}.ui-bar{height:25px;border-bottom:1px solid #eee;display:flex;gap:4px;padding:9px}.dot{width:5px;height:5px;background:#ccc;border-radius:50%}.ui-body{display:grid;grid-template-columns:1fr 1fr;padding:16px;gap:16px}.ui-col{font:11px/1.6 'DM Mono',monospace;color:#848484}.ui-code{height:100px;background:repeating-linear-gradient(#cacaca 0 2px,transparent 2px 12px)}
+#about{padding-top:100px}.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:50px}.about-kicker,.stats{display:none}.about-wrap h2{font-weight:400;font-size:28px;margin:0}.about-copy{font-size:17px;line-height:1.8;color:#828282;margin:0}footer{padding:100px 0 40px}.hello{font-size:40px;font-weight:400;letter-spacing:-.03em;margin:0 0 18px}footer>.eyebrow{display:none}.email{font-size:17px;border-bottom:1px solid #d2d2d2}.footer-row{display:flex;justify-content:space-between;gap:15px;margin-top:75px;font:11px 'DM Mono',monospace;color:#9e9e9e}.reveal{opacity:1}
+@media(max-width:700px){nav{height:66px}.brand{font-size:14px}.navlinks{gap:16px;font-size:13px}.hero{padding:10px 0 40px}.mascot-stage{height:320px;margin-bottom:10px}.scene-button{width:420px;top:20px}.scene-note{font-size:17px;right:0;top:0;max-width:145px}.scene-note span{display:none}.hero h1{font-size:39px}.lede{font-size:20px}.micro{font-size:12px}.projects{grid-template-columns:1fr;gap:38px}.visual{height:280px}.about-grid{grid-template-columns:1fr;gap:20px}.footer-row{flex-direction:column;margin-top:45px}.scene-status{font-size:11px;bottom:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style><link rel="stylesheet" href="astro-guide.css">
+<link rel="stylesheet" href="weasel-story.css">
+<link rel="stylesheet" href="pumpads-story.css">
+<link rel="stylesheet" href="swipebuilder-story.css">
+<link rel="stylesheet" href="jobtarget-story.css">
+<link rel="stylesheet" href="typography.css">
+<link rel="stylesheet" href="hero-scene.css">
+<link rel="stylesheet" href="ai-work.css">
+</head>
+<body>
+  <header id="header"><nav class="shell"><div class="navlinks"><a href="#work">Work</a><a href="https://github.com/smammadov1994" target="_blank" rel="noreferrer">GitHub ↗</a></div></nav></header>
+  <main>
+    <section class="hero shell">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>Seymur Mammadov</h1>
+        </div>
+
+<div class="mascot-stage">
+<div class="scene-button" id="fish">
+<svg class="scene" viewBox="0 0 540 375" role="group" aria-label="Astro the ghost holding a fishing rod beside a pool">
+<defs><clipPath id="cardPrintArea"><rect x="216" y="246" width="142" height="70"/></clipPath><linearGradient id="ghostGradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#c0c0c0"/><stop offset=".36" stop-color="#9b9b9b"/><stop offset=".72" stop-color="#727272"/><stop offset="1" stop-color="#4a4a4a"/></linearGradient><linearGradient id="mountainShade" x1="0" y1="0" x2=".5" y2="1"><stop stop-color="#7e9eae"/><stop offset="1" stop-color="#c4d4d3"/></linearGradient>
+<radialGradient id="ghostSunwash" cx=".92" cy=".12" r=".9"><stop stop-color="white" stop-opacity=".9"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
+<radialGradient id="sunHalo"><stop stop-color="#f6cd79" stop-opacity=".6"/><stop offset="1" stop-color="#f6cd79" stop-opacity="0"/></radialGradient>
+<clipPath id="landscapeClip"><rect x="35" y="-60" width="470" height="364" rx="20"/></clipPath>
+<clipPath id="fullBodyOutline" clipPathUnits="objectBoundingBox"><path transform="scale(.0006906077 .0009208103)" d="M325 110Q321 80 350 54Q373 25 423 22Q444 8 465 24Q503 4 527 25Q557 14 564 61Q571 84 553 113L561 140L570 190L561 214L540 226L542 258Q599 266 639 298Q663 323 675 365L691 443Q709 483 737 521L750 538L778 535L807 544L803 573Q866 570 892 591Q911 609 917 647L940 720L982 815L979 850L985 895L1006 917L1013 938Q1057 950 1096 964Q1130 974 1133 993L1128 1005Q1031 1030 889 1016L882 1004L889 978L894 957L891 922L866 881L850 831L819 758L805 711Q747 742 682 754L695 782L711 825L719 854L716 882L732 912L753 940L761 972L796 1001Q809 1021 803 1043Q734 1072 672 1042L644 1021L618 1018Q411 1028 200 1008L195 985L199 948L214 902L225 868L239 832L241 805Q267 754 349 730L349 707L334 675L332 654L329 638L334 615L328 600L324 561L309 511L296 453L285 400L284 382Q300 326 344 289L389 260L417 243L412 229L388 228L369 211L360 193L346 180L338 156L331 133Z"/><path transform="scale(.0006906077 .0009208103)" d="M686 590L716 522L859 407L1005 294L1148 184L1294 88L1402 27L1424 31L1428 62L1408 58L1310 110L1170 221L1022 339L1008 328L891 453L821 520L773 574Z"/></clipPath>
+<filter id="tvStatic" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence id="tvNoise" type="fractalNoise" baseFrequency=".92 .66" numOctaves="1" seed="71" stitchTiles="stitch"/><feColorMatrix type="matrix" values=".333 .333 .333 0 0 .333 .333 .333 0 0 .333 .333 .333 0 0 0 0 0 0 1"/><feComponentTransfer><feFuncR type="linear" slope="3.8" intercept="-1.4"/><feFuncG type="linear" slope="3.8" intercept="-1.4"/><feFuncB type="linear" slope="3.8" intercept="-1.4"/></feComponentTransfer></filter>
+<pattern id="tvScanlines" patternUnits="userSpaceOnUse" width="4" height="4"><rect y="2" width="4" height="1" fill="#171717" opacity=".35"/></pattern>
+<clipPath id="morphClip"><path id="morphContour"/><path id="morphRod"/></clipPath>
+<filter id="morphDistortion" x="-12%" y="-12%" width="124%" height="124%" color-interpolation-filters="sRGB"><feTurbulence id="morphNoise" type="fractalNoise" baseFrequency=".025 .06" numOctaves="2" seed="14" result="warp"/><feDisplacementMap id="morphDisplacement" in="SourceGraphic" in2="warp" scale="0" xChannelSelector="R" yChannelSelector="G"/></filter>
+</defs>
+<g id="sunriseLandscape" opacity="0" clip-path="url(#landscapeClip)" aria-hidden="true">
+<g id="risingSun"><g transform="translate(0 -55)"><circle cx="353" cy="99" r="91" fill="url(#sunHalo)"/><circle cx="353" cy="99" r="31" fill="#f4bd55" stroke="#d69a3b" stroke-width="1"/><g id="sunRays" transform="translate(353 99) scale(.78) translate(-353 -99)" stroke="#d7a448" stroke-linecap="round" opacity=".65"><path d="M353 52V44 M353 146V154 M306 99H298 M400 99H408 M320 66L314 60 M386 132L392 138 M320 132L314 138 M386 66L392 60"/></g></g></g>
+<g id="farMountains"><path d="M37 304L81 238L128 172L164 218L213 93L257 186L288 151L329 223L376 129L424 209L459 181L508 304Z" fill="url(#mountainShade)" stroke="#7898a4" stroke-width="1.2"/><path d="M164 218L213 93L231 168L219 151L205 183L195 171 M329 223L376 129L394 178L381 166L372 185L362 177 M81 238L128 172L150 211L133 200L119 219" fill="#e9f0ed" stroke="#b6cacb" stroke-width=".7"/><path d="M213 95L244 261 M376 131L407 279 M128 173L173 285" fill="none" stroke="#7695a1" opacity=".4"/></g>
+<g id="nearMountains"><path d="M37 306L93 254L130 270L181 199L231 257L273 218L321 276L365 230L402 265L447 213L508 306Z" fill="#a9bf9f" stroke="#88a181"/><path d="M130 270L181 199L195 239L184 229L171 247 M402 265L447 213L463 250L448 239L437 253" fill="#e4ead5"/><path d="M44 304Q135 271 227 289T498 300" fill="none" stroke="#8da582"/></g>
+</g>
+<ellipse cx="245" cy="309" rx="112" ry="10" fill="#eeeeee"/>
+<path id="fishingRock" d="M173 281 Q215 257 277 281 L293 305 Q237 320 163 303Z" fill="#f3f3f3" stroke="#d4d4d4"/>
+<g id="fishingPool"><ellipse cx="368" cy="311" rx="73" ry="16" fill="#f5f5f5"/>
+<ellipse id="ripple1" cx="368" cy="311" rx="30" ry="6" fill="none" stroke="#bcbcbc" stroke-width="1.5"/>
+<ellipse id="ripple2" cx="368" cy="311" rx="52" ry="11" fill="none" stroke="#d5d5d5"/>
+</g>
+<g id="ghostActor"><g id="ghostLean"><g id="ghostBody" transform="translate(177 120) scale(.51)">
+<path d="M230.809 115.385V249.411C230.809 269.923 214.985 287.282 194.495 288.411C184.544 288.949 175.364 285.718 168.26 280C159.746 273.154 147.769 273.461 139.178 280.23C132.638 285.384 124.381 288.462 115.379 288.462C106.377 288.462 98.1451 285.384 91.6055 280.23C82.912 273.385 70.9353 273.385 62.2415 280.23C55.7532 285.334 47.598 288.411 38.7246 288.462C17.4132 288.615 0 270.667 0 249.359V115.385C0 51.6667 51.6756 0 115.404 0C179.134 0 230.809 51.6667 230.809 115.385Z" fill="url(#ghostGradient)"/><path d="M230.809 115.385V249.411C230.809 269.923 214.985 287.282 194.495 288.411C184.544 288.949 175.364 285.718 168.26 280C159.746 273.154 147.769 273.461 139.178 280.23C132.638 285.384 124.381 288.462 115.379 288.462C106.377 288.462 98.1451 285.384 91.6055 280.23C82.912 273.385 70.9353 273.385 62.2415 280.23C55.7532 285.334 47.598 288.411 38.7246 288.462C17.4132 288.615 0 270.667 0 249.359V115.385C0 51.6667 51.6756 0 115.404 0C179.134 0 230.809 51.6667 230.809 115.385Z" id="ghostLight" fill="url(#ghostSunwash)" opacity="0"/>
+<g id="ghostGaze"><g id="eyes"><ellipse cx="88" cy="120" rx="18" ry="28" fill="white"/><ellipse cx="157" cy="120" rx="18" ry="28" fill="white"/></g><g id="closedEyes" opacity="0" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"><path d="M73 120Q88 131 103 120 M142 120Q157 131 172 120"/><path d="M109 166Q124 177 139 166" stroke-width="4"/></g></g>
+</g></g>
+<g id="rodGroup"><path d="M261 224 Q315 181 379 172" fill="none" stroke="#636363" stroke-width="4" stroke-linecap="round"/><path d="M262 224 L285 209" stroke="#4c4c4c" stroke-width="6" stroke-linecap="round"/></g>
+
+</g>
+<g id="seymurActor" opacity="0" aria-hidden="true"><g id="seymurReveal"><image id="seymurArtwork" clip-path="url(#fullBodyOutline)" href="assets/seymur-fishing-natural.png" x="92" y="28" width="384" height="288" preserveAspectRatio="xMidYMid meet"/></g></g>
+<g id="storyPoses" aria-hidden="true"><image id="noticePose" opacity="0" href="assets/seymur-catch-notice-v2.png" x="92" y="28" width="384" height="288"/><image id="pullPose" opacity="0" href="assets/seymur-catch-pull-v2.png" x="92" y="28" width="384" height="288"/><image id="retrievePose" opacity="0" href="assets/seymur-catch-retrieve-v2.png" x="92" y="28" width="384" height="288"/></g>
+<g id="heroGlitch" opacity="0" aria-hidden="true" filter="url(#morphDistortion)"><use href="#morphContour" fill="url(#ghostGradient)" opacity=".7"/><g clip-path="url(#morphClip)"><rect x="90" y="15" width="390" height="310" fill="#888" filter="url(#tvStatic)"/><rect x="90" y="15" width="390" height="310" fill="url(#tvScanlines)"/><g id="tvTrackingBand"><rect x="90" width="390" height="12" fill="#f6f6f6" opacity=".25"/><rect x="90" y="12" width="390" height="2" fill="#181818" opacity=".5"/></g></g></g>
+<path id="fishingLine" fill="none" stroke="#878787" stroke-width="1.2"/>
+<g id="bobber"><path d="M0 -9V-2" stroke="#767676"/><ellipse rx="4" ry="6" fill="#a6a6a6"/><path d="M-4 1H4" stroke="white" stroke-width="2"/></g>
+<g id="catchToken" opacity="0" aria-hidden="true"><rect x="-33" y="-18" width="66" height="40" rx="4" fill="#f9f8f4" stroke="#777" stroke-width="1.3"/><circle cx="-20" cy="-3" r="5" fill="none" stroke="#888"/><path d="M-27 11Q-20 0-13 11 M-5 -7H22 M-5 0H16 M-5 9H22" fill="none" stroke="#999" stroke-width="1.6"/><path d="M-5 -18Q0 -25 5 -18" fill="none" stroke="#888"/></g>
+<g id="fishingBucket"><path d="M128 278 L134 308 Q151 314 166 306 L171 278Z" fill="#f8f8f8" stroke="#9a9a9a" stroke-width="2"/><ellipse cx="150" cy="278" rx="22" ry="5" fill="#fdfdfd" stroke="#9a9a9a" stroke-width="2"/><path d="M129 282 Q122 309 150 312 Q171 312 172 282" fill="none" stroke="#9a9a9a" stroke-width="2"/></g>
+<g id="closePose" opacity="0" aria-hidden="true">
+<image href="assets/seymur-connect-close-v2.png" x="30" y="10" width="480" height="360"/>
+<image href="assets/seymur-business-card-print.png" x="30" y="10" width="480" height="360" clip-path="url(#cardPrintArea)" aria-hidden="true"/>
+<g id="held-contact" opacity="0" pointer-events="none" aria-label="Seymur Mammadov, full-stack and AI engineer. Contact details on his business card.">
+<a href="mailto:smammadov494@gmail.com" tabindex="-1" aria-label="Email Seymur at smammadov494@gmail.com"><rect x="207" y="241" width="153" height="57" fill="transparent"/></a>
+<a href="https://www.linkedin.com/in/seymur-mammadov/" target="_blank" rel="noreferrer" tabindex="-1" aria-label="Seymur’s LinkedIn profile"><rect x="216" y="298" width="43" height="21" fill="transparent"/></a>
+<a href="https://github.com/smammadov1994" target="_blank" rel="noreferrer" tabindex="-1" aria-label="Seymur’s GitHub profile"><rect x="259" y="298" width="47" height="21" fill="transparent"/></a>
+</g>
+</g>
+</svg></div>
+<span class="sr-only" id="status">Seymur’s illustrated fishing scene</span>
+
+</div>
+      </div>
+      <div id="contact-announcement" class="sr-only" role="status" aria-live="polite"></div>
+      <div class="scroll-note"><div class="scroll-line"></div>scroll to explore</div>
+    </section>
+
+
+<div id="work"></div>
+<section id="skadden" class="ai-feature shell" aria-labelledby="skadden-title">
+  <div class="ai-heading">
+    <div><p class="ai-kicker">01 / legal AI &amp; knowledge systems</p><h2 id="skadden-title">Skadden.</h2><p class="ai-role">Legal-document RAG · Intranet · Harvey &amp; Legora</p></div>
+    <p class="ai-intro">At Skadden, I help build some of the firm’s leading AI tools. My work spans RAG over a corpus of legal documents, content classification, and AI-powered search, alongside work with Harvey and Legora. I owned the AI components of a new intranet built with my team.</p>
+  </div>
+  <div class="ai-walkthrough ai-knowledge" data-walkthrough data-step="0" id="skadden-ai-story" aria-label="Skadden knowledge workflow illustration">
+    <div class="ai-window-bar"><span><i aria-hidden="true"></i> From content to knowledge</span><span>Conceptual illustration</span></div>
+    <div class="ai-flow">
+      <article class="ai-flow-card" data-phase="0"><p class="ai-card-label">01 / Migrate</p><div class="ai-document-stack" aria-hidden="true"><span></span><span></span><span><b></b><b></b><b></b></span></div><h3>A new home for content.</h3><p>Move existing knowledge from the older CMS into the new intranet built by our team.</p><div class="ai-source-label">Legacy CMS <span aria-hidden="true">→</span> New intranet</div></article>
+      <article class="ai-flow-card" data-phase="1"><p class="ai-card-label">02 / Classify</p><div class="ai-taxonomy" aria-hidden="true"><span>Content</span><i></i><div><span>Topic</span><span>Category</span><span>Type</span></div></div><h3>Give content structure.</h3><p>Use categorical models to classify content and support its organization in the new system.</p><div class="ai-source-label">AI content classification</div></article>
+      <article class="ai-flow-card" data-phase="2"><p class="ai-card-label">03 / Retrieve</p><div class="ai-search-example"><span aria-hidden="true">⌕</span> Find relevant knowledge</div><div class="ai-search-docs" aria-hidden="true"><span><b></b><i></i><i></i></span><span><b></b><i></i><i></i></span></div><h3>Make knowledge useful.</h3><p>Retrieve relevant passages from a corpus of legal documents and bring them into the context for RAG answers.</p></article>
+    </div>
+    <div class="ai-walk-controls" hidden><div class="ai-steps" aria-label="Skadden workflow steps"><button type="button" data-go="0" aria-pressed="true">Migrate</button><button type="button" data-go="1" aria-pressed="false">Classify</button><button type="button" data-go="2" aria-pressed="false">Retrieve</button></div><button type="button" class="ai-play" aria-label="Play Skadden animation">Play</button></div>
+  </div>
+  <div class="ai-notes"><div><h3>RAG for legal knowledge.</h3><p>I built a retrieval-augmented generation system for a corpus of legal documents, bringing relevant material into the context used to generate answers. My work also covered categorical models, AI-powered search, and information retrieval across the firm’s knowledge systems.</p></div><div><h3>Building the firm’s AI tools.</h3><p>I work with Harvey and Legora as part of the broader effort to build out the firm’s AI tools. For our new intranet, I owned the AI components and worked with my team to migrate content from the older CMS into the new AI-driven platform.</p></div></div>
+  <div class="ai-footer"><p>Skadden · Legal-document RAG · Classification models · CMS migration · Harvey · Legora</p></div>
+</section>
+
+<section id="weaszel" class="weasel-feature shell" aria-labelledby="weasel-title">
+  <div class="weasel-heading"><div><p class="weasel-kicker">02 / the first app · a work in progress</p><h2 id="weasel-title">Weaszel.</h2></div><div><p class="weasel-intro">A curious little scout.<br>A bridge between websites and agents.</p><span class="weasel-sub">Website → callable MCP tools → Swagger</span></div></div>
+  <div id="weasel-story"><div class="weasel-fallback"><img src="assets/weaszel-graphite.png" alt="A graphite weasel navigating browser windows" width="2048" height="683"><h3>Follow the little scout.</h3><p>Point Weaszel at a page. It observes the page, accessibility tree, and forms; builds callable tools; and generates a Swagger reference. An agent can use those tools through the local adapter.</p><a href="https://weaszel-youtube-swagger.smammadov494.chatgpt.site" target="_blank" rel="noreferrer">Explore the YouTube Swagger ↗</a><p>Local adapter prototype. Live calls run on your computer.</p></div></div>
+</section>
+
+<section id="pumpads" class="pump-feature shell" aria-labelledby="pumpads-title">
+<div class="pump-heading"><div><p class="pump-kicker">03 / building a business</p><h2 id="pumpads-title">PumpAds.</h2><p class="pump-role"><strong>2xROAS, Inc.</strong><br>Co-founder · product &amp; engineering<br>November 2024 — August 2025</p></div><p class="pump-intro">I co-founded 2xROAS, Inc., the company behind PumpAds. With my partners, I helped turn a complex AI workflow into a product that creates creator-style video ads for paying customers.</p></div>
+<div id="pumpads-story"><div class="pump-gallery"><figure><img src="assets/pumpads-skincare.png" alt="Illustrative AI creator presenting skincare"><figcaption>01 / skincare</figcaption></figure><figure><img src="assets/pumpads-tumbler.png" alt="Illustrative AI creator presenting a travel tumbler"><figcaption>02 / everyday essentials</figcaption></figure><figure><img src="assets/pumpads-headphones.png" alt="Illustrative AI creator presenting headphones"><figcaption>03 / audio</figcaption></figure></div><p class="pump-example-note">Illustrative AI creator concepts · not customer campaigns</p><p>Product brief → script → voice and visuals → lip sync → finished ad.</p></div>
+<div class="pump-results" aria-label="2xROAS, Inc. results for PumpAds"><div><strong>1,000+</strong><span>paying customers</span><small>within two months of launch</small></div><div><strong>$15K</strong><span>monthly revenue</span><small>within two months of launch</small></div><div><strong>10 → 2 min</strong><span>average generation time</span><small>after separating long-running AI work</small></div></div>
+<div class="pump-experience"><div><h3>More than a model call.</h3><p>With an eight-person team, we built a multimodal pipeline connecting script generation, voice cloning, image and video generation, lip sync, revoicing, and final FFmpeg assembly.</p><p>My experience spanned the product, backend, AI workflows, and the infrastructure needed to bring them together.</p></div><div><h3>Make it work as a business.</h3><p>We moved long-running jobs into independently scalable services, with queues and persistent job state. That kept n8n as a fast orchestration layer and supported bursts of 100 concurrent requests.</p><p>We also built a usage-credit ledger with reservations, reconciliation, and automatic refunds for failed generations, and secured $50K in platform credits to help manage early costs.</p></div></div><p class="pump-stack">2xROAS, Inc. · Product: PumpAds · multimodal AI · distributed jobs · n8n · FFmpeg · Replicate &amp; Cog</p>
+</section>
+
+<section id="swipebuilder" class="swipe-feature shell" aria-labelledby="swipebuilder-title">
+  <div class="swipe-heading">
+    <div><p class="swipe-kicker">04 / a home for good ideas</p><h2 id="swipebuilder-title">SwipeBuilder.</h2><p class="swipe-role">Co-founder · Lead Backend &amp; AI Engineer<br>December 2023 — August 2025</p></div>
+    <p class="swipe-intro">I co-founded SwipeBuilder to turn scattered ad inspiration into a searchable creative workspace. I led backend and AI engineering, from ingestion and semantic search to scripts grounded in the right references.</p>
+  </div>
+  <div id="swipebuilder-story">
+    <ol class="swipe-readable"><li><h3>Keep what catches your eye.</h3><p>Collect ad references from platforms such as Meta, TikTok, and Google.</p></li><li><h3>Give your ideas a home.</h3><p>Organize references into folders and share creative boards with your team.</p></li><li><h3>Find the useful thread.</h3><p>Explore saved ads and video transcripts to understand the ideas behind the creative.</p></li><li><h3>Make the next story yours.</h3><p>Use AI copywriting to adapt a reference to a different product or offer.</p></li></ol>
+  </div>
+  <div class="swipe-results" aria-label="SwipeBuilder company results"><div><strong>3,000</strong><span>users</span><small>product adoption</small></div><div><strong>300</strong><span>paying customers</span><small>at peak</small></div><div><strong>$25K</strong><span>monthly recurring revenue</span><small>at peak</small></div></div>
+  <div class="swipe-notes"><div><h3>Find the thread between ideas.</h3><p>I built natural-language and hybrid semantic search across 100K+ transcribed ads, combining embeddings, vector retrieval, metadata filters, personalized signals, and diverse results.</p><p>A production RAG pipeline brought relevant transcripts together with the customer's product, offer, and audience to generate scripts grounded in useful creative examples.</p></div><div><h3>Keep the creative work moving.</h3><p>I built the backend for a five-person company: core APIs, billing, collaboration, recommendations, and asynchronous jobs. Crawlers and Chrome-extension imports fed the ingestion and transcription pipeline.</p><p>Lambda, SQS, SNS, and persistent job state handled long-running work, with retries, dead-letter queues, and status tracking. Daily budgets and query caching kept repeated research faster and costs under control.</p></div></div>
+  <div class="swipe-footer"><p>The Swipe Company, LLC · OpenAI embeddings · Pinecone · production RAG · AWS</p><a href="https://swipebuilder.io/" target="_blank" rel="noreferrer">Explore SwipeBuilder <span aria-hidden="true">↗</span></a></div>
+</section>
+
+<section id="jobtarget" class="job-feature shell" aria-labelledby="jobtarget-title">
+  <div class="job-heading">
+    <div><p class="job-kicker">05 / opportunities in motion</p><h2 id="jobtarget-title">JobTarget.</h2><p class="job-role">Tech Lead · May 2022 — September 2025<br>Software Engineer · January 2020 — May 2022</p></div>
+    <p class="job-intro">At JobTarget, I grew from Software Engineer to Tech Lead, building full-stack products and taking ownership from planning through delivery. The system story below follows jobs from applicant tracking systems to the job boards where they can reach the right audience.</p>
+  </div>
+  <div id="jobtarget-story">
+    <ol class="job-readable"><li><h3>Every opportunity starts somewhere.</h3><p>Pull job listings from applicant tracking systems into the distribution workflow.</p></li><li><h3>Different systems. A common language.</h3><p>Prepare consistent job records with role, location, and source information.</p></li><li><h3>Find the right place for each role.</h3><p>Match each job to relevant boards using its context and destination requirements.</p></li><li><h3>One opening. The right audience.</h3><p>Distribute each job to its selected destinations and track delivery.</p></li></ol>
+  </div>
+  <div class="job-results" aria-label="JobTarget experience outcomes"><div><strong>24%</strong><span>reduction in churn</span><small>through full-stack product improvements</small></div><div><strong>40%</strong><span>faster audit responses</span><small>with Compliance-Post / Reporting Hub</small></div></div>
+  <div class="job-notes"><div><h3>Own the product, end to end.</h3><p>I led the development and optimization of compliance products, collaborating with stakeholders on priorities and serving as the primary technical contact for partners.</p><p>My work included the Local Outreach application, Compliance-Post / Reporting Hub, and the Compliance CIW Workbook with Salesforce integrations.</p></div><div><h3>Build the foundation. Grow the team.</h3><p>I architected AWS infrastructure migrations using DynamoDB, Lambda, and EC2, alongside the full-stack features that supported customers’ day-to-day work.</p><p>As Tech Lead, I mentored junior engineers in engineering practices and agile workflows, helping the team carry work from technical decisions through delivery.</p></div></div>
+  <div class="job-footer"><p>JobTarget · Stamford, Connecticut · Full-stack engineering · AWS · Partner integrations</p></div>
+</section>
+
+<section id="signal98" class="ai-feature shell" aria-labelledby="signal98-title">
+  <div class="ai-heading">
+    <div><p class="ai-kicker">06 / independent project</p><h2 id="signal98-title">Signal98.</h2><p class="ai-role">Error monitoring · AI triage · Developer tools</p></div>
+    <p class="ai-intro">I built Signal98 to connect application errors to the people and workflows they affect. It captures issues, uses <strong>JEV by TypeSafe AI</strong> to assess them, and gives each issue a Ghost conversation for investigation and a reviewed fix.</p>
+  </div>
+  <div class="ai-walkthrough" data-walkthrough data-step="0" id="signal98-ai-story" aria-label="Signal98 workflow illustration">
+    <div class="ai-window-bar"><span><i aria-hidden="true"></i> Signal98 / from error to action</span><span>Illustrative example</span></div>
+    <div class="ai-flow">
+      <article class="ai-flow-card" data-phase="0"><p class="ai-card-label">01 / Capture</p><div class="ai-error-icon" aria-hidden="true">{ ! }</div><h3>One issue. Its context.</h3><div class="ai-log"><code>TypeError · checkout</code><span>Payment form → submit → error</span><span>Repeated events grouped together</span></div><p>Browser and server SDKs capture the error and the steps leading up to it.</p></article>
+      <article class="ai-flow-card ai-judge" data-phase="1"><p class="ai-card-label">02 / Assess</p><div class="ai-model-mark"><span>JEV</span><small>by TypeSafe AI</small></div><dl class="ai-decisions"><div><dt>Category</dt><dd>Payments</dd></div><div><dt>Severity</dt><dd>Major</dd></div><div><dt>User-facing</dt><dd>Likely</dd></div></dl><p>Typed judgments inform the priority and alert rules in my code.</p></article>
+      <article class="ai-flow-card" data-phase="2"><p class="ai-card-label">03 / Investigate</p><div class="ai-review-icon" aria-hidden="true"><span>−</span><span>+</span></div><h3>Context to a code fix.</h3><div class="ai-review-list"><span>Investigate with Ghost</span><span>Prepare an isolated change</span><span>Review the diff, then apply</span></div><p>The assessment stays attached to the conversation and proposed fix.</p></article>
+    </div>
+    <div class="ai-walk-controls" hidden><div class="ai-steps" aria-label="Signal98 workflow steps"><button type="button" data-go="0" aria-pressed="true">Capture</button><button type="button" data-go="1" aria-pressed="false">JEV assessment</button><button type="button" data-go="2" aria-pressed="false">Review a fix</button></div><button type="button" class="ai-play" aria-label="Play Signal98 animation">Play</button></div>
+  </div>
+  <div class="ai-notes"><div><h3>JEV is the decision layer.</h3><p>I integrated TypeSafe AI’s System One model with explicit questions about each issue. Choice answers identify category and likely cause; scores assess severity and fix complexity; probability judgments assess urgency, user impact, and risk.</p><p>The application combines those answers with event counts and thresholds to decide what deserves attention. Repeated errors reuse the assessment; regressions or meaningful growth trigger another look.</p></div><div><h3>From assessment to investigation.</h3><p>I built the capture SDK, monitoring dashboard, and issue workflow around that context. Ghost handles the conversation and code investigation separately from JEV’s structured assessments.</p><p>Proposed code changes are prepared in an isolated Git worktree, with a diff to review before applying. If JEV is unavailable, the dashboard clearly labels its fallback assessment.</p></div></div>
+  <details class="ai-product-preview"><summary>See the Signal98 dashboard <span aria-hidden="true">↗</span></summary><figure><a href="assets/signal98-dashboard.jpg" target="_blank" rel="noreferrer"><img src="assets/signal98-dashboard.jpg" alt="Signal98 demo dashboard showing error activity, affected users, issue priorities, and Ghost investigation tools" width="1932" height="1324" loading="lazy"></a><figcaption>The working application, shown with demo data. Open the image for a closer look.</figcaption></figure></details>
+  <div class="ai-footer"><p>JavaScript SDK · Next.js · SQLite · JEV · Isolated Git worktrees</p><div><a href="https://github.com/smammadov1994/Signal98" target="_blank" rel="noreferrer">Explore Signal98 ↗</a><a href="https://docs.typesafe.ai/concepts/system-one" target="_blank" rel="noreferrer">About JEV / TypeSafe AI ↗</a></div></div>
+</section>
+
+
+
+  </main>
+  <script type="module" src="assets/ai-stories.js"></script>
+  <script type="module" src="assets/hero-scene.js"></script><script type="module" src="assets/weasel-story.js"></script><script type="module" src="assets/pumpads-story.js"></script><script type="module" src="assets/swipebuilder-story.js"></script><script type="module" src="assets/jobtarget-story.js"></script></body></html>
